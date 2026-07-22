@@ -1,15 +1,12 @@
-baseURL = "/"
-title = "AWS Portfolio Workshop"
+baseURL = 'https://long-28.github.io/'
+title = 'AWS Portfolio Workshop'
+theme = 'PaperMod'
+languageCode = 'en-US'
+
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
 summaryLength = 24
-
-[params]
-  baseURL = 'https://Long-28.github.io/'
-  languageCode = 'vi'
-  title = 'My Website'
-  theme = 'PaperMod'
 
 [languages]
   [languages.en]
