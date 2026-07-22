@@ -1,17 +1,389 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Personal AWS internship report and technical workshop"><title>Prerequisites · AWS Portfolio Workshop</title><script>document.documentElement.dataset.theme=localStorage.getItem("aws-workshop-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")</script><link rel=stylesheet href=/css/site.css></head><body><header class=topbar><button class="icon-button mobile-only" id=menu-toggle aria-label="Toggle menu">☰</button>
-<a class=brand href=/en/><span class=brand-mark>AWS</span><span><strong>AWS Portfolio Workshop</strong><small>Internship report, cloud project, and hands-on workshop</small></span></a><div class=topbar-actions><label class=search-box><span>⌕</span><input id=site-search type=search placeholder="Search navigation..."></label><div class=language-switcher><a class=active href=/en/6-workshop/02-prerequisites/>EN</a><a href=/vi/6-workshop/02-prerequisites/>VI</a></div></div></header><div class=app-shell><aside class=sidebar id=sidebar><div class=sidebar-label>CONTENTS</div><nav class=sidebar-nav id=sidebar-nav><details class=nav-group><summary><a href=/en/1-student-information/><span>01</span>Student Information</a></summary></details><details class=nav-group><summary><a href=/en/2-worklog/><span>02</span>Internship Worklog</a>
-<b>⌄</b></summary></details><details class=nav-group><summary><a href=/en/3-proposal/><span>03</span>Project Proposal</a></summary></details><details class=nav-group><summary><a href=/en/4-blog-posts/><span>04</span>Blog Posts</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/4-blog-posts/01-blog-1/>AWS IAM - The First Foundation When Learning Amazon Web Services</a>
-<a href=/en/4-blog-posts/02-blog-2/>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</a>
-<a href=/en/4-blog-posts/03-blog-3/>AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</a></div></details><details class=nav-group><summary><a href=/en/5-events-participated/><span>05</span>Events Participated</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/5-events-participated/01-event-1/>AWS First Cloud AI Journey Community Day 2026</a>
-<a href=/en/5-events-participated/02-event-2/>Mini Meetup – First Cloud AI Journey 06/06/2026</a></div></details><details class=nav-group open><summary><a href=/en/6-workshop/><span>06</span>Workshop</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/6-workshop/01-overview/>Overview</a>
-<a class=active href=/en/6-workshop/02-prerequisites/>Prerequisites</a>
-<a href=/en/6-workshop/03-architecture/>Architecture</a>
-<a href=/en/6-workshop/04-deployment/>Deployment</a>
-<a href=/en/6-workshop/09-cleanup/>Clean Up Resources</a>
-<a href=/en/6-workshop/demo/>Demo</a></div></details><details class=nav-group><summary><a href=/en/7-self-evaluation/><span>07</span>Self-evaluation</a></summary></details><details class=nav-group><summary><a href=/en/8-sharing-and-feedback/><span>08</span>Sharing and feedback</a></summary></details></nav><div class=sidebar-note><strong>Tip</strong><p>Use VI/EN to switch languages.</p></div></aside><main class=main-content id=main-content><nav class=breadcrumbs aria-label=Breadcrumb><a href=/en/>Home</a>
-<span>/</span><a href=/en/6-workshop/>Workshop</a>
-<span>/</span><span>Prerequisites</span></nav><header class="page-header journey-header"><span class=eyebrow>WORKSHOP DOCUMENTATION</span><h1>Prerequisites</h1></header><article class="content-card prose" data-search-content><h1 id=prerequisites>Prerequisites</h1><p>Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.</p><h2 id=1-aws-account>1. AWS Account</h2><p>You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.</p><p><strong>Recommendations:</strong></p><ul><li>Configure AWS Budgets to monitor and control AWS costs.</li><li>Choose an AWS Region before you begin and use the same Region throughout the entire workshop.</li></ul><hr><h2 id=2-prerequisite-knowledge>2. Prerequisite Knowledge</h2><p>This workshop assumes you have a basic understanding of the following topics:</p><ul><li>ASP.NET Core Razor Pages</li><li>C# programming</li><li>.NET 9</li><li>Microsoft SQL Server</li><li>Entity Framework Core</li><li>Client-server architecture</li><li>Fundamental concepts of Amazon Web Services (AWS)</li></ul><hr><h2 id=3-development-tools>3. Development Tools</h2><p>Prepare the following tools before starting the workshop:</p><table><thead><tr><th>Tool</th><th>Purpose</th></tr></thead><tbody><tr><td>Visual Studio 2022 or later</td><td>Develop and modify the application</td></tr><tr><td>.NET 9 SDK</td><td>Build and run the project</td></tr><tr><td>SQL Server Management Studio (SSMS)</td><td>Manage the SQL Server database</td></tr><tr><td>Git</td><td>Source code management</td></tr><tr><td>AWS Toolkit for Visual Studio (recommended)</td><td>Simplify application deployment to AWS</td></tr><tr><td>Google Chrome or Microsoft Edge</td><td>Access the AWS Management Console</td></tr></tbody></table><hr><h2 id=4-project-source-code>4. Project Source Code</h2><p>Prepare the Enterprise HelpDesk project source code, including:</p><ul><li>ASP.NET Core Razor Pages application</li><li>Entity Framework Core</li><li>ASP.NET Core Identity</li><li>Application configuration files</li><li>Database scripts (if available)</li></ul><hr><h2 id=5-aws-services-used>5. AWS Services Used</h2><p>This workshop uses the following AWS services throughout the deployment process.</p><h3 id=networking>Networking</h3><ul><li>Amazon VPC</li><li>Internet Gateway</li><li>Route Table</li><li>Public Subnet</li><li>Private Subnet</li><li>Security Groups</li></ul><h3 id=application-deployment>Application Deployment</h3><ul><li>AWS Elastic Beanstalk</li><li>Amazon EC2</li><li>Application Load Balancer (ALB)</li><li>Amazon CloudFront</li></ul><h3 id=database>Database</h3><ul><li>Amazon RDS for SQL Server</li></ul><h3 id=identity-security-and-access-management>Identity, Security, and Access Management</h3><ul><li>AWS Identity and Access Management (IAM)</li><li>AWS Secrets Manager</li><li>AWS WAF</li></ul><h3 id=monitoring-and-management>Monitoring and Management</h3><ul><li>Amazon CloudWatch</li><li>AWS CloudTrail</li><li>AWS Systems Manager</li></ul><hr><p>After completing all of the prerequisites above, you are ready to begin deploying the Enterprise HelpDesk system by following the step-by-step instructions provided in the remaining sections of this workshop.</p></article><nav class=pager><a href=/en/6-workshop/03-architecture/>← Architecture</a>
-<a href=/en/6-workshop/01-overview/>Overview →</a></nav><footer class=footer></footer></main></div><script src=/js/site.js defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Prerequisites | AWS Portfolio Workshop</title>
+<meta name="keywords" content="">
+<meta name="description" content="Prerequisites
+Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.
+1. AWS Account
+You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.">
+<meta name="author" content="">
+<link rel="canonical" href="https://long-28.github.io/en/6-workshop/02-prerequisites/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://long-28.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/6-workshop/02-prerequisites/">
+<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/6-workshop/02-prerequisites/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://long-28.github.io/en/6-workshop/02-prerequisites/">
+  <meta property="og:site_name" content="AWS Portfolio Workshop">
+  <meta property="og:title" content="Prerequisites">
+  <meta property="og:description" content="Prerequisites Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.
+1. AWS Account You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="6-workshop">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prerequisites">
+  <meta name="twitter:description" content="Prerequisites Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.
+1. AWS Account You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Workshop",
+      "item": "https://long-28.github.io/en/6-workshop/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Prerequisites",
+      "item": "https://long-28.github.io/en/6-workshop/02-prerequisites/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Prerequisites",
+  "name": "Prerequisites",
+  "description": "Prerequisites Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.\n1. AWS Account You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Prerequisites Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.\n1. AWS Account You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.\nRecommendations:\nConfigure AWS Budgets to monitor and control AWS costs. Choose an AWS Region before you begin and use the same Region throughout the entire workshop. 2. Prerequisite Knowledge This workshop assumes you have a basic understanding of the following topics:\nASP.NET Core Razor Pages C# programming .NET 9 Microsoft SQL Server Entity Framework Core Client-server architecture Fundamental concepts of Amazon Web Services (AWS) 3. Development Tools Prepare the following tools before starting the workshop:\nTool Purpose Visual Studio 2022 or later Develop and modify the application .NET 9 SDK Build and run the project SQL Server Management Studio (SSMS) Manage the SQL Server database Git Source code management AWS Toolkit for Visual Studio (recommended) Simplify application deployment to AWS Google Chrome or Microsoft Edge Access the AWS Management Console 4. Project Source Code Prepare the Enterprise HelpDesk project source code, including:\nASP.NET Core Razor Pages application Entity Framework Core ASP.NET Core Identity Application configuration files Database scripts (if available) 5. AWS Services Used This workshop uses the following AWS services throughout the deployment process.\nNetworking Amazon VPC Internet Gateway Route Table Public Subnet Private Subnet Security Groups Application Deployment AWS Elastic Beanstalk Amazon EC2 Application Load Balancer (ALB) Amazon CloudFront Database Amazon RDS for SQL Server Identity, Security, and Access Management AWS Identity and Access Management (IAM) AWS Secrets Manager AWS WAF Monitoring and Management Amazon CloudWatch AWS CloudTrail AWS Systems Manager After completing all of the prerequisites above, you are ready to begin deploying the Enterprise HelpDesk system by following the step-by-step instructions provided in the remaining sections of this workshop.\n",
+  "wordCount" : "307",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://long-28.github.io/en/6-workshop/02-prerequisites/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AWS Portfolio Workshop",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://long-28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://long-28.github.io/en/" accesskey="h" title="AWS Portfolio Workshop (Alt + H)">AWS Portfolio Workshop</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://long-28.github.io/vi/" title="Tiếng Việt"
+                                aria-label="Tiếng Việt">Vi</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Prerequisites
+    </h1>
+    <div class="post-meta">
+
+<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://long-28.github.io/vi/6-workshop/02-prerequisites/">Vi</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="prerequisites">Prerequisites<a hidden class="anchor" aria-hidden="true" href="#prerequisites">#</a></h1>
+<p>Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.</p>
+<h2 id="1-aws-account">1. AWS Account<a hidden class="anchor" aria-hidden="true" href="#1-aws-account">#</a></h2>
+<p>You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.</p>
+<p><strong>Recommendations:</strong></p>
+<ul>
+<li>Configure AWS Budgets to monitor and control AWS costs.</li>
+<li>Choose an AWS Region before you begin and use the same Region throughout the entire workshop.</li>
+</ul>
+<hr>
+<h2 id="2-prerequisite-knowledge">2. Prerequisite Knowledge<a hidden class="anchor" aria-hidden="true" href="#2-prerequisite-knowledge">#</a></h2>
+<p>This workshop assumes you have a basic understanding of the following topics:</p>
+<ul>
+<li>ASP.NET Core Razor Pages</li>
+<li>C# programming</li>
+<li>.NET 9</li>
+<li>Microsoft SQL Server</li>
+<li>Entity Framework Core</li>
+<li>Client-server architecture</li>
+<li>Fundamental concepts of Amazon Web Services (AWS)</li>
+</ul>
+<hr>
+<h2 id="3-development-tools">3. Development Tools<a hidden class="anchor" aria-hidden="true" href="#3-development-tools">#</a></h2>
+<p>Prepare the following tools before starting the workshop:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Visual Studio 2022 or later</td>
+					<td>Develop and modify the application</td>
+			</tr>
+			<tr>
+					<td>.NET 9 SDK</td>
+					<td>Build and run the project</td>
+			</tr>
+			<tr>
+					<td>SQL Server Management Studio (SSMS)</td>
+					<td>Manage the SQL Server database</td>
+			</tr>
+			<tr>
+					<td>Git</td>
+					<td>Source code management</td>
+			</tr>
+			<tr>
+					<td>AWS Toolkit for Visual Studio (recommended)</td>
+					<td>Simplify application deployment to AWS</td>
+			</tr>
+			<tr>
+					<td>Google Chrome or Microsoft Edge</td>
+					<td>Access the AWS Management Console</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h2 id="4-project-source-code">4. Project Source Code<a hidden class="anchor" aria-hidden="true" href="#4-project-source-code">#</a></h2>
+<p>Prepare the Enterprise HelpDesk project source code, including:</p>
+<ul>
+<li>ASP.NET Core Razor Pages application</li>
+<li>Entity Framework Core</li>
+<li>ASP.NET Core Identity</li>
+<li>Application configuration files</li>
+<li>Database scripts (if available)</li>
+</ul>
+<hr>
+<h2 id="5-aws-services-used">5. AWS Services Used<a hidden class="anchor" aria-hidden="true" href="#5-aws-services-used">#</a></h2>
+<p>This workshop uses the following AWS services throughout the deployment process.</p>
+<h3 id="networking">Networking<a hidden class="anchor" aria-hidden="true" href="#networking">#</a></h3>
+<ul>
+<li>Amazon VPC</li>
+<li>Internet Gateway</li>
+<li>Route Table</li>
+<li>Public Subnet</li>
+<li>Private Subnet</li>
+<li>Security Groups</li>
+</ul>
+<h3 id="application-deployment">Application Deployment<a hidden class="anchor" aria-hidden="true" href="#application-deployment">#</a></h3>
+<ul>
+<li>AWS Elastic Beanstalk</li>
+<li>Amazon EC2</li>
+<li>Application Load Balancer (ALB)</li>
+<li>Amazon CloudFront</li>
+</ul>
+<h3 id="database">Database<a hidden class="anchor" aria-hidden="true" href="#database">#</a></h3>
+<ul>
+<li>Amazon RDS for SQL Server</li>
+</ul>
+<h3 id="identity-security-and-access-management">Identity, Security, and Access Management<a hidden class="anchor" aria-hidden="true" href="#identity-security-and-access-management">#</a></h3>
+<ul>
+<li>AWS Identity and Access Management (IAM)</li>
+<li>AWS Secrets Manager</li>
+<li>AWS WAF</li>
+</ul>
+<h3 id="monitoring-and-management">Monitoring and Management<a hidden class="anchor" aria-hidden="true" href="#monitoring-and-management">#</a></h3>
+<ul>
+<li>Amazon CloudWatch</li>
+<li>AWS CloudTrail</li>
+<li>AWS Systems Manager</li>
+</ul>
+<hr>
+<p>After completing all of the prerequisites above, you are ready to begin deploying the Enterprise HelpDesk system by following the step-by-step instructions provided in the remaining sections of this workshop.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://long-28.github.io/en/">AWS Portfolio Workshop</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

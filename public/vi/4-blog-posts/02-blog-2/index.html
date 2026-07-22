@@ -1,17 +1,435 @@
-<!doctype html><html lang=vi><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Tìm hiểu AWS CloudTrail Lake, cách truy vấn dữ liệu sự kiện bằng SQL và ứng dụng trong giám sát, kiểm toán và điều tra sự cố trên AWS."><title>AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống · Workshop Portfolio AWS</title><script>document.documentElement.dataset.theme=localStorage.getItem("aws-workshop-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")</script><link rel=stylesheet href=/css/site.css></head><body><header class=topbar><button class="icon-button mobile-only" id=menu-toggle aria-label="Toggle menu">☰</button>
-<a class=brand href=/vi/><span class=brand-mark>AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a><div class=topbar-actions><label class=search-box><span>⌕</span><input id=site-search type=search placeholder="Search navigation..."></label><div class=language-switcher><a href=/en/4-blog-posts/02-blog-2/>EN</a><a class=active href=/vi/4-blog-posts/02-blog-2/>VI</a></div></div></header><div class=app-shell><aside class=sidebar id=sidebar><div class=sidebar-label>MỤC LỤC</div><nav class=sidebar-nav id=sidebar-nav><details class=nav-group><summary><a href=/vi/1-student-information/><span>01</span>Thông tin sinh viên</a></summary></details><details class=nav-group><summary><a href=/vi/2-worklog/><span>02</span>Nhật ký thực tập</a>
-<b>⌄</b></summary></details><details class=nav-group><summary><a href=/vi/3-proposal/><span>03</span>Đề xuất dự án</a></summary></details><details class=nav-group open><summary><a href=/vi/4-blog-posts/><span>04</span>Bài viết</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/4-blog-posts/01-blog-1/>AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
-<a class=active href=/vi/4-blog-posts/02-blog-2/>AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
-<a href=/vi/4-blog-posts/03-blog-3/>AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a></div></details><details class=nav-group><summary><a href=/vi/5-events-participated/><span>05</span>Sự kiện đã tham gia</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/5-events-participated/01-event-1/>AWS First Cloud AI Journey Community Day 2026</a>
-<a href=/vi/5-events-participated/02-event-2/>Mini Meetup – First Cloud AI Journey 06/06/2026</a></div></details><details class=nav-group><summary><a href=/vi/6-workshop/><span>06</span>Workshop</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/6-workshop/01-overview/>Tổng quan</a>
-<a href=/vi/6-workshop/02-prerequisites/>Điều kiện tiên quyết</a>
-<a href=/vi/6-workshop/03-architecture/>Kiến trúc</a>
-<a href=/vi/6-workshop/04-deployment/>Triển khai</a>
-<a href=/vi/6-workshop/09-cleanup/>Dọn dẹp tài nguyên</a>
-<a href=/vi/6-workshop/demo/>Demo</a></div></details><details class=nav-group><summary><a href=/vi/7-self-evaluation/><span>07</span>Tự đánh giá</a></summary></details><details class=nav-group><summary><a href=/vi/8-sharing-and-feedback/><span>08</span>Chia sẻ và phản hồi</a></summary></details></nav><div class=sidebar-note><strong>Mẹo</strong><p>Nhấn VI/EN để chuyển ngôn ngữ.</p></div></aside><main class=main-content id=main-content><nav class=breadcrumbs aria-label=Breadcrumb><a href=/vi/>Trang chủ</a>
-<span>/</span><a href=/vi/4-blog-posts/>Bài viết</a>
-<span>/</span><span>AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</span></nav><header class="page-header journey-header"><span class=eyebrow>TÀI LIỆU WORKSHOP</span><h1>AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</h1><p>Tìm hiểu AWS CloudTrail Lake, cách truy vấn dữ liệu sự kiện bằng SQL và ứng dụng trong giám sát, kiểm toán và điều tra sự cố trên AWS.</p></header><article class="content-card prose" data-search-content><h1 id=aws-cloudtrail-lake---phân-tích-hoạt-động-aws-bằng-sql-để-nâng-cao-bảo-mật-hệ-thống>AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</h1><p>Xin chào mọi người!</p><p>Sau khi tìm hiểu về <strong>AWS Identity and Access Management (IAM)</strong> trong bài viết trước, mình tiếp tục tìm hiểu một dịch vụ khác liên quan đến bảo mật và giám sát trên AWS là <strong>AWS CloudTrail Lake</strong>.</p><p>Nếu IAM giúp quản lý <strong>ai được phép thực hiện hành động trên AWS</strong>, thì CloudTrail Lake giúp trả lời câu hỏi:</p><ul><li>Ai đã thực hiện hành động?</li><li>Thực hiện khi nào?</li><li>Thực hiện trên tài nguyên nào?</li><li>API nào đã được gọi?</li></ul><p>CloudTrail Lake giúp biến dữ liệu nhật ký hoạt động (Audit Log) thành nguồn dữ liệu có thể truy vấn bằng SQL, từ đó hỗ trợ điều tra sự cố và kiểm toán bảo mật hiệu quả hơn.</p><hr><h1 id=aws-cloudtrail-lake-là-gì>AWS CloudTrail Lake là gì?</h1><p>AWS CloudTrail Lake là một tính năng mở rộng của AWS CloudTrail, cho phép thu thập, lưu trữ và phân tích dữ liệu sự kiện (Event Data) trên AWS.</p><p>Khác với CloudTrail truyền thống chỉ ghi lại lịch sử hoạt động, CloudTrail Lake lưu trữ dữ liệu trong <strong>Event Data Store</strong> và cho phép truy vấn trực tiếp bằng SQL.</p><p>Nhờ đó, người quản trị có thể nhanh chóng tìm kiếm các thông tin như:</p><ul><li>Ai đã tạo hoặc xóa tài nguyên AWS.</li><li>Khi nào IAM Policy bị thay đổi.</li><li>Người dùng nào đã gọi một API cụ thể.</li><li>Những dịch vụ AWS được sử dụng nhiều nhất.</li><li>Các thay đổi liên quan đến bảo mật.</li></ul><hr><p>Khi một người dùng hoặc dịch vụ thực hiện thao tác trên AWS, CloudTrail sẽ ghi nhận sự kiện.</p><p>Các sự kiện này được lưu trong <strong>Event Data Store</strong>, sau đó quản trị viên có thể sử dụng SQL để truy vấn và phân tích dữ liệu.</p><hr><h1 id=những-điểm-nổi-bật-của-aws-cloudtrail-lake>Những điểm nổi bật của AWS CloudTrail Lake</h1><h2 id=1-truy-vấn-dữ-liệu-bằng-sql>1. Truy vấn dữ liệu bằng SQL</h2><p>Đây là điểm nổi bật nhất của CloudTrail Lake.</p><p>Thay vì phải tải các tệp JSON rồi xử lý thủ công, người dùng có thể sử dụng câu lệnh SQL để tìm kiếm dữ liệu.</p><p>Ví dụ:</p><ul><li>Tìm các hoạt động liên quan đến Amazon EC2.</li><li>Kiểm tra các thay đổi quyền IAM.</li><li>Phân tích các API bị lỗi.</li><li>Thống kê hoạt động theo từng người dùng.</li></ul><p>Điều này giúp giảm đáng kể thời gian điều tra khi xảy ra sự cố.</p><hr><h2 id=2-hỗ-trợ-kiểm-toán-và-bảo-mật>2. Hỗ trợ kiểm toán và bảo mật</h2><p>CloudTrail Lake lưu lại đầy đủ các thông tin:</p><ul><li>Danh tính người thực hiện.</li><li>Thời gian xảy ra sự kiện.</li><li>Dịch vụ AWS liên quan.</li><li>API được gọi.</li><li>Địa chỉ IP nguồn.</li><li>Kết quả thực hiện.</li></ul><p>Những thông tin này rất quan trọng trong quá trình kiểm toán và đánh giá bảo mật.</p><hr><h2 id=3-phân-tích-dữ-liệu-trên-quy-mô-lớn>3. Phân tích dữ liệu trên quy mô lớn</h2><p>Đối với doanh nghiệp có nhiều tài khoản AWS hoặc triển khai ở nhiều Region, số lượng log có thể rất lớn.</p><p>CloudTrail Lake cho phép tập trung toàn bộ dữ liệu sự kiện vào Event Data Store, giúp việc quản lý và phân tích trở nên thuận tiện hơn.</p><hr><h2 id=4-hỗ-trợ-điều-tra-sự-cố>4. Hỗ trợ điều tra sự cố</h2><p>Ví dụ:</p><p>Một S3 Bucket quan trọng bị thay đổi quyền truy cập.</p><p>Quản trị viên có thể sử dụng CloudTrail Lake để xác định:</p><ul><li>Ai thực hiện thay đổi.</li><li>Thời điểm thay đổi.</li><li>API nào được gọi.</li><li>Tài khoản AWS nào thực hiện.</li></ul><p>Từ đó nhanh chóng xác định nguyên nhân và đưa ra phương án xử lý.</p><hr><h1 id=so-sánh-cloudtrail-và-cloudtrail-lake>So sánh CloudTrail và CloudTrail Lake</h1><table><thead><tr><th>AWS CloudTrail</th><th>AWS CloudTrail Lake</th></tr></thead><tbody><tr><td>Ghi nhận lịch sử hoạt động</td><td>Phân tích dữ liệu sự kiện</td></tr><tr><td>Lưu log trên Amazon S3</td><td>Lưu trong Event Data Store</td></tr><tr><td>Xem lịch sử hoạt động</td><td>Truy vấn bằng SQL</td></tr><tr><td>Phù hợp giám sát cơ bản</td><td>Phù hợp điều tra chuyên sâu</td></tr><tr><td>Không tối ưu cho phân tích</td><td>Hỗ trợ phân tích dữ liệu hiệu quả</td></tr></tbody></table><hr><h1 id=khi-nào-nên-sử-dụng-cloudtrail-lake>Khi nào nên sử dụng CloudTrail Lake?</h1><p>CloudTrail Lake phù hợp trong các trường hợp:</p><ul><li>Doanh nghiệp có nhiều tài khoản AWS.</li><li>Hệ thống yêu cầu kiểm toán bảo mật.</li><li>Cần lưu trữ lịch sử hoạt động trong thời gian dài.</li><li>Muốn điều tra sự cố nhanh chóng.</li><li>Cần theo dõi các thay đổi quan trọng trong hệ thống.</li></ul><p>Đối với các dự án nhỏ hoặc người mới học AWS, CloudTrail cơ bản thường đã đáp ứng nhu cầu. Tuy nhiên, khi hệ thống mở rộng và yêu cầu kiểm toán cao hơn, CloudTrail Lake sẽ trở thành công cụ rất hữu ích.</p><hr><h1 id=những-điều-mình-học-được>Những điều mình học được</h1><p>Sau khi tìm hiểu CloudTrail Lake, mình nhận thấy đây là một dịch vụ rất hữu ích cho việc quản trị hệ thống trên AWS.</p><p>Một số điều mình rút ra:</p><ul><li>CloudTrail không chỉ dùng để xem lịch sử hoạt động mà còn hỗ trợ kiểm toán bảo mật.</li><li>CloudTrail Lake giúp truy vấn dữ liệu nhanh hơn nhờ SQL.</li><li>Event Data Store giúp tổ chức dữ liệu sự kiện khoa học hơn.</li><li>Có thể nhanh chóng điều tra nguyên nhân khi xảy ra sự cố.</li><li>Đây là một dịch vụ quan trọng đối với các hệ thống doanh nghiệp.</li></ul><hr><h1 id=kết-luận>Kết luận</h1><p>AWS CloudTrail Lake có thể không phải là dịch vụ đầu tiên mà người mới học AWS tiếp cận, nhưng đây là công cụ rất mạnh trong việc giám sát, kiểm toán và phân tích hoạt động trên môi trường Cloud.</p><p>Nếu <strong>AWS IAM</strong> giúp trả lời câu hỏi:</p><blockquote><p><strong>&ldquo;Ai được phép làm gì?&rdquo;</strong></p></blockquote><p>thì <strong>AWS CloudTrail Lake</strong> sẽ giúp trả lời:</p><blockquote><p><strong>&ldquo;Ai đã làm gì, khi nào và bằng cách nào?&rdquo;</strong></p></blockquote><p>Theo mình, việc hiểu CloudTrail Lake sẽ giúp người học AWS có góc nhìn thực tế hơn về bảo mật, quản trị hệ thống và xử lý sự cố trên nền tảng đám mây.</p><hr><h1 id=tài-liệu-tham-khảo>Tài liệu tham khảo</h1><ul><li><p>AWS CloudTrail Lake Documentation<br><a href=https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html>https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html</a></p></li><li><p>AWS CloudTrail Documentation<br><a href=https://docs.aws.amazon.com/cloudtrail/>https://docs.aws.amazon.com/cloudtrail/</a></p></li><li><p>AWS CloudTrail Overview<br><a href=https://aws.amazon.com/cloudtrail/>https://aws.amazon.com/cloudtrail/</a></p></li></ul><hr><p><a href="https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL">https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL#</a></p></article><nav class=pager><a href=/vi/4-blog-posts/03-blog-3/>← AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a>
-<a href=/vi/4-blog-posts/01-blog-1/>AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services →</a></nav><footer class=footer></footer></main></div><script src=/js/site.js defer></script></body></html>
+<!DOCTYPE html>
+<html lang="vi" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống | Workshop Portfolio AWS</title>
+<meta name="keywords" content="">
+<meta name="description" content="Tìm hiểu AWS CloudTrail Lake, cách truy vấn dữ liệu sự kiện bằng SQL và ứng dụng trong giám sát, kiểm toán và điều tra sự cố trên AWS.">
+<meta name="author" content="">
+<link rel="canonical" href="https://long-28.github.io/vi/4-blog-posts/02-blog-2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://long-28.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/4-blog-posts/02-blog-2/">
+<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/4-blog-posts/02-blog-2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://long-28.github.io/vi/4-blog-posts/02-blog-2/">
+  <meta property="og:site_name" content="Workshop Portfolio AWS">
+  <meta property="og:title" content="AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống">
+  <meta property="og:description" content="Tìm hiểu AWS CloudTrail Lake, cách truy vấn dữ liệu sự kiện bằng SQL và ứng dụng trong giám sát, kiểm toán và điều tra sự cố trên AWS.">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="4-blog-posts">
+    <meta property="article:published_time" content="2026-07-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-07-22T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống">
+  <meta name="twitter:description" content="Tìm hiểu AWS CloudTrail Lake, cách truy vấn dữ liệu sự kiện bằng SQL và ứng dụng trong giám sát, kiểm toán và điều tra sự cố trên AWS.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Bài viết",
+      "item": "https://long-28.github.io/vi/4-blog-posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống",
+      "item": "https://long-28.github.io/vi/4-blog-posts/02-blog-2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống",
+  "name": "AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống",
+  "description": "Tìm hiểu AWS CloudTrail Lake, cách truy vấn dữ liệu sự kiện bằng SQL và ứng dụng trong giám sát, kiểm toán và điều tra sự cố trên AWS.",
+  "keywords": [
+    
+  ],
+  "articleBody": "AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống Xin chào mọi người!\nSau khi tìm hiểu về AWS Identity and Access Management (IAM) trong bài viết trước, mình tiếp tục tìm hiểu một dịch vụ khác liên quan đến bảo mật và giám sát trên AWS là AWS CloudTrail Lake.\nNếu IAM giúp quản lý ai được phép thực hiện hành động trên AWS, thì CloudTrail Lake giúp trả lời câu hỏi:\nAi đã thực hiện hành động? Thực hiện khi nào? Thực hiện trên tài nguyên nào? API nào đã được gọi? CloudTrail Lake giúp biến dữ liệu nhật ký hoạt động (Audit Log) thành nguồn dữ liệu có thể truy vấn bằng SQL, từ đó hỗ trợ điều tra sự cố và kiểm toán bảo mật hiệu quả hơn.\nAWS CloudTrail Lake là gì? AWS CloudTrail Lake là một tính năng mở rộng của AWS CloudTrail, cho phép thu thập, lưu trữ và phân tích dữ liệu sự kiện (Event Data) trên AWS.\nKhác với CloudTrail truyền thống chỉ ghi lại lịch sử hoạt động, CloudTrail Lake lưu trữ dữ liệu trong Event Data Store và cho phép truy vấn trực tiếp bằng SQL.\nNhờ đó, người quản trị có thể nhanh chóng tìm kiếm các thông tin như:\nAi đã tạo hoặc xóa tài nguyên AWS. Khi nào IAM Policy bị thay đổi. Người dùng nào đã gọi một API cụ thể. Những dịch vụ AWS được sử dụng nhiều nhất. Các thay đổi liên quan đến bảo mật. Khi một người dùng hoặc dịch vụ thực hiện thao tác trên AWS, CloudTrail sẽ ghi nhận sự kiện.\nCác sự kiện này được lưu trong Event Data Store, sau đó quản trị viên có thể sử dụng SQL để truy vấn và phân tích dữ liệu.\nNhững điểm nổi bật của AWS CloudTrail Lake 1. Truy vấn dữ liệu bằng SQL Đây là điểm nổi bật nhất của CloudTrail Lake.\nThay vì phải tải các tệp JSON rồi xử lý thủ công, người dùng có thể sử dụng câu lệnh SQL để tìm kiếm dữ liệu.\nVí dụ:\nTìm các hoạt động liên quan đến Amazon EC2. Kiểm tra các thay đổi quyền IAM. Phân tích các API bị lỗi. Thống kê hoạt động theo từng người dùng. Điều này giúp giảm đáng kể thời gian điều tra khi xảy ra sự cố.\n2. Hỗ trợ kiểm toán và bảo mật CloudTrail Lake lưu lại đầy đủ các thông tin:\nDanh tính người thực hiện. Thời gian xảy ra sự kiện. Dịch vụ AWS liên quan. API được gọi. Địa chỉ IP nguồn. Kết quả thực hiện. Những thông tin này rất quan trọng trong quá trình kiểm toán và đánh giá bảo mật.\n3. Phân tích dữ liệu trên quy mô lớn Đối với doanh nghiệp có nhiều tài khoản AWS hoặc triển khai ở nhiều Region, số lượng log có thể rất lớn.\nCloudTrail Lake cho phép tập trung toàn bộ dữ liệu sự kiện vào Event Data Store, giúp việc quản lý và phân tích trở nên thuận tiện hơn.\n4. Hỗ trợ điều tra sự cố Ví dụ:\nMột S3 Bucket quan trọng bị thay đổi quyền truy cập.\nQuản trị viên có thể sử dụng CloudTrail Lake để xác định:\nAi thực hiện thay đổi. Thời điểm thay đổi. API nào được gọi. Tài khoản AWS nào thực hiện. Từ đó nhanh chóng xác định nguyên nhân và đưa ra phương án xử lý.\nSo sánh CloudTrail và CloudTrail Lake AWS CloudTrail AWS CloudTrail Lake Ghi nhận lịch sử hoạt động Phân tích dữ liệu sự kiện Lưu log trên Amazon S3 Lưu trong Event Data Store Xem lịch sử hoạt động Truy vấn bằng SQL Phù hợp giám sát cơ bản Phù hợp điều tra chuyên sâu Không tối ưu cho phân tích Hỗ trợ phân tích dữ liệu hiệu quả Khi nào nên sử dụng CloudTrail Lake? CloudTrail Lake phù hợp trong các trường hợp:\nDoanh nghiệp có nhiều tài khoản AWS. Hệ thống yêu cầu kiểm toán bảo mật. Cần lưu trữ lịch sử hoạt động trong thời gian dài. Muốn điều tra sự cố nhanh chóng. Cần theo dõi các thay đổi quan trọng trong hệ thống. Đối với các dự án nhỏ hoặc người mới học AWS, CloudTrail cơ bản thường đã đáp ứng nhu cầu. Tuy nhiên, khi hệ thống mở rộng và yêu cầu kiểm toán cao hơn, CloudTrail Lake sẽ trở thành công cụ rất hữu ích.\nNhững điều mình học được Sau khi tìm hiểu CloudTrail Lake, mình nhận thấy đây là một dịch vụ rất hữu ích cho việc quản trị hệ thống trên AWS.\nMột số điều mình rút ra:\nCloudTrail không chỉ dùng để xem lịch sử hoạt động mà còn hỗ trợ kiểm toán bảo mật. CloudTrail Lake giúp truy vấn dữ liệu nhanh hơn nhờ SQL. Event Data Store giúp tổ chức dữ liệu sự kiện khoa học hơn. Có thể nhanh chóng điều tra nguyên nhân khi xảy ra sự cố. Đây là một dịch vụ quan trọng đối với các hệ thống doanh nghiệp. Kết luận AWS CloudTrail Lake có thể không phải là dịch vụ đầu tiên mà người mới học AWS tiếp cận, nhưng đây là công cụ rất mạnh trong việc giám sát, kiểm toán và phân tích hoạt động trên môi trường Cloud.\nNếu AWS IAM giúp trả lời câu hỏi:\n“Ai được phép làm gì?”\nthì AWS CloudTrail Lake sẽ giúp trả lời:\n“Ai đã làm gì, khi nào và bằng cách nào?”\nTheo mình, việc hiểu CloudTrail Lake sẽ giúp người học AWS có góc nhìn thực tế hơn về bảo mật, quản trị hệ thống và xử lý sự cố trên nền tảng đám mây.\nTài liệu tham khảo AWS CloudTrail Lake Documentation\nhttps://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html\nAWS CloudTrail Documentation\nhttps://docs.aws.amazon.com/cloudtrail/\nAWS CloudTrail Overview\nhttps://aws.amazon.com/cloudtrail/\nhttps://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL#\n",
+  "wordCount" : "994",
+  "inLanguage": "vi",
+  "datePublished": "2026-07-22T00:00:00Z",
+  "dateModified": "2026-07-22T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://long-28.github.io/vi/4-blog-posts/02-blog-2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Workshop Portfolio AWS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://long-28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://long-28.github.io/en/" title="English"
+                                aria-label="English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống
+    </h1>
+    <div class="post-description">
+      Tìm hiểu AWS CloudTrail Lake, cách truy vấn dữ liệu sự kiện bằng SQL và ứng dụng trong giám sát, kiểm toán và điều tra sự cố trên AWS.
+    </div>
+    <div class="post-meta">
+
+<span title='2026-07-22 00:00:00 +0000 UTC'>22 tháng 7, 2026</span>&nbsp;|&nbsp;<span>Bản dịch:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://long-28.github.io/en/4-blog-posts/02-blog-2/">En</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="aws-cloudtrail-lake---phân-tích-hoạt-động-aws-bằng-sql-để-nâng-cao-bảo-mật-hệ-thống">AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống<a hidden class="anchor" aria-hidden="true" href="#aws-cloudtrail-lake---phân-tích-hoạt-động-aws-bằng-sql-để-nâng-cao-bảo-mật-hệ-thống">#</a></h1>
+<p>Xin chào mọi người!</p>
+<p>Sau khi tìm hiểu về <strong>AWS Identity and Access Management (IAM)</strong> trong bài viết trước, mình tiếp tục tìm hiểu một dịch vụ khác liên quan đến bảo mật và giám sát trên AWS là <strong>AWS CloudTrail Lake</strong>.</p>
+<p>Nếu IAM giúp quản lý <strong>ai được phép thực hiện hành động trên AWS</strong>, thì CloudTrail Lake giúp trả lời câu hỏi:</p>
+<ul>
+<li>Ai đã thực hiện hành động?</li>
+<li>Thực hiện khi nào?</li>
+<li>Thực hiện trên tài nguyên nào?</li>
+<li>API nào đã được gọi?</li>
+</ul>
+<p>CloudTrail Lake giúp biến dữ liệu nhật ký hoạt động (Audit Log) thành nguồn dữ liệu có thể truy vấn bằng SQL, từ đó hỗ trợ điều tra sự cố và kiểm toán bảo mật hiệu quả hơn.</p>
+<hr>
+<h1 id="aws-cloudtrail-lake-là-gì">AWS CloudTrail Lake là gì?<a hidden class="anchor" aria-hidden="true" href="#aws-cloudtrail-lake-là-gì">#</a></h1>
+<p>AWS CloudTrail Lake là một tính năng mở rộng của AWS CloudTrail, cho phép thu thập, lưu trữ và phân tích dữ liệu sự kiện (Event Data) trên AWS.</p>
+<p>Khác với CloudTrail truyền thống chỉ ghi lại lịch sử hoạt động, CloudTrail Lake lưu trữ dữ liệu trong <strong>Event Data Store</strong> và cho phép truy vấn trực tiếp bằng SQL.</p>
+<p>Nhờ đó, người quản trị có thể nhanh chóng tìm kiếm các thông tin như:</p>
+<ul>
+<li>Ai đã tạo hoặc xóa tài nguyên AWS.</li>
+<li>Khi nào IAM Policy bị thay đổi.</li>
+<li>Người dùng nào đã gọi một API cụ thể.</li>
+<li>Những dịch vụ AWS được sử dụng nhiều nhất.</li>
+<li>Các thay đổi liên quan đến bảo mật.</li>
+</ul>
+<hr>
+<p>Khi một người dùng hoặc dịch vụ thực hiện thao tác trên AWS, CloudTrail sẽ ghi nhận sự kiện.</p>
+<p>Các sự kiện này được lưu trong <strong>Event Data Store</strong>, sau đó quản trị viên có thể sử dụng SQL để truy vấn và phân tích dữ liệu.</p>
+<hr>
+<h1 id="những-điểm-nổi-bật-của-aws-cloudtrail-lake">Những điểm nổi bật của AWS CloudTrail Lake<a hidden class="anchor" aria-hidden="true" href="#những-điểm-nổi-bật-của-aws-cloudtrail-lake">#</a></h1>
+<h2 id="1-truy-vấn-dữ-liệu-bằng-sql">1. Truy vấn dữ liệu bằng SQL<a hidden class="anchor" aria-hidden="true" href="#1-truy-vấn-dữ-liệu-bằng-sql">#</a></h2>
+<p>Đây là điểm nổi bật nhất của CloudTrail Lake.</p>
+<p>Thay vì phải tải các tệp JSON rồi xử lý thủ công, người dùng có thể sử dụng câu lệnh SQL để tìm kiếm dữ liệu.</p>
+<p>Ví dụ:</p>
+<ul>
+<li>Tìm các hoạt động liên quan đến Amazon EC2.</li>
+<li>Kiểm tra các thay đổi quyền IAM.</li>
+<li>Phân tích các API bị lỗi.</li>
+<li>Thống kê hoạt động theo từng người dùng.</li>
+</ul>
+<p>Điều này giúp giảm đáng kể thời gian điều tra khi xảy ra sự cố.</p>
+<hr>
+<h2 id="2-hỗ-trợ-kiểm-toán-và-bảo-mật">2. Hỗ trợ kiểm toán và bảo mật<a hidden class="anchor" aria-hidden="true" href="#2-hỗ-trợ-kiểm-toán-và-bảo-mật">#</a></h2>
+<p>CloudTrail Lake lưu lại đầy đủ các thông tin:</p>
+<ul>
+<li>Danh tính người thực hiện.</li>
+<li>Thời gian xảy ra sự kiện.</li>
+<li>Dịch vụ AWS liên quan.</li>
+<li>API được gọi.</li>
+<li>Địa chỉ IP nguồn.</li>
+<li>Kết quả thực hiện.</li>
+</ul>
+<p>Những thông tin này rất quan trọng trong quá trình kiểm toán và đánh giá bảo mật.</p>
+<hr>
+<h2 id="3-phân-tích-dữ-liệu-trên-quy-mô-lớn">3. Phân tích dữ liệu trên quy mô lớn<a hidden class="anchor" aria-hidden="true" href="#3-phân-tích-dữ-liệu-trên-quy-mô-lớn">#</a></h2>
+<p>Đối với doanh nghiệp có nhiều tài khoản AWS hoặc triển khai ở nhiều Region, số lượng log có thể rất lớn.</p>
+<p>CloudTrail Lake cho phép tập trung toàn bộ dữ liệu sự kiện vào Event Data Store, giúp việc quản lý và phân tích trở nên thuận tiện hơn.</p>
+<hr>
+<h2 id="4-hỗ-trợ-điều-tra-sự-cố">4. Hỗ trợ điều tra sự cố<a hidden class="anchor" aria-hidden="true" href="#4-hỗ-trợ-điều-tra-sự-cố">#</a></h2>
+<p>Ví dụ:</p>
+<p>Một S3 Bucket quan trọng bị thay đổi quyền truy cập.</p>
+<p>Quản trị viên có thể sử dụng CloudTrail Lake để xác định:</p>
+<ul>
+<li>Ai thực hiện thay đổi.</li>
+<li>Thời điểm thay đổi.</li>
+<li>API nào được gọi.</li>
+<li>Tài khoản AWS nào thực hiện.</li>
+</ul>
+<p>Từ đó nhanh chóng xác định nguyên nhân và đưa ra phương án xử lý.</p>
+<hr>
+<h1 id="so-sánh-cloudtrail-và-cloudtrail-lake">So sánh CloudTrail và CloudTrail Lake<a hidden class="anchor" aria-hidden="true" href="#so-sánh-cloudtrail-và-cloudtrail-lake">#</a></h1>
+<table>
+	<thead>
+			<tr>
+					<th>AWS CloudTrail</th>
+					<th>AWS CloudTrail Lake</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Ghi nhận lịch sử hoạt động</td>
+					<td>Phân tích dữ liệu sự kiện</td>
+			</tr>
+			<tr>
+					<td>Lưu log trên Amazon S3</td>
+					<td>Lưu trong Event Data Store</td>
+			</tr>
+			<tr>
+					<td>Xem lịch sử hoạt động</td>
+					<td>Truy vấn bằng SQL</td>
+			</tr>
+			<tr>
+					<td>Phù hợp giám sát cơ bản</td>
+					<td>Phù hợp điều tra chuyên sâu</td>
+			</tr>
+			<tr>
+					<td>Không tối ưu cho phân tích</td>
+					<td>Hỗ trợ phân tích dữ liệu hiệu quả</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h1 id="khi-nào-nên-sử-dụng-cloudtrail-lake">Khi nào nên sử dụng CloudTrail Lake?<a hidden class="anchor" aria-hidden="true" href="#khi-nào-nên-sử-dụng-cloudtrail-lake">#</a></h1>
+<p>CloudTrail Lake phù hợp trong các trường hợp:</p>
+<ul>
+<li>Doanh nghiệp có nhiều tài khoản AWS.</li>
+<li>Hệ thống yêu cầu kiểm toán bảo mật.</li>
+<li>Cần lưu trữ lịch sử hoạt động trong thời gian dài.</li>
+<li>Muốn điều tra sự cố nhanh chóng.</li>
+<li>Cần theo dõi các thay đổi quan trọng trong hệ thống.</li>
+</ul>
+<p>Đối với các dự án nhỏ hoặc người mới học AWS, CloudTrail cơ bản thường đã đáp ứng nhu cầu. Tuy nhiên, khi hệ thống mở rộng và yêu cầu kiểm toán cao hơn, CloudTrail Lake sẽ trở thành công cụ rất hữu ích.</p>
+<hr>
+<h1 id="những-điều-mình-học-được">Những điều mình học được<a hidden class="anchor" aria-hidden="true" href="#những-điều-mình-học-được">#</a></h1>
+<p>Sau khi tìm hiểu CloudTrail Lake, mình nhận thấy đây là một dịch vụ rất hữu ích cho việc quản trị hệ thống trên AWS.</p>
+<p>Một số điều mình rút ra:</p>
+<ul>
+<li>CloudTrail không chỉ dùng để xem lịch sử hoạt động mà còn hỗ trợ kiểm toán bảo mật.</li>
+<li>CloudTrail Lake giúp truy vấn dữ liệu nhanh hơn nhờ SQL.</li>
+<li>Event Data Store giúp tổ chức dữ liệu sự kiện khoa học hơn.</li>
+<li>Có thể nhanh chóng điều tra nguyên nhân khi xảy ra sự cố.</li>
+<li>Đây là một dịch vụ quan trọng đối với các hệ thống doanh nghiệp.</li>
+</ul>
+<hr>
+<h1 id="kết-luận">Kết luận<a hidden class="anchor" aria-hidden="true" href="#kết-luận">#</a></h1>
+<p>AWS CloudTrail Lake có thể không phải là dịch vụ đầu tiên mà người mới học AWS tiếp cận, nhưng đây là công cụ rất mạnh trong việc giám sát, kiểm toán và phân tích hoạt động trên môi trường Cloud.</p>
+<p>Nếu <strong>AWS IAM</strong> giúp trả lời câu hỏi:</p>
+<blockquote>
+<p><strong>&ldquo;Ai được phép làm gì?&rdquo;</strong></p>
+</blockquote>
+<p>thì <strong>AWS CloudTrail Lake</strong> sẽ giúp trả lời:</p>
+<blockquote>
+<p><strong>&ldquo;Ai đã làm gì, khi nào và bằng cách nào?&rdquo;</strong></p>
+</blockquote>
+<p>Theo mình, việc hiểu CloudTrail Lake sẽ giúp người học AWS có góc nhìn thực tế hơn về bảo mật, quản trị hệ thống và xử lý sự cố trên nền tảng đám mây.</p>
+<hr>
+<h1 id="tài-liệu-tham-khảo">Tài liệu tham khảo<a hidden class="anchor" aria-hidden="true" href="#tài-liệu-tham-khảo">#</a></h1>
+<ul>
+<li>
+<p>AWS CloudTrail Lake Documentation<br>
+<a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html">https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html</a></p>
+</li>
+<li>
+<p>AWS CloudTrail Documentation<br>
+<a href="https://docs.aws.amazon.com/cloudtrail/">https://docs.aws.amazon.com/cloudtrail/</a></p>
+</li>
+<li>
+<p>AWS CloudTrail Overview<br>
+<a href="https://aws.amazon.com/cloudtrail/">https://aws.amazon.com/cloudtrail/</a></p>
+</li>
+</ul>
+<hr>
+<p><a href="https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL">https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL#</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

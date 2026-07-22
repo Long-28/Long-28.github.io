@@ -1,17 +1,499 @@
-<!doctype html><html lang=vi><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai trên AWS."><title>Demo · Workshop Portfolio AWS</title><script>document.documentElement.dataset.theme=localStorage.getItem("aws-workshop-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")</script><link rel=stylesheet href=/css/site.css></head><body><header class=topbar><button class="icon-button mobile-only" id=menu-toggle aria-label="Toggle menu">☰</button>
-<a class=brand href=/vi/><span class=brand-mark>AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a><div class=topbar-actions><label class=search-box><span>⌕</span><input id=site-search type=search placeholder="Search navigation..."></label><div class=language-switcher><a href=/en/6-workshop/demo/>EN</a><a class=active href=/vi/6-workshop/demo/>VI</a></div></div></header><div class=app-shell><aside class=sidebar id=sidebar><div class=sidebar-label>MỤC LỤC</div><nav class=sidebar-nav id=sidebar-nav><details class=nav-group><summary><a href=/vi/1-student-information/><span>01</span>Thông tin sinh viên</a></summary></details><details class=nav-group><summary><a href=/vi/2-worklog/><span>02</span>Nhật ký thực tập</a>
-<b>⌄</b></summary></details><details class=nav-group><summary><a href=/vi/3-proposal/><span>03</span>Đề xuất dự án</a></summary></details><details class=nav-group><summary><a href=/vi/4-blog-posts/><span>04</span>Bài viết</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/4-blog-posts/01-blog-1/>AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
-<a href=/vi/4-blog-posts/02-blog-2/>AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
-<a href=/vi/4-blog-posts/03-blog-3/>AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a></div></details><details class=nav-group><summary><a href=/vi/5-events-participated/><span>05</span>Sự kiện đã tham gia</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/5-events-participated/01-event-1/>AWS First Cloud AI Journey Community Day 2026</a>
-<a href=/vi/5-events-participated/02-event-2/>Mini Meetup – First Cloud AI Journey 06/06/2026</a></div></details><details class=nav-group open><summary><a href=/vi/6-workshop/><span>06</span>Workshop</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/6-workshop/01-overview/>Tổng quan</a>
-<a href=/vi/6-workshop/02-prerequisites/>Điều kiện tiên quyết</a>
-<a href=/vi/6-workshop/03-architecture/>Kiến trúc</a>
-<a href=/vi/6-workshop/04-deployment/>Triển khai</a>
-<a href=/vi/6-workshop/09-cleanup/>Dọn dẹp tài nguyên</a>
-<a class=active href=/vi/6-workshop/demo/>Demo</a></div></details><details class=nav-group><summary><a href=/vi/7-self-evaluation/><span>07</span>Tự đánh giá</a></summary></details><details class=nav-group><summary><a href=/vi/8-sharing-and-feedback/><span>08</span>Chia sẻ và phản hồi</a></summary></details></nav><div class=sidebar-note><strong>Mẹo</strong><p>Nhấn VI/EN để chuyển ngôn ngữ.</p></div></aside><main class=main-content id=main-content><nav class=breadcrumbs aria-label=Breadcrumb><a href=/vi/>Trang chủ</a>
-<span>/</span><a href=/vi/6-workshop/>Workshop</a>
-<span>/</span><span>Demo</span></nav><header class="page-header journey-header"><span class=eyebrow>TÀI LIỆU WORKSHOP</span><h1>Demo</h1><p>Kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai trên AWS.</p></header><article class="content-card prose" data-search-content><h1 id=demo-hệ-thống-enterprise-helpdesk>Demo hệ thống Enterprise HelpDesk</h1><p>Trong phần này, chúng ta sẽ kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai thành công trên AWS. Các chức năng nghiệp vụ của ứng dụng cũng như các dịch vụ AWS sẽ được minh họa thông qua các tình huống thực tế nhằm chứng minh hệ thống hoạt động ổn định, an toàn và đáp ứng đúng kiến trúc đã thiết kế.</p><hr><h2 id=demo-1-đăng-nhập-hệ-thống>Demo 1. Đăng nhập hệ thống</h2><p>Người dùng nhập tài khoản và mật khẩu để xác thực. Sau khi đăng nhập thành công, hệ thống sẽ xác định vai trò của người dùng và hiển thị giao diện tương ứng.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/35-user-login.jpg target=_blank><img src=/images/workshop/35-user-login.jpg alt="Đăng nhập hệ thống" style=width:65%;cursor:zoom-in></a><p><i>Hình 35. Người dùng đăng nhập vào hệ thống Enterprise HelpDesk.</i></p></div><hr><h2 id=demo-2-xác-thực-người-dùng-với-amazon-rds>Demo 2. Xác thực người dùng với Amazon RDS</h2><p>Thông tin tài khoản, quyền truy cập và dữ liệu nghiệp vụ được lưu trong Amazon RDS SQL Server. Khi người dùng đăng nhập, ứng dụng sẽ truy vấn dữ liệu từ cơ sở dữ liệu này để xác thực.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/36-rds-authentication.jpg target=_blank><img src=/images/workshop/36-rds-authentication.jpg alt="Amazon RDS Authentication" style=width:65%;cursor:zoom-in></a><p><i>Hình 36. Xác thực người dùng bằng dữ liệu lưu trong Amazon RDS.</i></p></div><hr><h2 id=demo-3-aws-secrets-manager>Demo 3. AWS Secrets Manager</h2><p>Thông tin đăng nhập cơ sở dữ liệu được lưu trong AWS Secrets Manager thay vì ghi trực tiếp trong mã nguồn. Điều này giúp tăng cường bảo mật và giảm nguy cơ lộ thông tin nhạy cảm.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/37-secrets-manager.jpg target=_blank><img src=/images/workshop/37-secrets-manager.jpg alt="AWS Secrets Manager" style=width:65%;cursor:zoom-in></a><p><i>Hình 37. Lưu trữ thông tin kết nối cơ sở dữ liệu trong AWS Secrets Manager.</i></p></div><hr><h2 id=demo-4-iam-instance-profile>Demo 4. IAM Instance Profile</h2><p>EC2 sử dụng IAM Instance Profile để nhận quyền truy cập AWS Secrets Manager. Nhờ đó ứng dụng có thể lấy thông tin kết nối cơ sở dữ liệu một cách an toàn mà không cần sử dụng Access Key.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/38-iam-instance-profile.jpg target=_blank><img src=/images/workshop/38-iam-instance-profile.jpg alt="IAM Instance Profile" style=width:65%;cursor:zoom-in></a><p><i>Hình 38. EC2 sử dụng IAM Instance Profile để truy cập AWS Secrets Manager.</i></p></div><hr><h2 id=demo-5-tạo-ticket>Demo 5. Tạo Ticket</h2><p>Nhân viên nhập đầy đủ thông tin như tiêu đề, danh mục, mức độ ưu tiên và nội dung mô tả để tạo một yêu cầu hỗ trợ mới.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/39-create-ticket.jpg target=_blank><img src=/images/workshop/39-create-ticket.jpg alt="Create Ticket" style=width:65%;cursor:zoom-in></a><p><i>Hình 39. Tạo yêu cầu hỗ trợ mới trên hệ thống.</i></p></div><hr><h2 id=demo-6-ticket-được-lưu>Demo 6. Ticket được lưu</h2><p>Sau khi tạo thành công, hệ thống sinh mã Ticket và lưu thông tin vào cơ sở dữ liệu. Đồng thời một bản ghi lịch sử được tạo để phục vụ việc theo dõi quá trình xử lý.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/40-ticket-created.jpg target=_blank><img src=/images/workshop/40-ticket-created.jpg alt="Ticket Created" style=width:65%;cursor:zoom-in></a><p><i>Hình 40. Ticket được tạo thành công và lưu vào cơ sở dữ liệu.</i></p></div><hr><h2 id=demo-7-xử-lý-nghiệp-vụ-trên-elastic-beanstalk>Demo 7. Xử lý nghiệp vụ trên Elastic Beanstalk</h2><p>Các chức năng tạo Ticket, tiếp nhận, cập nhật trạng thái, bình luận và lưu lịch sử xử lý đều được thực thi trên ứng dụng ASP.NET Core chạy trong Elastic Beanstalk. Dữ liệu được lưu tập trung trong Amazon RDS SQL Server.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/41-ticket-processing.jpg target=_blank><img src=/images/workshop/41-ticket-processing.jpg alt="Ticket Processing" style=width:65%;cursor:zoom-in></a><p><i>Hình 41. Elastic Beanstalk xử lý các nghiệp vụ của hệ thống Enterprise HelpDesk.</i></p></div><hr><h2 id=demo-8-môi-trường-elastic-beanstalk>Demo 8. Môi trường Elastic Beanstalk</h2><p>Elastic Beanstalk chịu trách nhiệm triển khai và quản lý ứng dụng ASP.NET Core. Toàn bộ request từ người dùng sẽ được chuyển đến môi trường này để xử lý.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/42-elastic-beanstalk-environment.jpg target=_blank><img src=/images/workshop/42-elastic-beanstalk-environment.jpg alt="Elastic Beanstalk Environment" style=width:65%;cursor:zoom-in></a><p><i>Hình 42. Môi trường AWS Elastic Beanstalk đang vận hành ứng dụng.</i></p></div><hr><h2 id=demo-9-máy-chủ-ec2>Demo 9. Máy chủ EC2</h2><p>EC2 là máy chủ chạy ứng dụng Enterprise HelpDesk. Các chức năng như tạo Ticket, phân quyền và xử lý nghiệp vụ đều được thực thi trên EC2.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/43-ec2-instance.jpg target=_blank><img src=/images/workshop/43-ec2-instance.jpg alt="Amazon EC2" style=width:65%;cursor:zoom-in></a><p><i>Hình 43. Máy chủ Amazon EC2 thực thi ứng dụng Enterprise HelpDesk.</i></p></div><hr><h2 id=demo-10-amazon-cloudwatch>Demo 10. Amazon CloudWatch</h2><p>Amazon CloudWatch ghi nhận số lượng request, thời gian phản hồi và các chỉ số hoạt động của hệ thống nhằm phục vụ việc giám sát và phát hiện sự cố.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/44-cloudwatch-monitoring.jpg target=_blank><img src=/images/workshop/44-cloudwatch-monitoring.jpg alt="Amazon CloudWatch" style=width:65%;cursor:zoom-in></a><p><i>Hình 44. Theo dõi hoạt động của hệ thống bằng Amazon CloudWatch.</i></p></div>---<h2 id=demo-11-support-agent>Demo 11. Support Agent</h2><p>Nhân viên hỗ trợ tiếp nhận Ticket, thay đổi trạng thái xử lý và bổ sung nội dung trao đổi trong quá trình giải quyết yêu cầu. Mọi thay đổi đều được cập nhật vào hệ thống nhằm đảm bảo quá trình xử lý được theo dõi đầy đủ.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/45-support-agent.jpg target=_blank><img src=/images/workshop/45-support-agent.jpg alt="Support Agent" style=width:65%;cursor:zoom-in></a><p><i>Hình 45. Nhân viên hỗ trợ tiếp nhận và xử lý Ticket.</i></p></div><hr><h2 id=demo-12-application-load-balancer>Demo 12. Application Load Balancer</h2><p>Application Load Balancer chỉ chuyển các request đến những EC2 đang ở trạng thái <strong>Healthy</strong>, giúp đảm bảo người dùng luôn được phục vụ bởi các máy chủ hoạt động ổn định và sẵn sàng xử lý yêu cầu.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/46-application-load-balancer.jpg target=_blank><img src=/images/workshop/46-application-load-balancer.jpg alt="Application Load Balancer" style=width:65%;cursor:zoom-in></a><p><i>Hình 46. Application Load Balancer phân phối request đến các EC2 hoạt động.</i></p></div><hr><h2 id=demo-13-auto-scaling-group>Demo 13. Auto Scaling Group</h2><p>Auto Scaling Group quản lý số lượng EC2 theo cấu hình tối thiểu và tối đa, đồng thời tự động thay thế các instance gặp sự cố nhằm duy trì tính sẵn sàng và khả năng mở rộng của hệ thống.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/47-auto-scaling-group.jpg target=_blank><img src=/images/workshop/47-auto-scaling-group.jpg alt="Auto Scaling Group" style=width:65%;cursor:zoom-in></a><p><i>Hình 47. Auto Scaling Group quản lý và duy trì các EC2 trong môi trường.</i></p></div><hr><h2 id=demo-14-dashboard-hệ-thống>Demo 14. Dashboard hệ thống</h2><p>Dashboard hiển thị tổng quan tình trạng xử lý Ticket, số lượng Ticket theo từng trạng thái và các chỉ số SLA, giúp nhà quản lý theo dõi hiệu quả vận hành của hệ thống.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/48-dashboard-overview.jpg target=_blank><img src=/images/workshop/48-dashboard-overview.jpg alt=Dashboard style=width:65%;cursor:zoom-in></a><p><i>Hình 48. Dashboard tổng quan của hệ thống Enterprise HelpDesk.</i></p></div><hr><h2 id=demo-15-giám-sát-amazon-rds>Demo 15. Giám sát Amazon RDS</h2><p>Amazon RDS cung cấp các chỉ số như mức sử dụng CPU, số lượng kết nối và dung lượng lưu trữ để hỗ trợ việc theo dõi hiệu năng và đánh giá tình trạng hoạt động của cơ sở dữ liệu.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/49-rds-monitoring.jpg target=_blank><img src=/images/workshop/49-rds-monitoring.jpg alt="Amazon RDS Monitoring" style=width:65%;cursor:zoom-in></a><p><i>Hình 49. Theo dõi các chỉ số hoạt động của Amazon RDS.</i></p></div><hr><h2 id=demo-16-quản-lý-người-dùng>Demo 16. Quản lý người dùng</h2><p>Quản trị viên có thể tạo mới, cập nhật hoặc vô hiệu hóa tài khoản, đồng thời phân quyền và gán phòng ban cho từng người dùng nhằm đảm bảo việc quản lý tài khoản được thực hiện tập trung.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/50-user-management.jpg target=_blank><img src=/images/workshop/50-user-management.jpg alt="User Management" style=width:65%;cursor:zoom-in></a><p><i>Hình 50. Quản trị viên quản lý tài khoản và phân quyền người dùng.</i></p></div><hr><h2 id=demo-17-aws-waf>Demo 17. AWS WAF</h2><p>AWS WAF sử dụng các Managed Rules để kiểm tra và lọc những request có dấu hiệu tấn công trước khi chuyển tiếp đến Application Load Balancer, góp phần nâng cao khả năng bảo vệ ứng dụng.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/51-aws-waf.jpg target=_blank><img src=/images/workshop/51-aws-waf.jpg alt="AWS WAF" style=width:65%;cursor:zoom-in></a><p><i>Hình 51. AWS WAF bảo vệ ứng dụng trước các request không hợp lệ.</i></p></div><hr><h2 id=demo-18-aws-cloudtrail>Demo 18. AWS CloudTrail</h2><p>AWS CloudTrail ghi nhận toàn bộ thao tác quản trị trên hạ tầng AWS như triển khai Elastic Beanstalk, thay đổi IAM Role hoặc cập nhật Security Group. Các bản ghi này hỗ trợ kiểm toán và truy vết sự kiện khi cần thiết.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/52-cloudtrail-events.jpg target=_blank><img src=/images/workshop/52-cloudtrail-events.jpg alt="AWS CloudTrail" style=width:65%;cursor:zoom-in></a><p><i>Hình 52. AWS CloudTrail ghi nhận các hoạt động quản trị trên hạ tầng AWS.</i></p></div><hr><h2 id=demo-19-security-group>Demo 19. Security Group</h2><p>Hệ thống sử dụng Security Group để phân tách quyền truy cập giữa Application Load Balancer, EC2 và Amazon RDS. Chỉ những kết nối hợp lệ mới được phép đi qua từng tầng của kiến trúc, góp phần tăng cường khả năng bảo mật cho toàn bộ hệ thống.</p><div style="text-align:center;margin:20px 0"><a href=/images/workshop/53-security-groups.jpg target=_blank><img src=/images/workshop/53-security-groups.jpg alt="Security Groups" style=width:65%;cursor:zoom-in></a><p><i>Hình 53. Security Group kiểm soát luồng truy cập giữa các thành phần của hệ thống.</i></p></div><hr><h1 id=kết-quả>Kết quả</h1><p>Sau khi hoàn thành phần Demo, hệ thống <strong>Enterprise HelpDesk</strong> đã được kiểm chứng hoạt động thành công trên nền tảng AWS.</p><p>Các chức năng nghiệp vụ như đăng nhập, tạo Ticket, tiếp nhận và xử lý yêu cầu hỗ trợ đều hoạt động ổn định trên ứng dụng ASP.NET Core được triển khai bằng AWS Elastic Beanstalk. Dữ liệu được lưu trữ tập trung trong Amazon RDS SQL Server, trong khi AWS Secrets Manager hỗ trợ quản lý thông tin kết nối cơ sở dữ liệu một cách an toàn.</p><p>Bên cạnh đó, các dịch vụ như Application Load Balancer, Auto Scaling Group, Amazon CloudWatch, AWS WAF và AWS CloudTrail đã được cấu hình và hoạt động đúng vai trò trong kiến trúc, góp phần đảm bảo khả năng mở rộng, giám sát, bảo mật và tính sẵn sàng của hệ thống.</p><p>Thông qua quá trình triển khai và kiểm thử, có thể thấy kiến trúc AWS được xây dựng đáp ứng tốt yêu cầu của hệ thống Enterprise HelpDesk, đồng thời tạo nền tảng thuận lợi cho việc mở rộng và vận hành ứng dụng trong môi trường thực tế.</p></article><nav class=pager><span></span>
-<a href=/vi/6-workshop/09-cleanup/>Dọn dẹp tài nguyên →</a></nav><footer class=footer></footer></main></div><script src=/js/site.js defer></script></body></html>
+<!DOCTYPE html>
+<html lang="vi" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Demo | Workshop Portfolio AWS</title>
+<meta name="keywords" content="">
+<meta name="description" content="Kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai trên AWS.">
+<meta name="author" content="">
+<link rel="canonical" href="https://long-28.github.io/vi/6-workshop/demo/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://long-28.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/6-workshop/demo/">
+<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/6-workshop/demo/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://long-28.github.io/vi/6-workshop/demo/">
+  <meta property="og:site_name" content="Workshop Portfolio AWS">
+  <meta property="og:title" content="Demo">
+  <meta property="og:description" content="Kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai trên AWS.">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="6-workshop">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Demo">
+  <meta name="twitter:description" content="Kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai trên AWS.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Workshop",
+      "item": "https://long-28.github.io/vi/6-workshop/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Demo",
+      "item": "https://long-28.github.io/vi/6-workshop/demo/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Demo",
+  "name": "Demo",
+  "description": "Kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai trên AWS.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Demo hệ thống Enterprise HelpDesk Trong phần này, chúng ta sẽ kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai thành công trên AWS. Các chức năng nghiệp vụ của ứng dụng cũng như các dịch vụ AWS sẽ được minh họa thông qua các tình huống thực tế nhằm chứng minh hệ thống hoạt động ổn định, an toàn và đáp ứng đúng kiến trúc đã thiết kế.\nDemo 1. Đăng nhập hệ thống Người dùng nhập tài khoản và mật khẩu để xác thực. Sau khi đăng nhập thành công, hệ thống sẽ xác định vai trò của người dùng và hiển thị giao diện tương ứng.\nHình 35. Người dùng đăng nhập vào hệ thống Enterprise HelpDesk.\nDemo 2. Xác thực người dùng với Amazon RDS Thông tin tài khoản, quyền truy cập và dữ liệu nghiệp vụ được lưu trong Amazon RDS SQL Server. Khi người dùng đăng nhập, ứng dụng sẽ truy vấn dữ liệu từ cơ sở dữ liệu này để xác thực.\nHình 36. Xác thực người dùng bằng dữ liệu lưu trong Amazon RDS.\nDemo 3. AWS Secrets Manager Thông tin đăng nhập cơ sở dữ liệu được lưu trong AWS Secrets Manager thay vì ghi trực tiếp trong mã nguồn. Điều này giúp tăng cường bảo mật và giảm nguy cơ lộ thông tin nhạy cảm.\nHình 37. Lưu trữ thông tin kết nối cơ sở dữ liệu trong AWS Secrets Manager.\nDemo 4. IAM Instance Profile EC2 sử dụng IAM Instance Profile để nhận quyền truy cập AWS Secrets Manager. Nhờ đó ứng dụng có thể lấy thông tin kết nối cơ sở dữ liệu một cách an toàn mà không cần sử dụng Access Key.\nHình 38. EC2 sử dụng IAM Instance Profile để truy cập AWS Secrets Manager.\nDemo 5. Tạo Ticket Nhân viên nhập đầy đủ thông tin như tiêu đề, danh mục, mức độ ưu tiên và nội dung mô tả để tạo một yêu cầu hỗ trợ mới.\nHình 39. Tạo yêu cầu hỗ trợ mới trên hệ thống.\nDemo 6. Ticket được lưu Sau khi tạo thành công, hệ thống sinh mã Ticket và lưu thông tin vào cơ sở dữ liệu. Đồng thời một bản ghi lịch sử được tạo để phục vụ việc theo dõi quá trình xử lý.\nHình 40. Ticket được tạo thành công và lưu vào cơ sở dữ liệu.\nDemo 7. Xử lý nghiệp vụ trên Elastic Beanstalk Các chức năng tạo Ticket, tiếp nhận, cập nhật trạng thái, bình luận và lưu lịch sử xử lý đều được thực thi trên ứng dụng ASP.NET Core chạy trong Elastic Beanstalk. Dữ liệu được lưu tập trung trong Amazon RDS SQL Server.\nHình 41. Elastic Beanstalk xử lý các nghiệp vụ của hệ thống Enterprise HelpDesk.\nDemo 8. Môi trường Elastic Beanstalk Elastic Beanstalk chịu trách nhiệm triển khai và quản lý ứng dụng ASP.NET Core. Toàn bộ request từ người dùng sẽ được chuyển đến môi trường này để xử lý.\nHình 42. Môi trường AWS Elastic Beanstalk đang vận hành ứng dụng.\nDemo 9. Máy chủ EC2 EC2 là máy chủ chạy ứng dụng Enterprise HelpDesk. Các chức năng như tạo Ticket, phân quyền và xử lý nghiệp vụ đều được thực thi trên EC2.\nHình 43. Máy chủ Amazon EC2 thực thi ứng dụng Enterprise HelpDesk.\nDemo 10. Amazon CloudWatch Amazon CloudWatch ghi nhận số lượng request, thời gian phản hồi và các chỉ số hoạt động của hệ thống nhằm phục vụ việc giám sát và phát hiện sự cố.\nHình 44. Theo dõi hoạt động của hệ thống bằng Amazon CloudWatch.\n---\rDemo 11. Support Agent Nhân viên hỗ trợ tiếp nhận Ticket, thay đổi trạng thái xử lý và bổ sung nội dung trao đổi trong quá trình giải quyết yêu cầu. Mọi thay đổi đều được cập nhật vào hệ thống nhằm đảm bảo quá trình xử lý được theo dõi đầy đủ.\nHình 45. Nhân viên hỗ trợ tiếp nhận và xử lý Ticket.\nDemo 12. Application Load Balancer Application Load Balancer chỉ chuyển các request đến những EC2 đang ở trạng thái Healthy, giúp đảm bảo người dùng luôn được phục vụ bởi các máy chủ hoạt động ổn định và sẵn sàng xử lý yêu cầu.\nHình 46. Application Load Balancer phân phối request đến các EC2 hoạt động.\nDemo 13. Auto Scaling Group Auto Scaling Group quản lý số lượng EC2 theo cấu hình tối thiểu và tối đa, đồng thời tự động thay thế các instance gặp sự cố nhằm duy trì tính sẵn sàng và khả năng mở rộng của hệ thống.\nHình 47. Auto Scaling Group quản lý và duy trì các EC2 trong môi trường.\nDemo 14. Dashboard hệ thống Dashboard hiển thị tổng quan tình trạng xử lý Ticket, số lượng Ticket theo từng trạng thái và các chỉ số SLA, giúp nhà quản lý theo dõi hiệu quả vận hành của hệ thống.\nHình 48. Dashboard tổng quan của hệ thống Enterprise HelpDesk.\nDemo 15. Giám sát Amazon RDS Amazon RDS cung cấp các chỉ số như mức sử dụng CPU, số lượng kết nối và dung lượng lưu trữ để hỗ trợ việc theo dõi hiệu năng và đánh giá tình trạng hoạt động của cơ sở dữ liệu.\nHình 49. Theo dõi các chỉ số hoạt động của Amazon RDS.\nDemo 16. Quản lý người dùng Quản trị viên có thể tạo mới, cập nhật hoặc vô hiệu hóa tài khoản, đồng thời phân quyền và gán phòng ban cho từng người dùng nhằm đảm bảo việc quản lý tài khoản được thực hiện tập trung.\nHình 50. Quản trị viên quản lý tài khoản và phân quyền người dùng.\nDemo 17. AWS WAF AWS WAF sử dụng các Managed Rules để kiểm tra và lọc những request có dấu hiệu tấn công trước khi chuyển tiếp đến Application Load Balancer, góp phần nâng cao khả năng bảo vệ ứng dụng.\nHình 51. AWS WAF bảo vệ ứng dụng trước các request không hợp lệ.\nDemo 18. AWS CloudTrail AWS CloudTrail ghi nhận toàn bộ thao tác quản trị trên hạ tầng AWS như triển khai Elastic Beanstalk, thay đổi IAM Role hoặc cập nhật Security Group. Các bản ghi này hỗ trợ kiểm toán và truy vết sự kiện khi cần thiết.\nHình 52. AWS CloudTrail ghi nhận các hoạt động quản trị trên hạ tầng AWS.\nDemo 19. Security Group Hệ thống sử dụng Security Group để phân tách quyền truy cập giữa Application Load Balancer, EC2 và Amazon RDS. Chỉ những kết nối hợp lệ mới được phép đi qua từng tầng của kiến trúc, góp phần tăng cường khả năng bảo mật cho toàn bộ hệ thống.\nHình 53. Security Group kiểm soát luồng truy cập giữa các thành phần của hệ thống.\nKết quả Sau khi hoàn thành phần Demo, hệ thống Enterprise HelpDesk đã được kiểm chứng hoạt động thành công trên nền tảng AWS.\nCác chức năng nghiệp vụ như đăng nhập, tạo Ticket, tiếp nhận và xử lý yêu cầu hỗ trợ đều hoạt động ổn định trên ứng dụng ASP.NET Core được triển khai bằng AWS Elastic Beanstalk. Dữ liệu được lưu trữ tập trung trong Amazon RDS SQL Server, trong khi AWS Secrets Manager hỗ trợ quản lý thông tin kết nối cơ sở dữ liệu một cách an toàn.\nBên cạnh đó, các dịch vụ như Application Load Balancer, Auto Scaling Group, Amazon CloudWatch, AWS WAF và AWS CloudTrail đã được cấu hình và hoạt động đúng vai trò trong kiến trúc, góp phần đảm bảo khả năng mở rộng, giám sát, bảo mật và tính sẵn sàng của hệ thống.\nThông qua quá trình triển khai và kiểm thử, có thể thấy kiến trúc AWS được xây dựng đáp ứng tốt yêu cầu của hệ thống Enterprise HelpDesk, đồng thời tạo nền tảng thuận lợi cho việc mở rộng và vận hành ứng dụng trong môi trường thực tế.\n",
+  "wordCount" : "1345",
+  "inLanguage": "vi",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://long-28.github.io/vi/6-workshop/demo/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Workshop Portfolio AWS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://long-28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://long-28.github.io/en/" title="English"
+                                aria-label="English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Demo
+    </h1>
+    <div class="post-description">
+      Kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai trên AWS.
+    </div>
+    <div class="post-meta">
+
+<span>Bản dịch:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://long-28.github.io/en/6-workshop/demo/">En</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="demo-hệ-thống-enterprise-helpdesk">Demo hệ thống Enterprise HelpDesk<a hidden class="anchor" aria-hidden="true" href="#demo-hệ-thống-enterprise-helpdesk">#</a></h1>
+<p>Trong phần này, chúng ta sẽ kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai thành công trên AWS. Các chức năng nghiệp vụ của ứng dụng cũng như các dịch vụ AWS sẽ được minh họa thông qua các tình huống thực tế nhằm chứng minh hệ thống hoạt động ổn định, an toàn và đáp ứng đúng kiến trúc đã thiết kế.</p>
+<hr>
+<h2 id="demo-1-đăng-nhập-hệ-thống">Demo 1. Đăng nhập hệ thống<a hidden class="anchor" aria-hidden="true" href="#demo-1-đăng-nhập-hệ-thống">#</a></h2>
+<p>Người dùng nhập tài khoản và mật khẩu để xác thực. Sau khi đăng nhập thành công, hệ thống sẽ xác định vai trò của người dùng và hiển thị giao diện tương ứng.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/35-user-login.jpg" target="_blank">
+        <img src="/images/workshop/35-user-login.jpg"
+             alt="Đăng nhập hệ thống"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 35. Người dùng đăng nhập vào hệ thống Enterprise HelpDesk.</i></p>
+</div>
+<hr>
+<h2 id="demo-2-xác-thực-người-dùng-với-amazon-rds">Demo 2. Xác thực người dùng với Amazon RDS<a hidden class="anchor" aria-hidden="true" href="#demo-2-xác-thực-người-dùng-với-amazon-rds">#</a></h2>
+<p>Thông tin tài khoản, quyền truy cập và dữ liệu nghiệp vụ được lưu trong Amazon RDS SQL Server. Khi người dùng đăng nhập, ứng dụng sẽ truy vấn dữ liệu từ cơ sở dữ liệu này để xác thực.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/36-rds-authentication.jpg" target="_blank">
+        <img src="/images/workshop/36-rds-authentication.jpg"
+             alt="Amazon RDS Authentication"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 36. Xác thực người dùng bằng dữ liệu lưu trong Amazon RDS.</i></p>
+</div>
+<hr>
+<h2 id="demo-3-aws-secrets-manager">Demo 3. AWS Secrets Manager<a hidden class="anchor" aria-hidden="true" href="#demo-3-aws-secrets-manager">#</a></h2>
+<p>Thông tin đăng nhập cơ sở dữ liệu được lưu trong AWS Secrets Manager thay vì ghi trực tiếp trong mã nguồn. Điều này giúp tăng cường bảo mật và giảm nguy cơ lộ thông tin nhạy cảm.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/37-secrets-manager.jpg" target="_blank">
+        <img src="/images/workshop/37-secrets-manager.jpg"
+             alt="AWS Secrets Manager"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 37. Lưu trữ thông tin kết nối cơ sở dữ liệu trong AWS Secrets Manager.</i></p>
+</div>
+<hr>
+<h2 id="demo-4-iam-instance-profile">Demo 4. IAM Instance Profile<a hidden class="anchor" aria-hidden="true" href="#demo-4-iam-instance-profile">#</a></h2>
+<p>EC2 sử dụng IAM Instance Profile để nhận quyền truy cập AWS Secrets Manager. Nhờ đó ứng dụng có thể lấy thông tin kết nối cơ sở dữ liệu một cách an toàn mà không cần sử dụng Access Key.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/38-iam-instance-profile.jpg" target="_blank">
+        <img src="/images/workshop/38-iam-instance-profile.jpg"
+             alt="IAM Instance Profile"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 38. EC2 sử dụng IAM Instance Profile để truy cập AWS Secrets Manager.</i></p>
+</div>
+<hr>
+<h2 id="demo-5-tạo-ticket">Demo 5. Tạo Ticket<a hidden class="anchor" aria-hidden="true" href="#demo-5-tạo-ticket">#</a></h2>
+<p>Nhân viên nhập đầy đủ thông tin như tiêu đề, danh mục, mức độ ưu tiên và nội dung mô tả để tạo một yêu cầu hỗ trợ mới.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/39-create-ticket.jpg" target="_blank">
+        <img src="/images/workshop/39-create-ticket.jpg"
+             alt="Create Ticket"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 39. Tạo yêu cầu hỗ trợ mới trên hệ thống.</i></p>
+</div>
+<hr>
+<h2 id="demo-6-ticket-được-lưu">Demo 6. Ticket được lưu<a hidden class="anchor" aria-hidden="true" href="#demo-6-ticket-được-lưu">#</a></h2>
+<p>Sau khi tạo thành công, hệ thống sinh mã Ticket và lưu thông tin vào cơ sở dữ liệu. Đồng thời một bản ghi lịch sử được tạo để phục vụ việc theo dõi quá trình xử lý.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/40-ticket-created.jpg" target="_blank">
+        <img src="/images/workshop/40-ticket-created.jpg"
+             alt="Ticket Created"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 40. Ticket được tạo thành công và lưu vào cơ sở dữ liệu.</i></p>
+</div>
+<hr>
+<h2 id="demo-7-xử-lý-nghiệp-vụ-trên-elastic-beanstalk">Demo 7. Xử lý nghiệp vụ trên Elastic Beanstalk<a hidden class="anchor" aria-hidden="true" href="#demo-7-xử-lý-nghiệp-vụ-trên-elastic-beanstalk">#</a></h2>
+<p>Các chức năng tạo Ticket, tiếp nhận, cập nhật trạng thái, bình luận và lưu lịch sử xử lý đều được thực thi trên ứng dụng ASP.NET Core chạy trong Elastic Beanstalk. Dữ liệu được lưu tập trung trong Amazon RDS SQL Server.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/41-ticket-processing.jpg" target="_blank">
+        <img src="/images/workshop/41-ticket-processing.jpg"
+             alt="Ticket Processing"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 41. Elastic Beanstalk xử lý các nghiệp vụ của hệ thống Enterprise HelpDesk.</i></p>
+</div>
+<hr>
+<h2 id="demo-8-môi-trường-elastic-beanstalk">Demo 8. Môi trường Elastic Beanstalk<a hidden class="anchor" aria-hidden="true" href="#demo-8-môi-trường-elastic-beanstalk">#</a></h2>
+<p>Elastic Beanstalk chịu trách nhiệm triển khai và quản lý ứng dụng ASP.NET Core. Toàn bộ request từ người dùng sẽ được chuyển đến môi trường này để xử lý.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/42-elastic-beanstalk-environment.jpg" target="_blank">
+        <img src="/images/workshop/42-elastic-beanstalk-environment.jpg"
+             alt="Elastic Beanstalk Environment"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 42. Môi trường AWS Elastic Beanstalk đang vận hành ứng dụng.</i></p>
+</div>
+<hr>
+<h2 id="demo-9-máy-chủ-ec2">Demo 9. Máy chủ EC2<a hidden class="anchor" aria-hidden="true" href="#demo-9-máy-chủ-ec2">#</a></h2>
+<p>EC2 là máy chủ chạy ứng dụng Enterprise HelpDesk. Các chức năng như tạo Ticket, phân quyền và xử lý nghiệp vụ đều được thực thi trên EC2.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/43-ec2-instance.jpg" target="_blank">
+        <img src="/images/workshop/43-ec2-instance.jpg"
+             alt="Amazon EC2"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 43. Máy chủ Amazon EC2 thực thi ứng dụng Enterprise HelpDesk.</i></p>
+</div>
+<hr>
+<h2 id="demo-10-amazon-cloudwatch">Demo 10. Amazon CloudWatch<a hidden class="anchor" aria-hidden="true" href="#demo-10-amazon-cloudwatch">#</a></h2>
+<p>Amazon CloudWatch ghi nhận số lượng request, thời gian phản hồi và các chỉ số hoạt động của hệ thống nhằm phục vụ việc giám sát và phát hiện sự cố.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/44-cloudwatch-monitoring.jpg" target="_blank">
+        <img src="/images/workshop/44-cloudwatch-monitoring.jpg"
+             alt="Amazon CloudWatch"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 44. Theo dõi hoạt động của hệ thống bằng Amazon CloudWatch.</i></p>
+</div>
+---
+<h2 id="demo-11-support-agent">Demo 11. Support Agent<a hidden class="anchor" aria-hidden="true" href="#demo-11-support-agent">#</a></h2>
+<p>Nhân viên hỗ trợ tiếp nhận Ticket, thay đổi trạng thái xử lý và bổ sung nội dung trao đổi trong quá trình giải quyết yêu cầu. Mọi thay đổi đều được cập nhật vào hệ thống nhằm đảm bảo quá trình xử lý được theo dõi đầy đủ.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/45-support-agent.jpg" target="_blank">
+        <img src="/images/workshop/45-support-agent.jpg"
+             alt="Support Agent"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 45. Nhân viên hỗ trợ tiếp nhận và xử lý Ticket.</i></p>
+</div>
+<hr>
+<h2 id="demo-12-application-load-balancer">Demo 12. Application Load Balancer<a hidden class="anchor" aria-hidden="true" href="#demo-12-application-load-balancer">#</a></h2>
+<p>Application Load Balancer chỉ chuyển các request đến những EC2 đang ở trạng thái <strong>Healthy</strong>, giúp đảm bảo người dùng luôn được phục vụ bởi các máy chủ hoạt động ổn định và sẵn sàng xử lý yêu cầu.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/46-application-load-balancer.jpg" target="_blank">
+        <img src="/images/workshop/46-application-load-balancer.jpg"
+             alt="Application Load Balancer"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 46. Application Load Balancer phân phối request đến các EC2 hoạt động.</i></p>
+</div>
+<hr>
+<h2 id="demo-13-auto-scaling-group">Demo 13. Auto Scaling Group<a hidden class="anchor" aria-hidden="true" href="#demo-13-auto-scaling-group">#</a></h2>
+<p>Auto Scaling Group quản lý số lượng EC2 theo cấu hình tối thiểu và tối đa, đồng thời tự động thay thế các instance gặp sự cố nhằm duy trì tính sẵn sàng và khả năng mở rộng của hệ thống.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/47-auto-scaling-group.jpg" target="_blank">
+        <img src="/images/workshop/47-auto-scaling-group.jpg"
+             alt="Auto Scaling Group"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 47. Auto Scaling Group quản lý và duy trì các EC2 trong môi trường.</i></p>
+</div>
+<hr>
+<h2 id="demo-14-dashboard-hệ-thống">Demo 14. Dashboard hệ thống<a hidden class="anchor" aria-hidden="true" href="#demo-14-dashboard-hệ-thống">#</a></h2>
+<p>Dashboard hiển thị tổng quan tình trạng xử lý Ticket, số lượng Ticket theo từng trạng thái và các chỉ số SLA, giúp nhà quản lý theo dõi hiệu quả vận hành của hệ thống.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/48-dashboard-overview.jpg" target="_blank">
+        <img src="/images/workshop/48-dashboard-overview.jpg"
+             alt="Dashboard"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 48. Dashboard tổng quan của hệ thống Enterprise HelpDesk.</i></p>
+</div>
+<hr>
+<h2 id="demo-15-giám-sát-amazon-rds">Demo 15. Giám sát Amazon RDS<a hidden class="anchor" aria-hidden="true" href="#demo-15-giám-sát-amazon-rds">#</a></h2>
+<p>Amazon RDS cung cấp các chỉ số như mức sử dụng CPU, số lượng kết nối và dung lượng lưu trữ để hỗ trợ việc theo dõi hiệu năng và đánh giá tình trạng hoạt động của cơ sở dữ liệu.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/49-rds-monitoring.jpg" target="_blank">
+        <img src="/images/workshop/49-rds-monitoring.jpg"
+             alt="Amazon RDS Monitoring"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 49. Theo dõi các chỉ số hoạt động của Amazon RDS.</i></p>
+</div>
+<hr>
+<h2 id="demo-16-quản-lý-người-dùng">Demo 16. Quản lý người dùng<a hidden class="anchor" aria-hidden="true" href="#demo-16-quản-lý-người-dùng">#</a></h2>
+<p>Quản trị viên có thể tạo mới, cập nhật hoặc vô hiệu hóa tài khoản, đồng thời phân quyền và gán phòng ban cho từng người dùng nhằm đảm bảo việc quản lý tài khoản được thực hiện tập trung.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/50-user-management.jpg" target="_blank">
+        <img src="/images/workshop/50-user-management.jpg"
+             alt="User Management"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 50. Quản trị viên quản lý tài khoản và phân quyền người dùng.</i></p>
+</div>
+<hr>
+<h2 id="demo-17-aws-waf">Demo 17. AWS WAF<a hidden class="anchor" aria-hidden="true" href="#demo-17-aws-waf">#</a></h2>
+<p>AWS WAF sử dụng các Managed Rules để kiểm tra và lọc những request có dấu hiệu tấn công trước khi chuyển tiếp đến Application Load Balancer, góp phần nâng cao khả năng bảo vệ ứng dụng.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/51-aws-waf.jpg" target="_blank">
+        <img src="/images/workshop/51-aws-waf.jpg"
+             alt="AWS WAF"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 51. AWS WAF bảo vệ ứng dụng trước các request không hợp lệ.</i></p>
+</div>
+<hr>
+<h2 id="demo-18-aws-cloudtrail">Demo 18. AWS CloudTrail<a hidden class="anchor" aria-hidden="true" href="#demo-18-aws-cloudtrail">#</a></h2>
+<p>AWS CloudTrail ghi nhận toàn bộ thao tác quản trị trên hạ tầng AWS như triển khai Elastic Beanstalk, thay đổi IAM Role hoặc cập nhật Security Group. Các bản ghi này hỗ trợ kiểm toán và truy vết sự kiện khi cần thiết.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/52-cloudtrail-events.jpg" target="_blank">
+        <img src="/images/workshop/52-cloudtrail-events.jpg"
+             alt="AWS CloudTrail"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 52. AWS CloudTrail ghi nhận các hoạt động quản trị trên hạ tầng AWS.</i></p>
+</div>
+<hr>
+<h2 id="demo-19-security-group">Demo 19. Security Group<a hidden class="anchor" aria-hidden="true" href="#demo-19-security-group">#</a></h2>
+<p>Hệ thống sử dụng Security Group để phân tách quyền truy cập giữa Application Load Balancer, EC2 và Amazon RDS. Chỉ những kết nối hợp lệ mới được phép đi qua từng tầng của kiến trúc, góp phần tăng cường khả năng bảo mật cho toàn bộ hệ thống.</p>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/53-security-groups.jpg" target="_blank">
+        <img src="/images/workshop/53-security-groups.jpg"
+             alt="Security Groups"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 53. Security Group kiểm soát luồng truy cập giữa các thành phần của hệ thống.</i></p>
+</div>
+<hr>
+<h1 id="kết-quả">Kết quả<a hidden class="anchor" aria-hidden="true" href="#kết-quả">#</a></h1>
+<p>Sau khi hoàn thành phần Demo, hệ thống <strong>Enterprise HelpDesk</strong> đã được kiểm chứng hoạt động thành công trên nền tảng AWS.</p>
+<p>Các chức năng nghiệp vụ như đăng nhập, tạo Ticket, tiếp nhận và xử lý yêu cầu hỗ trợ đều hoạt động ổn định trên ứng dụng ASP.NET Core được triển khai bằng AWS Elastic Beanstalk. Dữ liệu được lưu trữ tập trung trong Amazon RDS SQL Server, trong khi AWS Secrets Manager hỗ trợ quản lý thông tin kết nối cơ sở dữ liệu một cách an toàn.</p>
+<p>Bên cạnh đó, các dịch vụ như Application Load Balancer, Auto Scaling Group, Amazon CloudWatch, AWS WAF và AWS CloudTrail đã được cấu hình và hoạt động đúng vai trò trong kiến trúc, góp phần đảm bảo khả năng mở rộng, giám sát, bảo mật và tính sẵn sàng của hệ thống.</p>
+<p>Thông qua quá trình triển khai và kiểm thử, có thể thấy kiến trúc AWS được xây dựng đáp ứng tốt yêu cầu của hệ thống Enterprise HelpDesk, đồng thời tạo nền tảng thuận lợi cho việc mở rộng và vận hành ứng dụng trong môi trường thực tế.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

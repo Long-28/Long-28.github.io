@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.164.0"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Workshop Portfolio AWS</title>
+
+<meta name="description" content="Website độc lập này sẽ chứa toàn bộ báo cáo thực tập và workshop kỹ thuật AWS từ đầu đến cuối. Nội dung mẫu sẽ được thay thế dần khi hoàn thiện tài liệu dự án.">
+<meta name="author" content="">
+<link rel="canonical" href="https://long-28.github.io/vi/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://long-28.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://long-28.github.io/vi/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/">
+<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://long-28.github.io/vi/">
+  <meta property="og:site_name" content="Workshop Portfolio AWS">
+  <meta property="og:title" content="Workshop Portfolio AWS">
+  <meta property="og:description" content="Website độc lập này sẽ chứa toàn bộ báo cáo thực tập và workshop kỹ thuật AWS từ đầu đến cuối. Nội dung mẫu sẽ được thay thế dần khi hoàn thiện tài liệu dự án.">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Workshop Portfolio AWS">
+  <meta name="twitter:description" content="Website độc lập này sẽ chứa toàn bộ báo cáo thực tập và workshop kỹ thuật AWS từ đầu đến cuối. Nội dung mẫu sẽ được thay thế dần khi hoàn thiện tài liệu dự án.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Workshop Portfolio AWS",
+  "url": "https://long-28.github.io/vi/",
+  "description": "",
+  "logo": "https://long-28.github.io/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://long-28.github.io/en/" title="English"
+                                aria-label="English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<div class="post-content md-content"><p>Website độc lập này sẽ chứa toàn bộ báo cáo thực tập và workshop kỹ thuật AWS từ đầu đến cuối. Nội dung mẫu sẽ được thay thế dần khi hoàn thiện tài liệu dự án.</p>
+
+
+</div>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Tuần 11
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🎯 Mục tiêu tuần 11 Khóa mã nguồn và hoàn thiện các tính năng còn lại của GreenLens Kids. Kiểm tra lại luồng hoạt động và chụp ảnh tài nguyên minh chứng. Quay video demo các chức năng chính của hệ thống. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Khóa mã nguồn và hoàn thiện các tính năng còn lại của GreenLens Kids.13/07/202613/07/2026AWS Documentation 2Kiểm tra lại luồng hoạt động và chụp ảnh tài nguyên minh chứng.14/07/202614/07/2026AWS Documentation 3Quay video demo các chức năng chính của hệ thống.15/07/202615/07/2026AWS Documentation 4Cập nhật sơ đồ kiến trúc chính thức theo hạ tầng thực tế.16/07/202616/07/2026AWS Documentation 5Hoàn thiện Technical Documentation và nội dung báo cáo.17/07/202617/07/2026AWS Documentation 🏆 Thành tích đạt được Đóng gói sản phẩm demo, sơ đồ kiến trúc và tài liệu kỹ thuật theo chuẩn báo cáo. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
+  </div>
+  <footer class="entry-footer">
+
+</footer>
+  <a class="entry-link" aria-label="post link to Tuần 11" href="https://long-28.github.io/vi/2-worklog/11-week-11/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Tuần 12
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🎯 Mục tiêu tuần 12 Rà soát và dọn dẹp tài nguyên AWS thử nghiệm để tránh phát sinh chi phí. Hoàn thiện báo cáo thực tập, Worklog và hồ sơ xác nhận doanh nghiệp. Kiểm tra toàn bộ tài liệu, hình ảnh và kết quả thực hành. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Rà soát và dọn dẹp tài nguyên AWS thử nghiệm để tránh phát sinh chi phí.20/07/202620/07/2026AWS Documentation 2Hoàn thiện báo cáo thực tập, Worklog và hồ sơ xác nhận doanh nghiệp.21/07/202621/07/2026AWS Documentation 3Kiểm tra toàn bộ tài liệu, hình ảnh và kết quả thực hành.22/07/202622/07/2026AWS Documentation 4Thiết kế slide và luyện tập nội dung thuyết trình.23/07/202623/07/2026AWS Documentation 5Tổng kết kết quả, bài học và định hướng phát triển Cloud Engineering/DevOps.24/07/202624/07/2026AWS Documentation 🏆 Thành tích đạt được Hoàn thiện báo cáo, Worklog, slide và sẵn sàng cho buổi bảo vệ thực tập. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
+  </div>
+  <footer class="entry-footer">
+
+</footer>
+  <a class="entry-link" aria-label="post link to Tuần 12" href="https://long-28.github.io/vi/2-worklog/12-week-12/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://long-28.github.io/vi/">
+      «&nbsp;Trang trước&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

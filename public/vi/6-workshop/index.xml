@@ -1,7 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workshop on Workshop Portfolio AWS</title><link>/vi/6-workshop/</link><description>Recent content in Workshop on Workshop Portfolio AWS</description><generator>Hugo</generator><language>vi-VN</language><atom:link href="/vi/6-workshop/index.xml" rel="self" type="application/rss+xml"/><item><title>Tổng quan</title><link>/vi/6-workshop/01-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/6-workshop/01-overview/</guid><description>&lt;h1 id="tổng-quan"&gt;Tổng quan&lt;/h1&gt;
-&lt;p&gt;Workshop này hướng dẫn triển khai hệ thống &lt;strong&gt;Enterprise HelpDesk&lt;/strong&gt; trên nền tảng &lt;strong&gt;Amazon Web Services (AWS)&lt;/strong&gt; thông qua quy trình triển khai từng bước, từ xây dựng hạ tầng mạng đến triển khai ứng dụng, giám sát hệ thống và tối ưu tài nguyên.&lt;/p&gt;</description></item><item><title>Điều kiện tiên quyết</title><link>/vi/6-workshop/02-prerequisites/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/6-workshop/02-prerequisites/</guid><description>&lt;h1 id="điều-kiện-tiên-quyết"&gt;Điều kiện tiên quyết&lt;/h1&gt;
-&lt;p&gt;Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy đủ các điều kiện dưới đây để quá trình triển khai diễn ra thuận lợi.&lt;/p&gt;</description></item><item><title>Kiến trúc</title><link>/vi/6-workshop/03-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/6-workshop/03-architecture/</guid><description>&lt;h2 id="kiến-trúc"&gt;Kiến trúc&lt;/h2&gt;
-&lt;p&gt;Sơ đồ dưới đây mô tả kiến trúc triển khai ứng dụng trên AWS với Amazon CloudFront, AWS WAF, Application Load Balancer, Amazon EC2, Amazon RDS for SQL Server và các dịch vụ bảo mật, giám sát.&lt;/p&gt;</description></item><item><title>Triển khai</title><link>/vi/6-workshop/04-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/6-workshop/04-deployment/</guid><description>&lt;h1 id="triển-khai-hệ-thống-enterprise-helpdesk-trên-aws"&gt;Triển khai hệ thống Enterprise HelpDesk trên AWS&lt;/h1&gt;
-&lt;p&gt;Trong phần này, chúng ta sẽ tiến hành xây dựng hạ tầng mạng cho hệ thống Enterprise HelpDesk bằng Amazon VPC. Sau khi hoàn thành, môi trường sẽ sẵn sàng để triển khai cơ sở dữ liệu Amazon RDS và ứng dụng bằng AWS Elastic Beanstalk.&lt;/p&gt;</description></item><item><title>Dọn dẹp tài nguyên</title><link>/vi/6-workshop/09-cleanup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/6-workshop/09-cleanup/</guid><description>&lt;h1 id="dọn-dẹp-tài-nguyên"&gt;Dọn dẹp tài nguyên&lt;/h1&gt;
-&lt;p&gt;Sau khi hoàn thành workshop, cần xóa toàn bộ tài nguyên đã tạo trên AWS để tránh phát sinh chi phí không cần thiết. Trong phần này, chúng ta sẽ lần lượt xóa môi trường Elastic Beanstalk, AWS WAF, Amazon RDS, Secrets Manager và các Security Group đã tạo.&lt;/p&gt;</description></item><item><title>Demo</title><link>/vi/6-workshop/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/6-workshop/demo/</guid><description>&lt;h1 id="demo-hệ-thống-enterprise-helpdesk"&gt;Demo hệ thống Enterprise HelpDesk&lt;/h1&gt;
-&lt;p&gt;Trong phần này, chúng ta sẽ kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai thành công trên AWS. Các chức năng nghiệp vụ của ứng dụng cũng như các dịch vụ AWS sẽ được minh họa thông qua các tình huống thực tế nhằm chứng minh hệ thống hoạt động ổn định, an toàn và đáp ứng đúng kiến trúc đã thiết kế.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Workshop on Workshop Portfolio AWS</title>
+    <link>https://long-28.github.io/vi/6-workshop/</link>
+    <description>Recent content in Workshop on Workshop Portfolio AWS</description>
+    <generator>Hugo</generator>
+    <language>vi-VN</language>
+    <atom:link href="https://long-28.github.io/vi/6-workshop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tổng quan</title>
+      <link>https://long-28.github.io/vi/6-workshop/01-overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/6-workshop/01-overview/</guid>
+      <description>&lt;h1 id=&#34;tổng-quan&#34;&gt;Tổng quan&lt;/h1&gt;
+&lt;p&gt;Workshop này hướng dẫn triển khai hệ thống &lt;strong&gt;Enterprise HelpDesk&lt;/strong&gt; trên nền tảng &lt;strong&gt;Amazon Web Services (AWS)&lt;/strong&gt; thông qua quy trình triển khai từng bước, từ xây dựng hạ tầng mạng đến triển khai ứng dụng, giám sát hệ thống và tối ưu tài nguyên.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Điều kiện tiên quyết</title>
+      <link>https://long-28.github.io/vi/6-workshop/02-prerequisites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/6-workshop/02-prerequisites/</guid>
+      <description>&lt;h1 id=&#34;điều-kiện-tiên-quyết&#34;&gt;Điều kiện tiên quyết&lt;/h1&gt;
+&lt;p&gt;Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy đủ các điều kiện dưới đây để quá trình triển khai diễn ra thuận lợi.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kiến trúc</title>
+      <link>https://long-28.github.io/vi/6-workshop/03-architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/6-workshop/03-architecture/</guid>
+      <description>Kiến trúc</description>
+    </item>
+    <item>
+      <title>Triển khai</title>
+      <link>https://long-28.github.io/vi/6-workshop/04-deployment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/6-workshop/04-deployment/</guid>
+      <description>Triển khai hệ thống Enterprise HelpDesk trên AWS</description>
+    </item>
+    <item>
+      <title>Dọn dẹp tài nguyên</title>
+      <link>https://long-28.github.io/vi/6-workshop/09-cleanup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/6-workshop/09-cleanup/</guid>
+      <description>Dọn dẹp tài nguyên</description>
+    </item>
+    <item>
+      <title>Demo</title>
+      <link>https://long-28.github.io/vi/6-workshop/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/6-workshop/demo/</guid>
+      <description>Kiểm tra hoạt động của hệ thống Enterprise HelpDesk sau khi triển khai trên AWS.</description>
+    </item>
+  </channel>
+</rss>

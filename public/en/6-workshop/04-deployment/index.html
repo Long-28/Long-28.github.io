@@ -1,17 +1,855 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Deploying the Enterprise HelpDesk System on AWS"><title>Deployment · AWS Portfolio Workshop</title><script>document.documentElement.dataset.theme=localStorage.getItem("aws-workshop-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")</script><link rel=stylesheet href=/css/site.css></head><body><header class=topbar><button class="icon-button mobile-only" id=menu-toggle aria-label="Toggle menu">☰</button>
-<a class=brand href=/en/><span class=brand-mark>AWS</span><span><strong>AWS Portfolio Workshop</strong><small>Internship report, cloud project, and hands-on workshop</small></span></a><div class=topbar-actions><label class=search-box><span>⌕</span><input id=site-search type=search placeholder="Search navigation..."></label><div class=language-switcher><a class=active href=/en/6-workshop/04-deployment/>EN</a><a href=/vi/6-workshop/04-deployment/>VI</a></div></div></header><div class=app-shell><aside class=sidebar id=sidebar><div class=sidebar-label>CONTENTS</div><nav class=sidebar-nav id=sidebar-nav><details class=nav-group><summary><a href=/en/1-student-information/><span>01</span>Student Information</a></summary></details><details class=nav-group><summary><a href=/en/2-worklog/><span>02</span>Internship Worklog</a>
-<b>⌄</b></summary></details><details class=nav-group><summary><a href=/en/3-proposal/><span>03</span>Project Proposal</a></summary></details><details class=nav-group><summary><a href=/en/4-blog-posts/><span>04</span>Blog Posts</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/4-blog-posts/01-blog-1/>AWS IAM - The First Foundation When Learning Amazon Web Services</a>
-<a href=/en/4-blog-posts/02-blog-2/>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</a>
-<a href=/en/4-blog-posts/03-blog-3/>AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</a></div></details><details class=nav-group><summary><a href=/en/5-events-participated/><span>05</span>Events Participated</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/5-events-participated/01-event-1/>AWS First Cloud AI Journey Community Day 2026</a>
-<a href=/en/5-events-participated/02-event-2/>Mini Meetup – First Cloud AI Journey 06/06/2026</a></div></details><details class=nav-group open><summary><a href=/en/6-workshop/><span>06</span>Workshop</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/6-workshop/01-overview/>Overview</a>
-<a href=/en/6-workshop/02-prerequisites/>Prerequisites</a>
-<a href=/en/6-workshop/03-architecture/>Architecture</a>
-<a class=active href=/en/6-workshop/04-deployment/>Deployment</a>
-<a href=/en/6-workshop/09-cleanup/>Clean Up Resources</a>
-<a href=/en/6-workshop/demo/>Demo</a></div></details><details class=nav-group><summary><a href=/en/7-self-evaluation/><span>07</span>Self-evaluation</a></summary></details><details class=nav-group><summary><a href=/en/8-sharing-and-feedback/><span>08</span>Sharing and feedback</a></summary></details></nav><div class=sidebar-note><strong>Tip</strong><p>Use VI/EN to switch languages.</p></div></aside><main class=main-content id=main-content><nav class=breadcrumbs aria-label=Breadcrumb><a href=/en/>Home</a>
-<span>/</span><a href=/en/6-workshop/>Workshop</a>
-<span>/</span><span>Deployment</span></nav><header class="page-header journey-header"><span class=eyebrow>WORKSHOP DOCUMENTATION</span><h1>Deployment</h1><p>Deploying the Enterprise HelpDesk System on AWS</p></header><article class="content-card prose" data-search-content><h1 id=deploying-the-enterprise-helpdesk-system-on-aws>Deploying the Enterprise HelpDesk System on AWS</h1><p>In this section, you will build the network infrastructure for the Enterprise HelpDesk system using <strong>Amazon VPC</strong>. After completing this section, the environment will be ready for deploying the <strong>Amazon RDS for SQL Server</strong> database and the application using <strong>AWS Elastic Beanstalk</strong>.</p><hr><h2 id=deployment-sections>Deployment Sections</h2><ul><li><a href=/en/6-workshop/04-deployment/#part-1-amazon-vpc>Part 1. Amazon VPC</a></li><li><a href=/en/6-workshop/04-deployment/#part-2-amazon-rds>Part 2. Amazon RDS</a></li><li><a href=/en/6-workshop/04-deployment/#part-3-aws-elastic-beanstalk>Part 3. AWS Elastic Beanstalk</a></li></ul><hr><h2 id=part-1-amazon-vpc style="text-align:center;font-size:36px;margin:50px 0 30px">Part 1. Building the Network Infrastructure with Amazon VPC</h2><p>Amazon Virtual Private Cloud (Amazon VPC) enables you to create an isolated virtual network on AWS for deploying your application resources. In this workshop, you will configure an Amazon VPC that includes public subnets, private subnets, an internet gateway, route tables, and security groups.</p><hr><h2 id=step-1-create-an-amazon-vpc>Step 1. Create an Amazon VPC</h2><p>Sign in to the <strong>AWS Management Console</strong>.</p><p>Complete the following steps:</p><ol><li>Search for and open the <strong>Amazon VPC</strong> service.</li><li>Choose <strong>Your VPCs</strong>.</li><li>Choose <strong>Create VPC</strong>.</li><li>Enter <strong>EnterpriseHelpDesk-VPC</strong> as the VPC name.</li><li>Specify an appropriate IPv4 CIDR block.</li><li>Choose <strong>Create VPC</strong>.</li></ol><p>After the VPC is created, it will serve as the isolated network for all resources used by the Enterprise HelpDesk system.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/01-create-vpc.jpg alt="Create an Amazon VPC" style=width:65%></div><hr><h2 id=step-2-create-public-and-private-subnets>Step 2. Create Public and Private Subnets</h2><p>After creating the VPC, create the required subnets.</p><p>This workshop uses the following subnets:</p><ul><li>Public-Subnet-A</li><li>Public-Subnet-B</li><li>Private-Subnet-A</li><li>Private-Subnet-B</li></ul><p>Separating public and private subnets improves security and follows a multi-tier architecture best practice on AWS.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/02-create-subnets.jpg alt="Create Public and Private Subnets" style=width:65%></div><hr><h2 id=step-3-create-an-internet-gateway>Step 3. Create an Internet Gateway</h2><p>To allow resources in the public subnets to access the internet, create an internet gateway.</p><p>Complete the following steps:</p><ol><li>Open the <strong>Amazon VPC</strong> console.</li><li>Choose <strong>Internet Gateways</strong>.</li><li>Choose <strong>Create internet gateway</strong>.</li><li>Enter the following value:</li></ol><table><thead><tr><th>Property</th><th>Value</th></tr></thead><tbody><tr><td>Name tag</td><td>EnterpriseHelpDesk-IGW</td></tr></tbody></table><ol start=5><li>Choose <strong>Create internet gateway</strong>.</li></ol><p>After it is created, the internet gateway will be in the <strong>Available</strong> state, but it cannot be used until it is attached to a VPC.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/03-create-internet-gateway.jpg alt="Create an Internet Gateway" style=width:65%></div><hr><h2 id=step-4-attach-the-internet-gateway-to-the-vpc>Step 4. Attach the Internet Gateway to the VPC</h2><p>After creating the internet gateway, attach it to the VPC.</p><p>Complete the following steps:</p><ol><li>Select the internet gateway you created.</li><li>Choose <strong>Actions → Attach to VPC</strong>.</li><li>Select <strong>EnterpriseHelpDesk-VPC</strong>.</li><li>Choose <strong>Attach internet gateway</strong>.</li></ol><p>After this step, the internet gateway provides internet connectivity for the public subnets.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/04-attach-internet-gateway.jpg alt="Attach the Internet Gateway to the VPC" style=width:65%></div><hr><h2 id=step-5-configure-the-public-route-table>Step 5. Configure the Public Route Table</h2><p>Next, configure routing for the public subnets.</p><p>Complete the following steps:</p><ol><li>Open <strong>Route Tables</strong>.</li><li>Select the route table associated with the VPC.</li><li>Rename it to <strong>EnterpriseHelpDesk-Public-RT</strong>.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/05-public-route-table.jpg alt="Configure the Public Route Table" style=width:65%></div><hr><h2 id=step-6-add-the-default-route>Step 6. Add the Default Route</h2><p>In the public route table:</p><ol><li>Choose <strong>Routes</strong>.</li><li>Choose <strong>Edit routes</strong>.</li><li>Choose <strong>Add route</strong>.</li><li>Enter the following values:</li></ol><table><thead><tr><th>Destination</th><th>Target</th></tr></thead><tbody><tr><td>0.0.0.0/0</td><td>EnterpriseHelpDesk-IGW</td></tr></tbody></table><ol start=5><li>Choose <strong>Save changes</strong>.</li></ol><p>This route allows resources in the public subnets to access the internet through the internet gateway.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/06-public-route.jpg alt="Add the Default Route to the Public Route Table" style=width:65%></div><hr><h2 id=step-7-associate-the-public-subnets>Step 7. Associate the Public Subnets</h2><p>Associate the public route table with the public subnets.</p><p>Complete the following steps:</p><ol><li>Choose the <strong>Subnet Associations</strong> tab.</li><li>Choose <strong>Edit subnet associations</strong>.</li><li>Select:<ul><li>Public-Subnet-A</li><li>Public-Subnet-B</li></ul></li><li>Choose <strong>Save associations</strong>.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/07-public-subnet-association.jpg alt="Associate the Public Subnets" style=width:65%></div><hr><h2 id=step-8-create-a-private-route-table>Step 8. Create a Private Route Table</h2><p>Create a dedicated route table for the private subnets.</p><p>Complete the following steps:</p><ol><li>Choose <strong>Create route table</strong>.</li><li>Enter the following name:</li></ol><p><strong>EnterpriseHelpDesk-Private-RT</strong></p><ol start=3><li>Select the project VPC.</li><li>Choose <strong>Create route table</strong>.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/08-private-route-table.jpg alt="Create a Private Route Table" style=width:65%></div><hr><h2 id=step-9-associate-the-private-subnets>Step 9. Associate the Private Subnets</h2><p>After creating the private route table:</p><ol><li>Choose <strong>Subnet Associations</strong>.</li><li>Choose <strong>Edit subnet associations</strong>.</li><li>Select:<ul><li>Private-Subnet-A</li><li>Private-Subnet-B</li></ul></li><li>Choose <strong>Save associations</strong>.</li></ol><p>Using a private route table ensures that resources such as Amazon RDS are not directly accessible from the internet.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/09-private-subnet-association.jpg alt="Associate the Private Subnets" style=width:65%></div><hr><h2 id=step-10-create-a-security-group-for-the-application-load-balancer>Step 10. Create a Security Group for the Application Load Balancer</h2><p>Open <strong>Security Groups</strong>.</p><p>Choose <strong>Create Security Group</strong>.</p><p>Create a security group for the Application Load Balancer with the following inbound rules:</p><table><thead><tr><th>Type</th><th>Port</th><th>Source</th></tr></thead><tbody><tr><td>HTTP</td><td>80</td><td>0.0.0.0/0</td></tr><tr><td>HTTPS</td><td>443</td><td>0.0.0.0/0</td></tr></tbody></table><p>After completing the configuration, choose <strong>Create Security Group</strong>.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/10-create-alb-security-group.jpg alt="Create a Security Group for the Application Load Balancer" style=width:65%></div><hr><h2 id=step-11-create-a-security-group-for-amazon-ec2>Step 11. Create a Security Group for Amazon EC2</h2><p>Create a new security group for the Amazon EC2 instances.</p><p>Allow access only from the Application Load Balancer to the application servers.</p><p>This configuration prevents direct internet access to the Amazon EC2 instances.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/11-create-ec2-security-group.jpg alt="Create a Security Group for Amazon EC2" style=width:65%></div><hr><h2 id=step-12-create-a-security-group-for-amazon-rds>Step 12. Create a Security Group for Amazon RDS</h2><p>Create a security group for the Amazon RDS for SQL Server database.</p><p>Allow database connections only from the Amazon EC2 instances or the AWS Elastic Beanstalk environment through the SQL Server port.</p><p>Do not allow direct access from the internet.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/12-create-rds-security-group.jpg alt="Create a Security Group for Amazon RDS" style=width:65%></div><hr><h1 id=result>Result</h1><p>After completing the Amazon VPC deployment, the environment includes:</p><ul><li>One Amazon VPC.</li><li>Two public subnets.</li><li>Two private subnets.</li><li>One internet gateway.</li><li>One public route table.</li><li>One private route table.</li><li>A security group for the Application Load Balancer.</li><li>A security group for the Amazon EC2 instances.</li><li>A security group for Amazon RDS.</li></ul><p>This network infrastructure will be used in the next sections to deploy <strong>Amazon RDS for SQL Server</strong> and the <strong>Enterprise HelpDesk</strong> application using <strong>AWS Elastic Beanstalk</strong>.</p><hr><h2 id=part-2-amazon-rds style="text-align:center;font-size:36px;margin:50px 0 30px">Part 2. Deploying the Database with Amazon RDS</h2><p>Amazon Relational Database Service (Amazon RDS) is a fully managed relational database service on AWS. In this workshop, Amazon RDS is used to deploy a <strong>Microsoft SQL Server</strong> database for the Enterprise HelpDesk application.</p><p>After completing this section, the database will be deployed in private subnets and will be accessible only to resources within the Amazon VPC through the security group configured in the previous section.</p><h3 id=step-1-create-a-db-subnet-group>Step 1. Create a DB Subnet Group</h3><p>A DB subnet group allows Amazon RDS to deploy the database across multiple private subnets, improving availability while ensuring that the database is not directly accessible from the internet.</p><p>Complete the following steps:</p><ol><li>Sign in to the <strong>AWS Management Console</strong>.</li><li>Search for and open the <strong>Amazon RDS</strong> service.</li><li>Choose <strong>Subnet groups</strong>.</li><li>Choose <strong>Create DB subnet group</strong>.</li><li>Enter <strong>EnterpriseHelpDesk-DBSubnetGroup</strong> as the name.</li><li>Select the <strong>EnterpriseHelpDesk-VPC</strong>.</li><li>Select the two private subnets created in the Amazon VPC section.</li><li>Choose <strong>Create</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/13-create-db-subnet-group.jpg target=_blank rel="noopener noreferrer"><img src=/images/workshop/13-create-db-subnet-group.jpg alt="Create a DB Subnet Group" title="Click the image to view the full size" style=width:65%;cursor:zoom-in;border-radius:6px></a><p style=margin-top:8px;font-size:14px;color:#666>Click the image to view the full size.</p></div><hr><h3 id=step-2-create-an-amazon-rds-database>Step 2. Create an Amazon RDS Database</h3><p>After creating the DB subnet group, create a new database.</p><p>Complete the following steps:</p><ol><li>Choose <strong>Databases</strong>.</li><li>Choose <strong>Create database</strong>.</li><li>Select <strong>Standard Create</strong>.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/14-create-database.jpg alt="Create an Amazon RDS Database" style=width:65%></div><hr><h3 id=step-3-select-microsoft-sql-server>Step 3. Select Microsoft SQL Server</h3><p>Continue configuring the database.</p><p>Complete the following steps:</p><ol><li>Select <strong>Microsoft SQL Server</strong>.</li><li>Choose the appropriate SQL Server engine version.</li><li>Select the <strong>Free tier</strong> or <strong>Dev/Test</strong> deployment template (if available).</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/15-select-sql-server-engine.jpg alt="Select the Microsoft SQL Server Engine" style=width:65%></div><hr><h3 id=step-4-configure-the-db-instance>Step 4. Configure the DB Instance</h3><p>Configure the database instance settings.</p><p>Complete the following steps:</p><ol><li>Enter the <strong>DB instance identifier</strong>.</li><li>Specify the <strong>Master username</strong>.</li><li>Enter and confirm the <strong>Master password</strong>.</li><li>Select an appropriate instance class.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/16-configure-db-instance.jpg alt="Configure the DB Instance" style=width:65%></div><hr><h3 id=step-5-configure-storage>Step 5. Configure Storage</h3><p>Configure the database storage settings.</p><p>Complete the following steps:</p><ol><li>Select the storage type.</li><li>Specify the allocated storage size.</li><li>Enable or disable <strong>Storage Autoscaling</strong> as needed.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/17-configure-storage.jpg alt="Configure Database Storage" style=width:65%></div><hr><h3 id=step-6-configure-networking>Step 6. Configure Networking</h3><p>Configure the network settings for the database.</p><p>Complete the following steps:</p><ol><li>Select <strong>EnterpriseHelpDesk-VPC</strong>.</li><li>Select <strong>EnterpriseHelpDesk-DBSubnetGroup</strong>.</li><li>Set <strong>Public access</strong> to <strong>No</strong>.</li><li>Keep the remaining settings at their default values.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/18-configure-network.jpg alt="Configure Database Networking" style=width:65%></div><hr><h3 id=step-7-select-the-security-group>Step 7. Select the Security Group</h3><p>Finally, configure the security group for the Amazon RDS database.</p><p>Complete the following steps:</p><ol><li>Select the security group created in the Amazon VPC section.</li><li>Review all configuration settings.</li><li>Choose <strong>Create database</strong> to begin provisioning the database.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/19-select-rds-security-group.png alt="Select the Amazon RDS Security Group" style=width:65%></div><hr><h2 id=part-3-aws-elastic-beanstalk style="text-align:center;font-size:36px;margin:50px 0 30px">Part 3. Deploying the Application with AWS Elastic Beanstalk</h2><p>AWS Elastic Beanstalk is an AWS service that simplifies application deployment and management without requiring you to manually provision and configure the underlying infrastructure. In this workshop, AWS Elastic Beanstalk is used to deploy the <strong>Enterprise HelpDesk</strong> application on the <strong>.NET</strong> platform and connect it to the <strong>Amazon RDS</strong> database created in the previous section.</p><p>After completing this section, the application will be successfully deployed and accessible through the URL provided by AWS Elastic Beanstalk.</p><hr><h3 id=step-1-create-the-service-role>Step 1. Create the Service Role</h3><p>The service role allows AWS Elastic Beanstalk to manage AWS resources and monitor the health of the deployment environment.</p><p>Complete the following steps:</p><ol><li>Sign in to the <strong>AWS Management Console</strong>.</li><li>Open the <strong>IAM</strong> service.</li><li>Choose <strong>Roles</strong>.</li><li>Choose <strong>Create role</strong>.</li><li>For <strong>Trusted entity type</strong>, select <strong>AWS service</strong>.</li><li>For <strong>Service or use case</strong>, select <strong>Elastic Beanstalk</strong>.</li><li>Choose <strong>Elastic Beanstalk – Environment</strong>.</li><li>Choose <strong>Next</strong>.</li><li>Verify that the following managed policies are attached:<ul><li><strong>AWSElasticBeanstalkEnhancedHealth</strong></li><li><strong>AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy</strong></li></ul></li><li>Name the role <strong>aws-elasticbeanstalk-service-role</strong>.</li><li>Choose <strong>Create role</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/20-create-service-role.jpg target=_blank><img src=/images/workshop/20-create-service-role.jpg alt="Create the Elastic Beanstalk Service Role" style=width:65%;cursor:zoom-in></a><p><i>Figure 20. Creating the Elastic Beanstalk service role.</i></p></div><hr><h3 id=step-2-create-the-ec2-instance-profile-role>Step 2. Create the EC2 Instance Profile Role</h3><p>The EC2 instance profile role allows the Amazon EC2 instances in the Elastic Beanstalk environment to access AWS services based on the assigned permissions.</p><p>Complete the following steps:</p><ol><li>In the <strong>IAM</strong> console, choose <strong>Roles</strong>.</li><li>Choose <strong>Create role</strong>.</li><li>Select <strong>AWS service</strong>.</li><li>Select <strong>Elastic Beanstalk</strong>.</li><li>Choose <strong>Elastic Beanstalk – Compute</strong>.</li><li>Keep the following default managed policies:<ul><li><strong>AWSElasticBeanstalkWebTier</strong></li><li><strong>AWSElasticBeanstalkWorkerTier</strong></li><li><strong>AWSElasticBeanstalkMulticontainerDocker</strong></li></ul></li><li>Name the role <strong>aws-elasticbeanstalk-ec2-role</strong>.</li><li>Choose <strong>Create role</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/21-create-ec2-role.jpg target=_blank><img src=/images/workshop/21-create-ec2-role.jpg alt="Create the EC2 Instance Profile Role" style=width:65%;cursor:zoom-in></a><p><i>Figure 21. Creating the EC2 instance profile role.</i></p></div><hr><h3 id=step-3-grant-permission-to-read-aws-secrets-manager>Step 3. Grant Permission to Read AWS Secrets Manager</h3><p>To allow the application to retrieve the database connection information from AWS Secrets Manager, grant the required permissions to the EC2 instance profile role.</p><p>Complete the following steps:</p><ol><li>Open the <strong>aws-elasticbeanstalk-ec2-role</strong> role.</li><li>Choose the <strong>Permissions</strong> tab.</li><li>Choose <strong>Add permissions</strong>.</li><li>Select <strong>Create inline policy</strong>.</li><li>Open the <strong>JSON</strong> tab.</li><li>Delete the default policy content.</li><li>Paste the prepared IAM policy.</li><li>Choose <strong>Next</strong>.</li><li>Complete the creation of the inline policy.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/22-create-inline-policy.jpg target=_blank><img src=/images/workshop/22-create-inline-policy.jpg alt="Create an Inline Policy" style=width:65%;cursor:zoom-in></a><p><i>Figure 22. Granting permission to access AWS Secrets Manager.</i></p></div><hr><h3 id=step-4-create-the-aws-elastic-beanstalk-application>Step 4. Create the AWS Elastic Beanstalk Application</h3><p>After completing the IAM configuration, create the Elastic Beanstalk application.</p><p>Complete the following steps:</p><ol><li>Open the <strong>AWS Elastic Beanstalk</strong> service.</li><li>Choose <strong>Create application</strong>.</li><li>Enter <strong>EnterpriseHelpDesk</strong> as the application name.</li><li>Under <strong>Application code</strong>, select <strong>Sample application</strong>.</li><li>Select <strong>aws-elasticbeanstalk-service-role</strong> as the <strong>Service role</strong>.</li><li>Select <strong>aws-elasticbeanstalk-ec2-role</strong> as the <strong>EC2 instance profile</strong>.</li><li>Choose <strong>Next</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/23-create-application.jpg target=_blank><img src=/images/workshop/23-create-application.jpg alt="Create an AWS Elastic Beanstalk Application" style=width:65%;cursor:zoom-in></a><p><i>Figure 23. Creating the AWS Elastic Beanstalk application.</i></p></div><hr><h3 id=step-5-configure-the-vpc>Step 5. Configure the VPC</h3><p>Next, configure the networking settings for the Elastic Beanstalk environment.</p><p>Complete the following steps:</p><ol><li>For <strong>VPC</strong>, select <strong>EnterpriseHelpDesk-VPC</strong>.</li><li>Wait for AWS to load the available subnets.</li><li>Keep the <strong>System default</strong> option.</li><li>Expand the <strong>Tags</strong> section.</li><li>Add the following tag:<ul><li><strong>Key:</strong> Project</li><li><strong>Value:</strong> EnterpriseHelpDesk</li></ul></li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/25-configure-vpc.jpg target=_blank><img src=/images/workshop/25-configure-vpc.jpg alt="Configure the VPC" style=width:65%;cursor:zoom-in></a><p><i>Figure 24. Configuring the VPC for the Elastic Beanstalk environment.</i></p></div><hr><h3 id=step-6-select-the-security-group>Step 6. Select the Security Group</h3><p>To secure the deployment environment, assign the security group created in the Amazon VPC section.</p><p>Complete the following steps:</p><ol><li>Choose <strong>Choose security groups</strong>.</li><li>Select <strong>EnterpriseHelpDesk-App-SG</strong>.</li><li>Choose <strong>Next</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/26-select-security-group.jpg target=_blank><img src=/images/workshop/26-select-security-group.jpg alt="Select the Security Group" style=width:65%;cursor:zoom-in></a><p><i>Figure 25. Selecting the security group.</i></p></div><hr><h3 id=step-7-configure-capacity>Step 7. Configure Capacity</h3><p>Configure the compute resources for the Elastic Beanstalk environment.</p><p>Complete the following steps:</p><ol><li>Keep the instance type as <strong>t3.micro</strong>.</li><li>If AWS automatically adds <strong>t3.small</strong>, remove that instance type.</li><li>Choose <strong>Next</strong> to continue.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/27-configure-capacity.jpg target=_blank><img src=/images/workshop/27-configure-capacity.jpg alt="Configure Capacity" style=width:65%;cursor:zoom-in></a><p><i>Figure 26. Configuring capacity.</i></p></div><hr><h3 id=step-8-deploy-the-application>Step 8. Deploy the Application</h3><p>After the environment has been created, deploy the Enterprise HelpDesk application.</p><p>Complete the following steps:</p><ol><li>Choose <strong>Upload and deploy</strong>.</li><li>Select the published <strong>.zip</strong> package of the Enterprise HelpDesk application.</li><li>Choose <strong>Deploy</strong>.</li><li>Wait for the deployment to complete.</li><li>Open the URL provided by AWS Elastic Beanstalk to verify that the application is running successfully.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/29-upload-and-deploy.jpg target=_blank><img src=/images/workshop/29-upload-and-deploy.jpg alt="Upload and Deploy the Application" style=width:65%;cursor:zoom-in></a><p><i>Figure 27. Uploading and deploying the application.</i></p></div></article><nav class=pager><a href=/en/6-workshop/09-cleanup/>← Clean Up Resources</a>
-<a href=/en/6-workshop/03-architecture/>Architecture →</a></nav><footer class=footer></footer></main></div><script src=/js/site.js defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Deployment | AWS Portfolio Workshop</title>
+<meta name="keywords" content="">
+<meta name="description" content="Deploying the Enterprise HelpDesk System on AWS">
+<meta name="author" content="">
+<link rel="canonical" href="https://long-28.github.io/en/6-workshop/04-deployment/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://long-28.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/6-workshop/04-deployment/">
+<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/6-workshop/04-deployment/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://long-28.github.io/en/6-workshop/04-deployment/">
+  <meta property="og:site_name" content="AWS Portfolio Workshop">
+  <meta property="og:title" content="Deployment">
+  <meta property="og:description" content="Deploying the Enterprise HelpDesk System on AWS">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="6-workshop">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Deployment">
+  <meta name="twitter:description" content="Deploying the Enterprise HelpDesk System on AWS">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Workshop",
+      "item": "https://long-28.github.io/en/6-workshop/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Deployment",
+      "item": "https://long-28.github.io/en/6-workshop/04-deployment/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Deployment",
+  "name": "Deployment",
+  "description": "Deploying the Enterprise HelpDesk System on AWS",
+  "keywords": [
+    
+  ],
+  "articleBody": "Deploying the Enterprise HelpDesk System on AWS In this section, you will build the network infrastructure for the Enterprise HelpDesk system using Amazon VPC. After completing this section, the environment will be ready for deploying the Amazon RDS for SQL Server database and the application using AWS Elastic Beanstalk.\nDeployment Sections Part 1. Amazon VPC Part 2. Amazon RDS Part 3. AWS Elastic Beanstalk Part 1. Building the Network Infrastructure with Amazon VPC Amazon Virtual Private Cloud (Amazon VPC) enables you to create an isolated virtual network on AWS for deploying your application resources. In this workshop, you will configure an Amazon VPC that includes public subnets, private subnets, an internet gateway, route tables, and security groups.\nStep 1. Create an Amazon VPC Sign in to the AWS Management Console.\nComplete the following steps:\nSearch for and open the Amazon VPC service. Choose Your VPCs. Choose Create VPC. Enter EnterpriseHelpDesk-VPC as the VPC name. Specify an appropriate IPv4 CIDR block. Choose Create VPC. After the VPC is created, it will serve as the isolated network for all resources used by the Enterprise HelpDesk system.\nStep 2. Create Public and Private Subnets After creating the VPC, create the required subnets.\nThis workshop uses the following subnets:\nPublic-Subnet-A Public-Subnet-B Private-Subnet-A Private-Subnet-B Separating public and private subnets improves security and follows a multi-tier architecture best practice on AWS.\nStep 3. Create an Internet Gateway To allow resources in the public subnets to access the internet, create an internet gateway.\nComplete the following steps:\nOpen the Amazon VPC console. Choose Internet Gateways. Choose Create internet gateway. Enter the following value: Property Value Name tag EnterpriseHelpDesk-IGW Choose Create internet gateway. After it is created, the internet gateway will be in the Available state, but it cannot be used until it is attached to a VPC.\nStep 4. Attach the Internet Gateway to the VPC After creating the internet gateway, attach it to the VPC.\nComplete the following steps:\nSelect the internet gateway you created. Choose Actions → Attach to VPC. Select EnterpriseHelpDesk-VPC. Choose Attach internet gateway. After this step, the internet gateway provides internet connectivity for the public subnets.\nStep 5. Configure the Public Route Table Next, configure routing for the public subnets.\nComplete the following steps:\nOpen Route Tables. Select the route table associated with the VPC. Rename it to EnterpriseHelpDesk-Public-RT. Step 6. Add the Default Route In the public route table:\nChoose Routes. Choose Edit routes. Choose Add route. Enter the following values: Destination Target 0.0.0.0/0 EnterpriseHelpDesk-IGW Choose Save changes. This route allows resources in the public subnets to access the internet through the internet gateway.\nStep 7. Associate the Public Subnets Associate the public route table with the public subnets.\nComplete the following steps:\nChoose the Subnet Associations tab. Choose Edit subnet associations. Select: Public-Subnet-A Public-Subnet-B Choose Save associations. Step 8. Create a Private Route Table Create a dedicated route table for the private subnets.\nComplete the following steps:\nChoose Create route table. Enter the following name: EnterpriseHelpDesk-Private-RT\nSelect the project VPC. Choose Create route table. Step 9. Associate the Private Subnets After creating the private route table:\nChoose Subnet Associations. Choose Edit subnet associations. Select: Private-Subnet-A Private-Subnet-B Choose Save associations. Using a private route table ensures that resources such as Amazon RDS are not directly accessible from the internet.\nStep 10. Create a Security Group for the Application Load Balancer Open Security Groups.\nChoose Create Security Group.\nCreate a security group for the Application Load Balancer with the following inbound rules:\nType Port Source HTTP 80 0.0.0.0/0 HTTPS 443 0.0.0.0/0 After completing the configuration, choose Create Security Group.\nStep 11. Create a Security Group for Amazon EC2 Create a new security group for the Amazon EC2 instances.\nAllow access only from the Application Load Balancer to the application servers.\nThis configuration prevents direct internet access to the Amazon EC2 instances.\nStep 12. Create a Security Group for Amazon RDS Create a security group for the Amazon RDS for SQL Server database.\nAllow database connections only from the Amazon EC2 instances or the AWS Elastic Beanstalk environment through the SQL Server port.\nDo not allow direct access from the internet.\nResult After completing the Amazon VPC deployment, the environment includes:\nOne Amazon VPC. Two public subnets. Two private subnets. One internet gateway. One public route table. One private route table. A security group for the Application Load Balancer. A security group for the Amazon EC2 instances. A security group for Amazon RDS. This network infrastructure will be used in the next sections to deploy Amazon RDS for SQL Server and the Enterprise HelpDesk application using AWS Elastic Beanstalk.\nPart 2. Deploying the Database with Amazon RDS Amazon Relational Database Service (Amazon RDS) is a fully managed relational database service on AWS. In this workshop, Amazon RDS is used to deploy a Microsoft SQL Server database for the Enterprise HelpDesk application.\nAfter completing this section, the database will be deployed in private subnets and will be accessible only to resources within the Amazon VPC through the security group configured in the previous section.\nStep 1. Create a DB Subnet Group A DB subnet group allows Amazon RDS to deploy the database across multiple private subnets, improving availability while ensuring that the database is not directly accessible from the internet.\nComplete the following steps:\nSign in to the AWS Management Console. Search for and open the Amazon RDS service. Choose Subnet groups. Choose Create DB subnet group. Enter EnterpriseHelpDesk-DBSubnetGroup as the name. Select the EnterpriseHelpDesk-VPC. Select the two private subnets created in the Amazon VPC section. Choose Create. Click the image to view the full size. Step 2. Create an Amazon RDS Database After creating the DB subnet group, create a new database.\nComplete the following steps:\nChoose Databases. Choose Create database. Select Standard Create. Step 3. Select Microsoft SQL Server Continue configuring the database.\nComplete the following steps:\nSelect Microsoft SQL Server. Choose the appropriate SQL Server engine version. Select the Free tier or Dev/Test deployment template (if available). Step 4. Configure the DB Instance Configure the database instance settings.\nComplete the following steps:\nEnter the DB instance identifier. Specify the Master username. Enter and confirm the Master password. Select an appropriate instance class. Step 5. Configure Storage Configure the database storage settings.\nComplete the following steps:\nSelect the storage type. Specify the allocated storage size. Enable or disable Storage Autoscaling as needed. Step 6. Configure Networking Configure the network settings for the database.\nComplete the following steps:\nSelect EnterpriseHelpDesk-VPC. Select EnterpriseHelpDesk-DBSubnetGroup. Set Public access to No. Keep the remaining settings at their default values. Step 7. Select the Security Group Finally, configure the security group for the Amazon RDS database.\nComplete the following steps:\nSelect the security group created in the Amazon VPC section. Review all configuration settings. Choose Create database to begin provisioning the database. Part 3. Deploying the Application with AWS Elastic Beanstalk AWS Elastic Beanstalk is an AWS service that simplifies application deployment and management without requiring you to manually provision and configure the underlying infrastructure. In this workshop, AWS Elastic Beanstalk is used to deploy the Enterprise HelpDesk application on the .NET platform and connect it to the Amazon RDS database created in the previous section.\nAfter completing this section, the application will be successfully deployed and accessible through the URL provided by AWS Elastic Beanstalk.\nStep 1. Create the Service Role The service role allows AWS Elastic Beanstalk to manage AWS resources and monitor the health of the deployment environment.\nComplete the following steps:\nSign in to the AWS Management Console. Open the IAM service. Choose Roles. Choose Create role. For Trusted entity type, select AWS service. For Service or use case, select Elastic Beanstalk. Choose Elastic Beanstalk – Environment. Choose Next. Verify that the following managed policies are attached: AWSElasticBeanstalkEnhancedHealth AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy Name the role aws-elasticbeanstalk-service-role. Choose Create role. Figure 20. Creating the Elastic Beanstalk service role.\nStep 2. Create the EC2 Instance Profile Role The EC2 instance profile role allows the Amazon EC2 instances in the Elastic Beanstalk environment to access AWS services based on the assigned permissions.\nComplete the following steps:\nIn the IAM console, choose Roles. Choose Create role. Select AWS service. Select Elastic Beanstalk. Choose Elastic Beanstalk – Compute. Keep the following default managed policies: AWSElasticBeanstalkWebTier AWSElasticBeanstalkWorkerTier AWSElasticBeanstalkMulticontainerDocker Name the role aws-elasticbeanstalk-ec2-role. Choose Create role. Figure 21. Creating the EC2 instance profile role.\nStep 3. Grant Permission to Read AWS Secrets Manager To allow the application to retrieve the database connection information from AWS Secrets Manager, grant the required permissions to the EC2 instance profile role.\nComplete the following steps:\nOpen the aws-elasticbeanstalk-ec2-role role. Choose the Permissions tab. Choose Add permissions. Select Create inline policy. Open the JSON tab. Delete the default policy content. Paste the prepared IAM policy. Choose Next. Complete the creation of the inline policy. Figure 22. Granting permission to access AWS Secrets Manager.\nStep 4. Create the AWS Elastic Beanstalk Application After completing the IAM configuration, create the Elastic Beanstalk application.\nComplete the following steps:\nOpen the AWS Elastic Beanstalk service. Choose Create application. Enter EnterpriseHelpDesk as the application name. Under Application code, select Sample application. Select aws-elasticbeanstalk-service-role as the Service role. Select aws-elasticbeanstalk-ec2-role as the EC2 instance profile. Choose Next. Figure 23. Creating the AWS Elastic Beanstalk application.\nStep 5. Configure the VPC Next, configure the networking settings for the Elastic Beanstalk environment.\nComplete the following steps:\nFor VPC, select EnterpriseHelpDesk-VPC. Wait for AWS to load the available subnets. Keep the System default option. Expand the Tags section. Add the following tag: Key: Project Value: EnterpriseHelpDesk Figure 24. Configuring the VPC for the Elastic Beanstalk environment.\nStep 6. Select the Security Group To secure the deployment environment, assign the security group created in the Amazon VPC section.\nComplete the following steps:\nChoose Choose security groups. Select EnterpriseHelpDesk-App-SG. Choose Next. Figure 25. Selecting the security group.\nStep 7. Configure Capacity Configure the compute resources for the Elastic Beanstalk environment.\nComplete the following steps:\nKeep the instance type as t3.micro. If AWS automatically adds t3.small, remove that instance type. Choose Next to continue. Figure 26. Configuring capacity.\nStep 8. Deploy the Application After the environment has been created, deploy the Enterprise HelpDesk application.\nComplete the following steps:\nChoose Upload and deploy. Select the published .zip package of the Enterprise HelpDesk application. Choose Deploy. Wait for the deployment to complete. Open the URL provided by AWS Elastic Beanstalk to verify that the application is running successfully. Figure 27. Uploading and deploying the application.\n",
+  "wordCount" : "1742",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://long-28.github.io/en/6-workshop/04-deployment/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AWS Portfolio Workshop",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://long-28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://long-28.github.io/en/" accesskey="h" title="AWS Portfolio Workshop (Alt + H)">AWS Portfolio Workshop</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://long-28.github.io/vi/" title="Tiếng Việt"
+                                aria-label="Tiếng Việt">Vi</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Deployment
+    </h1>
+    <div class="post-description">
+      Deploying the Enterprise HelpDesk System on AWS
+    </div>
+    <div class="post-meta">
+
+<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://long-28.github.io/vi/6-workshop/04-deployment/">Vi</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="deploying-the-enterprise-helpdesk-system-on-aws">Deploying the Enterprise HelpDesk System on AWS<a hidden class="anchor" aria-hidden="true" href="#deploying-the-enterprise-helpdesk-system-on-aws">#</a></h1>
+<p>In this section, you will build the network infrastructure for the Enterprise HelpDesk system using <strong>Amazon VPC</strong>. After completing this section, the environment will be ready for deploying the <strong>Amazon RDS for SQL Server</strong> database and the application using <strong>AWS Elastic Beanstalk</strong>.</p>
+<hr>
+<h2 id="deployment-sections">Deployment Sections<a hidden class="anchor" aria-hidden="true" href="#deployment-sections">#</a></h2>
+<ul>
+<li><a href="/en/6-workshop/04-deployment/#part-1-amazon-vpc">Part 1. Amazon VPC</a></li>
+<li><a href="/en/6-workshop/04-deployment/#part-2-amazon-rds">Part 2. Amazon RDS</a></li>
+<li><a href="/en/6-workshop/04-deployment/#part-3-aws-elastic-beanstalk">Part 3. AWS Elastic Beanstalk</a></li>
+</ul>
+<hr>
+<h2 id="part-1-amazon-vpc"
+    style="text-align:center; font-size:36px; margin:50px 0 30px 0;">
+    Part 1. Building the Network Infrastructure with Amazon VPC
+</h2>
+<p>Amazon Virtual Private Cloud (Amazon VPC) enables you to create an isolated virtual network on AWS for deploying your application resources. In this workshop, you will configure an Amazon VPC that includes public subnets, private subnets, an internet gateway, route tables, and security groups.</p>
+<hr>
+<h2 id="step-1-create-an-amazon-vpc">Step 1. Create an Amazon VPC<a hidden class="anchor" aria-hidden="true" href="#step-1-create-an-amazon-vpc">#</a></h2>
+<p>Sign in to the <strong>AWS Management Console</strong>.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Search for and open the <strong>Amazon VPC</strong> service.</li>
+<li>Choose <strong>Your VPCs</strong>.</li>
+<li>Choose <strong>Create VPC</strong>.</li>
+<li>Enter <strong>EnterpriseHelpDesk-VPC</strong> as the VPC name.</li>
+<li>Specify an appropriate IPv4 CIDR block.</li>
+<li>Choose <strong>Create VPC</strong>.</li>
+</ol>
+<p>After the VPC is created, it will serve as the isolated network for all resources used by the Enterprise HelpDesk system.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/01-create-vpc.jpg"
+         alt="Create an Amazon VPC"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-2-create-public-and-private-subnets">Step 2. Create Public and Private Subnets<a hidden class="anchor" aria-hidden="true" href="#step-2-create-public-and-private-subnets">#</a></h2>
+<p>After creating the VPC, create the required subnets.</p>
+<p>This workshop uses the following subnets:</p>
+<ul>
+<li>Public-Subnet-A</li>
+<li>Public-Subnet-B</li>
+<li>Private-Subnet-A</li>
+<li>Private-Subnet-B</li>
+</ul>
+<p>Separating public and private subnets improves security and follows a multi-tier architecture best practice on AWS.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/02-create-subnets.jpg"
+         alt="Create Public and Private Subnets"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-3-create-an-internet-gateway">Step 3. Create an Internet Gateway<a hidden class="anchor" aria-hidden="true" href="#step-3-create-an-internet-gateway">#</a></h2>
+<p>To allow resources in the public subnets to access the internet, create an internet gateway.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Open the <strong>Amazon VPC</strong> console.</li>
+<li>Choose <strong>Internet Gateways</strong>.</li>
+<li>Choose <strong>Create internet gateway</strong>.</li>
+<li>Enter the following value:</li>
+</ol>
+<table>
+	<thead>
+			<tr>
+					<th>Property</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Name tag</td>
+					<td>EnterpriseHelpDesk-IGW</td>
+			</tr>
+	</tbody>
+</table>
+<ol start="5">
+<li>Choose <strong>Create internet gateway</strong>.</li>
+</ol>
+<p>After it is created, the internet gateway will be in the <strong>Available</strong> state, but it cannot be used until it is attached to a VPC.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/03-create-internet-gateway.jpg"
+         alt="Create an Internet Gateway"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-4-attach-the-internet-gateway-to-the-vpc">Step 4. Attach the Internet Gateway to the VPC<a hidden class="anchor" aria-hidden="true" href="#step-4-attach-the-internet-gateway-to-the-vpc">#</a></h2>
+<p>After creating the internet gateway, attach it to the VPC.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Select the internet gateway you created.</li>
+<li>Choose <strong>Actions → Attach to VPC</strong>.</li>
+<li>Select <strong>EnterpriseHelpDesk-VPC</strong>.</li>
+<li>Choose <strong>Attach internet gateway</strong>.</li>
+</ol>
+<p>After this step, the internet gateway provides internet connectivity for the public subnets.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/04-attach-internet-gateway.jpg"
+         alt="Attach the Internet Gateway to the VPC"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-5-configure-the-public-route-table">Step 5. Configure the Public Route Table<a hidden class="anchor" aria-hidden="true" href="#step-5-configure-the-public-route-table">#</a></h2>
+<p>Next, configure routing for the public subnets.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Open <strong>Route Tables</strong>.</li>
+<li>Select the route table associated with the VPC.</li>
+<li>Rename it to <strong>EnterpriseHelpDesk-Public-RT</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/05-public-route-table.jpg"
+         alt="Configure the Public Route Table"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-6-add-the-default-route">Step 6. Add the Default Route<a hidden class="anchor" aria-hidden="true" href="#step-6-add-the-default-route">#</a></h2>
+<p>In the public route table:</p>
+<ol>
+<li>Choose <strong>Routes</strong>.</li>
+<li>Choose <strong>Edit routes</strong>.</li>
+<li>Choose <strong>Add route</strong>.</li>
+<li>Enter the following values:</li>
+</ol>
+<table>
+	<thead>
+			<tr>
+					<th>Destination</th>
+					<th>Target</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>0.0.0.0/0</td>
+					<td>EnterpriseHelpDesk-IGW</td>
+			</tr>
+	</tbody>
+</table>
+<ol start="5">
+<li>Choose <strong>Save changes</strong>.</li>
+</ol>
+<p>This route allows resources in the public subnets to access the internet through the internet gateway.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/06-public-route.jpg"
+         alt="Add the Default Route to the Public Route Table"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-7-associate-the-public-subnets">Step 7. Associate the Public Subnets<a hidden class="anchor" aria-hidden="true" href="#step-7-associate-the-public-subnets">#</a></h2>
+<p>Associate the public route table with the public subnets.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Choose the <strong>Subnet Associations</strong> tab.</li>
+<li>Choose <strong>Edit subnet associations</strong>.</li>
+<li>Select:
+<ul>
+<li>Public-Subnet-A</li>
+<li>Public-Subnet-B</li>
+</ul>
+</li>
+<li>Choose <strong>Save associations</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/07-public-subnet-association.jpg"
+         alt="Associate the Public Subnets"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-8-create-a-private-route-table">Step 8. Create a Private Route Table<a hidden class="anchor" aria-hidden="true" href="#step-8-create-a-private-route-table">#</a></h2>
+<p>Create a dedicated route table for the private subnets.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Choose <strong>Create route table</strong>.</li>
+<li>Enter the following name:</li>
+</ol>
+<p><strong>EnterpriseHelpDesk-Private-RT</strong></p>
+<ol start="3">
+<li>Select the project VPC.</li>
+<li>Choose <strong>Create route table</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/08-private-route-table.jpg"
+         alt="Create a Private Route Table"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-9-associate-the-private-subnets">Step 9. Associate the Private Subnets<a hidden class="anchor" aria-hidden="true" href="#step-9-associate-the-private-subnets">#</a></h2>
+<p>After creating the private route table:</p>
+<ol>
+<li>Choose <strong>Subnet Associations</strong>.</li>
+<li>Choose <strong>Edit subnet associations</strong>.</li>
+<li>Select:
+<ul>
+<li>Private-Subnet-A</li>
+<li>Private-Subnet-B</li>
+</ul>
+</li>
+<li>Choose <strong>Save associations</strong>.</li>
+</ol>
+<p>Using a private route table ensures that resources such as Amazon RDS are not directly accessible from the internet.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/09-private-subnet-association.jpg"
+         alt="Associate the Private Subnets"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-10-create-a-security-group-for-the-application-load-balancer">Step 10. Create a Security Group for the Application Load Balancer<a hidden class="anchor" aria-hidden="true" href="#step-10-create-a-security-group-for-the-application-load-balancer">#</a></h2>
+<p>Open <strong>Security Groups</strong>.</p>
+<p>Choose <strong>Create Security Group</strong>.</p>
+<p>Create a security group for the Application Load Balancer with the following inbound rules:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Type</th>
+					<th>Port</th>
+					<th>Source</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>HTTP</td>
+					<td>80</td>
+					<td>0.0.0.0/0</td>
+			</tr>
+			<tr>
+					<td>HTTPS</td>
+					<td>443</td>
+					<td>0.0.0.0/0</td>
+			</tr>
+	</tbody>
+</table>
+<p>After completing the configuration, choose <strong>Create Security Group</strong>.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/10-create-alb-security-group.jpg"
+         alt="Create a Security Group for the Application Load Balancer"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-11-create-a-security-group-for-amazon-ec2">Step 11. Create a Security Group for Amazon EC2<a hidden class="anchor" aria-hidden="true" href="#step-11-create-a-security-group-for-amazon-ec2">#</a></h2>
+<p>Create a new security group for the Amazon EC2 instances.</p>
+<p>Allow access only from the Application Load Balancer to the application servers.</p>
+<p>This configuration prevents direct internet access to the Amazon EC2 instances.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/11-create-ec2-security-group.jpg"
+         alt="Create a Security Group for Amazon EC2"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="step-12-create-a-security-group-for-amazon-rds">Step 12. Create a Security Group for Amazon RDS<a hidden class="anchor" aria-hidden="true" href="#step-12-create-a-security-group-for-amazon-rds">#</a></h2>
+<p>Create a security group for the Amazon RDS for SQL Server database.</p>
+<p>Allow database connections only from the Amazon EC2 instances or the AWS Elastic Beanstalk environment through the SQL Server port.</p>
+<p>Do not allow direct access from the internet.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/12-create-rds-security-group.jpg"
+         alt="Create a Security Group for Amazon RDS"
+         style="width:65%;">
+</div>
+<hr>
+<h1 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">#</a></h1>
+<p>After completing the Amazon VPC deployment, the environment includes:</p>
+<ul>
+<li>One Amazon VPC.</li>
+<li>Two public subnets.</li>
+<li>Two private subnets.</li>
+<li>One internet gateway.</li>
+<li>One public route table.</li>
+<li>One private route table.</li>
+<li>A security group for the Application Load Balancer.</li>
+<li>A security group for the Amazon EC2 instances.</li>
+<li>A security group for Amazon RDS.</li>
+</ul>
+<p>This network infrastructure will be used in the next sections to deploy <strong>Amazon RDS for SQL Server</strong> and the <strong>Enterprise HelpDesk</strong> application using <strong>AWS Elastic Beanstalk</strong>.</p>
+<hr>
+<h2 id="part-2-amazon-rds"
+    style="text-align:center; font-size:36px; margin:50px 0 30px 0;">
+    Part 2. Deploying the Database with Amazon RDS
+</h2>
+<p>Amazon Relational Database Service (Amazon RDS) is a fully managed relational database service on AWS. In this workshop, Amazon RDS is used to deploy a <strong>Microsoft SQL Server</strong> database for the Enterprise HelpDesk application.</p>
+<p>After completing this section, the database will be deployed in private subnets and will be accessible only to resources within the Amazon VPC through the security group configured in the previous section.</p>
+<h3 id="step-1-create-a-db-subnet-group">Step 1. Create a DB Subnet Group<a hidden class="anchor" aria-hidden="true" href="#step-1-create-a-db-subnet-group">#</a></h3>
+<p>A DB subnet group allows Amazon RDS to deploy the database across multiple private subnets, improving availability while ensuring that the database is not directly accessible from the internet.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Sign in to the <strong>AWS Management Console</strong>.</li>
+<li>Search for and open the <strong>Amazon RDS</strong> service.</li>
+<li>Choose <strong>Subnet groups</strong>.</li>
+<li>Choose <strong>Create DB subnet group</strong>.</li>
+<li>Enter <strong>EnterpriseHelpDesk-DBSubnetGroup</strong> as the name.</li>
+<li>Select the <strong>EnterpriseHelpDesk-VPC</strong>.</li>
+<li>Select the two private subnets created in the Amazon VPC section.</li>
+<li>Choose <strong>Create</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/13-create-db-subnet-group.jpg"
+       target="_blank"
+       rel="noopener noreferrer">
+        <img src="/images/workshop/13-create-db-subnet-group.jpg"
+             alt="Create a DB Subnet Group"
+             title="Click the image to view the full size"
+             style="width:65%; cursor:zoom-in; border-radius:6px;">
+    </a>
+    <p style="margin-top:8px; font-size:14px; color:#666;">
+        Click the image to view the full size.
+    </p>
+</div>
+<hr>
+<h3 id="step-2-create-an-amazon-rds-database">Step 2. Create an Amazon RDS Database<a hidden class="anchor" aria-hidden="true" href="#step-2-create-an-amazon-rds-database">#</a></h3>
+<p>After creating the DB subnet group, create a new database.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Choose <strong>Databases</strong>.</li>
+<li>Choose <strong>Create database</strong>.</li>
+<li>Select <strong>Standard Create</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/14-create-database.jpg"
+         alt="Create an Amazon RDS Database"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="step-3-select-microsoft-sql-server">Step 3. Select Microsoft SQL Server<a hidden class="anchor" aria-hidden="true" href="#step-3-select-microsoft-sql-server">#</a></h3>
+<p>Continue configuring the database.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Select <strong>Microsoft SQL Server</strong>.</li>
+<li>Choose the appropriate SQL Server engine version.</li>
+<li>Select the <strong>Free tier</strong> or <strong>Dev/Test</strong> deployment template (if available).</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/15-select-sql-server-engine.jpg"
+         alt="Select the Microsoft SQL Server Engine"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="step-4-configure-the-db-instance">Step 4. Configure the DB Instance<a hidden class="anchor" aria-hidden="true" href="#step-4-configure-the-db-instance">#</a></h3>
+<p>Configure the database instance settings.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Enter the <strong>DB instance identifier</strong>.</li>
+<li>Specify the <strong>Master username</strong>.</li>
+<li>Enter and confirm the <strong>Master password</strong>.</li>
+<li>Select an appropriate instance class.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/16-configure-db-instance.jpg"
+         alt="Configure the DB Instance"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="step-5-configure-storage">Step 5. Configure Storage<a hidden class="anchor" aria-hidden="true" href="#step-5-configure-storage">#</a></h3>
+<p>Configure the database storage settings.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Select the storage type.</li>
+<li>Specify the allocated storage size.</li>
+<li>Enable or disable <strong>Storage Autoscaling</strong> as needed.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/17-configure-storage.jpg"
+         alt="Configure Database Storage"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="step-6-configure-networking">Step 6. Configure Networking<a hidden class="anchor" aria-hidden="true" href="#step-6-configure-networking">#</a></h3>
+<p>Configure the network settings for the database.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Select <strong>EnterpriseHelpDesk-VPC</strong>.</li>
+<li>Select <strong>EnterpriseHelpDesk-DBSubnetGroup</strong>.</li>
+<li>Set <strong>Public access</strong> to <strong>No</strong>.</li>
+<li>Keep the remaining settings at their default values.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/18-configure-network.jpg"
+         alt="Configure Database Networking"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="step-7-select-the-security-group">Step 7. Select the Security Group<a hidden class="anchor" aria-hidden="true" href="#step-7-select-the-security-group">#</a></h3>
+<p>Finally, configure the security group for the Amazon RDS database.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Select the security group created in the Amazon VPC section.</li>
+<li>Review all configuration settings.</li>
+<li>Choose <strong>Create database</strong> to begin provisioning the database.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/19-select-rds-security-group.png"
+         alt="Select the Amazon RDS Security Group"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="part-3-aws-elastic-beanstalk"
+    style="text-align:center; font-size:36px; margin:50px 0 30px 0;">
+    Part 3. Deploying the Application with AWS Elastic Beanstalk
+</h2>
+<p>AWS Elastic Beanstalk is an AWS service that simplifies application deployment and management without requiring you to manually provision and configure the underlying infrastructure. In this workshop, AWS Elastic Beanstalk is used to deploy the <strong>Enterprise HelpDesk</strong> application on the <strong>.NET</strong> platform and connect it to the <strong>Amazon RDS</strong> database created in the previous section.</p>
+<p>After completing this section, the application will be successfully deployed and accessible through the URL provided by AWS Elastic Beanstalk.</p>
+<hr>
+<h3 id="step-1-create-the-service-role">Step 1. Create the Service Role<a hidden class="anchor" aria-hidden="true" href="#step-1-create-the-service-role">#</a></h3>
+<p>The service role allows AWS Elastic Beanstalk to manage AWS resources and monitor the health of the deployment environment.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Sign in to the <strong>AWS Management Console</strong>.</li>
+<li>Open the <strong>IAM</strong> service.</li>
+<li>Choose <strong>Roles</strong>.</li>
+<li>Choose <strong>Create role</strong>.</li>
+<li>For <strong>Trusted entity type</strong>, select <strong>AWS service</strong>.</li>
+<li>For <strong>Service or use case</strong>, select <strong>Elastic Beanstalk</strong>.</li>
+<li>Choose <strong>Elastic Beanstalk – Environment</strong>.</li>
+<li>Choose <strong>Next</strong>.</li>
+<li>Verify that the following managed policies are attached:
+<ul>
+<li><strong>AWSElasticBeanstalkEnhancedHealth</strong></li>
+<li><strong>AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy</strong></li>
+</ul>
+</li>
+<li>Name the role <strong>aws-elasticbeanstalk-service-role</strong>.</li>
+<li>Choose <strong>Create role</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/20-create-service-role.jpg" target="_blank">
+        <img src="/images/workshop/20-create-service-role.jpg"
+             alt="Create the Elastic Beanstalk Service Role"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Figure 20. Creating the Elastic Beanstalk service role.</i></p>
+</div>
+<hr>
+<h3 id="step-2-create-the-ec2-instance-profile-role">Step 2. Create the EC2 Instance Profile Role<a hidden class="anchor" aria-hidden="true" href="#step-2-create-the-ec2-instance-profile-role">#</a></h3>
+<p>The EC2 instance profile role allows the Amazon EC2 instances in the Elastic Beanstalk environment to access AWS services based on the assigned permissions.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>In the <strong>IAM</strong> console, choose <strong>Roles</strong>.</li>
+<li>Choose <strong>Create role</strong>.</li>
+<li>Select <strong>AWS service</strong>.</li>
+<li>Select <strong>Elastic Beanstalk</strong>.</li>
+<li>Choose <strong>Elastic Beanstalk – Compute</strong>.</li>
+<li>Keep the following default managed policies:
+<ul>
+<li><strong>AWSElasticBeanstalkWebTier</strong></li>
+<li><strong>AWSElasticBeanstalkWorkerTier</strong></li>
+<li><strong>AWSElasticBeanstalkMulticontainerDocker</strong></li>
+</ul>
+</li>
+<li>Name the role <strong>aws-elasticbeanstalk-ec2-role</strong>.</li>
+<li>Choose <strong>Create role</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/21-create-ec2-role.jpg" target="_blank">
+        <img src="/images/workshop/21-create-ec2-role.jpg"
+             alt="Create the EC2 Instance Profile Role"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Figure 21. Creating the EC2 instance profile role.</i></p>
+</div>
+<hr>
+<h3 id="step-3-grant-permission-to-read-aws-secrets-manager">Step 3. Grant Permission to Read AWS Secrets Manager<a hidden class="anchor" aria-hidden="true" href="#step-3-grant-permission-to-read-aws-secrets-manager">#</a></h3>
+<p>To allow the application to retrieve the database connection information from AWS Secrets Manager, grant the required permissions to the EC2 instance profile role.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Open the <strong>aws-elasticbeanstalk-ec2-role</strong> role.</li>
+<li>Choose the <strong>Permissions</strong> tab.</li>
+<li>Choose <strong>Add permissions</strong>.</li>
+<li>Select <strong>Create inline policy</strong>.</li>
+<li>Open the <strong>JSON</strong> tab.</li>
+<li>Delete the default policy content.</li>
+<li>Paste the prepared IAM policy.</li>
+<li>Choose <strong>Next</strong>.</li>
+<li>Complete the creation of the inline policy.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/22-create-inline-policy.jpg" target="_blank">
+        <img src="/images/workshop/22-create-inline-policy.jpg"
+             alt="Create an Inline Policy"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Figure 22. Granting permission to access AWS Secrets Manager.</i></p>
+</div>
+<hr>
+<h3 id="step-4-create-the-aws-elastic-beanstalk-application">Step 4. Create the AWS Elastic Beanstalk Application<a hidden class="anchor" aria-hidden="true" href="#step-4-create-the-aws-elastic-beanstalk-application">#</a></h3>
+<p>After completing the IAM configuration, create the Elastic Beanstalk application.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Open the <strong>AWS Elastic Beanstalk</strong> service.</li>
+<li>Choose <strong>Create application</strong>.</li>
+<li>Enter <strong>EnterpriseHelpDesk</strong> as the application name.</li>
+<li>Under <strong>Application code</strong>, select <strong>Sample application</strong>.</li>
+<li>Select <strong>aws-elasticbeanstalk-service-role</strong> as the <strong>Service role</strong>.</li>
+<li>Select <strong>aws-elasticbeanstalk-ec2-role</strong> as the <strong>EC2 instance profile</strong>.</li>
+<li>Choose <strong>Next</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/23-create-application.jpg" target="_blank">
+        <img src="/images/workshop/23-create-application.jpg"
+             alt="Create an AWS Elastic Beanstalk Application"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Figure 23. Creating the AWS Elastic Beanstalk application.</i></p>
+</div>
+<hr>
+<h3 id="step-5-configure-the-vpc">Step 5. Configure the VPC<a hidden class="anchor" aria-hidden="true" href="#step-5-configure-the-vpc">#</a></h3>
+<p>Next, configure the networking settings for the Elastic Beanstalk environment.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>For <strong>VPC</strong>, select <strong>EnterpriseHelpDesk-VPC</strong>.</li>
+<li>Wait for AWS to load the available subnets.</li>
+<li>Keep the <strong>System default</strong> option.</li>
+<li>Expand the <strong>Tags</strong> section.</li>
+<li>Add the following tag:
+<ul>
+<li><strong>Key:</strong> Project</li>
+<li><strong>Value:</strong> EnterpriseHelpDesk</li>
+</ul>
+</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/25-configure-vpc.jpg" target="_blank">
+        <img src="/images/workshop/25-configure-vpc.jpg"
+             alt="Configure the VPC"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Figure 24. Configuring the VPC for the Elastic Beanstalk environment.</i></p>
+</div>
+<hr>
+<h3 id="step-6-select-the-security-group">Step 6. Select the Security Group<a hidden class="anchor" aria-hidden="true" href="#step-6-select-the-security-group">#</a></h3>
+<p>To secure the deployment environment, assign the security group created in the Amazon VPC section.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Choose <strong>Choose security groups</strong>.</li>
+<li>Select <strong>EnterpriseHelpDesk-App-SG</strong>.</li>
+<li>Choose <strong>Next</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/26-select-security-group.jpg" target="_blank">
+        <img src="/images/workshop/26-select-security-group.jpg"
+             alt="Select the Security Group"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Figure 25. Selecting the security group.</i></p>
+</div>
+<hr>
+<h3 id="step-7-configure-capacity">Step 7. Configure Capacity<a hidden class="anchor" aria-hidden="true" href="#step-7-configure-capacity">#</a></h3>
+<p>Configure the compute resources for the Elastic Beanstalk environment.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Keep the instance type as <strong>t3.micro</strong>.</li>
+<li>If AWS automatically adds <strong>t3.small</strong>, remove that instance type.</li>
+<li>Choose <strong>Next</strong> to continue.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/27-configure-capacity.jpg" target="_blank">
+        <img src="/images/workshop/27-configure-capacity.jpg"
+             alt="Configure Capacity"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Figure 26. Configuring capacity.</i></p>
+</div>
+<hr>
+<h3 id="step-8-deploy-the-application">Step 8. Deploy the Application<a hidden class="anchor" aria-hidden="true" href="#step-8-deploy-the-application">#</a></h3>
+<p>After the environment has been created, deploy the Enterprise HelpDesk application.</p>
+<p>Complete the following steps:</p>
+<ol>
+<li>Choose <strong>Upload and deploy</strong>.</li>
+<li>Select the published <strong>.zip</strong> package of the Enterprise HelpDesk application.</li>
+<li>Choose <strong>Deploy</strong>.</li>
+<li>Wait for the deployment to complete.</li>
+<li>Open the URL provided by AWS Elastic Beanstalk to verify that the application is running successfully.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/29-upload-and-deploy.jpg" target="_blank">
+        <img src="/images/workshop/29-upload-and-deploy.jpg"
+             alt="Upload and Deploy the Application"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Figure 27. Uploading and deploying the application.</i></p>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://long-28.github.io/en/">AWS Portfolio Workshop</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

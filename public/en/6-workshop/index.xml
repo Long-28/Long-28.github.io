@@ -1,9 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workshop on AWS Portfolio Workshop</title><link>/en/6-workshop/</link><description>Recent content in Workshop on AWS Portfolio Workshop</description><generator>Hugo</generator><language>en-US</language><atom:link href="/en/6-workshop/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/en/6-workshop/01-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/6-workshop/01-overview/</guid><description>&lt;h1 id="overview"&gt;Overview&lt;/h1&gt;
-&lt;p&gt;This workshop provides a step-by-step guide to deploying the &lt;strong&gt;Enterprise HelpDesk&lt;/strong&gt; system on &lt;strong&gt;Amazon Web Services (AWS)&lt;/strong&gt;, covering the complete deployment process from building the network infrastructure to deploying the application, monitoring the environment, and optimizing AWS resources.&lt;/p&gt;</description></item><item><title>Prerequisites</title><link>/en/6-workshop/02-prerequisites/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/6-workshop/02-prerequisites/</guid><description>&lt;h1 id="prerequisites"&gt;Prerequisites&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Workshop on AWS Portfolio Workshop</title>
+    <link>https://long-28.github.io/en/6-workshop/</link>
+    <description>Recent content in Workshop on AWS Portfolio Workshop</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <atom:link href="https://long-28.github.io/en/6-workshop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Overview</title>
+      <link>https://long-28.github.io/en/6-workshop/01-overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/en/6-workshop/01-overview/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;This workshop provides a step-by-step guide to deploying the &lt;strong&gt;Enterprise HelpDesk&lt;/strong&gt; system on &lt;strong&gt;Amazon Web Services (AWS)&lt;/strong&gt;, covering the complete deployment process from building the network infrastructure to deploying the application, monitoring the environment, and optimizing AWS resources.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Prerequisites</title>
+      <link>https://long-28.github.io/en/6-workshop/02-prerequisites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/en/6-workshop/02-prerequisites/</guid>
+      <description>&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
 &lt;p&gt;Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.&lt;/p&gt;
-&lt;h2 id="1-aws-account"&gt;1. AWS Account&lt;/h2&gt;
-&lt;p&gt;You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.&lt;/p&gt;</description></item><item><title>Architecture</title><link>/en/6-workshop/03-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/6-workshop/03-architecture/</guid><description>&lt;h2 id="architecture"&gt;Architecture&lt;/h2&gt;
-&lt;p&gt;The diagram below presents an AWS application architecture using Amazon CloudFront, AWS WAF, an Application Load Balancer, Amazon EC2, Amazon RDS for SQL Server, and supporting security and monitoring services.&lt;/p&gt;</description></item><item><title>Deployment</title><link>/en/6-workshop/04-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/6-workshop/04-deployment/</guid><description>&lt;h1 id="deploying-the-enterprise-helpdesk-system-on-aws"&gt;Deploying the Enterprise HelpDesk System on AWS&lt;/h1&gt;
-&lt;p&gt;In this section, you will build the network infrastructure for the Enterprise HelpDesk system using &lt;strong&gt;Amazon VPC&lt;/strong&gt;. After completing this section, the environment will be ready for deploying the &lt;strong&gt;Amazon RDS for SQL Server&lt;/strong&gt; database and the application using &lt;strong&gt;AWS Elastic Beanstalk&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Clean Up Resources</title><link>/en/6-workshop/09-cleanup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/6-workshop/09-cleanup/</guid><description>&lt;h1 id="clean-up-resources"&gt;Clean Up Resources&lt;/h1&gt;
-&lt;p&gt;After completing this workshop, you should delete all AWS resources that were created to avoid unnecessary charges. In this section, you will remove the AWS Elastic Beanstalk environment, AWS WAF Web ACL, Amazon RDS database, AWS Secrets Manager secret, and the security groups created during the workshop.&lt;/p&gt;</description></item><item><title>Demo</title><link>/en/6-workshop/demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/en/6-workshop/demo/</guid><description>&lt;h1 id="enterprise-helpdesk-system-demo"&gt;Enterprise HelpDesk System Demo&lt;/h1&gt;
-&lt;p&gt;In this section, you will verify the functionality of the Enterprise HelpDesk system after it has been successfully deployed on AWS. The application&amp;rsquo;s business features and AWS services are demonstrated through real-world scenarios to validate that the system operates reliably, securely, and according to the designed architecture.&lt;/p&gt;</description></item></channel></rss>
+&lt;h2 id=&#34;1-aws-account&#34;&gt;1. AWS Account&lt;/h2&gt;
+&lt;p&gt;You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>https://long-28.github.io/en/6-workshop/03-architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/en/6-workshop/03-architecture/</guid>
+      <description>Architecture</description>
+    </item>
+    <item>
+      <title>Deployment</title>
+      <link>https://long-28.github.io/en/6-workshop/04-deployment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/en/6-workshop/04-deployment/</guid>
+      <description>Deploying the Enterprise HelpDesk System on AWS</description>
+    </item>
+    <item>
+      <title>Clean Up Resources</title>
+      <link>https://long-28.github.io/en/6-workshop/09-cleanup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/en/6-workshop/09-cleanup/</guid>
+      <description>Clean Up Resources</description>
+    </item>
+    <item>
+      <title>Demo</title>
+      <link>https://long-28.github.io/en/6-workshop/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/en/6-workshop/demo/</guid>
+      <description>Verify the functionality of the Enterprise HelpDesk system after deployment on AWS.</description>
+    </item>
+  </channel>
+</rss>

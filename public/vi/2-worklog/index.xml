@@ -1,277 +1,95 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nhật ký thực tập on Workshop Portfolio AWS</title><link>/vi/2-worklog/</link><description>Recent content in Nhật ký thực tập on Workshop Portfolio AWS</description><generator>Hugo</generator><language>vi-VN</language><atom:link href="/vi/2-worklog/index.xml" rel="self" type="application/rss+xml"/><item><title>Tuần 1</title><link>/vi/2-worklog/01-week-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/01-week-1/</guid><description>&lt;h2 id="-mục-tiêu-tuần-1"&gt;🎯 Mục tiêu tuần 1&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Tìm hiểu lịch sử, văn hóa, nội quy thực tập và quy trình làm việc tại AWS Việt Nam.&lt;/li&gt;
-&lt;li&gt;Khởi tạo, xác minh và bảo mật tài khoản AWS cá nhân phục vụ thực hành.&lt;/li&gt;
-&lt;li&gt;Chuẩn bị IDE, AWS CLI và công cụ thiết kế sơ đồ kiến trúc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Tìm hiểu lịch sử, văn hóa doanh nghiệp, nội quy thực tập và quy trình làm việc tại AWS Việt Nam.&lt;/td&gt;&lt;td&gt;05/05/2026&lt;/td&gt;&lt;td&gt;05/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://aws.amazon.com/vi/about-aws/" target="_blank"&gt;AWS About&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Khởi tạo tài khoản AWS cá nhân, xác minh thông tin và kích hoạt quyền truy cập AWS Console.&lt;/td&gt;&lt;td&gt;06/05/2026&lt;/td&gt;&lt;td&gt;06/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html" target="_blank"&gt;AWS Account&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Thiết lập MFA, tìm hiểu nguyên tắc bảo mật tài khoản và quản lý thông tin đăng nhập.&lt;/td&gt;&lt;td&gt;07/05/2026&lt;/td&gt;&lt;td&gt;07/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html" target="_blank"&gt;AWS IAM MFA&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Cài đặt và kiểm tra IDE, AWS CLI cùng các công cụ hỗ trợ thiết kế sơ đồ kiến trúc.&lt;/td&gt;&lt;td&gt;08/05/2026&lt;/td&gt;&lt;td&gt;08/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html" target="_blank"&gt;AWS CLI&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Kiểm tra toàn bộ môi trường thực hành và ghi nhận các yêu cầu kỹ thuật ban đầu.&lt;/td&gt;&lt;td&gt;09/05/2026&lt;/td&gt;&lt;td&gt;10/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://aws.amazon.com/getting-started/" target="_blank"&gt;AWS Getting Started&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Nắm được văn hóa, quy trình làm việc và các yêu cầu bảo mật trong kỳ thực tập.&lt;/li&gt;
-&lt;li&gt;Khởi tạo, bảo mật tài khoản AWS và chuẩn bị đầy đủ môi trường thực hành.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Hiểu quy trình đăng ký, kích hoạt và bảo vệ tài khoản AWS.&lt;/li&gt;
-&lt;li&gt;Biết cách thiết lập AWS CLI và các công cụ hỗ trợ thiết kế hệ thống.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 2</title><link>/vi/2-worklog/02-week-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/02-week-2/</guid><description>&lt;h2 id="-mục-tiêu-tuần-2"&gt;🎯 Mục tiêu tuần 2&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Thao tác trên AWS Management Console và thực hành các bài Workshop cơ bản.&lt;/li&gt;
-&lt;li&gt;Học quy trình viết Lab Guide chuẩn hóa, có hình ảnh minh họa.&lt;/li&gt;
-&lt;li&gt;Vẽ sơ đồ kiến trúc và luồng dữ liệu bằng bộ biểu tượng AWS trên draw.io.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Thao tác trên AWS Management Console và thực hành các bài Workshop cơ bản.&lt;/td&gt;&lt;td&gt;11/05/2026&lt;/td&gt;&lt;td&gt;11/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Học quy trình viết Lab Guide chuẩn hóa, có hình ảnh minh họa.&lt;/td&gt;&lt;td&gt;12/05/2026&lt;/td&gt;&lt;td&gt;12/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Vẽ sơ đồ kiến trúc và luồng dữ liệu bằng bộ biểu tượng AWS trên draw.io.&lt;/td&gt;&lt;td&gt;13/05/2026&lt;/td&gt;&lt;td&gt;13/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Nghiên cứu IAM, S3, Lambda, API Gateway, DynamoDB, CloudWatch và Cognito.&lt;/td&gt;&lt;td&gt;14/05/2026&lt;/td&gt;&lt;td&gt;14/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Tổng hợp kiến thức nền tảng cho dự án GreenLens Kids.&lt;/td&gt;&lt;td&gt;15/05/2026&lt;/td&gt;&lt;td&gt;15/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Nắm được vai trò của các dịch vụ AWS cốt lõi và cách trình bày kiến thức kỹ thuật bằng Lab Guide.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 3</title><link>/vi/2-worklog/03-week-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/03-week-3/</guid><description>&lt;h2 id="-mục-tiêu-tuần-3"&gt;🎯 Mục tiêu tuần 3&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Phân tích bài toán, xác định chức năng và yêu cầu kỹ thuật của GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Tìm hiểu Amazon S3 và mô hình Object Storage.&lt;/li&gt;
-&lt;li&gt;Thực hành Amazon EBS và mô hình Block Storage.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Phân tích bài toán, xác định chức năng và yêu cầu kỹ thuật của GreenLens Kids.&lt;/td&gt;&lt;td&gt;18/05/2026&lt;/td&gt;&lt;td&gt;18/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Tìm hiểu Amazon S3 và mô hình Object Storage.&lt;/td&gt;&lt;td&gt;19/05/2026&lt;/td&gt;&lt;td&gt;19/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Thực hành Amazon EBS và mô hình Block Storage.&lt;/td&gt;&lt;td&gt;20/05/2026&lt;/td&gt;&lt;td&gt;20/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Thực hành Amazon EFS và mô hình File Storage.&lt;/td&gt;&lt;td&gt;21/05/2026&lt;/td&gt;&lt;td&gt;21/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;So sánh chi phí, hiệu năng và lựa chọn giải pháp lưu trữ phù hợp cho dự án.&lt;/td&gt;&lt;td&gt;22/05/2026&lt;/td&gt;&lt;td&gt;22/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Phân biệt S3, EBS và EFS; hoàn thiện yêu cầu và định hướng lưu trữ cho GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 4</title><link>/vi/2-worklog/04-week-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/04-week-4/</guid><description>&lt;h2 id="-mục-tiêu-tuần-4"&gt;🎯 Mục tiêu tuần 4&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Phác thảo kiến trúc tổng thể trên draw.io.&lt;/li&gt;
-&lt;li&gt;Mô hình hóa tương tác giữa API Gateway, Lambda, S3, DynamoDB và Cognito.&lt;/li&gt;
-&lt;li&gt;Xác định luồng dữ liệu và các điểm tích hợp giữa các thành phần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Phác thảo kiến trúc tổng thể trên draw.io.&lt;/td&gt;&lt;td&gt;25/05/2026&lt;/td&gt;&lt;td&gt;25/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Mô hình hóa tương tác giữa API Gateway, Lambda, S3, DynamoDB và Cognito.&lt;/td&gt;&lt;td&gt;26/05/2026&lt;/td&gt;&lt;td&gt;26/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Xác định luồng dữ liệu và các điểm tích hợp giữa các thành phần.&lt;/td&gt;&lt;td&gt;27/05/2026&lt;/td&gt;&lt;td&gt;27/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Đánh giá tính hợp lý, khả năng sẵn sàng và độ trễ của kiến trúc.&lt;/td&gt;&lt;td&gt;28/05/2026&lt;/td&gt;&lt;td&gt;28/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Rà soát bảo mật và hoàn thiện tài liệu thiết kế hệ thống.&lt;/td&gt;&lt;td&gt;29/05/2026&lt;/td&gt;&lt;td&gt;29/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Hoàn thiện sơ đồ kiến trúc Serverless và bộ tài liệu thiết kế phục vụ phát triển.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 5</title><link>/vi/2-worklog/05-week-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/05-week-5/</guid><description>&lt;h2 id="-mục-tiêu-tuần-5"&gt;🎯 Mục tiêu tuần 5&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Thiết lập IAM User, Group, Role và Custom Policy theo nguyên tắc Least Privilege.&lt;/li&gt;
-&lt;li&gt;Tạo và cấu hình S3 Bucket lưu trữ hình ảnh cho GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Thiết lập quyền truy cập, CORS và chính sách bảo mật cho S3.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Thiết lập IAM User, Group, Role và Custom Policy theo nguyên tắc Least Privilege.&lt;/td&gt;&lt;td&gt;01/06/2026&lt;/td&gt;&lt;td&gt;01/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Tạo và cấu hình S3 Bucket lưu trữ hình ảnh cho GreenLens Kids.&lt;/td&gt;&lt;td&gt;02/06/2026&lt;/td&gt;&lt;td&gt;02/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Thiết lập quyền truy cập, CORS và chính sách bảo mật cho S3.&lt;/td&gt;&lt;td&gt;03/06/2026&lt;/td&gt;&lt;td&gt;03/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Quản lý tài nguyên AWS bằng AWS CLI.&lt;/td&gt;&lt;td&gt;04/06/2026&lt;/td&gt;&lt;td&gt;04/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Thiết lập giám sát cơ bản và ghi log bằng CloudWatch.&lt;/td&gt;&lt;td&gt;05/06/2026&lt;/td&gt;&lt;td&gt;05/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Cấu hình được nền tảng IAM, S3, AWS CLI và CloudWatch cho môi trường dự án.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 6</title><link>/vi/2-worklog/06-week-6/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/06-week-6/</guid><description>&lt;h2 id="-mục-tiêu-tuần-6"&gt;🎯 Mục tiêu tuần 6&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Phát triển Lambda Function xử lý logic nghiệp vụ.&lt;/li&gt;
-&lt;li&gt;Thiết kế RESTful API bằng Amazon API Gateway.&lt;/li&gt;
-&lt;li&gt;Cấu hình tích hợp API Gateway với Lambda.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Phát triển Lambda Function xử lý logic nghiệp vụ.&lt;/td&gt;&lt;td&gt;08/06/2026&lt;/td&gt;&lt;td&gt;08/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Thiết kế RESTful API bằng Amazon API Gateway.&lt;/td&gt;&lt;td&gt;09/06/2026&lt;/td&gt;&lt;td&gt;09/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Cấu hình tích hợp API Gateway với Lambda.&lt;/td&gt;&lt;td&gt;10/06/2026&lt;/td&gt;&lt;td&gt;10/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Xử lý dữ liệu JSON giữa client và backend.&lt;/td&gt;&lt;td&gt;11/06/2026&lt;/td&gt;&lt;td&gt;11/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Kiểm thử HTTP Request/Response và hoàn thiện các endpoint.&lt;/td&gt;&lt;td&gt;12/06/2026&lt;/td&gt;&lt;td&gt;12/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Xây dựng và kiểm thử thành công backend Serverless với Lambda và API Gateway.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 7</title><link>/vi/2-worklog/07-week-7/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/07-week-7/</guid><description>&lt;h2 id="-mục-tiêu-tuần-7"&gt;🎯 Mục tiêu tuần 7&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Nghiên cứu mô hình dữ liệu NoSQL cho GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Thiết kế bảng, Partition Key và Sort Key trên DynamoDB.&lt;/li&gt;
-&lt;li&gt;Triển khai bảng và cấu hình các thuộc tính dữ liệu.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Nghiên cứu mô hình dữ liệu NoSQL cho GreenLens Kids.&lt;/td&gt;&lt;td&gt;15/06/2026&lt;/td&gt;&lt;td&gt;15/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Thiết kế bảng, Partition Key và Sort Key trên DynamoDB.&lt;/td&gt;&lt;td&gt;16/06/2026&lt;/td&gt;&lt;td&gt;16/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Triển khai bảng và cấu hình các thuộc tính dữ liệu.&lt;/td&gt;&lt;td&gt;17/06/2026&lt;/td&gt;&lt;td&gt;17/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Tích hợp AWS SDK vào Lambda để thực hiện CRUD.&lt;/td&gt;&lt;td&gt;18/06/2026&lt;/td&gt;&lt;td&gt;18/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Tạo GSI và kiểm thử khả năng truy vấn dữ liệu.&lt;/td&gt;&lt;td&gt;19/06/2026&lt;/td&gt;&lt;td&gt;19/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Nắm vững thiết kế khóa, chỉ mục và thao tác CRUD trên DynamoDB bằng AWS SDK.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 8</title><link>/vi/2-worklog/08-week-8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/08-week-8/</guid><description>&lt;h2 id="-mục-tiêu-tuần-8"&gt;🎯 Mục tiêu tuần 8&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Tạo và cấu hình Cognito User Pool cho đăng ký, đăng nhập.&lt;/li&gt;
-&lt;li&gt;Tìm hiểu Identity Pool và cơ chế ủy quyền tài nguyên AWS.&lt;/li&gt;
-&lt;li&gt;Tích hợp Cognito Authorizer vào API Gateway.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Tạo và cấu hình Cognito User Pool cho đăng ký, đăng nhập.&lt;/td&gt;&lt;td&gt;22/06/2026&lt;/td&gt;&lt;td&gt;22/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Tìm hiểu Identity Pool và cơ chế ủy quyền tài nguyên AWS.&lt;/td&gt;&lt;td&gt;23/06/2026&lt;/td&gt;&lt;td&gt;23/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Tích hợp Cognito Authorizer vào API Gateway.&lt;/td&gt;&lt;td&gt;24/06/2026&lt;/td&gt;&lt;td&gt;24/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Kiểm thử JWT Token và quyền truy cập API.&lt;/td&gt;&lt;td&gt;25/06/2026&lt;/td&gt;&lt;td&gt;25/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Cấu hình quyền truy cập S3 cho người dùng đã xác thực.&lt;/td&gt;&lt;td&gt;26/06/2026&lt;/td&gt;&lt;td&gt;26/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Bảo vệ API bằng Cognito, JWT và phân quyền tài nguyên theo người dùng.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 9</title><link>/vi/2-worklog/09-week-9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/09-week-9/</guid><description>&lt;h2 id="-mục-tiêu-tuần-9"&gt;🎯 Mục tiêu tuần 9&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Tập trung log của API Gateway, Lambda và DynamoDB về CloudWatch Logs.&lt;/li&gt;
-&lt;li&gt;Thiết lập Metrics, CloudWatch Alarm và Dashboard.&lt;/li&gt;
-&lt;li&gt;Theo dõi hiệu năng, phát hiện điểm nghẽn và lỗi phát sinh.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Tập trung log của API Gateway, Lambda và DynamoDB về CloudWatch Logs.&lt;/td&gt;&lt;td&gt;29/06/2026&lt;/td&gt;&lt;td&gt;29/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Thiết lập Metrics, CloudWatch Alarm và Dashboard.&lt;/td&gt;&lt;td&gt;30/06/2026&lt;/td&gt;&lt;td&gt;30/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Theo dõi hiệu năng, phát hiện điểm nghẽn và lỗi phát sinh.&lt;/td&gt;&lt;td&gt;01/07/2026&lt;/td&gt;&lt;td&gt;01/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Sử dụng Logs Insights và AWS X-Ray để tìm nguyên nhân gốc.&lt;/td&gt;&lt;td&gt;02/07/2026&lt;/td&gt;&lt;td&gt;02/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Cấu hình cảnh báo tự động qua Amazon SNS và xử lý sự cố.&lt;/td&gt;&lt;td&gt;03/07/2026&lt;/td&gt;&lt;td&gt;03/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Hoàn thiện hệ thống giám sát, cảnh báo và quy trình xử lý sự cố cho GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 10</title><link>/vi/2-worklog/10-week-10/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/10-week-10/</guid><description>&lt;h2 id="-mục-tiêu-tuần-10"&gt;🎯 Mục tiêu tuần 10&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Thực hiện kiểm thử End-to-End toàn bộ hệ thống GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Tối ưu Lambda, API và DynamoDB để giảm thời gian phản hồi.&lt;/li&gt;
-&lt;li&gt;Kiểm tra quyền truy cập, bảo mật S3 và API.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Thực hiện kiểm thử End-to-End toàn bộ hệ thống GreenLens Kids.&lt;/td&gt;&lt;td&gt;06/07/2026&lt;/td&gt;&lt;td&gt;06/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Tối ưu Lambda, API và DynamoDB để giảm thời gian phản hồi.&lt;/td&gt;&lt;td&gt;07/07/2026&lt;/td&gt;&lt;td&gt;07/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Kiểm tra quyền truy cập, bảo mật S3 và API.&lt;/td&gt;&lt;td&gt;08/07/2026&lt;/td&gt;&lt;td&gt;08/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Phân tích chi phí và áp dụng các biện pháp AWS Cost Optimization.&lt;/td&gt;&lt;td&gt;09/07/2026&lt;/td&gt;&lt;td&gt;09/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Đánh giá kết quả kiểm thử và hoàn thiện cấu hình triển khai.&lt;/td&gt;&lt;td&gt;10/07/2026&lt;/td&gt;&lt;td&gt;10/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Kiểm thử toàn diện, cải thiện hiệu năng, bảo mật và chi phí vận hành hệ thống.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 11</title><link>/vi/2-worklog/11-week-11/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/11-week-11/</guid><description>&lt;h2 id="-mục-tiêu-tuần-11"&gt;🎯 Mục tiêu tuần 11&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Khóa mã nguồn và hoàn thiện các tính năng còn lại của GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Kiểm tra lại luồng hoạt động và chụp ảnh tài nguyên minh chứng.&lt;/li&gt;
-&lt;li&gt;Quay video demo các chức năng chính của hệ thống.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Khóa mã nguồn và hoàn thiện các tính năng còn lại của GreenLens Kids.&lt;/td&gt;&lt;td&gt;13/07/2026&lt;/td&gt;&lt;td&gt;13/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Kiểm tra lại luồng hoạt động và chụp ảnh tài nguyên minh chứng.&lt;/td&gt;&lt;td&gt;14/07/2026&lt;/td&gt;&lt;td&gt;14/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Quay video demo các chức năng chính của hệ thống.&lt;/td&gt;&lt;td&gt;15/07/2026&lt;/td&gt;&lt;td&gt;15/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Cập nhật sơ đồ kiến trúc chính thức theo hạ tầng thực tế.&lt;/td&gt;&lt;td&gt;16/07/2026&lt;/td&gt;&lt;td&gt;16/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Hoàn thiện Technical Documentation và nội dung báo cáo.&lt;/td&gt;&lt;td&gt;17/07/2026&lt;/td&gt;&lt;td&gt;17/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Đóng gói sản phẩm demo, sơ đồ kiến trúc và tài liệu kỹ thuật theo chuẩn báo cáo.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Tuần 12</title><link>/vi/2-worklog/12-week-12/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/vi/2-worklog/12-week-12/</guid><description>&lt;h2 id="-mục-tiêu-tuần-12"&gt;🎯 Mục tiêu tuần 12&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Rà soát và dọn dẹp tài nguyên AWS thử nghiệm để tránh phát sinh chi phí.&lt;/li&gt;
-&lt;li&gt;Hoàn thiện báo cáo thực tập, Worklog và hồ sơ xác nhận doanh nghiệp.&lt;/li&gt;
-&lt;li&gt;Kiểm tra toàn bộ tài liệu, hình ảnh và kết quả thực hành.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-công-việc-thực-hiện-trong-tuần"&gt;📅 Công việc thực hiện trong tuần&lt;/h2&gt;
-&lt;table class="table table-bordered table-hover"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="width:6%"&gt;STT&lt;/th&gt;&lt;th style="width:48%"&gt;Nhiệm vụ&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày bắt đầu&lt;/th&gt;&lt;th style="width:12%"&gt;Ngày hoàn thành&lt;/th&gt;&lt;th style="width:22%"&gt;Tài liệu tham khảo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Rà soát và dọn dẹp tài nguyên AWS thử nghiệm để tránh phát sinh chi phí.&lt;/td&gt;&lt;td&gt;20/07/2026&lt;/td&gt;&lt;td&gt;20/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Hoàn thiện báo cáo thực tập, Worklog và hồ sơ xác nhận doanh nghiệp.&lt;/td&gt;&lt;td&gt;21/07/2026&lt;/td&gt;&lt;td&gt;21/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Kiểm tra toàn bộ tài liệu, hình ảnh và kết quả thực hành.&lt;/td&gt;&lt;td&gt;22/07/2026&lt;/td&gt;&lt;td&gt;22/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Thiết kế slide và luyện tập nội dung thuyết trình.&lt;/td&gt;&lt;td&gt;23/07/2026&lt;/td&gt;&lt;td&gt;23/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Tổng kết kết quả, bài học và định hướng phát triển Cloud Engineering/DevOps.&lt;/td&gt;&lt;td&gt;24/07/2026&lt;/td&gt;&lt;td&gt;24/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href="https://docs.aws.amazon.com/" target="_blank"&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id="-thành-tích-đạt-được"&gt;🏆 Thành tích đạt được&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Hoàn thiện báo cáo, Worklog, slide và sẵn sàng cho buổi bảo vệ thực tập.&lt;/li&gt;
-&lt;li&gt;Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-kiến-thức-rút-ra"&gt;💡 Kiến thức rút ra&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.&lt;/li&gt;
-&lt;li&gt;Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.&lt;/li&gt;
-&lt;/ul&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nhật ký thực tập on Workshop Portfolio AWS</title>
+    <link>https://long-28.github.io/vi/2-worklog/</link>
+    <description>Recent content in Nhật ký thực tập on Workshop Portfolio AWS</description>
+    <generator>Hugo</generator>
+    <language>vi-VN</language>
+    <atom:link href="https://long-28.github.io/vi/2-worklog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tuần 1</title>
+      <link>https://long-28.github.io/vi/2-worklog/01-week-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/01-week-1/</guid>
+      <description>Tìm hiểu AWS Việt Nam, quy trình làm việc, khởi tạo AWS Account và môi trường thực hành</description>
+    </item>
+    <item>
+      <title>Tuần 2</title>
+      <link>https://long-28.github.io/vi/2-worklog/02-week-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/02-week-2/</guid>
+      <description>Quản lý AWS Console, Lab Guide, sơ đồ kiến trúc và các dịch vụ AWS cốt lõi</description>
+    </item>
+    <item>
+      <title>Tuần 3</title>
+      <link>https://long-28.github.io/vi/2-worklog/03-week-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/03-week-3/</guid>
+      <description>Phân tích yêu cầu GreenLens Kids và nghiên cứu các dịch vụ lưu trữ AWS</description>
+    </item>
+    <item>
+      <title>Tuần 4</title>
+      <link>https://long-28.github.io/vi/2-worklog/04-week-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/04-week-4/</guid>
+      <description>Thiết kế chi tiết kiến trúc hệ thống GreenLens Kids</description>
+    </item>
+    <item>
+      <title>Tuần 5</title>
+      <link>https://long-28.github.io/vi/2-worklog/05-week-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/05-week-5/</guid>
+      <description>Cấu hình IAM nâng cao, khởi tạo S3, AWS CLI và CloudWatch</description>
+    </item>
+    <item>
+      <title>Tuần 6</title>
+      <link>https://long-28.github.io/vi/2-worklog/06-week-6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/06-week-6/</guid>
+      <description>Xây dựng AWS Lambda kết hợp Amazon API Gateway</description>
+    </item>
+    <item>
+      <title>Tuần 7</title>
+      <link>https://long-28.github.io/vi/2-worklog/07-week-7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/07-week-7/</guid>
+      <description>Thiết kế và triển khai Amazon DynamoDB</description>
+    </item>
+    <item>
+      <title>Tuần 8</title>
+      <link>https://long-28.github.io/vi/2-worklog/08-week-8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/08-week-8/</guid>
+      <description>Tích hợp Amazon Cognito quản lý xác thực và phân quyền</description>
+    </item>
+    <item>
+      <title>Tuần 9</title>
+      <link>https://long-28.github.io/vi/2-worklog/09-week-9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/09-week-9/</guid>
+      <description>Phân tích nhật ký, cảnh báo CloudWatch và vận hành hệ thống</description>
+    </item>
+    <item>
+      <title>Tuần 10</title>
+      <link>https://long-28.github.io/vi/2-worklog/10-week-10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/10-week-10/</guid>
+      <description>Kiểm thử, tối ưu hiệu năng, bảo mật và chi phí AWS</description>
+    </item>
+    <item>
+      <title>Tuần 11</title>
+      <link>https://long-28.github.io/vi/2-worklog/11-week-11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/11-week-11/</guid>
+      <description>Hoàn thiện chức năng, quay video demo và tài liệu kỹ thuật</description>
+    </item>
+    <item>
+      <title>Tuần 12</title>
+      <link>https://long-28.github.io/vi/2-worklog/12-week-12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://long-28.github.io/vi/2-worklog/12-week-12/</guid>
+      <description>Tổng kết thực tập, hoàn thiện báo cáo và chuẩn bị bảo vệ</description>
+    </item>
+  </channel>
+</rss>

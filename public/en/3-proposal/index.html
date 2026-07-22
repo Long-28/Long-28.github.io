@@ -1,15 +1,500 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Project Proposal - Enterprise HelpDesk on Amazon Web Services (AWS)"><title>Project Proposal · AWS Portfolio Workshop</title><script>document.documentElement.dataset.theme=localStorage.getItem("aws-workshop-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")</script><link rel=stylesheet href=/css/site.css></head><body><header class=topbar><button class="icon-button mobile-only" id=menu-toggle aria-label="Toggle menu">☰</button>
-<a class=brand href=/en/><span class=brand-mark>AWS</span><span><strong>AWS Portfolio Workshop</strong><small>Internship report, cloud project, and hands-on workshop</small></span></a><div class=topbar-actions><label class=search-box><span>⌕</span><input id=site-search type=search placeholder="Search navigation..."></label><div class=language-switcher><a class=active href=/en/3-proposal/>EN</a><a href=/vi/3-proposal/>VI</a></div></div></header><div class=app-shell><aside class=sidebar id=sidebar><div class=sidebar-label>CONTENTS</div><nav class=sidebar-nav id=sidebar-nav><details class=nav-group><summary><a href=/en/1-student-information/><span>01</span>Student Information</a></summary></details><details class=nav-group><summary><a href=/en/2-worklog/><span>02</span>Internship Worklog</a>
-<b>⌄</b></summary></details><details class=nav-group open><summary><a href=/en/3-proposal/><span>03</span>Project Proposal</a></summary></details><details class=nav-group><summary><a href=/en/4-blog-posts/><span>04</span>Blog Posts</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/4-blog-posts/01-blog-1/>AWS IAM - The First Foundation When Learning Amazon Web Services</a>
-<a href=/en/4-blog-posts/02-blog-2/>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</a>
-<a href=/en/4-blog-posts/03-blog-3/>AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</a></div></details><details class=nav-group><summary><a href=/en/5-events-participated/><span>05</span>Events Participated</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/5-events-participated/01-event-1/>AWS First Cloud AI Journey Community Day 2026</a>
-<a href=/en/5-events-participated/02-event-2/>Mini Meetup – First Cloud AI Journey 06/06/2026</a></div></details><details class=nav-group><summary><a href=/en/6-workshop/><span>06</span>Workshop</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/6-workshop/01-overview/>Overview</a>
-<a href=/en/6-workshop/02-prerequisites/>Prerequisites</a>
-<a href=/en/6-workshop/03-architecture/>Architecture</a>
-<a href=/en/6-workshop/04-deployment/>Deployment</a>
-<a href=/en/6-workshop/09-cleanup/>Clean Up Resources</a>
-<a href=/en/6-workshop/demo/>Demo</a></div></details><details class=nav-group><summary><a href=/en/7-self-evaluation/><span>07</span>Self-evaluation</a></summary></details><details class=nav-group><summary><a href=/en/8-sharing-and-feedback/><span>08</span>Sharing and feedback</a></summary></details></nav><div class=sidebar-note><strong>Tip</strong><p>Use VI/EN to switch languages.</p></div></aside><main class=main-content id=main-content><nav class=breadcrumbs aria-label=Breadcrumb><a href=/en/>Home</a>
-<span>/</span><span>Project Proposal</span></nav><header class=page-header><span class=eyebrow>SECTION</span><h1>Project Proposal</h1><p>Project Proposal - Enterprise HelpDesk on Amazon Web Services (AWS)</p></header><article class="content-card prose"><h1 id=enterprise-helpdesk>Enterprise HelpDesk</h1><h2 id=project-proposal>Project Proposal</h2><hr><h1 id=1-project-overview>1. Project Overview</h1><p>Enterprise HelpDesk is an internal IT HelpDesk ticket management system developed using <strong>ASP.NET Core Razor Pages (.NET 9)</strong> and deployed on <strong>Amazon Web Services (AWS)</strong>.</p><p>The system is designed to digitize the process of receiving, managing, and tracking IT support requests between employees and the IT department. Instead of relying on email, instant messaging applications, or phone calls, Enterprise HelpDesk provides a centralized platform for managing the entire lifecycle of support tickets—from creation to resolution.</p><p>The solution follows a <strong>cloud-native architecture</strong>, leveraging AWS services to improve scalability, security, high availability, and operational efficiency while simplifying infrastructure management.</p><hr><h1 id=2-project-objectives>2. Project Objectives</h1><p>The project aims to achieve the following objectives:</p><ul><li>Develop an internal enterprise HelpDesk system.</li><li>Standardize the IT support request workflow.</li><li>Track ticket resolution time based on Service Level Agreements (SLAs).</li><li>Manage users and access permissions.</li><li>Manage ticket status throughout the support lifecycle.</li><li>Provide dashboards and reporting capabilities.</li><li>Export data to Microsoft Excel.</li><li>Deploy the application on AWS using a cloud-native architecture.</li></ul><hr><h1 id=3-background>3. Background</h1><p>In many small and medium-sized enterprises (SMEs), IT support requests are still handled through email, Zalo, Microsoft Teams, or phone calls.</p><p>This approach introduces several challenges:</p><ul><li>Difficulty tracking ticket status.</li><li>Risk of missing or overlooking support requests.</li><li>No centralized ticket history.</li><li>Limited visibility into IT staff performance.</li><li>Lack of SLA management.</li><li>Difficult reporting and analytics.</li><li>Increased administrative overhead.</li></ul><p>In addition, deploying applications on on-premises servers requires organizations to manage infrastructure, maintain servers, perform software updates, and handle operational issues internally.</p><hr><h1 id=4-proposed-solution>4. Proposed Solution</h1><p>Enterprise HelpDesk is designed to address all of the challenges described above.</p><p>Employees submit support tickets directly through the application.</p><p>The IT department receives, assigns, and resolves tickets using a centralized workflow.</p><p>All ticket information is securely stored in a centralized database.</p><p>The system automatically tracks SLA compliance, generates reports, and provides operational statistics.</p><p>The entire solution is deployed on AWS to reduce infrastructure management overhead while improving scalability, availability, and security.</p><hr><h1 id=5-system-architecture>5. System Architecture</h1><p>In this architecture:</p><ul><li>Amazon CloudFront provides HTTPS support and accelerates content delivery.</li><li>AWS WAF protects the web application.</li><li>Application Load Balancer distributes incoming traffic.</li><li>AWS Elastic Beanstalk manages application deployment.</li><li>Amazon EC2 hosts the ASP.NET Core application.</li><li>Amazon RDS for SQL Server stores application data.</li><li>AWS Secrets Manager securely stores database connection strings.</li><li>Amazon CloudWatch monitors system health and performance.</li><li>AWS CloudTrail records management and API activities for auditing.</li><li>AWS Systems Manager simplifies Amazon EC2 administration.</li></ul><hr><h1 id=6-aws-services-used>6. AWS Services Used</h1><table><thead><tr><th>AWS Service</th><th>Purpose</th></tr></thead><tbody><tr><td>Amazon VPC</td><td>Network infrastructure</td></tr><tr><td>Public and Private Subnets</td><td>Network segmentation</td></tr><tr><td>Security Groups</td><td>Network access control</td></tr><tr><td>AWS Identity and Access Management (IAM)</td><td>Identity and access management</td></tr><tr><td>AWS Elastic Beanstalk</td><td>Application deployment</td></tr><tr><td>Amazon EC2</td><td>Application hosting</td></tr><tr><td>Amazon RDS for SQL Server</td><td>Relational database</td></tr><tr><td>Application Load Balancer (ALB)</td><td>Traffic distribution</td></tr><tr><td>Amazon CloudFront</td><td>HTTPS and content delivery network (CDN)</td></tr><tr><td>AWS WAF</td><td>Web application protection</td></tr><tr><td>AWS Secrets Manager</td><td>Secrets management</td></tr><tr><td>Amazon CloudWatch</td><td>Monitoring and observability</td></tr><tr><td>AWS CloudTrail</td><td>Auditing and activity logging</td></tr><tr><td>AWS Systems Manager</td><td>Amazon EC2 administration</td></tr></tbody></table><hr><h1 id=7-system-features>7. System Features</h1><p>The system provides the following features:</p><ul><li>Ticket management.</li><li>User management.</li><li>Department management.</li><li>Ticket category management.</li><li>SLA monitoring.</li><li>Dashboard.</li><li>Reports.</li><li>Microsoft Excel export.</li><li>Ticket status management.</li><li>Ticket history management.</li></ul><hr><h1 id=8-implementation-plan>8. Implementation Plan</h1><h2 id=phase-1>Phase 1</h2><p>Requirements Analysis</p><ul><li>Business requirements analysis.</li><li>Database design.</li><li>Use case design.</li><li>User interface design.</li></ul><h2 id=phase-2>Phase 2</h2><p>Application Development</p><ul><li>ASP.NET Core Razor Pages.</li><li>ASP.NET Core Identity.</li><li>CRUD operations.</li><li>Dashboard.</li><li>Reports.</li></ul><h2 id=phase-3>Phase 3</h2><p>AWS Deployment</p><ul><li>Amazon VPC.</li><li>Amazon EC2.</li><li>AWS Elastic Beanstalk.</li><li>Amazon RDS.</li><li>AWS IAM.</li><li>AWS Secrets Manager.</li><li>Amazon CloudWatch.</li><li>AWS CloudTrail.</li><li>AWS Systems Manager.</li><li>Amazon CloudFront.</li><li>AWS WAF.</li></ul><h2 id=phase-4>Phase 4</h2><p>Testing</p><ul><li>User authentication.</li><li>Ticket workflow.</li><li>SLA validation.</li><li>Reports.</li><li>Monitoring.</li></ul><h2 id=phase-5>Phase 5</h2><p>Production Deployment</p><ul><li>System demonstration.</li><li>Amazon CloudWatch monitoring.</li><li>AWS billing review.</li><li>Resource cleanup.</li></ul><hr><h1 id=9-risk-assessment>9. Risk Assessment</h1><table><thead><tr><th>Risk</th><th>Mitigation</th></tr></thead><tbody><tr><td>Amazon EC2 cannot connect to Amazon RDS</td><td>Verify security groups and Amazon VPC configuration</td></tr><tr><td>Database access is lost</td><td>Use IAM roles and AWS Secrets Manager</td></tr><tr><td>Deployment failures</td><td>Monitor AWS Elastic Beanstalk events</td></tr><tr><td>Performance degradation</td><td>Monitor Amazon CloudWatch metrics</td></tr><tr><td>Increasing AWS costs</td><td>Configure AWS Budgets</td></tr><tr><td>Unauthorized access</td><td>Protect the application with AWS WAF, HTTPS, and security groups</td></tr></tbody></table><hr><h1 id=10-business-value>10. Business Value</h1><p>After deployment, the system will provide the following benefits:</p><ul><li>Standardized HelpDesk processes.</li><li>Centralized support request management.</li><li>SLA tracking.</li><li>Interactive reporting and dashboards.</li><li>Reduced ticket resolution time.</li><li>Improved IT team productivity.</li><li>Lower infrastructure management costs.</li><li>High scalability.</li><li>Enhanced security.</li><li>Simplified maintenance.</li></ul><hr><h1 id=11-expected-outcomes>11. Expected Outcomes</h1><p>Upon completion, the system will support:</p><ul><li>Ticket management.</li><li>SLA monitoring.</li><li>User management.</li><li>Department management.</li><li>Dashboard.</li><li>Reports.</li><li>Microsoft Excel export.</li><li>Monitoring.</li><li>Logging.</li><li>Fully deployed production environment on AWS.</li></ul><hr><h1 id=12-future-enhancements>12. Future Enhancements</h1><p>The system can be extended with the following features:</p><ul><li>Email notifications.</li><li>SMS notifications.</li><li>File attachment uploads.</li><li>Amazon Simple Email Service (Amazon SES).</li><li>Single Sign-On (SSO).</li><li>Multi-tenant architecture.</li><li>Amazon QuickSight dashboards.</li><li>CI/CD pipeline.</li><li>AI-assisted ticket classification.</li><li>AI-powered support chatbot.</li></ul></article><div class=section-grid></div><footer class=footer></footer></main></div><script src=/js/site.js defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Project Proposal | AWS Portfolio Workshop</title>
+<meta name="keywords" content="">
+<meta name="description" content="Project Proposal - Enterprise HelpDesk on Amazon Web Services (AWS)">
+<meta name="author" content="">
+<link rel="canonical" href="https://long-28.github.io/en/3-proposal/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://long-28.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://long-28.github.io/en/3-proposal/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/3-proposal/">
+<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/3-proposal/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://long-28.github.io/en/3-proposal/">
+  <meta property="og:site_name" content="AWS Portfolio Workshop">
+  <meta property="og:title" content="Project Proposal">
+  <meta property="og:description" content="Project Proposal - Enterprise HelpDesk on Amazon Web Services (AWS)">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Project Proposal">
+  <meta name="twitter:description" content="Project Proposal - Enterprise HelpDesk on Amazon Web Services (AWS)">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Project Proposal",
+      "item": "https://long-28.github.io/en/3-proposal/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://long-28.github.io/en/" accesskey="h" title="AWS Portfolio Workshop (Alt + H)">AWS Portfolio Workshop</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://long-28.github.io/vi/" title="Tiếng Việt"
+                                aria-label="Tiếng Việt">Vi</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Project Proposal
+  </h1>
+  <div class="post-description">
+    Project Proposal - Enterprise HelpDesk on Amazon Web Services (AWS)
+  </div>
+</header>
+<div class="post-content md-content"><h1 id="enterprise-helpdesk">Enterprise HelpDesk<a hidden class="anchor" aria-hidden="true" href="#enterprise-helpdesk">#</a></h1>
+<h2 id="project-proposal">Project Proposal<a hidden class="anchor" aria-hidden="true" href="#project-proposal">#</a></h2>
+<hr>
+<h1 id="1-project-overview">1. Project Overview<a hidden class="anchor" aria-hidden="true" href="#1-project-overview">#</a></h1>
+<p>Enterprise HelpDesk is an internal IT HelpDesk ticket management system developed using <strong>ASP.NET Core Razor Pages (.NET 9)</strong> and deployed on <strong>Amazon Web Services (AWS)</strong>.</p>
+<p>The system is designed to digitize the process of receiving, managing, and tracking IT support requests between employees and the IT department. Instead of relying on email, instant messaging applications, or phone calls, Enterprise HelpDesk provides a centralized platform for managing the entire lifecycle of support tickets—from creation to resolution.</p>
+<p>The solution follows a <strong>cloud-native architecture</strong>, leveraging AWS services to improve scalability, security, high availability, and operational efficiency while simplifying infrastructure management.</p>
+<hr>
+<h1 id="2-project-objectives">2. Project Objectives<a hidden class="anchor" aria-hidden="true" href="#2-project-objectives">#</a></h1>
+<p>The project aims to achieve the following objectives:</p>
+<ul>
+<li>Develop an internal enterprise HelpDesk system.</li>
+<li>Standardize the IT support request workflow.</li>
+<li>Track ticket resolution time based on Service Level Agreements (SLAs).</li>
+<li>Manage users and access permissions.</li>
+<li>Manage ticket status throughout the support lifecycle.</li>
+<li>Provide dashboards and reporting capabilities.</li>
+<li>Export data to Microsoft Excel.</li>
+<li>Deploy the application on AWS using a cloud-native architecture.</li>
+</ul>
+<hr>
+<h1 id="3-background">3. Background<a hidden class="anchor" aria-hidden="true" href="#3-background">#</a></h1>
+<p>In many small and medium-sized enterprises (SMEs), IT support requests are still handled through email, Zalo, Microsoft Teams, or phone calls.</p>
+<p>This approach introduces several challenges:</p>
+<ul>
+<li>Difficulty tracking ticket status.</li>
+<li>Risk of missing or overlooking support requests.</li>
+<li>No centralized ticket history.</li>
+<li>Limited visibility into IT staff performance.</li>
+<li>Lack of SLA management.</li>
+<li>Difficult reporting and analytics.</li>
+<li>Increased administrative overhead.</li>
+</ul>
+<p>In addition, deploying applications on on-premises servers requires organizations to manage infrastructure, maintain servers, perform software updates, and handle operational issues internally.</p>
+<hr>
+<h1 id="4-proposed-solution">4. Proposed Solution<a hidden class="anchor" aria-hidden="true" href="#4-proposed-solution">#</a></h1>
+<p>Enterprise HelpDesk is designed to address all of the challenges described above.</p>
+<p>Employees submit support tickets directly through the application.</p>
+<p>The IT department receives, assigns, and resolves tickets using a centralized workflow.</p>
+<p>All ticket information is securely stored in a centralized database.</p>
+<p>The system automatically tracks SLA compliance, generates reports, and provides operational statistics.</p>
+<p>The entire solution is deployed on AWS to reduce infrastructure management overhead while improving scalability, availability, and security.</p>
+<hr>
+<h1 id="5-system-architecture">5. System Architecture<a hidden class="anchor" aria-hidden="true" href="#5-system-architecture">#</a></h1>
+<p>In this architecture:</p>
+<ul>
+<li>Amazon CloudFront provides HTTPS support and accelerates content delivery.</li>
+<li>AWS WAF protects the web application.</li>
+<li>Application Load Balancer distributes incoming traffic.</li>
+<li>AWS Elastic Beanstalk manages application deployment.</li>
+<li>Amazon EC2 hosts the ASP.NET Core application.</li>
+<li>Amazon RDS for SQL Server stores application data.</li>
+<li>AWS Secrets Manager securely stores database connection strings.</li>
+<li>Amazon CloudWatch monitors system health and performance.</li>
+<li>AWS CloudTrail records management and API activities for auditing.</li>
+<li>AWS Systems Manager simplifies Amazon EC2 administration.</li>
+</ul>
+<hr>
+<h1 id="6-aws-services-used">6. AWS Services Used<a hidden class="anchor" aria-hidden="true" href="#6-aws-services-used">#</a></h1>
+<table>
+	<thead>
+			<tr>
+					<th>AWS Service</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Amazon VPC</td>
+					<td>Network infrastructure</td>
+			</tr>
+			<tr>
+					<td>Public and Private Subnets</td>
+					<td>Network segmentation</td>
+			</tr>
+			<tr>
+					<td>Security Groups</td>
+					<td>Network access control</td>
+			</tr>
+			<tr>
+					<td>AWS Identity and Access Management (IAM)</td>
+					<td>Identity and access management</td>
+			</tr>
+			<tr>
+					<td>AWS Elastic Beanstalk</td>
+					<td>Application deployment</td>
+			</tr>
+			<tr>
+					<td>Amazon EC2</td>
+					<td>Application hosting</td>
+			</tr>
+			<tr>
+					<td>Amazon RDS for SQL Server</td>
+					<td>Relational database</td>
+			</tr>
+			<tr>
+					<td>Application Load Balancer (ALB)</td>
+					<td>Traffic distribution</td>
+			</tr>
+			<tr>
+					<td>Amazon CloudFront</td>
+					<td>HTTPS and content delivery network (CDN)</td>
+			</tr>
+			<tr>
+					<td>AWS WAF</td>
+					<td>Web application protection</td>
+			</tr>
+			<tr>
+					<td>AWS Secrets Manager</td>
+					<td>Secrets management</td>
+			</tr>
+			<tr>
+					<td>Amazon CloudWatch</td>
+					<td>Monitoring and observability</td>
+			</tr>
+			<tr>
+					<td>AWS CloudTrail</td>
+					<td>Auditing and activity logging</td>
+			</tr>
+			<tr>
+					<td>AWS Systems Manager</td>
+					<td>Amazon EC2 administration</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h1 id="7-system-features">7. System Features<a hidden class="anchor" aria-hidden="true" href="#7-system-features">#</a></h1>
+<p>The system provides the following features:</p>
+<ul>
+<li>Ticket management.</li>
+<li>User management.</li>
+<li>Department management.</li>
+<li>Ticket category management.</li>
+<li>SLA monitoring.</li>
+<li>Dashboard.</li>
+<li>Reports.</li>
+<li>Microsoft Excel export.</li>
+<li>Ticket status management.</li>
+<li>Ticket history management.</li>
+</ul>
+<hr>
+<h1 id="8-implementation-plan">8. Implementation Plan<a hidden class="anchor" aria-hidden="true" href="#8-implementation-plan">#</a></h1>
+<h2 id="phase-1">Phase 1<a hidden class="anchor" aria-hidden="true" href="#phase-1">#</a></h2>
+<p>Requirements Analysis</p>
+<ul>
+<li>Business requirements analysis.</li>
+<li>Database design.</li>
+<li>Use case design.</li>
+<li>User interface design.</li>
+</ul>
+<h2 id="phase-2">Phase 2<a hidden class="anchor" aria-hidden="true" href="#phase-2">#</a></h2>
+<p>Application Development</p>
+<ul>
+<li>ASP.NET Core Razor Pages.</li>
+<li>ASP.NET Core Identity.</li>
+<li>CRUD operations.</li>
+<li>Dashboard.</li>
+<li>Reports.</li>
+</ul>
+<h2 id="phase-3">Phase 3<a hidden class="anchor" aria-hidden="true" href="#phase-3">#</a></h2>
+<p>AWS Deployment</p>
+<ul>
+<li>Amazon VPC.</li>
+<li>Amazon EC2.</li>
+<li>AWS Elastic Beanstalk.</li>
+<li>Amazon RDS.</li>
+<li>AWS IAM.</li>
+<li>AWS Secrets Manager.</li>
+<li>Amazon CloudWatch.</li>
+<li>AWS CloudTrail.</li>
+<li>AWS Systems Manager.</li>
+<li>Amazon CloudFront.</li>
+<li>AWS WAF.</li>
+</ul>
+<h2 id="phase-4">Phase 4<a hidden class="anchor" aria-hidden="true" href="#phase-4">#</a></h2>
+<p>Testing</p>
+<ul>
+<li>User authentication.</li>
+<li>Ticket workflow.</li>
+<li>SLA validation.</li>
+<li>Reports.</li>
+<li>Monitoring.</li>
+</ul>
+<h2 id="phase-5">Phase 5<a hidden class="anchor" aria-hidden="true" href="#phase-5">#</a></h2>
+<p>Production Deployment</p>
+<ul>
+<li>System demonstration.</li>
+<li>Amazon CloudWatch monitoring.</li>
+<li>AWS billing review.</li>
+<li>Resource cleanup.</li>
+</ul>
+<hr>
+<h1 id="9-risk-assessment">9. Risk Assessment<a hidden class="anchor" aria-hidden="true" href="#9-risk-assessment">#</a></h1>
+<table>
+	<thead>
+			<tr>
+					<th>Risk</th>
+					<th>Mitigation</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Amazon EC2 cannot connect to Amazon RDS</td>
+					<td>Verify security groups and Amazon VPC configuration</td>
+			</tr>
+			<tr>
+					<td>Database access is lost</td>
+					<td>Use IAM roles and AWS Secrets Manager</td>
+			</tr>
+			<tr>
+					<td>Deployment failures</td>
+					<td>Monitor AWS Elastic Beanstalk events</td>
+			</tr>
+			<tr>
+					<td>Performance degradation</td>
+					<td>Monitor Amazon CloudWatch metrics</td>
+			</tr>
+			<tr>
+					<td>Increasing AWS costs</td>
+					<td>Configure AWS Budgets</td>
+			</tr>
+			<tr>
+					<td>Unauthorized access</td>
+					<td>Protect the application with AWS WAF, HTTPS, and security groups</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h1 id="10-business-value">10. Business Value<a hidden class="anchor" aria-hidden="true" href="#10-business-value">#</a></h1>
+<p>After deployment, the system will provide the following benefits:</p>
+<ul>
+<li>Standardized HelpDesk processes.</li>
+<li>Centralized support request management.</li>
+<li>SLA tracking.</li>
+<li>Interactive reporting and dashboards.</li>
+<li>Reduced ticket resolution time.</li>
+<li>Improved IT team productivity.</li>
+<li>Lower infrastructure management costs.</li>
+<li>High scalability.</li>
+<li>Enhanced security.</li>
+<li>Simplified maintenance.</li>
+</ul>
+<hr>
+<h1 id="11-expected-outcomes">11. Expected Outcomes<a hidden class="anchor" aria-hidden="true" href="#11-expected-outcomes">#</a></h1>
+<p>Upon completion, the system will support:</p>
+<ul>
+<li>Ticket management.</li>
+<li>SLA monitoring.</li>
+<li>User management.</li>
+<li>Department management.</li>
+<li>Dashboard.</li>
+<li>Reports.</li>
+<li>Microsoft Excel export.</li>
+<li>Monitoring.</li>
+<li>Logging.</li>
+<li>Fully deployed production environment on AWS.</li>
+</ul>
+<hr>
+<h1 id="12-future-enhancements">12. Future Enhancements<a hidden class="anchor" aria-hidden="true" href="#12-future-enhancements">#</a></h1>
+<p>The system can be extended with the following features:</p>
+<ul>
+<li>Email notifications.</li>
+<li>SMS notifications.</li>
+<li>File attachment uploads.</li>
+<li>Amazon Simple Email Service (Amazon SES).</li>
+<li>Single Sign-On (SSO).</li>
+<li>Multi-tenant architecture.</li>
+<li>Amazon QuickSight dashboards.</li>
+<li>CI/CD pipeline.</li>
+<li>AI-assisted ticket classification.</li>
+<li>AI-powered support chatbot.</li>
+</ul>
+
+
+</div>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://long-28.github.io/en/">AWS Portfolio Workshop</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

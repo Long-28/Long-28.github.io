@@ -1,15 +1,500 @@
-<!doctype html><html lang=vi><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Project Proposal - Enterprise HelpDesk trên nền tảng AWS"><title>Đề xuất dự án · Workshop Portfolio AWS</title><script>document.documentElement.dataset.theme=localStorage.getItem("aws-workshop-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")</script><link rel=stylesheet href=/css/site.css></head><body><header class=topbar><button class="icon-button mobile-only" id=menu-toggle aria-label="Toggle menu">☰</button>
-<a class=brand href=/vi/><span class=brand-mark>AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a><div class=topbar-actions><label class=search-box><span>⌕</span><input id=site-search type=search placeholder="Search navigation..."></label><div class=language-switcher><a href=/en/3-proposal/>EN</a><a class=active href=/vi/3-proposal/>VI</a></div></div></header><div class=app-shell><aside class=sidebar id=sidebar><div class=sidebar-label>MỤC LỤC</div><nav class=sidebar-nav id=sidebar-nav><details class=nav-group><summary><a href=/vi/1-student-information/><span>01</span>Thông tin sinh viên</a></summary></details><details class=nav-group><summary><a href=/vi/2-worklog/><span>02</span>Nhật ký thực tập</a>
-<b>⌄</b></summary></details><details class=nav-group open><summary><a href=/vi/3-proposal/><span>03</span>Đề xuất dự án</a></summary></details><details class=nav-group><summary><a href=/vi/4-blog-posts/><span>04</span>Bài viết</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/4-blog-posts/01-blog-1/>AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
-<a href=/vi/4-blog-posts/02-blog-2/>AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
-<a href=/vi/4-blog-posts/03-blog-3/>AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a></div></details><details class=nav-group><summary><a href=/vi/5-events-participated/><span>05</span>Sự kiện đã tham gia</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/5-events-participated/01-event-1/>AWS First Cloud AI Journey Community Day 2026</a>
-<a href=/vi/5-events-participated/02-event-2/>Mini Meetup – First Cloud AI Journey 06/06/2026</a></div></details><details class=nav-group><summary><a href=/vi/6-workshop/><span>06</span>Workshop</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/6-workshop/01-overview/>Tổng quan</a>
-<a href=/vi/6-workshop/02-prerequisites/>Điều kiện tiên quyết</a>
-<a href=/vi/6-workshop/03-architecture/>Kiến trúc</a>
-<a href=/vi/6-workshop/04-deployment/>Triển khai</a>
-<a href=/vi/6-workshop/09-cleanup/>Dọn dẹp tài nguyên</a>
-<a href=/vi/6-workshop/demo/>Demo</a></div></details><details class=nav-group><summary><a href=/vi/7-self-evaluation/><span>07</span>Tự đánh giá</a></summary></details><details class=nav-group><summary><a href=/vi/8-sharing-and-feedback/><span>08</span>Chia sẻ và phản hồi</a></summary></details></nav><div class=sidebar-note><strong>Mẹo</strong><p>Nhấn VI/EN để chuyển ngôn ngữ.</p></div></aside><main class=main-content id=main-content><nav class=breadcrumbs aria-label=Breadcrumb><a href=/vi/>Trang chủ</a>
-<span>/</span><span>Đề xuất dự án</span></nav><header class=page-header><span class=eyebrow>CHUYÊN MỤC</span><h1>Đề xuất dự án</h1><p>Project Proposal - Enterprise HelpDesk trên nền tảng AWS</p></header><article class="content-card prose"><h1 id=enterprise-helpdesk>Enterprise HelpDesk</h1><h2 id=đề-xuất-dự-án>Đề xuất dự án</h2><hr><h2 id=1-giới-thiệu-dự-án>1. Giới thiệu dự án</h2><p>Enterprise HelpDesk là hệ thống quản lý yêu cầu hỗ trợ công nghệ thông tin (IT HelpDesk) dành cho doanh nghiệp nội bộ, được phát triển bằng <strong>ASP.NET Core Razor Pages (.NET 9)</strong> và triển khai trên nền tảng <strong>Amazon Web Services (AWS)</strong>.</p><p>Hệ thống được xây dựng nhằm số hóa quy trình tiếp nhận, xử lý và theo dõi các yêu cầu hỗ trợ CNTT giữa nhân viên và bộ phận IT. Thay vì quản lý thủ công qua email hoặc các ứng dụng nhắn tin, Enterprise HelpDesk cung cấp một nền tảng tập trung giúp quản lý toàn bộ vòng đời của Ticket từ khi được tạo cho đến khi hoàn thành.</p><p>Giải pháp được thiết kế theo kiến trúc <strong>Cloud-Native</strong>, tận dụng các dịch vụ của AWS nhằm tăng khả năng mở rộng, bảo mật, tính sẵn sàng và đơn giản hóa công tác quản trị hạ tầng.</p><hr><h1 id=2-mục-tiêu-dự-án>2. Mục tiêu dự án</h1><p>Dự án hướng đến các mục tiêu sau:</p><ul><li>Xây dựng hệ thống HelpDesk phục vụ doanh nghiệp nội bộ.</li><li>Chuẩn hóa quy trình tiếp nhận và xử lý yêu cầu hỗ trợ.</li><li>Theo dõi thời gian xử lý theo SLA.</li><li>Quản lý người dùng và phân quyền.</li><li>Quản lý Ticket theo trạng thái.</li><li>Hỗ trợ Dashboard và báo cáo.</li><li>Xuất dữ liệu Excel.</li><li>Triển khai trên nền tảng AWS theo mô hình Cloud-Native.</li></ul><hr><h1 id=3-bối-cảnh>3. Bối cảnh</h1><p>Tại nhiều doanh nghiệp vừa và nhỏ, bộ phận CNTT vẫn tiếp nhận yêu cầu hỗ trợ thông qua Email, Zalo, Microsoft Teams hoặc điện thoại.</p><p>Điều này dẫn đến nhiều khó khăn:</p><ul><li>Không theo dõi được trạng thái xử lý.</li><li>Dễ bỏ sót yêu cầu.</li><li>Không có lịch sử xử lý tập trung.</li><li>Khó đánh giá hiệu suất nhân viên IT.</li><li>Không có cơ chế SLA.</li><li>Khó tổng hợp báo cáo.</li><li>Tốn nhiều thời gian quản lý.</li></ul><p>Ngoài ra, khi triển khai trên máy chủ nội bộ, doanh nghiệp còn phải tự quản trị máy chủ, cập nhật phần mềm và xử lý các vấn đề về hạ tầng.</p><hr><h1 id=4-giải-pháp-đề-xuất>4. Giải pháp đề xuất</h1><p>Enterprise HelpDesk được xây dựng nhằm giải quyết toàn bộ các vấn đề trên.</p><p>Người dùng gửi Ticket trực tiếp trên hệ thống.</p><p>Bộ phận IT tiếp nhận, phân công và xử lý Ticket.</p><p>Toàn bộ quá trình được lưu trữ tập trung trong cơ sở dữ liệu.</p><p>Hệ thống tự động theo dõi SLA, thống kê và sinh báo cáo.</p><p>Toàn bộ ứng dụng được triển khai trên AWS nhằm giảm chi phí quản trị hạ tầng và tăng tính sẵn sàng của hệ thống.</p><hr><h1 id=5-kiến-trúc-hệ-thống>5. Kiến trúc hệ thống</h1><p>Trong kiến trúc này:</p><ul><li>CloudFront cung cấp HTTPS và tăng tốc truy cập.</li><li>AWS WAF bảo vệ ứng dụng.</li><li>Load Balancer phân phối lưu lượng.</li><li>Elastic Beanstalk quản lý việc triển khai.</li><li>EC2 chạy ứng dụng ASP.NET Core.</li><li>RDS lưu trữ dữ liệu.</li><li>Secrets Manager lưu chuỗi kết nối.</li><li>CloudWatch giám sát hệ thống.</li><li>CloudTrail ghi nhận thao tác quản trị.</li><li>Systems Manager hỗ trợ quản trị EC2.</li></ul><hr><h1 id=6-các-dịch-vụ-aws-sử-dụng>6. Các dịch vụ AWS sử dụng</h1><table><thead><tr><th>Dịch vụ</th><th>Vai trò</th></tr></thead><tbody><tr><td>Amazon VPC</td><td>Hạ tầng mạng</td></tr><tr><td>Public & Private Subnet</td><td>Phân tách vùng mạng</td></tr><tr><td>Security Group</td><td>Kiểm soát truy cập</td></tr><tr><td>AWS IAM</td><td>Quản lý quyền</td></tr><tr><td>Elastic Beanstalk</td><td>Triển khai ứng dụng</td></tr><tr><td>Amazon EC2</td><td>Chạy ứng dụng</td></tr><tr><td>Amazon RDS SQL Server</td><td>Cơ sở dữ liệu</td></tr><tr><td>Application Load Balancer</td><td>Phân phối request</td></tr><tr><td>Amazon CloudFront</td><td>HTTPS và CDN</td></tr><tr><td>AWS WAF</td><td>Bảo vệ Web</td></tr><tr><td>AWS Secrets Manager</td><td>Quản lý Secret</td></tr><tr><td>Amazon CloudWatch</td><td>Monitoring</td></tr><tr><td>AWS CloudTrail</td><td>Audit</td></tr><tr><td>AWS Systems Manager</td><td>Quản trị EC2</td></tr></tbody></table><hr><h1 id=7-chức-năng-của-hệ-thống>7. Chức năng của hệ thống</h1><p>Hệ thống cung cấp các chức năng:</p><ul><li>Quản lý Ticket.</li><li>Quản lý người dùng.</li><li>Quản lý phòng ban.</li><li>Quản lý danh mục Ticket.</li><li>SLA Monitoring.</li><li>Dashboard.</li><li>Reports.</li><li>Export Excel.</li><li>Quản lý trạng thái Ticket.</li><li>Quản lý lịch sử xử lý.</li></ul><hr><h1 id=8-quy-trình-triển-khai>8. Quy trình triển khai</h1><h2 id=giai-đoạn-1>Giai đoạn 1</h2><p>Phân tích yêu cầu.</p><ul><li>Khảo sát nghiệp vụ.</li><li>Thiết kế Database.</li><li>Thiết kế Use Case.</li><li>Thiết kế giao diện.</li></ul><h2 id=giai-đoạn-2>Giai đoạn 2</h2><p>Phát triển hệ thống.</p><ul><li>ASP.NET Core Razor Pages.</li><li>Identity.</li><li>CRUD.</li><li>Dashboard.</li><li>Reports.</li></ul><h2 id=giai-đoạn-3>Giai đoạn 3</h2><p>Triển khai AWS.</p><ul><li>VPC.</li><li>EC2.</li><li>Elastic Beanstalk.</li><li>RDS.</li><li>IAM.</li><li>Secrets Manager.</li><li>CloudWatch.</li><li>CloudTrail.</li><li>Systems Manager.</li><li>CloudFront.</li><li>WAF.</li></ul><h2 id=giai-đoạn-4>Giai đoạn 4</h2><p>Kiểm thử.</p><ul><li>Login.</li><li>Ticket Workflow.</li><li>SLA.</li><li>Reports.</li><li>Monitoring.</li></ul><h2 id=giai-đoạn-5>Giai đoạn 5</h2><p>Đưa vào vận hành.</p><ul><li>Demo.</li><li>Theo dõi CloudWatch.</li><li>Kiểm tra Billing.</li><li>Dọn dẹp tài nguyên.</li></ul><hr><h1 id=9-đánh-giá-rủi-ro>9. Đánh giá rủi ro</h1><table><thead><tr><th>Rủi ro</th><th>Giải pháp</th></tr></thead><tbody><tr><td>EC2 không kết nối RDS</td><td>Kiểm tra Security Group và VPC</td></tr><tr><td>Mất quyền truy cập Database</td><td>Sử dụng IAM Role và Secrets Manager</td></tr><tr><td>Lỗi triển khai</td><td>Theo dõi Elastic Beanstalk Events</td></tr><tr><td>Hiệu năng giảm</td><td>Theo dõi CloudWatch Metrics</td></tr><tr><td>Chi phí tăng</td><td>Thiết lập AWS Budgets</td></tr><tr><td>Truy cập trái phép</td><td>AWS WAF, HTTPS và Security Group</td></tr></tbody></table><hr><h1 id=10-giá-trị-mang-lại>10. Giá trị mang lại</h1><p>Sau khi triển khai, hệ thống mang lại nhiều lợi ích:</p><ul><li>Chuẩn hóa quy trình HelpDesk.</li><li>Quản lý tập trung.</li><li>Theo dõi SLA.</li><li>Báo cáo trực quan.</li><li>Giảm thời gian xử lý Ticket.</li><li>Tăng hiệu suất làm việc.</li><li>Giảm chi phí quản trị hạ tầng.</li><li>Khả năng mở rộng cao.</li><li>Bảo mật tốt hơn.</li><li>Dễ dàng bảo trì.</li></ul><hr><h1 id=11-kết-quả-mong-đợi>11. Kết quả mong đợi</h1><p>Sau khi hoàn thành, hệ thống có thể:</p><ul><li>Quản lý Ticket.</li><li>Theo dõi SLA.</li><li>Quản lý người dùng.</li><li>Quản lý phòng ban.</li><li>Dashboard.</li><li>Reports.</li><li>Export Excel.</li><li>Monitoring.</li><li>Logging.</li><li>Triển khai hoàn chỉnh trên AWS.</li></ul><hr><h1 id=12-hướng-phát-triển>12. Hướng phát triển</h1><p>Trong tương lai hệ thống có thể mở rộng thêm:</p><ul><li>Email Notification.</li><li>SMS Notification.</li><li>Upload Attachment.</li><li>Amazon SES.</li><li>Single Sign-On (SSO).</li><li>Multi-Tenant.</li><li>Amazon QuickSight Dashboard.</li><li>CI/CD Pipeline.</li><li>AI hỗ trợ phân loại Ticket.</li><li>Chatbot hỗ trợ người dùng.</li></ul></article><div class=section-grid></div><footer class=footer></footer></main></div><script src=/js/site.js defer></script></body></html>
+<!DOCTYPE html>
+<html lang="vi" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Đề xuất dự án | Workshop Portfolio AWS</title>
+<meta name="keywords" content="">
+<meta name="description" content="Project Proposal - Enterprise HelpDesk trên nền tảng AWS">
+<meta name="author" content="">
+<link rel="canonical" href="https://long-28.github.io/vi/3-proposal/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://long-28.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://long-28.github.io/vi/3-proposal/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/3-proposal/">
+<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/3-proposal/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://long-28.github.io/vi/3-proposal/">
+  <meta property="og:site_name" content="Workshop Portfolio AWS">
+  <meta property="og:title" content="Đề xuất dự án">
+  <meta property="og:description" content="Project Proposal - Enterprise HelpDesk trên nền tảng AWS">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Đề xuất dự án">
+  <meta name="twitter:description" content="Project Proposal - Enterprise HelpDesk trên nền tảng AWS">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Đề xuất dự án",
+      "item": "https://long-28.github.io/vi/3-proposal/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://long-28.github.io/en/" title="English"
+                                aria-label="English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Đề xuất dự án
+  </h1>
+  <div class="post-description">
+    Project Proposal - Enterprise HelpDesk trên nền tảng AWS
+  </div>
+</header>
+<div class="post-content md-content"><h1 id="enterprise-helpdesk">Enterprise HelpDesk<a hidden class="anchor" aria-hidden="true" href="#enterprise-helpdesk">#</a></h1>
+<h2 id="đề-xuất-dự-án">Đề xuất dự án<a hidden class="anchor" aria-hidden="true" href="#đề-xuất-dự-án">#</a></h2>
+<hr>
+<h2 id="1-giới-thiệu-dự-án">1. Giới thiệu dự án<a hidden class="anchor" aria-hidden="true" href="#1-giới-thiệu-dự-án">#</a></h2>
+<p>Enterprise HelpDesk là hệ thống quản lý yêu cầu hỗ trợ công nghệ thông tin (IT HelpDesk) dành cho doanh nghiệp nội bộ, được phát triển bằng <strong>ASP.NET Core Razor Pages (.NET 9)</strong> và triển khai trên nền tảng <strong>Amazon Web Services (AWS)</strong>.</p>
+<p>Hệ thống được xây dựng nhằm số hóa quy trình tiếp nhận, xử lý và theo dõi các yêu cầu hỗ trợ CNTT giữa nhân viên và bộ phận IT. Thay vì quản lý thủ công qua email hoặc các ứng dụng nhắn tin, Enterprise HelpDesk cung cấp một nền tảng tập trung giúp quản lý toàn bộ vòng đời của Ticket từ khi được tạo cho đến khi hoàn thành.</p>
+<p>Giải pháp được thiết kế theo kiến trúc <strong>Cloud-Native</strong>, tận dụng các dịch vụ của AWS nhằm tăng khả năng mở rộng, bảo mật, tính sẵn sàng và đơn giản hóa công tác quản trị hạ tầng.</p>
+<hr>
+<h1 id="2-mục-tiêu-dự-án">2. Mục tiêu dự án<a hidden class="anchor" aria-hidden="true" href="#2-mục-tiêu-dự-án">#</a></h1>
+<p>Dự án hướng đến các mục tiêu sau:</p>
+<ul>
+<li>Xây dựng hệ thống HelpDesk phục vụ doanh nghiệp nội bộ.</li>
+<li>Chuẩn hóa quy trình tiếp nhận và xử lý yêu cầu hỗ trợ.</li>
+<li>Theo dõi thời gian xử lý theo SLA.</li>
+<li>Quản lý người dùng và phân quyền.</li>
+<li>Quản lý Ticket theo trạng thái.</li>
+<li>Hỗ trợ Dashboard và báo cáo.</li>
+<li>Xuất dữ liệu Excel.</li>
+<li>Triển khai trên nền tảng AWS theo mô hình Cloud-Native.</li>
+</ul>
+<hr>
+<h1 id="3-bối-cảnh">3. Bối cảnh<a hidden class="anchor" aria-hidden="true" href="#3-bối-cảnh">#</a></h1>
+<p>Tại nhiều doanh nghiệp vừa và nhỏ, bộ phận CNTT vẫn tiếp nhận yêu cầu hỗ trợ thông qua Email, Zalo, Microsoft Teams hoặc điện thoại.</p>
+<p>Điều này dẫn đến nhiều khó khăn:</p>
+<ul>
+<li>Không theo dõi được trạng thái xử lý.</li>
+<li>Dễ bỏ sót yêu cầu.</li>
+<li>Không có lịch sử xử lý tập trung.</li>
+<li>Khó đánh giá hiệu suất nhân viên IT.</li>
+<li>Không có cơ chế SLA.</li>
+<li>Khó tổng hợp báo cáo.</li>
+<li>Tốn nhiều thời gian quản lý.</li>
+</ul>
+<p>Ngoài ra, khi triển khai trên máy chủ nội bộ, doanh nghiệp còn phải tự quản trị máy chủ, cập nhật phần mềm và xử lý các vấn đề về hạ tầng.</p>
+<hr>
+<h1 id="4-giải-pháp-đề-xuất">4. Giải pháp đề xuất<a hidden class="anchor" aria-hidden="true" href="#4-giải-pháp-đề-xuất">#</a></h1>
+<p>Enterprise HelpDesk được xây dựng nhằm giải quyết toàn bộ các vấn đề trên.</p>
+<p>Người dùng gửi Ticket trực tiếp trên hệ thống.</p>
+<p>Bộ phận IT tiếp nhận, phân công và xử lý Ticket.</p>
+<p>Toàn bộ quá trình được lưu trữ tập trung trong cơ sở dữ liệu.</p>
+<p>Hệ thống tự động theo dõi SLA, thống kê và sinh báo cáo.</p>
+<p>Toàn bộ ứng dụng được triển khai trên AWS nhằm giảm chi phí quản trị hạ tầng và tăng tính sẵn sàng của hệ thống.</p>
+<hr>
+<h1 id="5-kiến-trúc-hệ-thống">5. Kiến trúc hệ thống<a hidden class="anchor" aria-hidden="true" href="#5-kiến-trúc-hệ-thống">#</a></h1>
+<p>Trong kiến trúc này:</p>
+<ul>
+<li>CloudFront cung cấp HTTPS và tăng tốc truy cập.</li>
+<li>AWS WAF bảo vệ ứng dụng.</li>
+<li>Load Balancer phân phối lưu lượng.</li>
+<li>Elastic Beanstalk quản lý việc triển khai.</li>
+<li>EC2 chạy ứng dụng ASP.NET Core.</li>
+<li>RDS lưu trữ dữ liệu.</li>
+<li>Secrets Manager lưu chuỗi kết nối.</li>
+<li>CloudWatch giám sát hệ thống.</li>
+<li>CloudTrail ghi nhận thao tác quản trị.</li>
+<li>Systems Manager hỗ trợ quản trị EC2.</li>
+</ul>
+<hr>
+<h1 id="6-các-dịch-vụ-aws-sử-dụng">6. Các dịch vụ AWS sử dụng<a hidden class="anchor" aria-hidden="true" href="#6-các-dịch-vụ-aws-sử-dụng">#</a></h1>
+<table>
+	<thead>
+			<tr>
+					<th>Dịch vụ</th>
+					<th>Vai trò</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Amazon VPC</td>
+					<td>Hạ tầng mạng</td>
+			</tr>
+			<tr>
+					<td>Public &amp; Private Subnet</td>
+					<td>Phân tách vùng mạng</td>
+			</tr>
+			<tr>
+					<td>Security Group</td>
+					<td>Kiểm soát truy cập</td>
+			</tr>
+			<tr>
+					<td>AWS IAM</td>
+					<td>Quản lý quyền</td>
+			</tr>
+			<tr>
+					<td>Elastic Beanstalk</td>
+					<td>Triển khai ứng dụng</td>
+			</tr>
+			<tr>
+					<td>Amazon EC2</td>
+					<td>Chạy ứng dụng</td>
+			</tr>
+			<tr>
+					<td>Amazon RDS SQL Server</td>
+					<td>Cơ sở dữ liệu</td>
+			</tr>
+			<tr>
+					<td>Application Load Balancer</td>
+					<td>Phân phối request</td>
+			</tr>
+			<tr>
+					<td>Amazon CloudFront</td>
+					<td>HTTPS và CDN</td>
+			</tr>
+			<tr>
+					<td>AWS WAF</td>
+					<td>Bảo vệ Web</td>
+			</tr>
+			<tr>
+					<td>AWS Secrets Manager</td>
+					<td>Quản lý Secret</td>
+			</tr>
+			<tr>
+					<td>Amazon CloudWatch</td>
+					<td>Monitoring</td>
+			</tr>
+			<tr>
+					<td>AWS CloudTrail</td>
+					<td>Audit</td>
+			</tr>
+			<tr>
+					<td>AWS Systems Manager</td>
+					<td>Quản trị EC2</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h1 id="7-chức-năng-của-hệ-thống">7. Chức năng của hệ thống<a hidden class="anchor" aria-hidden="true" href="#7-chức-năng-của-hệ-thống">#</a></h1>
+<p>Hệ thống cung cấp các chức năng:</p>
+<ul>
+<li>Quản lý Ticket.</li>
+<li>Quản lý người dùng.</li>
+<li>Quản lý phòng ban.</li>
+<li>Quản lý danh mục Ticket.</li>
+<li>SLA Monitoring.</li>
+<li>Dashboard.</li>
+<li>Reports.</li>
+<li>Export Excel.</li>
+<li>Quản lý trạng thái Ticket.</li>
+<li>Quản lý lịch sử xử lý.</li>
+</ul>
+<hr>
+<h1 id="8-quy-trình-triển-khai">8. Quy trình triển khai<a hidden class="anchor" aria-hidden="true" href="#8-quy-trình-triển-khai">#</a></h1>
+<h2 id="giai-đoạn-1">Giai đoạn 1<a hidden class="anchor" aria-hidden="true" href="#giai-đoạn-1">#</a></h2>
+<p>Phân tích yêu cầu.</p>
+<ul>
+<li>Khảo sát nghiệp vụ.</li>
+<li>Thiết kế Database.</li>
+<li>Thiết kế Use Case.</li>
+<li>Thiết kế giao diện.</li>
+</ul>
+<h2 id="giai-đoạn-2">Giai đoạn 2<a hidden class="anchor" aria-hidden="true" href="#giai-đoạn-2">#</a></h2>
+<p>Phát triển hệ thống.</p>
+<ul>
+<li>ASP.NET Core Razor Pages.</li>
+<li>Identity.</li>
+<li>CRUD.</li>
+<li>Dashboard.</li>
+<li>Reports.</li>
+</ul>
+<h2 id="giai-đoạn-3">Giai đoạn 3<a hidden class="anchor" aria-hidden="true" href="#giai-đoạn-3">#</a></h2>
+<p>Triển khai AWS.</p>
+<ul>
+<li>VPC.</li>
+<li>EC2.</li>
+<li>Elastic Beanstalk.</li>
+<li>RDS.</li>
+<li>IAM.</li>
+<li>Secrets Manager.</li>
+<li>CloudWatch.</li>
+<li>CloudTrail.</li>
+<li>Systems Manager.</li>
+<li>CloudFront.</li>
+<li>WAF.</li>
+</ul>
+<h2 id="giai-đoạn-4">Giai đoạn 4<a hidden class="anchor" aria-hidden="true" href="#giai-đoạn-4">#</a></h2>
+<p>Kiểm thử.</p>
+<ul>
+<li>Login.</li>
+<li>Ticket Workflow.</li>
+<li>SLA.</li>
+<li>Reports.</li>
+<li>Monitoring.</li>
+</ul>
+<h2 id="giai-đoạn-5">Giai đoạn 5<a hidden class="anchor" aria-hidden="true" href="#giai-đoạn-5">#</a></h2>
+<p>Đưa vào vận hành.</p>
+<ul>
+<li>Demo.</li>
+<li>Theo dõi CloudWatch.</li>
+<li>Kiểm tra Billing.</li>
+<li>Dọn dẹp tài nguyên.</li>
+</ul>
+<hr>
+<h1 id="9-đánh-giá-rủi-ro">9. Đánh giá rủi ro<a hidden class="anchor" aria-hidden="true" href="#9-đánh-giá-rủi-ro">#</a></h1>
+<table>
+	<thead>
+			<tr>
+					<th>Rủi ro</th>
+					<th>Giải pháp</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>EC2 không kết nối RDS</td>
+					<td>Kiểm tra Security Group và VPC</td>
+			</tr>
+			<tr>
+					<td>Mất quyền truy cập Database</td>
+					<td>Sử dụng IAM Role và Secrets Manager</td>
+			</tr>
+			<tr>
+					<td>Lỗi triển khai</td>
+					<td>Theo dõi Elastic Beanstalk Events</td>
+			</tr>
+			<tr>
+					<td>Hiệu năng giảm</td>
+					<td>Theo dõi CloudWatch Metrics</td>
+			</tr>
+			<tr>
+					<td>Chi phí tăng</td>
+					<td>Thiết lập AWS Budgets</td>
+			</tr>
+			<tr>
+					<td>Truy cập trái phép</td>
+					<td>AWS WAF, HTTPS và Security Group</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h1 id="10-giá-trị-mang-lại">10. Giá trị mang lại<a hidden class="anchor" aria-hidden="true" href="#10-giá-trị-mang-lại">#</a></h1>
+<p>Sau khi triển khai, hệ thống mang lại nhiều lợi ích:</p>
+<ul>
+<li>Chuẩn hóa quy trình HelpDesk.</li>
+<li>Quản lý tập trung.</li>
+<li>Theo dõi SLA.</li>
+<li>Báo cáo trực quan.</li>
+<li>Giảm thời gian xử lý Ticket.</li>
+<li>Tăng hiệu suất làm việc.</li>
+<li>Giảm chi phí quản trị hạ tầng.</li>
+<li>Khả năng mở rộng cao.</li>
+<li>Bảo mật tốt hơn.</li>
+<li>Dễ dàng bảo trì.</li>
+</ul>
+<hr>
+<h1 id="11-kết-quả-mong-đợi">11. Kết quả mong đợi<a hidden class="anchor" aria-hidden="true" href="#11-kết-quả-mong-đợi">#</a></h1>
+<p>Sau khi hoàn thành, hệ thống có thể:</p>
+<ul>
+<li>Quản lý Ticket.</li>
+<li>Theo dõi SLA.</li>
+<li>Quản lý người dùng.</li>
+<li>Quản lý phòng ban.</li>
+<li>Dashboard.</li>
+<li>Reports.</li>
+<li>Export Excel.</li>
+<li>Monitoring.</li>
+<li>Logging.</li>
+<li>Triển khai hoàn chỉnh trên AWS.</li>
+</ul>
+<hr>
+<h1 id="12-hướng-phát-triển">12. Hướng phát triển<a hidden class="anchor" aria-hidden="true" href="#12-hướng-phát-triển">#</a></h1>
+<p>Trong tương lai hệ thống có thể mở rộng thêm:</p>
+<ul>
+<li>Email Notification.</li>
+<li>SMS Notification.</li>
+<li>Upload Attachment.</li>
+<li>Amazon SES.</li>
+<li>Single Sign-On (SSO).</li>
+<li>Multi-Tenant.</li>
+<li>Amazon QuickSight Dashboard.</li>
+<li>CI/CD Pipeline.</li>
+<li>AI hỗ trợ phân loại Ticket.</li>
+<li>Chatbot hỗ trợ người dùng.</li>
+</ul>
+
+
+</div>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

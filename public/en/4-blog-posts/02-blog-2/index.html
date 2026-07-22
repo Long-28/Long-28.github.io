@@ -1,17 +1,435 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Learn about AWS CloudTrail Lake, how to query event data using SQL, and its role in monitoring, auditing, and investigating security events on AWS."><title>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security · AWS Portfolio Workshop</title><script>document.documentElement.dataset.theme=localStorage.getItem("aws-workshop-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")</script><link rel=stylesheet href=/css/site.css></head><body><header class=topbar><button class="icon-button mobile-only" id=menu-toggle aria-label="Toggle menu">☰</button>
-<a class=brand href=/en/><span class=brand-mark>AWS</span><span><strong>AWS Portfolio Workshop</strong><small>Internship report, cloud project, and hands-on workshop</small></span></a><div class=topbar-actions><label class=search-box><span>⌕</span><input id=site-search type=search placeholder="Search navigation..."></label><div class=language-switcher><a class=active href=/en/4-blog-posts/02-blog-2/>EN</a><a href=/vi/4-blog-posts/02-blog-2/>VI</a></div></div></header><div class=app-shell><aside class=sidebar id=sidebar><div class=sidebar-label>CONTENTS</div><nav class=sidebar-nav id=sidebar-nav><details class=nav-group><summary><a href=/en/1-student-information/><span>01</span>Student Information</a></summary></details><details class=nav-group><summary><a href=/en/2-worklog/><span>02</span>Internship Worklog</a>
-<b>⌄</b></summary></details><details class=nav-group><summary><a href=/en/3-proposal/><span>03</span>Project Proposal</a></summary></details><details class=nav-group open><summary><a href=/en/4-blog-posts/><span>04</span>Blog Posts</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/4-blog-posts/01-blog-1/>AWS IAM - The First Foundation When Learning Amazon Web Services</a>
-<a class=active href=/en/4-blog-posts/02-blog-2/>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</a>
-<a href=/en/4-blog-posts/03-blog-3/>AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</a></div></details><details class=nav-group><summary><a href=/en/5-events-participated/><span>05</span>Events Participated</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/5-events-participated/01-event-1/>AWS First Cloud AI Journey Community Day 2026</a>
-<a href=/en/5-events-participated/02-event-2/>Mini Meetup – First Cloud AI Journey 06/06/2026</a></div></details><details class=nav-group><summary><a href=/en/6-workshop/><span>06</span>Workshop</a>
-<b>⌄</b></summary><div class=nav-children><a href=/en/6-workshop/01-overview/>Overview</a>
-<a href=/en/6-workshop/02-prerequisites/>Prerequisites</a>
-<a href=/en/6-workshop/03-architecture/>Architecture</a>
-<a href=/en/6-workshop/04-deployment/>Deployment</a>
-<a href=/en/6-workshop/09-cleanup/>Clean Up Resources</a>
-<a href=/en/6-workshop/demo/>Demo</a></div></details><details class=nav-group><summary><a href=/en/7-self-evaluation/><span>07</span>Self-evaluation</a></summary></details><details class=nav-group><summary><a href=/en/8-sharing-and-feedback/><span>08</span>Sharing and feedback</a></summary></details></nav><div class=sidebar-note><strong>Tip</strong><p>Use VI/EN to switch languages.</p></div></aside><main class=main-content id=main-content><nav class=breadcrumbs aria-label=Breadcrumb><a href=/en/>Home</a>
-<span>/</span><a href=/en/4-blog-posts/>Blog Posts</a>
-<span>/</span><span>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</span></nav><header class="page-header journey-header"><span class=eyebrow>WORKSHOP DOCUMENTATION</span><h1>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</h1><p>Learn about AWS CloudTrail Lake, how to query event data using SQL, and its role in monitoring, auditing, and investigating security events on AWS.</p></header><article class="content-card prose" data-search-content><h1 id=aws-cloudtrail-lake---analyzing-aws-activity-with-sql-to-enhance-system-security>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</h1><p>Hello everyone!</p><p>After learning about <strong>AWS Identity and Access Management (IAM)</strong> in my previous article, I continued exploring another AWS service focused on security and monitoring: <strong>AWS CloudTrail Lake</strong>.</p><p>If IAM helps answer the question <strong>who is allowed to perform actions in AWS</strong>, then AWS CloudTrail Lake helps answer questions such as:</p><ul><li>Who performed the action?</li><li>When was the action performed?</li><li>Which AWS resource was affected?</li><li>Which API operation was called?</li></ul><p>AWS CloudTrail Lake transforms audit logs into queryable datasets, allowing administrators to analyze AWS activity using SQL. This makes security investigations, operational monitoring, and compliance auditing much more efficient.</p><hr><h1 id=what-is-aws-cloudtrail-lake>What is AWS CloudTrail Lake?</h1><p>AWS CloudTrail Lake is an extension of AWS CloudTrail that enables you to collect, store, and analyze AWS event data.</p><p>Unlike traditional AWS CloudTrail, which primarily records account activity, CloudTrail Lake stores events in an <strong>event data store</strong> and allows you to query them directly using SQL.</p><p>This enables administrators to quickly answer questions such as:</p><ul><li>Who created or deleted an AWS resource?</li><li>When was an IAM policy modified?</li><li>Which user invoked a specific API operation?</li><li>Which AWS services are used most frequently?</li><li>What security-related changes have occurred?</li></ul><hr><p>When a user or AWS service performs an action, AWS CloudTrail records the event.</p><p>These events are stored in an <strong>event data store</strong>, where administrators can use SQL queries to search, analyze, and investigate AWS activity.</p><hr><h1 id=key-features-of-aws-cloudtrail-lake>Key Features of AWS CloudTrail Lake</h1><h2 id=1-query-event-data-using-sql>1. Query Event Data Using SQL</h2><p>One of the most valuable capabilities of CloudTrail Lake is native SQL support.</p><p>Instead of downloading and manually processing JSON log files, administrators can execute SQL queries directly against the event data.</p><p>For example, you can:</p><ul><li>Find activities related to Amazon EC2.</li><li>Review IAM permission changes.</li><li>Analyze failed API calls.</li><li>Generate activity reports by user.</li></ul><p>This significantly reduces the time required to investigate operational or security incidents.</p><hr><h2 id=2-security-auditing-and-compliance>2. Security Auditing and Compliance</h2><p>CloudTrail Lake captures comprehensive event information, including:</p><ul><li>The identity that performed the action.</li><li>The event timestamp.</li><li>The AWS service involved.</li><li>The API operation that was called.</li><li>The source IP address.</li><li>The operation result.</li></ul><p>This information is invaluable for security auditing, compliance, and forensic investigations.</p><hr><h2 id=3-large-scale-event-analysis>3. Large-Scale Event Analysis</h2><p>Organizations operating multiple AWS accounts or multiple AWS Regions often generate a large volume of audit logs.</p><p>CloudTrail Lake centralizes all event data into an <strong>event data store</strong>, making large-scale analysis and long-term management significantly more efficient.</p><hr><h2 id=4-faster-incident-investigation>4. Faster Incident Investigation</h2><p>For example:</p><p>Suppose an important Amazon S3 bucket has unexpectedly had its permissions modified.</p><p>Using CloudTrail Lake, an administrator can quickly determine:</p><ul><li>Who made the change.</li><li>When the change occurred.</li><li>Which API operation was called.</li><li>Which AWS account performed the action.</li></ul><p>This allows security teams to identify the root cause and respond more quickly.</p><hr><h1 id=aws-cloudtrail-vs-aws-cloudtrail-lake>AWS CloudTrail vs. AWS CloudTrail Lake</h1><table><thead><tr><th>AWS CloudTrail</th><th>AWS CloudTrail Lake</th></tr></thead><tbody><tr><td>Records AWS account activity</td><td>Analyzes AWS event data</td></tr><tr><td>Stores logs in Amazon S3</td><td>Stores events in an event data store</td></tr><tr><td>View event history</td><td>Query events using SQL</td></tr><tr><td>Suitable for basic monitoring</td><td>Designed for advanced investigation and analytics</td></tr><tr><td>Limited analytical capabilities</td><td>Optimized for large-scale event analysis</td></tr></tbody></table><hr><h1 id=when-should-you-use-aws-cloudtrail-lake>When Should You Use AWS CloudTrail Lake?</h1><p>AWS CloudTrail Lake is particularly useful when:</p><ul><li>Your organization manages multiple AWS accounts.</li><li>Security auditing and compliance are required.</li><li>Long-term event retention is needed.</li><li>Rapid incident investigation is important.</li><li>You need to monitor critical changes across AWS environments.</li></ul><p>For small projects or beginners learning AWS, the standard AWS CloudTrail service is often sufficient. However, as environments grow and auditing requirements become more demanding, CloudTrail Lake becomes an extremely valuable solution.</p><hr><h1 id=what-i-learned>What I Learned</h1><p>After learning about AWS CloudTrail Lake, I realized that it is an essential service for managing enterprise AWS environments.</p><p>Some of the key lessons I learned include:</p><ul><li>AWS CloudTrail is more than an activity history service—it is also a powerful security auditing tool.</li><li>CloudTrail Lake enables much faster investigations through SQL-based querying.</li><li>Event data stores organize AWS event data more effectively.</li><li>Security incidents can be investigated much more efficiently.</li><li>CloudTrail Lake is especially valuable for enterprise-scale AWS environments.</li></ul><hr><h1 id=conclusion>Conclusion</h1><p>AWS CloudTrail Lake may not be the first AWS service that beginners learn, but it is an extremely powerful solution for monitoring, auditing, and analyzing activity across AWS environments.</p><p>If <strong>AWS Identity and Access Management (IAM)</strong> answers the question:</p><blockquote><p><strong>&ldquo;Who is allowed to do what?&rdquo;</strong></p></blockquote><p>then <strong>AWS CloudTrail Lake</strong> answers:</p><blockquote><p><strong>&ldquo;Who did what, when, and how?&rdquo;</strong></p></blockquote><p>In my opinion, understanding AWS CloudTrail Lake provides a much deeper understanding of AWS security, governance, and operational troubleshooting, making it an important service for anyone working with cloud infrastructure.</p><hr><h1 id=references>References</h1><ul><li><p>AWS CloudTrail Lake Documentation<br><a href=https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html>https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html</a></p></li><li><p>AWS CloudTrail Documentation<br><a href=https://docs.aws.amazon.com/cloudtrail/>https://docs.aws.amazon.com/cloudtrail/</a></p></li><li><p>AWS CloudTrail Overview<br><a href=https://aws.amazon.com/cloudtrail/>https://aws.amazon.com/cloudtrail/</a></p></li></ul><hr><p><a href="https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL">https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL#</a></p></article><nav class=pager><a href=/en/4-blog-posts/03-blog-3/>← AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</a>
-<a href=/en/4-blog-posts/01-blog-1/>AWS IAM - The First Foundation When Learning Amazon Web Services →</a></nav><footer class=footer></footer></main></div><script src=/js/site.js defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security | AWS Portfolio Workshop</title>
+<meta name="keywords" content="">
+<meta name="description" content="Learn about AWS CloudTrail Lake, how to query event data using SQL, and its role in monitoring, auditing, and investigating security events on AWS.">
+<meta name="author" content="">
+<link rel="canonical" href="https://long-28.github.io/en/4-blog-posts/02-blog-2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://long-28.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/4-blog-posts/02-blog-2/">
+<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/4-blog-posts/02-blog-2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://long-28.github.io/en/4-blog-posts/02-blog-2/">
+  <meta property="og:site_name" content="AWS Portfolio Workshop">
+  <meta property="og:title" content="AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security">
+  <meta property="og:description" content="Learn about AWS CloudTrail Lake, how to query event data using SQL, and its role in monitoring, auditing, and investigating security events on AWS.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="4-blog-posts">
+    <meta property="article:published_time" content="2026-07-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-07-22T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security">
+  <meta name="twitter:description" content="Learn about AWS CloudTrail Lake, how to query event data using SQL, and its role in monitoring, auditing, and investigating security events on AWS.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blog Posts",
+      "item": "https://long-28.github.io/en/4-blog-posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security",
+      "item": "https://long-28.github.io/en/4-blog-posts/02-blog-2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security",
+  "name": "AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security",
+  "description": "Learn about AWS CloudTrail Lake, how to query event data using SQL, and its role in monitoring, auditing, and investigating security events on AWS.",
+  "keywords": [
+    
+  ],
+  "articleBody": "AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security Hello everyone!\nAfter learning about AWS Identity and Access Management (IAM) in my previous article, I continued exploring another AWS service focused on security and monitoring: AWS CloudTrail Lake.\nIf IAM helps answer the question who is allowed to perform actions in AWS, then AWS CloudTrail Lake helps answer questions such as:\nWho performed the action? When was the action performed? Which AWS resource was affected? Which API operation was called? AWS CloudTrail Lake transforms audit logs into queryable datasets, allowing administrators to analyze AWS activity using SQL. This makes security investigations, operational monitoring, and compliance auditing much more efficient.\nWhat is AWS CloudTrail Lake? AWS CloudTrail Lake is an extension of AWS CloudTrail that enables you to collect, store, and analyze AWS event data.\nUnlike traditional AWS CloudTrail, which primarily records account activity, CloudTrail Lake stores events in an event data store and allows you to query them directly using SQL.\nThis enables administrators to quickly answer questions such as:\nWho created or deleted an AWS resource? When was an IAM policy modified? Which user invoked a specific API operation? Which AWS services are used most frequently? What security-related changes have occurred? When a user or AWS service performs an action, AWS CloudTrail records the event.\nThese events are stored in an event data store, where administrators can use SQL queries to search, analyze, and investigate AWS activity.\nKey Features of AWS CloudTrail Lake 1. Query Event Data Using SQL One of the most valuable capabilities of CloudTrail Lake is native SQL support.\nInstead of downloading and manually processing JSON log files, administrators can execute SQL queries directly against the event data.\nFor example, you can:\nFind activities related to Amazon EC2. Review IAM permission changes. Analyze failed API calls. Generate activity reports by user. This significantly reduces the time required to investigate operational or security incidents.\n2. Security Auditing and Compliance CloudTrail Lake captures comprehensive event information, including:\nThe identity that performed the action. The event timestamp. The AWS service involved. The API operation that was called. The source IP address. The operation result. This information is invaluable for security auditing, compliance, and forensic investigations.\n3. Large-Scale Event Analysis Organizations operating multiple AWS accounts or multiple AWS Regions often generate a large volume of audit logs.\nCloudTrail Lake centralizes all event data into an event data store, making large-scale analysis and long-term management significantly more efficient.\n4. Faster Incident Investigation For example:\nSuppose an important Amazon S3 bucket has unexpectedly had its permissions modified.\nUsing CloudTrail Lake, an administrator can quickly determine:\nWho made the change. When the change occurred. Which API operation was called. Which AWS account performed the action. This allows security teams to identify the root cause and respond more quickly.\nAWS CloudTrail vs. AWS CloudTrail Lake AWS CloudTrail AWS CloudTrail Lake Records AWS account activity Analyzes AWS event data Stores logs in Amazon S3 Stores events in an event data store View event history Query events using SQL Suitable for basic monitoring Designed for advanced investigation and analytics Limited analytical capabilities Optimized for large-scale event analysis When Should You Use AWS CloudTrail Lake? AWS CloudTrail Lake is particularly useful when:\nYour organization manages multiple AWS accounts. Security auditing and compliance are required. Long-term event retention is needed. Rapid incident investigation is important. You need to monitor critical changes across AWS environments. For small projects or beginners learning AWS, the standard AWS CloudTrail service is often sufficient. However, as environments grow and auditing requirements become more demanding, CloudTrail Lake becomes an extremely valuable solution.\nWhat I Learned After learning about AWS CloudTrail Lake, I realized that it is an essential service for managing enterprise AWS environments.\nSome of the key lessons I learned include:\nAWS CloudTrail is more than an activity history service—it is also a powerful security auditing tool. CloudTrail Lake enables much faster investigations through SQL-based querying. Event data stores organize AWS event data more effectively. Security incidents can be investigated much more efficiently. CloudTrail Lake is especially valuable for enterprise-scale AWS environments. Conclusion AWS CloudTrail Lake may not be the first AWS service that beginners learn, but it is an extremely powerful solution for monitoring, auditing, and analyzing activity across AWS environments.\nIf AWS Identity and Access Management (IAM) answers the question:\n“Who is allowed to do what?”\nthen AWS CloudTrail Lake answers:\n“Who did what, when, and how?”\nIn my opinion, understanding AWS CloudTrail Lake provides a much deeper understanding of AWS security, governance, and operational troubleshooting, making it an important service for anyone working with cloud infrastructure.\nReferences AWS CloudTrail Lake Documentation\nhttps://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html\nAWS CloudTrail Documentation\nhttps://docs.aws.amazon.com/cloudtrail/\nAWS CloudTrail Overview\nhttps://aws.amazon.com/cloudtrail/\nhttps://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL#\n",
+  "wordCount" : "785",
+  "inLanguage": "en",
+  "datePublished": "2026-07-22T00:00:00Z",
+  "dateModified": "2026-07-22T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://long-28.github.io/en/4-blog-posts/02-blog-2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AWS Portfolio Workshop",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://long-28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://long-28.github.io/en/" accesskey="h" title="AWS Portfolio Workshop (Alt + H)">AWS Portfolio Workshop</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://long-28.github.io/vi/" title="Tiếng Việt"
+                                aria-label="Tiếng Việt">Vi</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security
+    </h1>
+    <div class="post-description">
+      Learn about AWS CloudTrail Lake, how to query event data using SQL, and its role in monitoring, auditing, and investigating security events on AWS.
+    </div>
+    <div class="post-meta">
+
+<span title='2026-07-22 00:00:00 +0000 UTC'>July 22, 2026</span>&nbsp;|&nbsp;<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://long-28.github.io/vi/4-blog-posts/02-blog-2/">Vi</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="aws-cloudtrail-lake---analyzing-aws-activity-with-sql-to-enhance-system-security">AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security<a hidden class="anchor" aria-hidden="true" href="#aws-cloudtrail-lake---analyzing-aws-activity-with-sql-to-enhance-system-security">#</a></h1>
+<p>Hello everyone!</p>
+<p>After learning about <strong>AWS Identity and Access Management (IAM)</strong> in my previous article, I continued exploring another AWS service focused on security and monitoring: <strong>AWS CloudTrail Lake</strong>.</p>
+<p>If IAM helps answer the question <strong>who is allowed to perform actions in AWS</strong>, then AWS CloudTrail Lake helps answer questions such as:</p>
+<ul>
+<li>Who performed the action?</li>
+<li>When was the action performed?</li>
+<li>Which AWS resource was affected?</li>
+<li>Which API operation was called?</li>
+</ul>
+<p>AWS CloudTrail Lake transforms audit logs into queryable datasets, allowing administrators to analyze AWS activity using SQL. This makes security investigations, operational monitoring, and compliance auditing much more efficient.</p>
+<hr>
+<h1 id="what-is-aws-cloudtrail-lake">What is AWS CloudTrail Lake?<a hidden class="anchor" aria-hidden="true" href="#what-is-aws-cloudtrail-lake">#</a></h1>
+<p>AWS CloudTrail Lake is an extension of AWS CloudTrail that enables you to collect, store, and analyze AWS event data.</p>
+<p>Unlike traditional AWS CloudTrail, which primarily records account activity, CloudTrail Lake stores events in an <strong>event data store</strong> and allows you to query them directly using SQL.</p>
+<p>This enables administrators to quickly answer questions such as:</p>
+<ul>
+<li>Who created or deleted an AWS resource?</li>
+<li>When was an IAM policy modified?</li>
+<li>Which user invoked a specific API operation?</li>
+<li>Which AWS services are used most frequently?</li>
+<li>What security-related changes have occurred?</li>
+</ul>
+<hr>
+<p>When a user or AWS service performs an action, AWS CloudTrail records the event.</p>
+<p>These events are stored in an <strong>event data store</strong>, where administrators can use SQL queries to search, analyze, and investigate AWS activity.</p>
+<hr>
+<h1 id="key-features-of-aws-cloudtrail-lake">Key Features of AWS CloudTrail Lake<a hidden class="anchor" aria-hidden="true" href="#key-features-of-aws-cloudtrail-lake">#</a></h1>
+<h2 id="1-query-event-data-using-sql">1. Query Event Data Using SQL<a hidden class="anchor" aria-hidden="true" href="#1-query-event-data-using-sql">#</a></h2>
+<p>One of the most valuable capabilities of CloudTrail Lake is native SQL support.</p>
+<p>Instead of downloading and manually processing JSON log files, administrators can execute SQL queries directly against the event data.</p>
+<p>For example, you can:</p>
+<ul>
+<li>Find activities related to Amazon EC2.</li>
+<li>Review IAM permission changes.</li>
+<li>Analyze failed API calls.</li>
+<li>Generate activity reports by user.</li>
+</ul>
+<p>This significantly reduces the time required to investigate operational or security incidents.</p>
+<hr>
+<h2 id="2-security-auditing-and-compliance">2. Security Auditing and Compliance<a hidden class="anchor" aria-hidden="true" href="#2-security-auditing-and-compliance">#</a></h2>
+<p>CloudTrail Lake captures comprehensive event information, including:</p>
+<ul>
+<li>The identity that performed the action.</li>
+<li>The event timestamp.</li>
+<li>The AWS service involved.</li>
+<li>The API operation that was called.</li>
+<li>The source IP address.</li>
+<li>The operation result.</li>
+</ul>
+<p>This information is invaluable for security auditing, compliance, and forensic investigations.</p>
+<hr>
+<h2 id="3-large-scale-event-analysis">3. Large-Scale Event Analysis<a hidden class="anchor" aria-hidden="true" href="#3-large-scale-event-analysis">#</a></h2>
+<p>Organizations operating multiple AWS accounts or multiple AWS Regions often generate a large volume of audit logs.</p>
+<p>CloudTrail Lake centralizes all event data into an <strong>event data store</strong>, making large-scale analysis and long-term management significantly more efficient.</p>
+<hr>
+<h2 id="4-faster-incident-investigation">4. Faster Incident Investigation<a hidden class="anchor" aria-hidden="true" href="#4-faster-incident-investigation">#</a></h2>
+<p>For example:</p>
+<p>Suppose an important Amazon S3 bucket has unexpectedly had its permissions modified.</p>
+<p>Using CloudTrail Lake, an administrator can quickly determine:</p>
+<ul>
+<li>Who made the change.</li>
+<li>When the change occurred.</li>
+<li>Which API operation was called.</li>
+<li>Which AWS account performed the action.</li>
+</ul>
+<p>This allows security teams to identify the root cause and respond more quickly.</p>
+<hr>
+<h1 id="aws-cloudtrail-vs-aws-cloudtrail-lake">AWS CloudTrail vs. AWS CloudTrail Lake<a hidden class="anchor" aria-hidden="true" href="#aws-cloudtrail-vs-aws-cloudtrail-lake">#</a></h1>
+<table>
+	<thead>
+			<tr>
+					<th>AWS CloudTrail</th>
+					<th>AWS CloudTrail Lake</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Records AWS account activity</td>
+					<td>Analyzes AWS event data</td>
+			</tr>
+			<tr>
+					<td>Stores logs in Amazon S3</td>
+					<td>Stores events in an event data store</td>
+			</tr>
+			<tr>
+					<td>View event history</td>
+					<td>Query events using SQL</td>
+			</tr>
+			<tr>
+					<td>Suitable for basic monitoring</td>
+					<td>Designed for advanced investigation and analytics</td>
+			</tr>
+			<tr>
+					<td>Limited analytical capabilities</td>
+					<td>Optimized for large-scale event analysis</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h1 id="when-should-you-use-aws-cloudtrail-lake">When Should You Use AWS CloudTrail Lake?<a hidden class="anchor" aria-hidden="true" href="#when-should-you-use-aws-cloudtrail-lake">#</a></h1>
+<p>AWS CloudTrail Lake is particularly useful when:</p>
+<ul>
+<li>Your organization manages multiple AWS accounts.</li>
+<li>Security auditing and compliance are required.</li>
+<li>Long-term event retention is needed.</li>
+<li>Rapid incident investigation is important.</li>
+<li>You need to monitor critical changes across AWS environments.</li>
+</ul>
+<p>For small projects or beginners learning AWS, the standard AWS CloudTrail service is often sufficient. However, as environments grow and auditing requirements become more demanding, CloudTrail Lake becomes an extremely valuable solution.</p>
+<hr>
+<h1 id="what-i-learned">What I Learned<a hidden class="anchor" aria-hidden="true" href="#what-i-learned">#</a></h1>
+<p>After learning about AWS CloudTrail Lake, I realized that it is an essential service for managing enterprise AWS environments.</p>
+<p>Some of the key lessons I learned include:</p>
+<ul>
+<li>AWS CloudTrail is more than an activity history service—it is also a powerful security auditing tool.</li>
+<li>CloudTrail Lake enables much faster investigations through SQL-based querying.</li>
+<li>Event data stores organize AWS event data more effectively.</li>
+<li>Security incidents can be investigated much more efficiently.</li>
+<li>CloudTrail Lake is especially valuable for enterprise-scale AWS environments.</li>
+</ul>
+<hr>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>AWS CloudTrail Lake may not be the first AWS service that beginners learn, but it is an extremely powerful solution for monitoring, auditing, and analyzing activity across AWS environments.</p>
+<p>If <strong>AWS Identity and Access Management (IAM)</strong> answers the question:</p>
+<blockquote>
+<p><strong>&ldquo;Who is allowed to do what?&rdquo;</strong></p>
+</blockquote>
+<p>then <strong>AWS CloudTrail Lake</strong> answers:</p>
+<blockquote>
+<p><strong>&ldquo;Who did what, when, and how?&rdquo;</strong></p>
+</blockquote>
+<p>In my opinion, understanding AWS CloudTrail Lake provides a much deeper understanding of AWS security, governance, and operational troubleshooting, making it an important service for anyone working with cloud infrastructure.</p>
+<hr>
+<h1 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h1>
+<ul>
+<li>
+<p>AWS CloudTrail Lake Documentation<br>
+<a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html">https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html</a></p>
+</li>
+<li>
+<p>AWS CloudTrail Documentation<br>
+<a href="https://docs.aws.amazon.com/cloudtrail/">https://docs.aws.amazon.com/cloudtrail/</a></p>
+</li>
+<li>
+<p>AWS CloudTrail Overview<br>
+<a href="https://aws.amazon.com/cloudtrail/">https://aws.amazon.com/cloudtrail/</a></p>
+</li>
+</ul>
+<hr>
+<p><a href="https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL">https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219727545458872/?rdid=HWQjwewQwSpD0wcL#</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://long-28.github.io/en/">AWS Portfolio Workshop</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

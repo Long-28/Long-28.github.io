@@ -1,17 +1,855 @@
-<!doctype html><html lang=vi><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Triển khai hệ thống Enterprise HelpDesk trên AWS"><title>Triển khai · Workshop Portfolio AWS</title><script>document.documentElement.dataset.theme=localStorage.getItem("aws-workshop-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")</script><link rel=stylesheet href=/css/site.css></head><body><header class=topbar><button class="icon-button mobile-only" id=menu-toggle aria-label="Toggle menu">☰</button>
-<a class=brand href=/vi/><span class=brand-mark>AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a><div class=topbar-actions><label class=search-box><span>⌕</span><input id=site-search type=search placeholder="Search navigation..."></label><div class=language-switcher><a href=/en/6-workshop/04-deployment/>EN</a><a class=active href=/vi/6-workshop/04-deployment/>VI</a></div></div></header><div class=app-shell><aside class=sidebar id=sidebar><div class=sidebar-label>MỤC LỤC</div><nav class=sidebar-nav id=sidebar-nav><details class=nav-group><summary><a href=/vi/1-student-information/><span>01</span>Thông tin sinh viên</a></summary></details><details class=nav-group><summary><a href=/vi/2-worklog/><span>02</span>Nhật ký thực tập</a>
-<b>⌄</b></summary></details><details class=nav-group><summary><a href=/vi/3-proposal/><span>03</span>Đề xuất dự án</a></summary></details><details class=nav-group><summary><a href=/vi/4-blog-posts/><span>04</span>Bài viết</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/4-blog-posts/01-blog-1/>AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
-<a href=/vi/4-blog-posts/02-blog-2/>AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
-<a href=/vi/4-blog-posts/03-blog-3/>AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a></div></details><details class=nav-group><summary><a href=/vi/5-events-participated/><span>05</span>Sự kiện đã tham gia</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/5-events-participated/01-event-1/>AWS First Cloud AI Journey Community Day 2026</a>
-<a href=/vi/5-events-participated/02-event-2/>Mini Meetup – First Cloud AI Journey 06/06/2026</a></div></details><details class=nav-group open><summary><a href=/vi/6-workshop/><span>06</span>Workshop</a>
-<b>⌄</b></summary><div class=nav-children><a href=/vi/6-workshop/01-overview/>Tổng quan</a>
-<a href=/vi/6-workshop/02-prerequisites/>Điều kiện tiên quyết</a>
-<a href=/vi/6-workshop/03-architecture/>Kiến trúc</a>
-<a class=active href=/vi/6-workshop/04-deployment/>Triển khai</a>
-<a href=/vi/6-workshop/09-cleanup/>Dọn dẹp tài nguyên</a>
-<a href=/vi/6-workshop/demo/>Demo</a></div></details><details class=nav-group><summary><a href=/vi/7-self-evaluation/><span>07</span>Tự đánh giá</a></summary></details><details class=nav-group><summary><a href=/vi/8-sharing-and-feedback/><span>08</span>Chia sẻ và phản hồi</a></summary></details></nav><div class=sidebar-note><strong>Mẹo</strong><p>Nhấn VI/EN để chuyển ngôn ngữ.</p></div></aside><main class=main-content id=main-content><nav class=breadcrumbs aria-label=Breadcrumb><a href=/vi/>Trang chủ</a>
-<span>/</span><a href=/vi/6-workshop/>Workshop</a>
-<span>/</span><span>Triển khai</span></nav><header class="page-header journey-header"><span class=eyebrow>TÀI LIỆU WORKSHOP</span><h1>Triển khai</h1><p>Triển khai hệ thống Enterprise HelpDesk trên AWS</p></header><article class="content-card prose" data-search-content><h1 id=triển-khai-hệ-thống-enterprise-helpdesk-trên-aws>Triển khai hệ thống Enterprise HelpDesk trên AWS</h1><p>Trong phần này, chúng ta sẽ tiến hành xây dựng hạ tầng mạng cho hệ thống Enterprise HelpDesk bằng Amazon VPC. Sau khi hoàn thành, môi trường sẽ sẵn sàng để triển khai cơ sở dữ liệu Amazon RDS và ứng dụng bằng AWS Elastic Beanstalk.</p><hr><h2 id=nội-dung-triển-khai>Nội dung triển khai</h2><ul><li><a href=/vi/6-workshop/04-deployment/#phan-1-amazon-vpc>Phần 1. Amazon VPC</a></li><li><a href=/vi/6-workshop/04-deployment/#phan-2-amazon-rds>Phần 2. Amazon RDS</a></li><li><a href=/vi/6-workshop/04-deployment/#phan-3-aws-elastic-beanstalk>Phần 3. AWS Elastic Beanstalk</a></li></ul><hr><h2 id=phan-1-amazon-vpc style="text-align:center;font-size:36px;margin:50px 0 30px">Phần 1. Xây dựng hạ tầng mạng với Amazon VPC</h2><p>Amazon Virtual Private Cloud (Amazon VPC) cho phép tạo một mạng riêng trên AWS để triển khai các tài nguyên của hệ thống. Trong workshop này, chúng ta sẽ cấu hình một VPC gồm Public Subnet, Private Subnet, Internet Gateway, Route Table và Security Group.</p><hr><h2 id=bước-1-tạo-amazon-vpc>Bước 1. Tạo Amazon VPC</h2><p>Đăng nhập vào <strong>AWS Management Console</strong>.</p><p>Thực hiện:</p><ol><li>Tìm và mở dịch vụ <strong>Amazon VPC</strong>.</li><li>Chọn <strong>Your VPCs</strong>.</li><li>Nhấn <strong>Create VPC</strong>.</li><li>Đặt tên VPC là <strong>EnterpriseHelpDesk-VPC</strong>.</li><li>Chọn dải địa chỉ IPv4 CIDR phù hợp.</li><li>Nhấn <strong>Create VPC</strong>.</li></ol><p>Sau khi hoàn thành, AWS sẽ tạo một mạng riêng dùng để triển khai toàn bộ tài nguyên của hệ thống.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/01-create-vpc.jpg alt="Tạo Amazon VPC" style=width:65%></div><hr><h2 id=bước-2-tạo-public-subnet-và-private-subnet>Bước 2. Tạo Public Subnet và Private Subnet</h2><p>Sau khi tạo VPC, tiếp tục tạo các Subnet.</p><p>Trong workshop này sẽ sử dụng:</p><ul><li>Public-Subnet-A</li><li>Public-Subnet-B</li><li>Private-Subnet-A</li><li>Private-Subnet-B</li></ul><p>Việc tách Public và Private Subnet giúp tăng tính bảo mật và tuân theo mô hình triển khai nhiều tầng trên AWS.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/02-create-subnets.jpg alt="Tạo Public Subnet và Private Subnet" style=width:65%></div><hr><h2 id=bước-3-tạo-internet-gateway>Bước 3. Tạo Internet Gateway</h2><p>Để các tài nguyên trong Public Subnet có thể truy cập Internet, cần tạo Internet Gateway.</p><p>Thực hiện:</p><ol><li>Mở <strong>Amazon VPC</strong>.</li><li>Chọn <strong>Internet Gateways</strong>.</li><li>Nhấn <strong>Create internet gateway</strong>.</li><li>Nhập:</li></ol><table><thead><tr><th>Thuộc tính</th><th>Giá trị</th></tr></thead><tbody><tr><td>Name tag</td><td>EnterpriseHelpDesk-IGW</td></tr></tbody></table><ol start=5><li>Nhấn <strong>Create internet gateway</strong>.</li></ol><p>Sau khi tạo thành công, Internet Gateway sẽ ở trạng thái <strong>Available</strong>, tuy nhiên vẫn chưa được sử dụng cho đến khi gắn với VPC.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/03-create-internet-gateway.jpg alt="Tạo Internet Gateway" style=width:65%></div><hr><h2 id=bước-4-gắn-internet-gateway-vào-vpc>Bước 4. Gắn Internet Gateway vào VPC</h2><p>Sau khi tạo Internet Gateway, cần kết nối với VPC.</p><p>Thực hiện:</p><ol><li>Chọn Internet Gateway vừa tạo.</li><li>Chọn <strong>Actions → Attach to VPC</strong>.</li><li>Chọn <strong>EnterpriseHelpDesk-VPC</strong>.</li><li>Nhấn <strong>Attach internet gateway</strong>.</li></ol><p>Sau khi hoàn thành, Internet Gateway sẽ được sử dụng để cung cấp kết nối Internet cho các Public Subnet.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/04-attach-internet-gateway.jpg alt="Gắn Internet Gateway vào VPC" style=width:65%></div><hr><h2 id=bước-5-cấu-hình-public-route-table>Bước 5. Cấu hình Public Route Table</h2><p>Tiếp tục cấu hình định tuyến cho Public Subnet.</p><p>Thực hiện:</p><ol><li>Mở <strong>Route Tables</strong>.</li><li>Chọn Route Table của VPC.</li><li>Đổi tên thành <strong>EnterpriseHelpDesk-Public-RT</strong>.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/05-public-route-table.jpg alt="Cấu hình Public Route Table" style=width:65%></div><hr><h2 id=bước-6-thêm-tuyến-mặc-định>Bước 6. Thêm tuyến mặc định</h2><p>Trong Public Route Table:</p><ol><li>Chọn <strong>Routes</strong>.</li><li>Nhấn <strong>Edit routes</strong>.</li><li>Chọn <strong>Add route</strong>.</li><li>Nhập:</li></ol><table><thead><tr><th>Destination</th><th>Target</th></tr></thead><tbody><tr><td>0.0.0.0/0</td><td>EnterpriseHelpDesk-IGW</td></tr></tbody></table><ol start=5><li>Nhấn <strong>Save changes</strong>.</li></ol><p>Route này cho phép Public Subnet truy cập Internet thông qua Internet Gateway.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/06-public-route.jpg alt="Thêm tuyến mặc định cho Public Route Table" style=width:65%></div><hr><h2 id=bước-7-liên-kết-public-subnet>Bước 7. Liên kết Public Subnet</h2><p>Tiếp tục gắn Public Route Table cho các Public Subnet.</p><p>Thực hiện:</p><ol><li>Chọn tab <strong>Subnet Associations</strong>.</li><li>Nhấn <strong>Edit subnet associations</strong>.</li><li>Chọn:<ul><li>Public-Subnet-A</li><li>Public-Subnet-B</li></ul></li><li>Nhấn <strong>Save associations</strong>.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/07-public-subnet-association.jpg alt="Liên kết Public Subnet" style=width:65%></div><hr><h2 id=bước-8-tạo-private-route-table>Bước 8. Tạo Private Route Table</h2><p>Tiếp tục tạo Route Table dành riêng cho Private Subnet.</p><p>Thực hiện:</p><ol><li>Chọn <strong>Create route table</strong>.</li><li>Đặt tên:</li></ol><p><strong>EnterpriseHelpDesk-Private-RT</strong></p><ol start=3><li>Chọn VPC của dự án.</li><li>Nhấn <strong>Create route table</strong>.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/08-private-route-table.jpg alt="Tạo Private Route Table" style=width:65%></div><hr><h2 id=bước-9-liên-kết-private-subnet>Bước 9. Liên kết Private Subnet</h2><p>Sau khi tạo Private Route Table:</p><ol><li>Chọn <strong>Subnet Associations</strong>.</li><li>Nhấn <strong>Edit subnet associations</strong>.</li><li>Chọn:<ul><li>Private-Subnet-A</li><li>Private-Subnet-B</li></ul></li><li>Nhấn <strong>Save associations</strong>.</li></ol><p>Việc sử dụng Private Route Table giúp các tài nguyên như Amazon RDS không thể truy cập trực tiếp từ Internet.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/09-private-subnet-association.jpg alt="Liên kết Private Subnet" style=width:65%></div><hr><h2 id=bước-10-tạo-security-group-cho-application-load-balancer>Bước 10. Tạo Security Group cho Application Load Balancer</h2><p>Mở <strong>Security Groups</strong>.</p><p>Nhấn <strong>Create Security Group</strong>.</p><p>Tạo Security Group dành cho Application Load Balancer và cấu hình:</p><table><thead><tr><th>Type</th><th>Port</th><th>Source</th></tr></thead><tbody><tr><td>HTTP</td><td>80</td><td>0.0.0.0/0</td></tr><tr><td>HTTPS</td><td>443</td><td>0.0.0.0/0</td></tr></tbody></table><p>Sau khi hoàn thành, nhấn <strong>Create Security Group</strong>.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/10-create-alb-security-group.jpg alt="Tạo Security Group cho Application Load Balancer" style=width:65%></div><hr><h2 id=bước-11-tạo-security-group-cho-amazon-ec2>Bước 11. Tạo Security Group cho Amazon EC2</h2><p>Tiếp tục tạo Security Group mới dành cho EC2.</p><p>Chỉ cho phép Application Load Balancer truy cập vào máy chủ ứng dụng.</p><p>Điều này giúp ngăn chặn truy cập trực tiếp từ Internet đến EC2.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/11-create-ec2-security-group.jpg alt="Tạo Security Group cho Amazon EC2" style=width:65%></div><hr><h2 id=bước-12-tạo-security-group-cho-amazon-rds>Bước 12. Tạo Security Group cho Amazon RDS</h2><p>Tạo Security Group dành cho Amazon RDS SQL Server.</p><p>Chỉ cho phép EC2 hoặc Elastic Beanstalk kết nối tới cơ sở dữ liệu thông qua cổng SQL Server.</p><p>Không nên mở quyền truy cập trực tiếp từ Internet.</p><div style="text-align:center;margin:20px 0"><img src=/images/workshop/12-create-rds-security-group.jpg alt="Tạo Security Group cho Amazon RDS" style=width:65%></div><hr><h1 id=kết-quả-đạt-được>Kết quả đạt được</h1><p>Sau khi hoàn thành phần triển khai Amazon VPC, hệ thống sẽ có:</p><ul><li>01 Amazon VPC.</li><li>02 Public Subnet.</li><li>02 Private Subnet.</li><li>01 Internet Gateway.</li><li>01 Public Route Table.</li><li>01 Private Route Table.</li><li>Security Group cho Application Load Balancer.</li><li>Security Group cho Amazon EC2.</li><li>Security Group cho Amazon RDS.</li></ul><p>Hạ tầng mạng này sẽ được sử dụng trong các bước tiếp theo để triển khai Amazon RDS SQL Server và ứng dụng Enterprise HelpDesk bằng AWS Elastic Beanstalk.</p><hr><h2 id=phan-2-amazon-rds style="text-align:center;font-size:36px;margin:50px 0 30px">Phần 2. Triển khai cơ sở dữ liệu với Amazon RDS</h2><p>Amazon Relational Database Service (Amazon RDS) là dịch vụ cơ sở dữ liệu được quản lý trên AWS. Trong workshop này, Amazon RDS được sử dụng để triển khai cơ sở dữ liệu Microsoft SQL Server phục vụ cho hệ thống Enterprise HelpDesk.</p><p>Sau khi hoàn thành phần này, cơ sở dữ liệu sẽ được triển khai trong Private Subnet và chỉ cho phép các tài nguyên trong VPC truy cập thông qua Security Group đã cấu hình ở phần trước.</p><h3 id=bước-1-tạo-db-subnet-group>Bước 1. Tạo DB Subnet Group</h3><p>DB Subnet Group cho phép Amazon RDS triển khai cơ sở dữ liệu trên nhiều Private Subnet nhằm tăng tính sẵn sàng và đảm bảo cơ sở dữ liệu không được truy cập trực tiếp từ Internet.</p><p>Thực hiện các bước sau:</p><ol><li>Đăng nhập <strong>AWS Management Console</strong>.</li><li>Tìm và mở dịch vụ <strong>Amazon RDS</strong>.</li><li>Chọn <strong>Subnet groups</strong>.</li><li>Nhấn <strong>Create DB subnet group</strong>.</li><li>Đặt tên <strong>EnterpriseHelpDesk-DBSubnetGroup</strong>.</li><li>Chọn VPC <strong>EnterpriseHelpDesk-VPC</strong>.</li><li>Chọn hai Private Subnet đã tạo ở phần Amazon VPC.</li><li>Nhấn <strong>Create</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/13-create-db-subnet-group.jpg target=_blank rel="noopener noreferrer"><img src=/images/workshop/13-create-db-subnet-group.jpg alt="Tạo DB Subnet Group" title="Bấm vào hình để xem kích thước đầy đủ" style=width:65%;cursor:zoom-in;border-radius:6px></a><p style=margin-top:8px;font-size:14px;color:#666>Bấm vào hình để xem kích thước đầy đủ</p></div><hr><h3 id=bước-2-tạo-cơ-sở-dữ-liệu-amazon-rds>Bước 2. Tạo cơ sở dữ liệu Amazon RDS</h3><p>Sau khi tạo DB Subnet Group, tiến hành tạo cơ sở dữ liệu mới.</p><p>Thực hiện các bước sau:</p><ol><li>Chọn <strong>Databases</strong>.</li><li>Nhấn <strong>Create database</strong>.</li><li>Chọn <strong>Standard Create</strong>.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/14-create-database.jpg alt="Create Database" style=width:65%></div><hr><h3 id=bước-3-chọn-microsoft-sql-server>Bước 3. Chọn Microsoft SQL Server</h3><p>Tiếp tục cấu hình cơ sở dữ liệu.</p><p>Thực hiện các bước sau:</p><ol><li>Chọn <strong>Microsoft SQL Server</strong>.</li><li>Chọn phiên bản SQL Server phù hợp.</li><li>Chọn mẫu triển khai <strong>Free tier</strong> hoặc <strong>Dev/Test</strong> (nếu có).</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/15-select-sql-server-engine.jpg alt="Select SQL Server Engine" style=width:65%></div><hr><h3 id=bước-4-cấu-hình-db-instance>Bước 4. Cấu hình DB Instance</h3><p>Thiết lập thông tin cho cơ sở dữ liệu.</p><p>Thực hiện các bước sau:</p><ol><li>Nhập <strong>DB instance identifier</strong>.</li><li>Nhập <strong>Master username</strong>.</li><li>Nhập và xác nhận <strong>Master password</strong>.</li><li>Chọn loại Instance phù hợp.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/16-configure-db-instance.jpg alt="Configure DB Instance" style=width:65%></div><hr><h3 id=bước-5-cấu-hình-storage>Bước 5. Cấu hình Storage</h3><p>Tiếp tục cấu hình dung lượng lưu trữ.</p><p>Thực hiện các bước sau:</p><ol><li>Chọn loại Storage.</li><li>Thiết lập dung lượng lưu trữ.</li><li>Bật hoặc tắt Storage Autoscaling theo yêu cầu.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/17-configure-storage.jpg alt="Configure Storage" style=width:65%></div><hr><h3 id=bước-6-cấu-hình-mạng>Bước 6. Cấu hình mạng</h3><p>Tiếp tục cấu hình kết nối mạng.</p><p>Thực hiện các bước sau:</p><ol><li>Chọn <strong>EnterpriseHelpDesk-VPC</strong>.</li><li>Chọn <strong>EnterpriseHelpDesk-DBSubnetGroup</strong>.</li><li>Chọn <strong>No</strong> tại mục <strong>Public Access</strong>.</li><li>Giữ nguyên các thiết lập còn lại.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/18-configure-network.jpg alt="Configure Network" style=width:65%></div><hr><h3 id=bước-7-chọn-security-group>Bước 7. Chọn Security Group</h3><p>Cuối cùng, cấu hình Security Group cho Amazon RDS.</p><p>Thực hiện các bước sau:</p><ol><li>Chọn Security Group đã tạo ở phần Amazon VPC.</li><li>Kiểm tra lại toàn bộ thông tin cấu hình.</li><li>Nhấn <strong>Create database</strong> để bắt đầu triển khai.</li></ol><div style="text-align:center;margin:20px 0"><img src=/images/workshop/19-select-rds-security-group.png alt="Select RDS Security Group" style=width:65%></div><hr><h2 id=phan-3-aws-elastic-beanstalk style="text-align:center;font-size:36px;margin:50px 0 30px">Phần 3. Triển khai ứng dụng với AWS Elastic Beanstalk</h2><p>AWS Elastic Beanstalk là dịch vụ của Amazon Web Services hỗ trợ triển khai và quản lý ứng dụng một cách nhanh chóng mà không cần cấu hình thủ công toàn bộ hạ tầng. Trong workshop này, Elastic Beanstalk được sử dụng để triển khai ứng dụng <strong>Enterprise HelpDesk</strong> trên nền tảng .NET, đồng thời kết nối với cơ sở dữ liệu Amazon RDS đã được tạo ở phần trước.</p><p>Sau khi hoàn thành phần này, ứng dụng sẽ được triển khai thành công và có thể truy cập thông qua địa chỉ URL do AWS Elastic Beanstalk cung cấp.</p><hr><h3 id=bước-1-tạo-service-role>Bước 1. Tạo Service Role</h3><p>Service Role cho phép AWS Elastic Beanstalk quản lý các tài nguyên AWS và theo dõi trạng thái của môi trường triển khai.</p><p>Thực hiện các bước sau:</p><ol><li>Đăng nhập <strong>AWS Management Console</strong>.</li><li>Mở dịch vụ <strong>IAM</strong>.</li><li>Chọn <strong>Roles</strong>.</li><li>Nhấn <strong>Create role</strong>.</li><li>Tại <strong>Trusted entity type</strong>, chọn <strong>AWS service</strong>.</li><li>Tại <strong>Service or use case</strong>, chọn <strong>Elastic Beanstalk</strong>.</li><li>Chọn <strong>Elastic Beanstalk – Environment</strong>.</li><li>Nhấn <strong>Next</strong>.</li><li>Kiểm tra hai Policy đã được chọn:<ul><li><strong>AWSElasticBeanstalkEnhancedHealth</strong></li><li><strong>AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy</strong></li></ul></li><li>Đặt tên Role là <strong>aws-elasticbeanstalk-service-role</strong>.</li><li>Nhấn <strong>Create role</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/20-create-service-role.jpg target=_blank><img src=/images/workshop/20-create-service-role.jpg alt="Create Service Role" style=width:65%;cursor:zoom-in></a><p><i>Hình 20. Tạo Service Role cho Elastic Beanstalk.</i></p></div><hr><h3 id=bước-2-tạo-ec2-instance-profile-role>Bước 2. Tạo EC2 Instance Profile Role</h3><p>EC2 Instance Profile Role cho phép các máy chủ EC2 trong môi trường Elastic Beanstalk truy cập các dịch vụ AWS theo quyền đã được cấp.</p><p>Thực hiện các bước sau:</p><ol><li>Trong dịch vụ <strong>IAM</strong>, chọn <strong>Roles</strong>.</li><li>Nhấn <strong>Create role</strong>.</li><li>Chọn <strong>AWS service</strong>.</li><li>Chọn <strong>Elastic Beanstalk</strong>.</li><li>Chọn <strong>Elastic Beanstalk – Compute</strong>.</li><li>Giữ nguyên các Policy mặc định:<ul><li><strong>AWSElasticBeanstalkWebTier</strong></li><li><strong>AWSElasticBeanstalkWorkerTier</strong></li><li><strong>AWSElasticBeanstalkMulticontainerDocker</strong></li></ul></li><li>Đặt tên Role là <strong>aws-elasticbeanstalk-ec2-role</strong>.</li><li>Nhấn <strong>Create role</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/21-create-ec2-role.jpg target=_blank><img src=/images/workshop/21-create-ec2-role.jpg alt="Create EC2 Role" style=width:65%;cursor:zoom-in></a><p><i>Hình 21. Tạo EC2 Instance Profile Role.</i></p></div><hr><h3 id=bước-3-cấp-quyền-đọc-secrets-manager>Bước 3. Cấp quyền đọc Secrets Manager</h3><p>Để ứng dụng có thể đọc thông tin kết nối cơ sở dữ liệu từ AWS Secrets Manager, cần cấp quyền cho EC2 Instance Profile Role.</p><p>Thực hiện các bước sau:</p><ol><li>Mở Role <strong>aws-elasticbeanstalk-ec2-role</strong>.</li><li>Chọn tab <strong>Permissions</strong>.</li><li>Nhấn <strong>Add permissions</strong>.</li><li>Chọn <strong>Create inline policy</strong>.</li><li>Chọn tab <strong>JSON</strong>.</li><li>Xóa nội dung mặc định.</li><li>Dán Policy đã chuẩn bị.</li><li>Nhấn <strong>Next</strong>.</li><li>Hoàn tất việc tạo Inline Policy.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/22-create-inline-policy.jpg target=_blank><img src=/images/workshop/22-create-inline-policy.jpg alt="Create Inline Policy" style=width:65%;cursor:zoom-in></a><p><i>Hình 22. Cấp quyền đọc Secrets Manager.</i></p></div><hr><h3 id=bước-4-tạo-elastic-beanstalk-application>Bước 4. Tạo Elastic Beanstalk Application</h3><p>Sau khi hoàn tất cấu hình IAM, tiến hành tạo Application trên Elastic Beanstalk.</p><p>Thực hiện các bước sau:</p><ol><li>Mở dịch vụ <strong>Elastic Beanstalk</strong>.</li><li>Chọn <strong>Create application</strong>.</li><li>Nhập tên Application là <strong>EnterpriseHelpDesk</strong>.</li><li>Tại mục <strong>Application code</strong>, chọn <strong>Sample application</strong>.</li><li>Chọn <strong>Service Role</strong> là <strong>aws-elasticbeanstalk-service-role</strong>.</li><li>Chọn <strong>EC2 Instance Profile</strong> là <strong>aws-elasticbeanstalk-ec2-role</strong>.</li><li>Nhấn <strong>Next</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/23-create-application.jpg target=_blank><img src=/images/workshop/23-create-application.jpg alt="Create Elastic Beanstalk Application" style=width:65%;cursor:zoom-in></a><p><i>Hình 23. Tạo Elastic Beanstalk Application.</i></p></div><hr><h3 id=bước-5-cấu-hình-vpc>Bước 5. Cấu hình VPC</h3><p>Tiếp tục cấu hình mạng cho môi trường Elastic Beanstalk.</p><p>Thực hiện các bước sau:</p><ol><li>Tại mục <strong>VPC</strong>, chọn <strong>EnterpriseHelpDesk-VPC</strong>.</li><li>Chờ AWS tải danh sách Subnets.</li><li>Giữ nguyên tùy chọn <strong>System default</strong>.</li><li>Mở phần <strong>Tags</strong>.</li><li>Thêm Tag với:<ul><li><strong>Key:</strong> Project</li><li><strong>Value:</strong> EnterpriseHelpDesk</li></ul></li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/25-configure-vpc.jpg target=_blank><img src=/images/workshop/25-configure-vpc.jpg alt="Configure VPC" style=width:65%;cursor:zoom-in></a><p><i>Hình 24. Cấu hình VPC cho Elastic Beanstalk.</i></p></div><hr><h3 id=bước-6-chọn-security-group>Bước 6. Chọn Security Group</h3><p>Để bảo vệ môi trường triển khai, cần gán Security Group đã tạo ở phần Amazon VPC.</p><p>Thực hiện các bước sau:</p><ol><li>Chọn <strong>Choose security groups</strong>.</li><li>Chọn <strong>EnterpriseHelpDesk-App-SG</strong>.</li><li>Nhấn <strong>Next</strong>.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/26-select-security-group.jpg target=_blank><img src=/images/workshop/26-select-security-group.jpg alt="Select Security Group" style=width:65%;cursor:zoom-in></a><p><i>Hình 25. Chọn Security Group.</i></p></div><hr><h3 id=bước-7-cấu-hình-capacity>Bước 7. Cấu hình Capacity</h3><p>Tiếp tục cấu hình tài nguyên cho môi trường Elastic Beanstalk.</p><p>Thực hiện các bước sau:</p><ol><li>Giữ loại Instance là <strong>t3.micro</strong>.</li><li>Nếu AWS tự động thêm <strong>t3.small</strong>, hãy xóa lựa chọn này.</li><li>Nhấn <strong>Next</strong> để tiếp tục.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/27-configure-capacity.jpg target=_blank><img src=/images/workshop/27-configure-capacity.jpg alt="Configure Capacity" style=width:65%;cursor:zoom-in></a><p><i>Hình 26. Cấu hình Capacity.</i></p></div><hr><h3 id=bước-8-triển-khai-ứng-dụng>Bước 8. Triển khai ứng dụng</h3><p>Sau khi hoàn tất việc tạo môi trường, tiến hành triển khai ứng dụng Enterprise HelpDesk.</p><p>Thực hiện các bước sau:</p><ol><li>Chọn <strong>Upload and deploy</strong>.</li><li>Chọn file Publish (.zip) của ứng dụng Enterprise HelpDesk.</li><li>Nhấn <strong>Deploy</strong>.</li><li>Chờ quá trình triển khai hoàn tất.</li><li>Truy cập URL do AWS Elastic Beanstalk cung cấp để kiểm tra ứng dụng.</li></ol><div style="text-align:center;margin:20px 0"><a href=/images/workshop/29-upload-and-deploy.jpg target=_blank><img src=/images/workshop/29-upload-and-deploy.jpg alt="Upload and Deploy" style=width:65%;cursor:zoom-in></a><p><i>Hình 27. Upload và triển khai ứng dụng.</i></p></div></article><nav class=pager><a href=/vi/6-workshop/09-cleanup/>← Dọn dẹp tài nguyên</a>
-<a href=/vi/6-workshop/03-architecture/>Kiến trúc →</a></nav><footer class=footer></footer></main></div><script src=/js/site.js defer></script></body></html>
+<!DOCTYPE html>
+<html lang="vi" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Triển khai | Workshop Portfolio AWS</title>
+<meta name="keywords" content="">
+<meta name="description" content="Triển khai hệ thống Enterprise HelpDesk trên AWS">
+<meta name="author" content="">
+<link rel="canonical" href="https://long-28.github.io/vi/6-workshop/04-deployment/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://long-28.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/6-workshop/04-deployment/">
+<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/6-workshop/04-deployment/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://long-28.github.io/vi/6-workshop/04-deployment/">
+  <meta property="og:site_name" content="Workshop Portfolio AWS">
+  <meta property="og:title" content="Triển khai">
+  <meta property="og:description" content="Triển khai hệ thống Enterprise HelpDesk trên AWS">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="6-workshop">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Triển khai">
+  <meta name="twitter:description" content="Triển khai hệ thống Enterprise HelpDesk trên AWS">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Workshop",
+      "item": "https://long-28.github.io/vi/6-workshop/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Triển khai",
+      "item": "https://long-28.github.io/vi/6-workshop/04-deployment/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Triển khai",
+  "name": "Triển khai",
+  "description": "Triển khai hệ thống Enterprise HelpDesk trên AWS",
+  "keywords": [
+    
+  ],
+  "articleBody": "Triển khai hệ thống Enterprise HelpDesk trên AWS Trong phần này, chúng ta sẽ tiến hành xây dựng hạ tầng mạng cho hệ thống Enterprise HelpDesk bằng Amazon VPC. Sau khi hoàn thành, môi trường sẽ sẵn sàng để triển khai cơ sở dữ liệu Amazon RDS và ứng dụng bằng AWS Elastic Beanstalk.\nNội dung triển khai Phần 1. Amazon VPC Phần 2. Amazon RDS Phần 3. AWS Elastic Beanstalk Phần 1. Xây dựng hạ tầng mạng với Amazon VPC Amazon Virtual Private Cloud (Amazon VPC) cho phép tạo một mạng riêng trên AWS để triển khai các tài nguyên của hệ thống. Trong workshop này, chúng ta sẽ cấu hình một VPC gồm Public Subnet, Private Subnet, Internet Gateway, Route Table và Security Group.\nBước 1. Tạo Amazon VPC Đăng nhập vào AWS Management Console.\nThực hiện:\nTìm và mở dịch vụ Amazon VPC. Chọn Your VPCs. Nhấn Create VPC. Đặt tên VPC là EnterpriseHelpDesk-VPC. Chọn dải địa chỉ IPv4 CIDR phù hợp. Nhấn Create VPC. Sau khi hoàn thành, AWS sẽ tạo một mạng riêng dùng để triển khai toàn bộ tài nguyên của hệ thống.\nBước 2. Tạo Public Subnet và Private Subnet Sau khi tạo VPC, tiếp tục tạo các Subnet.\nTrong workshop này sẽ sử dụng:\nPublic-Subnet-A Public-Subnet-B Private-Subnet-A Private-Subnet-B Việc tách Public và Private Subnet giúp tăng tính bảo mật và tuân theo mô hình triển khai nhiều tầng trên AWS.\nBước 3. Tạo Internet Gateway Để các tài nguyên trong Public Subnet có thể truy cập Internet, cần tạo Internet Gateway.\nThực hiện:\nMở Amazon VPC. Chọn Internet Gateways. Nhấn Create internet gateway. Nhập: Thuộc tính Giá trị Name tag EnterpriseHelpDesk-IGW Nhấn Create internet gateway. Sau khi tạo thành công, Internet Gateway sẽ ở trạng thái Available, tuy nhiên vẫn chưa được sử dụng cho đến khi gắn với VPC.\nBước 4. Gắn Internet Gateway vào VPC Sau khi tạo Internet Gateway, cần kết nối với VPC.\nThực hiện:\nChọn Internet Gateway vừa tạo. Chọn Actions → Attach to VPC. Chọn EnterpriseHelpDesk-VPC. Nhấn Attach internet gateway. Sau khi hoàn thành, Internet Gateway sẽ được sử dụng để cung cấp kết nối Internet cho các Public Subnet.\nBước 5. Cấu hình Public Route Table Tiếp tục cấu hình định tuyến cho Public Subnet.\nThực hiện:\nMở Route Tables. Chọn Route Table của VPC. Đổi tên thành EnterpriseHelpDesk-Public-RT. Bước 6. Thêm tuyến mặc định Trong Public Route Table:\nChọn Routes. Nhấn Edit routes. Chọn Add route. Nhập: Destination Target 0.0.0.0/0 EnterpriseHelpDesk-IGW Nhấn Save changes. Route này cho phép Public Subnet truy cập Internet thông qua Internet Gateway.\nBước 7. Liên kết Public Subnet Tiếp tục gắn Public Route Table cho các Public Subnet.\nThực hiện:\nChọn tab Subnet Associations. Nhấn Edit subnet associations. Chọn: Public-Subnet-A Public-Subnet-B Nhấn Save associations. Bước 8. Tạo Private Route Table Tiếp tục tạo Route Table dành riêng cho Private Subnet.\nThực hiện:\nChọn Create route table. Đặt tên: EnterpriseHelpDesk-Private-RT\nChọn VPC của dự án. Nhấn Create route table. Bước 9. Liên kết Private Subnet Sau khi tạo Private Route Table:\nChọn Subnet Associations. Nhấn Edit subnet associations. Chọn: Private-Subnet-A Private-Subnet-B Nhấn Save associations. Việc sử dụng Private Route Table giúp các tài nguyên như Amazon RDS không thể truy cập trực tiếp từ Internet.\nBước 10. Tạo Security Group cho Application Load Balancer Mở Security Groups.\nNhấn Create Security Group.\nTạo Security Group dành cho Application Load Balancer và cấu hình:\nType Port Source HTTP 80 0.0.0.0/0 HTTPS 443 0.0.0.0/0 Sau khi hoàn thành, nhấn Create Security Group.\nBước 11. Tạo Security Group cho Amazon EC2 Tiếp tục tạo Security Group mới dành cho EC2.\nChỉ cho phép Application Load Balancer truy cập vào máy chủ ứng dụng.\nĐiều này giúp ngăn chặn truy cập trực tiếp từ Internet đến EC2.\nBước 12. Tạo Security Group cho Amazon RDS Tạo Security Group dành cho Amazon RDS SQL Server.\nChỉ cho phép EC2 hoặc Elastic Beanstalk kết nối tới cơ sở dữ liệu thông qua cổng SQL Server.\nKhông nên mở quyền truy cập trực tiếp từ Internet.\nKết quả đạt được Sau khi hoàn thành phần triển khai Amazon VPC, hệ thống sẽ có:\n01 Amazon VPC. 02 Public Subnet. 02 Private Subnet. 01 Internet Gateway. 01 Public Route Table. 01 Private Route Table. Security Group cho Application Load Balancer. Security Group cho Amazon EC2. Security Group cho Amazon RDS. Hạ tầng mạng này sẽ được sử dụng trong các bước tiếp theo để triển khai Amazon RDS SQL Server và ứng dụng Enterprise HelpDesk bằng AWS Elastic Beanstalk.\nPhần 2. Triển khai cơ sở dữ liệu với Amazon RDS Amazon Relational Database Service (Amazon RDS) là dịch vụ cơ sở dữ liệu được quản lý trên AWS. Trong workshop này, Amazon RDS được sử dụng để triển khai cơ sở dữ liệu Microsoft SQL Server phục vụ cho hệ thống Enterprise HelpDesk.\nSau khi hoàn thành phần này, cơ sở dữ liệu sẽ được triển khai trong Private Subnet và chỉ cho phép các tài nguyên trong VPC truy cập thông qua Security Group đã cấu hình ở phần trước.\nBước 1. Tạo DB Subnet Group DB Subnet Group cho phép Amazon RDS triển khai cơ sở dữ liệu trên nhiều Private Subnet nhằm tăng tính sẵn sàng và đảm bảo cơ sở dữ liệu không được truy cập trực tiếp từ Internet.\nThực hiện các bước sau:\nĐăng nhập AWS Management Console. Tìm và mở dịch vụ Amazon RDS. Chọn Subnet groups. Nhấn Create DB subnet group. Đặt tên EnterpriseHelpDesk-DBSubnetGroup. Chọn VPC EnterpriseHelpDesk-VPC. Chọn hai Private Subnet đã tạo ở phần Amazon VPC. Nhấn Create. Bấm vào hình để xem kích thước đầy đủ Bước 2. Tạo cơ sở dữ liệu Amazon RDS Sau khi tạo DB Subnet Group, tiến hành tạo cơ sở dữ liệu mới.\nThực hiện các bước sau:\nChọn Databases. Nhấn Create database. Chọn Standard Create. Bước 3. Chọn Microsoft SQL Server Tiếp tục cấu hình cơ sở dữ liệu.\nThực hiện các bước sau:\nChọn Microsoft SQL Server. Chọn phiên bản SQL Server phù hợp. Chọn mẫu triển khai Free tier hoặc Dev/Test (nếu có). Bước 4. Cấu hình DB Instance Thiết lập thông tin cho cơ sở dữ liệu.\nThực hiện các bước sau:\nNhập DB instance identifier. Nhập Master username. Nhập và xác nhận Master password. Chọn loại Instance phù hợp. Bước 5. Cấu hình Storage Tiếp tục cấu hình dung lượng lưu trữ.\nThực hiện các bước sau:\nChọn loại Storage. Thiết lập dung lượng lưu trữ. Bật hoặc tắt Storage Autoscaling theo yêu cầu. Bước 6. Cấu hình mạng Tiếp tục cấu hình kết nối mạng.\nThực hiện các bước sau:\nChọn EnterpriseHelpDesk-VPC. Chọn EnterpriseHelpDesk-DBSubnetGroup. Chọn No tại mục Public Access. Giữ nguyên các thiết lập còn lại. Bước 7. Chọn Security Group Cuối cùng, cấu hình Security Group cho Amazon RDS.\nThực hiện các bước sau:\nChọn Security Group đã tạo ở phần Amazon VPC. Kiểm tra lại toàn bộ thông tin cấu hình. Nhấn Create database để bắt đầu triển khai. Phần 3. Triển khai ứng dụng với AWS Elastic Beanstalk AWS Elastic Beanstalk là dịch vụ của Amazon Web Services hỗ trợ triển khai và quản lý ứng dụng một cách nhanh chóng mà không cần cấu hình thủ công toàn bộ hạ tầng. Trong workshop này, Elastic Beanstalk được sử dụng để triển khai ứng dụng Enterprise HelpDesk trên nền tảng .NET, đồng thời kết nối với cơ sở dữ liệu Amazon RDS đã được tạo ở phần trước.\nSau khi hoàn thành phần này, ứng dụng sẽ được triển khai thành công và có thể truy cập thông qua địa chỉ URL do AWS Elastic Beanstalk cung cấp.\nBước 1. Tạo Service Role Service Role cho phép AWS Elastic Beanstalk quản lý các tài nguyên AWS và theo dõi trạng thái của môi trường triển khai.\nThực hiện các bước sau:\nĐăng nhập AWS Management Console. Mở dịch vụ IAM. Chọn Roles. Nhấn Create role. Tại Trusted entity type, chọn AWS service. Tại Service or use case, chọn Elastic Beanstalk. Chọn Elastic Beanstalk – Environment. Nhấn Next. Kiểm tra hai Policy đã được chọn: AWSElasticBeanstalkEnhancedHealth AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy Đặt tên Role là aws-elasticbeanstalk-service-role. Nhấn Create role. Hình 20. Tạo Service Role cho Elastic Beanstalk.\nBước 2. Tạo EC2 Instance Profile Role EC2 Instance Profile Role cho phép các máy chủ EC2 trong môi trường Elastic Beanstalk truy cập các dịch vụ AWS theo quyền đã được cấp.\nThực hiện các bước sau:\nTrong dịch vụ IAM, chọn Roles. Nhấn Create role. Chọn AWS service. Chọn Elastic Beanstalk. Chọn Elastic Beanstalk – Compute. Giữ nguyên các Policy mặc định: AWSElasticBeanstalkWebTier AWSElasticBeanstalkWorkerTier AWSElasticBeanstalkMulticontainerDocker Đặt tên Role là aws-elasticbeanstalk-ec2-role. Nhấn Create role. Hình 21. Tạo EC2 Instance Profile Role.\nBước 3. Cấp quyền đọc Secrets Manager Để ứng dụng có thể đọc thông tin kết nối cơ sở dữ liệu từ AWS Secrets Manager, cần cấp quyền cho EC2 Instance Profile Role.\nThực hiện các bước sau:\nMở Role aws-elasticbeanstalk-ec2-role. Chọn tab Permissions. Nhấn Add permissions. Chọn Create inline policy. Chọn tab JSON. Xóa nội dung mặc định. Dán Policy đã chuẩn bị. Nhấn Next. Hoàn tất việc tạo Inline Policy. Hình 22. Cấp quyền đọc Secrets Manager.\nBước 4. Tạo Elastic Beanstalk Application Sau khi hoàn tất cấu hình IAM, tiến hành tạo Application trên Elastic Beanstalk.\nThực hiện các bước sau:\nMở dịch vụ Elastic Beanstalk. Chọn Create application. Nhập tên Application là EnterpriseHelpDesk. Tại mục Application code, chọn Sample application. Chọn Service Role là aws-elasticbeanstalk-service-role. Chọn EC2 Instance Profile là aws-elasticbeanstalk-ec2-role. Nhấn Next. Hình 23. Tạo Elastic Beanstalk Application.\nBước 5. Cấu hình VPC Tiếp tục cấu hình mạng cho môi trường Elastic Beanstalk.\nThực hiện các bước sau:\nTại mục VPC, chọn EnterpriseHelpDesk-VPC. Chờ AWS tải danh sách Subnets. Giữ nguyên tùy chọn System default. Mở phần Tags. Thêm Tag với: Key: Project Value: EnterpriseHelpDesk Hình 24. Cấu hình VPC cho Elastic Beanstalk.\nBước 6. Chọn Security Group Để bảo vệ môi trường triển khai, cần gán Security Group đã tạo ở phần Amazon VPC.\nThực hiện các bước sau:\nChọn Choose security groups. Chọn EnterpriseHelpDesk-App-SG. Nhấn Next. Hình 25. Chọn Security Group.\nBước 7. Cấu hình Capacity Tiếp tục cấu hình tài nguyên cho môi trường Elastic Beanstalk.\nThực hiện các bước sau:\nGiữ loại Instance là t3.micro. Nếu AWS tự động thêm t3.small, hãy xóa lựa chọn này. Nhấn Next để tiếp tục. Hình 26. Cấu hình Capacity.\nBước 8. Triển khai ứng dụng Sau khi hoàn tất việc tạo môi trường, tiến hành triển khai ứng dụng Enterprise HelpDesk.\nThực hiện các bước sau:\nChọn Upload and deploy. Chọn file Publish (.zip) của ứng dụng Enterprise HelpDesk. Nhấn Deploy. Chờ quá trình triển khai hoàn tất. Truy cập URL do AWS Elastic Beanstalk cung cấp để kiểm tra ứng dụng. Hình 27. Upload và triển khai ứng dụng.\n",
+  "wordCount" : "1817",
+  "inLanguage": "vi",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://long-28.github.io/vi/6-workshop/04-deployment/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Workshop Portfolio AWS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://long-28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://long-28.github.io/en/" title="English"
+                                aria-label="English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Triển khai
+    </h1>
+    <div class="post-description">
+      Triển khai hệ thống Enterprise HelpDesk trên AWS
+    </div>
+    <div class="post-meta">
+
+<span>Bản dịch:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://long-28.github.io/en/6-workshop/04-deployment/">En</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="triển-khai-hệ-thống-enterprise-helpdesk-trên-aws">Triển khai hệ thống Enterprise HelpDesk trên AWS<a hidden class="anchor" aria-hidden="true" href="#triển-khai-hệ-thống-enterprise-helpdesk-trên-aws">#</a></h1>
+<p>Trong phần này, chúng ta sẽ tiến hành xây dựng hạ tầng mạng cho hệ thống Enterprise HelpDesk bằng Amazon VPC. Sau khi hoàn thành, môi trường sẽ sẵn sàng để triển khai cơ sở dữ liệu Amazon RDS và ứng dụng bằng AWS Elastic Beanstalk.</p>
+<hr>
+<h2 id="nội-dung-triển-khai">Nội dung triển khai<a hidden class="anchor" aria-hidden="true" href="#nội-dung-triển-khai">#</a></h2>
+<ul>
+<li><a href="/vi/6-workshop/04-deployment/#phan-1-amazon-vpc">Phần 1. Amazon VPC</a></li>
+<li><a href="/vi/6-workshop/04-deployment/#phan-2-amazon-rds">Phần 2. Amazon RDS</a></li>
+<li><a href="/vi/6-workshop/04-deployment/#phan-3-aws-elastic-beanstalk">Phần 3. AWS Elastic Beanstalk</a></li>
+</ul>
+<hr>
+<h2 id="phan-1-amazon-vpc"
+    style="text-align:center; font-size:36px; margin:50px 0 30px 0;">
+    Phần 1. Xây dựng hạ tầng mạng với Amazon VPC
+</h2>
+<p>Amazon Virtual Private Cloud (Amazon VPC) cho phép tạo một mạng riêng trên AWS để triển khai các tài nguyên của hệ thống. Trong workshop này, chúng ta sẽ cấu hình một VPC gồm Public Subnet, Private Subnet, Internet Gateway, Route Table và Security Group.</p>
+<hr>
+<h2 id="bước-1-tạo-amazon-vpc">Bước 1. Tạo Amazon VPC<a hidden class="anchor" aria-hidden="true" href="#bước-1-tạo-amazon-vpc">#</a></h2>
+<p>Đăng nhập vào <strong>AWS Management Console</strong>.</p>
+<p>Thực hiện:</p>
+<ol>
+<li>Tìm và mở dịch vụ <strong>Amazon VPC</strong>.</li>
+<li>Chọn <strong>Your VPCs</strong>.</li>
+<li>Nhấn <strong>Create VPC</strong>.</li>
+<li>Đặt tên VPC là <strong>EnterpriseHelpDesk-VPC</strong>.</li>
+<li>Chọn dải địa chỉ IPv4 CIDR phù hợp.</li>
+<li>Nhấn <strong>Create VPC</strong>.</li>
+</ol>
+<p>Sau khi hoàn thành, AWS sẽ tạo một mạng riêng dùng để triển khai toàn bộ tài nguyên của hệ thống.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/01-create-vpc.jpg"
+         alt="Tạo Amazon VPC"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-2-tạo-public-subnet-và-private-subnet">Bước 2. Tạo Public Subnet và Private Subnet<a hidden class="anchor" aria-hidden="true" href="#bước-2-tạo-public-subnet-và-private-subnet">#</a></h2>
+<p>Sau khi tạo VPC, tiếp tục tạo các Subnet.</p>
+<p>Trong workshop này sẽ sử dụng:</p>
+<ul>
+<li>Public-Subnet-A</li>
+<li>Public-Subnet-B</li>
+<li>Private-Subnet-A</li>
+<li>Private-Subnet-B</li>
+</ul>
+<p>Việc tách Public và Private Subnet giúp tăng tính bảo mật và tuân theo mô hình triển khai nhiều tầng trên AWS.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/02-create-subnets.jpg"
+         alt="Tạo Public Subnet và Private Subnet"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-3-tạo-internet-gateway">Bước 3. Tạo Internet Gateway<a hidden class="anchor" aria-hidden="true" href="#bước-3-tạo-internet-gateway">#</a></h2>
+<p>Để các tài nguyên trong Public Subnet có thể truy cập Internet, cần tạo Internet Gateway.</p>
+<p>Thực hiện:</p>
+<ol>
+<li>Mở <strong>Amazon VPC</strong>.</li>
+<li>Chọn <strong>Internet Gateways</strong>.</li>
+<li>Nhấn <strong>Create internet gateway</strong>.</li>
+<li>Nhập:</li>
+</ol>
+<table>
+	<thead>
+			<tr>
+					<th>Thuộc tính</th>
+					<th>Giá trị</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Name tag</td>
+					<td>EnterpriseHelpDesk-IGW</td>
+			</tr>
+	</tbody>
+</table>
+<ol start="5">
+<li>Nhấn <strong>Create internet gateway</strong>.</li>
+</ol>
+<p>Sau khi tạo thành công, Internet Gateway sẽ ở trạng thái <strong>Available</strong>, tuy nhiên vẫn chưa được sử dụng cho đến khi gắn với VPC.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/03-create-internet-gateway.jpg"
+         alt="Tạo Internet Gateway"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-4-gắn-internet-gateway-vào-vpc">Bước 4. Gắn Internet Gateway vào VPC<a hidden class="anchor" aria-hidden="true" href="#bước-4-gắn-internet-gateway-vào-vpc">#</a></h2>
+<p>Sau khi tạo Internet Gateway, cần kết nối với VPC.</p>
+<p>Thực hiện:</p>
+<ol>
+<li>Chọn Internet Gateway vừa tạo.</li>
+<li>Chọn <strong>Actions → Attach to VPC</strong>.</li>
+<li>Chọn <strong>EnterpriseHelpDesk-VPC</strong>.</li>
+<li>Nhấn <strong>Attach internet gateway</strong>.</li>
+</ol>
+<p>Sau khi hoàn thành, Internet Gateway sẽ được sử dụng để cung cấp kết nối Internet cho các Public Subnet.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/04-attach-internet-gateway.jpg"
+         alt="Gắn Internet Gateway vào VPC"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-5-cấu-hình-public-route-table">Bước 5. Cấu hình Public Route Table<a hidden class="anchor" aria-hidden="true" href="#bước-5-cấu-hình-public-route-table">#</a></h2>
+<p>Tiếp tục cấu hình định tuyến cho Public Subnet.</p>
+<p>Thực hiện:</p>
+<ol>
+<li>Mở <strong>Route Tables</strong>.</li>
+<li>Chọn Route Table của VPC.</li>
+<li>Đổi tên thành <strong>EnterpriseHelpDesk-Public-RT</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/05-public-route-table.jpg"
+         alt="Cấu hình Public Route Table"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-6-thêm-tuyến-mặc-định">Bước 6. Thêm tuyến mặc định<a hidden class="anchor" aria-hidden="true" href="#bước-6-thêm-tuyến-mặc-định">#</a></h2>
+<p>Trong Public Route Table:</p>
+<ol>
+<li>Chọn <strong>Routes</strong>.</li>
+<li>Nhấn <strong>Edit routes</strong>.</li>
+<li>Chọn <strong>Add route</strong>.</li>
+<li>Nhập:</li>
+</ol>
+<table>
+	<thead>
+			<tr>
+					<th>Destination</th>
+					<th>Target</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>0.0.0.0/0</td>
+					<td>EnterpriseHelpDesk-IGW</td>
+			</tr>
+	</tbody>
+</table>
+<ol start="5">
+<li>Nhấn <strong>Save changes</strong>.</li>
+</ol>
+<p>Route này cho phép Public Subnet truy cập Internet thông qua Internet Gateway.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/06-public-route.jpg"
+         alt="Thêm tuyến mặc định cho Public Route Table"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-7-liên-kết-public-subnet">Bước 7. Liên kết Public Subnet<a hidden class="anchor" aria-hidden="true" href="#bước-7-liên-kết-public-subnet">#</a></h2>
+<p>Tiếp tục gắn Public Route Table cho các Public Subnet.</p>
+<p>Thực hiện:</p>
+<ol>
+<li>Chọn tab <strong>Subnet Associations</strong>.</li>
+<li>Nhấn <strong>Edit subnet associations</strong>.</li>
+<li>Chọn:
+<ul>
+<li>Public-Subnet-A</li>
+<li>Public-Subnet-B</li>
+</ul>
+</li>
+<li>Nhấn <strong>Save associations</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/07-public-subnet-association.jpg"
+         alt="Liên kết Public Subnet"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-8-tạo-private-route-table">Bước 8. Tạo Private Route Table<a hidden class="anchor" aria-hidden="true" href="#bước-8-tạo-private-route-table">#</a></h2>
+<p>Tiếp tục tạo Route Table dành riêng cho Private Subnet.</p>
+<p>Thực hiện:</p>
+<ol>
+<li>Chọn <strong>Create route table</strong>.</li>
+<li>Đặt tên:</li>
+</ol>
+<p><strong>EnterpriseHelpDesk-Private-RT</strong></p>
+<ol start="3">
+<li>Chọn VPC của dự án.</li>
+<li>Nhấn <strong>Create route table</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/08-private-route-table.jpg"
+         alt="Tạo Private Route Table"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-9-liên-kết-private-subnet">Bước 9. Liên kết Private Subnet<a hidden class="anchor" aria-hidden="true" href="#bước-9-liên-kết-private-subnet">#</a></h2>
+<p>Sau khi tạo Private Route Table:</p>
+<ol>
+<li>Chọn <strong>Subnet Associations</strong>.</li>
+<li>Nhấn <strong>Edit subnet associations</strong>.</li>
+<li>Chọn:
+<ul>
+<li>Private-Subnet-A</li>
+<li>Private-Subnet-B</li>
+</ul>
+</li>
+<li>Nhấn <strong>Save associations</strong>.</li>
+</ol>
+<p>Việc sử dụng Private Route Table giúp các tài nguyên như Amazon RDS không thể truy cập trực tiếp từ Internet.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/09-private-subnet-association.jpg"
+         alt="Liên kết Private Subnet"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-10-tạo-security-group-cho-application-load-balancer">Bước 10. Tạo Security Group cho Application Load Balancer<a hidden class="anchor" aria-hidden="true" href="#bước-10-tạo-security-group-cho-application-load-balancer">#</a></h2>
+<p>Mở <strong>Security Groups</strong>.</p>
+<p>Nhấn <strong>Create Security Group</strong>.</p>
+<p>Tạo Security Group dành cho Application Load Balancer và cấu hình:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Type</th>
+					<th>Port</th>
+					<th>Source</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>HTTP</td>
+					<td>80</td>
+					<td>0.0.0.0/0</td>
+			</tr>
+			<tr>
+					<td>HTTPS</td>
+					<td>443</td>
+					<td>0.0.0.0/0</td>
+			</tr>
+	</tbody>
+</table>
+<p>Sau khi hoàn thành, nhấn <strong>Create Security Group</strong>.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/10-create-alb-security-group.jpg"
+         alt="Tạo Security Group cho Application Load Balancer"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-11-tạo-security-group-cho-amazon-ec2">Bước 11. Tạo Security Group cho Amazon EC2<a hidden class="anchor" aria-hidden="true" href="#bước-11-tạo-security-group-cho-amazon-ec2">#</a></h2>
+<p>Tiếp tục tạo Security Group mới dành cho EC2.</p>
+<p>Chỉ cho phép Application Load Balancer truy cập vào máy chủ ứng dụng.</p>
+<p>Điều này giúp ngăn chặn truy cập trực tiếp từ Internet đến EC2.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/11-create-ec2-security-group.jpg"
+         alt="Tạo Security Group cho Amazon EC2"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="bước-12-tạo-security-group-cho-amazon-rds">Bước 12. Tạo Security Group cho Amazon RDS<a hidden class="anchor" aria-hidden="true" href="#bước-12-tạo-security-group-cho-amazon-rds">#</a></h2>
+<p>Tạo Security Group dành cho Amazon RDS SQL Server.</p>
+<p>Chỉ cho phép EC2 hoặc Elastic Beanstalk kết nối tới cơ sở dữ liệu thông qua cổng SQL Server.</p>
+<p>Không nên mở quyền truy cập trực tiếp từ Internet.</p>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/12-create-rds-security-group.jpg"
+         alt="Tạo Security Group cho Amazon RDS"
+         style="width:65%;">
+</div>
+<hr>
+<h1 id="kết-quả-đạt-được">Kết quả đạt được<a hidden class="anchor" aria-hidden="true" href="#kết-quả-đạt-được">#</a></h1>
+<p>Sau khi hoàn thành phần triển khai Amazon VPC, hệ thống sẽ có:</p>
+<ul>
+<li>01 Amazon VPC.</li>
+<li>02 Public Subnet.</li>
+<li>02 Private Subnet.</li>
+<li>01 Internet Gateway.</li>
+<li>01 Public Route Table.</li>
+<li>01 Private Route Table.</li>
+<li>Security Group cho Application Load Balancer.</li>
+<li>Security Group cho Amazon EC2.</li>
+<li>Security Group cho Amazon RDS.</li>
+</ul>
+<p>Hạ tầng mạng này sẽ được sử dụng trong các bước tiếp theo để triển khai Amazon RDS SQL Server và ứng dụng Enterprise HelpDesk bằng AWS Elastic Beanstalk.</p>
+<hr>
+<h2 id="phan-2-amazon-rds"
+    style="text-align:center; font-size:36px; margin:50px 0 30px 0;">
+    Phần 2. Triển khai cơ sở dữ liệu với Amazon RDS
+</h2>
+<p>Amazon Relational Database Service (Amazon RDS) là dịch vụ cơ sở dữ liệu được quản lý trên AWS. Trong workshop này, Amazon RDS được sử dụng để triển khai cơ sở dữ liệu Microsoft SQL Server phục vụ cho hệ thống Enterprise HelpDesk.</p>
+<p>Sau khi hoàn thành phần này, cơ sở dữ liệu sẽ được triển khai trong Private Subnet và chỉ cho phép các tài nguyên trong VPC truy cập thông qua Security Group đã cấu hình ở phần trước.</p>
+<h3 id="bước-1-tạo-db-subnet-group">Bước 1. Tạo DB Subnet Group<a hidden class="anchor" aria-hidden="true" href="#bước-1-tạo-db-subnet-group">#</a></h3>
+<p>DB Subnet Group cho phép Amazon RDS triển khai cơ sở dữ liệu trên nhiều Private Subnet nhằm tăng tính sẵn sàng và đảm bảo cơ sở dữ liệu không được truy cập trực tiếp từ Internet.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Đăng nhập <strong>AWS Management Console</strong>.</li>
+<li>Tìm và mở dịch vụ <strong>Amazon RDS</strong>.</li>
+<li>Chọn <strong>Subnet groups</strong>.</li>
+<li>Nhấn <strong>Create DB subnet group</strong>.</li>
+<li>Đặt tên <strong>EnterpriseHelpDesk-DBSubnetGroup</strong>.</li>
+<li>Chọn VPC <strong>EnterpriseHelpDesk-VPC</strong>.</li>
+<li>Chọn hai Private Subnet đã tạo ở phần Amazon VPC.</li>
+<li>Nhấn <strong>Create</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/13-create-db-subnet-group.jpg"
+       target="_blank"
+       rel="noopener noreferrer">
+        <img src="/images/workshop/13-create-db-subnet-group.jpg"
+             alt="Tạo DB Subnet Group"
+             title="Bấm vào hình để xem kích thước đầy đủ"
+             style="width:65%; cursor:zoom-in; border-radius:6px;">
+    </a>
+    <p style="margin-top:8px; font-size:14px; color:#666;">
+        Bấm vào hình để xem kích thước đầy đủ
+    </p>
+</div>
+<hr>
+<h3 id="bước-2-tạo-cơ-sở-dữ-liệu-amazon-rds">Bước 2. Tạo cơ sở dữ liệu Amazon RDS<a hidden class="anchor" aria-hidden="true" href="#bước-2-tạo-cơ-sở-dữ-liệu-amazon-rds">#</a></h3>
+<p>Sau khi tạo DB Subnet Group, tiến hành tạo cơ sở dữ liệu mới.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Chọn <strong>Databases</strong>.</li>
+<li>Nhấn <strong>Create database</strong>.</li>
+<li>Chọn <strong>Standard Create</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/14-create-database.jpg"
+         alt="Create Database"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="bước-3-chọn-microsoft-sql-server">Bước 3. Chọn Microsoft SQL Server<a hidden class="anchor" aria-hidden="true" href="#bước-3-chọn-microsoft-sql-server">#</a></h3>
+<p>Tiếp tục cấu hình cơ sở dữ liệu.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Chọn <strong>Microsoft SQL Server</strong>.</li>
+<li>Chọn phiên bản SQL Server phù hợp.</li>
+<li>Chọn mẫu triển khai <strong>Free tier</strong> hoặc <strong>Dev/Test</strong> (nếu có).</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/15-select-sql-server-engine.jpg"
+         alt="Select SQL Server Engine"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="bước-4-cấu-hình-db-instance">Bước 4. Cấu hình DB Instance<a hidden class="anchor" aria-hidden="true" href="#bước-4-cấu-hình-db-instance">#</a></h3>
+<p>Thiết lập thông tin cho cơ sở dữ liệu.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Nhập <strong>DB instance identifier</strong>.</li>
+<li>Nhập <strong>Master username</strong>.</li>
+<li>Nhập và xác nhận <strong>Master password</strong>.</li>
+<li>Chọn loại Instance phù hợp.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/16-configure-db-instance.jpg"
+         alt="Configure DB Instance"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="bước-5-cấu-hình-storage">Bước 5. Cấu hình Storage<a hidden class="anchor" aria-hidden="true" href="#bước-5-cấu-hình-storage">#</a></h3>
+<p>Tiếp tục cấu hình dung lượng lưu trữ.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Chọn loại Storage.</li>
+<li>Thiết lập dung lượng lưu trữ.</li>
+<li>Bật hoặc tắt Storage Autoscaling theo yêu cầu.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/17-configure-storage.jpg"
+         alt="Configure Storage"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="bước-6-cấu-hình-mạng">Bước 6. Cấu hình mạng<a hidden class="anchor" aria-hidden="true" href="#bước-6-cấu-hình-mạng">#</a></h3>
+<p>Tiếp tục cấu hình kết nối mạng.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Chọn <strong>EnterpriseHelpDesk-VPC</strong>.</li>
+<li>Chọn <strong>EnterpriseHelpDesk-DBSubnetGroup</strong>.</li>
+<li>Chọn <strong>No</strong> tại mục <strong>Public Access</strong>.</li>
+<li>Giữ nguyên các thiết lập còn lại.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/18-configure-network.jpg"
+         alt="Configure Network"
+         style="width:65%;">
+</div>
+<hr>
+<h3 id="bước-7-chọn-security-group">Bước 7. Chọn Security Group<a hidden class="anchor" aria-hidden="true" href="#bước-7-chọn-security-group">#</a></h3>
+<p>Cuối cùng, cấu hình Security Group cho Amazon RDS.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Chọn Security Group đã tạo ở phần Amazon VPC.</li>
+<li>Kiểm tra lại toàn bộ thông tin cấu hình.</li>
+<li>Nhấn <strong>Create database</strong> để bắt đầu triển khai.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <img src="/images/workshop/19-select-rds-security-group.png"
+         alt="Select RDS Security Group"
+         style="width:65%;">
+</div>
+<hr>
+<h2 id="phan-3-aws-elastic-beanstalk"
+    style="text-align:center; font-size:36px; margin:50px 0 30px 0;">
+    Phần 3. Triển khai ứng dụng với AWS Elastic Beanstalk
+</h2>
+<p>AWS Elastic Beanstalk là dịch vụ của Amazon Web Services hỗ trợ triển khai và quản lý ứng dụng một cách nhanh chóng mà không cần cấu hình thủ công toàn bộ hạ tầng. Trong workshop này, Elastic Beanstalk được sử dụng để triển khai ứng dụng <strong>Enterprise HelpDesk</strong> trên nền tảng .NET, đồng thời kết nối với cơ sở dữ liệu Amazon RDS đã được tạo ở phần trước.</p>
+<p>Sau khi hoàn thành phần này, ứng dụng sẽ được triển khai thành công và có thể truy cập thông qua địa chỉ URL do AWS Elastic Beanstalk cung cấp.</p>
+<hr>
+<h3 id="bước-1-tạo-service-role">Bước 1. Tạo Service Role<a hidden class="anchor" aria-hidden="true" href="#bước-1-tạo-service-role">#</a></h3>
+<p>Service Role cho phép AWS Elastic Beanstalk quản lý các tài nguyên AWS và theo dõi trạng thái của môi trường triển khai.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Đăng nhập <strong>AWS Management Console</strong>.</li>
+<li>Mở dịch vụ <strong>IAM</strong>.</li>
+<li>Chọn <strong>Roles</strong>.</li>
+<li>Nhấn <strong>Create role</strong>.</li>
+<li>Tại <strong>Trusted entity type</strong>, chọn <strong>AWS service</strong>.</li>
+<li>Tại <strong>Service or use case</strong>, chọn <strong>Elastic Beanstalk</strong>.</li>
+<li>Chọn <strong>Elastic Beanstalk – Environment</strong>.</li>
+<li>Nhấn <strong>Next</strong>.</li>
+<li>Kiểm tra hai Policy đã được chọn:
+<ul>
+<li><strong>AWSElasticBeanstalkEnhancedHealth</strong></li>
+<li><strong>AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy</strong></li>
+</ul>
+</li>
+<li>Đặt tên Role là <strong>aws-elasticbeanstalk-service-role</strong>.</li>
+<li>Nhấn <strong>Create role</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/20-create-service-role.jpg" target="_blank">
+        <img src="/images/workshop/20-create-service-role.jpg"
+             alt="Create Service Role"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 20. Tạo Service Role cho Elastic Beanstalk.</i></p>
+</div>
+<hr>
+<h3 id="bước-2-tạo-ec2-instance-profile-role">Bước 2. Tạo EC2 Instance Profile Role<a hidden class="anchor" aria-hidden="true" href="#bước-2-tạo-ec2-instance-profile-role">#</a></h3>
+<p>EC2 Instance Profile Role cho phép các máy chủ EC2 trong môi trường Elastic Beanstalk truy cập các dịch vụ AWS theo quyền đã được cấp.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Trong dịch vụ <strong>IAM</strong>, chọn <strong>Roles</strong>.</li>
+<li>Nhấn <strong>Create role</strong>.</li>
+<li>Chọn <strong>AWS service</strong>.</li>
+<li>Chọn <strong>Elastic Beanstalk</strong>.</li>
+<li>Chọn <strong>Elastic Beanstalk – Compute</strong>.</li>
+<li>Giữ nguyên các Policy mặc định:
+<ul>
+<li><strong>AWSElasticBeanstalkWebTier</strong></li>
+<li><strong>AWSElasticBeanstalkWorkerTier</strong></li>
+<li><strong>AWSElasticBeanstalkMulticontainerDocker</strong></li>
+</ul>
+</li>
+<li>Đặt tên Role là <strong>aws-elasticbeanstalk-ec2-role</strong>.</li>
+<li>Nhấn <strong>Create role</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/21-create-ec2-role.jpg" target="_blank">
+        <img src="/images/workshop/21-create-ec2-role.jpg"
+             alt="Create EC2 Role"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 21. Tạo EC2 Instance Profile Role.</i></p>
+</div>
+<hr>
+<h3 id="bước-3-cấp-quyền-đọc-secrets-manager">Bước 3. Cấp quyền đọc Secrets Manager<a hidden class="anchor" aria-hidden="true" href="#bước-3-cấp-quyền-đọc-secrets-manager">#</a></h3>
+<p>Để ứng dụng có thể đọc thông tin kết nối cơ sở dữ liệu từ AWS Secrets Manager, cần cấp quyền cho EC2 Instance Profile Role.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Mở Role <strong>aws-elasticbeanstalk-ec2-role</strong>.</li>
+<li>Chọn tab <strong>Permissions</strong>.</li>
+<li>Nhấn <strong>Add permissions</strong>.</li>
+<li>Chọn <strong>Create inline policy</strong>.</li>
+<li>Chọn tab <strong>JSON</strong>.</li>
+<li>Xóa nội dung mặc định.</li>
+<li>Dán Policy đã chuẩn bị.</li>
+<li>Nhấn <strong>Next</strong>.</li>
+<li>Hoàn tất việc tạo Inline Policy.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/22-create-inline-policy.jpg" target="_blank">
+        <img src="/images/workshop/22-create-inline-policy.jpg"
+             alt="Create Inline Policy"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 22. Cấp quyền đọc Secrets Manager.</i></p>
+</div>
+<hr>
+<h3 id="bước-4-tạo-elastic-beanstalk-application">Bước 4. Tạo Elastic Beanstalk Application<a hidden class="anchor" aria-hidden="true" href="#bước-4-tạo-elastic-beanstalk-application">#</a></h3>
+<p>Sau khi hoàn tất cấu hình IAM, tiến hành tạo Application trên Elastic Beanstalk.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Mở dịch vụ <strong>Elastic Beanstalk</strong>.</li>
+<li>Chọn <strong>Create application</strong>.</li>
+<li>Nhập tên Application là <strong>EnterpriseHelpDesk</strong>.</li>
+<li>Tại mục <strong>Application code</strong>, chọn <strong>Sample application</strong>.</li>
+<li>Chọn <strong>Service Role</strong> là <strong>aws-elasticbeanstalk-service-role</strong>.</li>
+<li>Chọn <strong>EC2 Instance Profile</strong> là <strong>aws-elasticbeanstalk-ec2-role</strong>.</li>
+<li>Nhấn <strong>Next</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/23-create-application.jpg" target="_blank">
+        <img src="/images/workshop/23-create-application.jpg"
+             alt="Create Elastic Beanstalk Application"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 23. Tạo Elastic Beanstalk Application.</i></p>
+</div>
+<hr>
+<h3 id="bước-5-cấu-hình-vpc">Bước 5. Cấu hình VPC<a hidden class="anchor" aria-hidden="true" href="#bước-5-cấu-hình-vpc">#</a></h3>
+<p>Tiếp tục cấu hình mạng cho môi trường Elastic Beanstalk.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Tại mục <strong>VPC</strong>, chọn <strong>EnterpriseHelpDesk-VPC</strong>.</li>
+<li>Chờ AWS tải danh sách Subnets.</li>
+<li>Giữ nguyên tùy chọn <strong>System default</strong>.</li>
+<li>Mở phần <strong>Tags</strong>.</li>
+<li>Thêm Tag với:
+<ul>
+<li><strong>Key:</strong> Project</li>
+<li><strong>Value:</strong> EnterpriseHelpDesk</li>
+</ul>
+</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/25-configure-vpc.jpg" target="_blank">
+        <img src="/images/workshop/25-configure-vpc.jpg"
+             alt="Configure VPC"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 24. Cấu hình VPC cho Elastic Beanstalk.</i></p>
+</div>
+<hr>
+<h3 id="bước-6-chọn-security-group">Bước 6. Chọn Security Group<a hidden class="anchor" aria-hidden="true" href="#bước-6-chọn-security-group">#</a></h3>
+<p>Để bảo vệ môi trường triển khai, cần gán Security Group đã tạo ở phần Amazon VPC.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Chọn <strong>Choose security groups</strong>.</li>
+<li>Chọn <strong>EnterpriseHelpDesk-App-SG</strong>.</li>
+<li>Nhấn <strong>Next</strong>.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/26-select-security-group.jpg" target="_blank">
+        <img src="/images/workshop/26-select-security-group.jpg"
+             alt="Select Security Group"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 25. Chọn Security Group.</i></p>
+</div>
+<hr>
+<h3 id="bước-7-cấu-hình-capacity">Bước 7. Cấu hình Capacity<a hidden class="anchor" aria-hidden="true" href="#bước-7-cấu-hình-capacity">#</a></h3>
+<p>Tiếp tục cấu hình tài nguyên cho môi trường Elastic Beanstalk.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Giữ loại Instance là <strong>t3.micro</strong>.</li>
+<li>Nếu AWS tự động thêm <strong>t3.small</strong>, hãy xóa lựa chọn này.</li>
+<li>Nhấn <strong>Next</strong> để tiếp tục.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/27-configure-capacity.jpg" target="_blank">
+        <img src="/images/workshop/27-configure-capacity.jpg"
+             alt="Configure Capacity"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 26. Cấu hình Capacity.</i></p>
+</div>
+<hr>
+<h3 id="bước-8-triển-khai-ứng-dụng">Bước 8. Triển khai ứng dụng<a hidden class="anchor" aria-hidden="true" href="#bước-8-triển-khai-ứng-dụng">#</a></h3>
+<p>Sau khi hoàn tất việc tạo môi trường, tiến hành triển khai ứng dụng Enterprise HelpDesk.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Chọn <strong>Upload and deploy</strong>.</li>
+<li>Chọn file Publish (.zip) của ứng dụng Enterprise HelpDesk.</li>
+<li>Nhấn <strong>Deploy</strong>.</li>
+<li>Chờ quá trình triển khai hoàn tất.</li>
+<li>Truy cập URL do AWS Elastic Beanstalk cung cấp để kiểm tra ứng dụng.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/29-upload-and-deploy.jpg" target="_blank">
+        <img src="/images/workshop/29-upload-and-deploy.jpg"
+             alt="Upload and Deploy"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 27. Upload và triển khai ứng dụng.</i></p>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
