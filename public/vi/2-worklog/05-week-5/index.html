@@ -1,200 +1,165 @@
-<!DOCTYPE html>
-<html lang="vi" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Tuần 5 | Workshop Portfolio AWS</title>
-<meta name="keywords" content="">
-<meta name="description" content="Cấu hình IAM nâng cao, khởi tạo S3, AWS CLI và CloudWatch">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/vi/2-worklog/05-week-5/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/2-worklog/05-week-5/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/2-worklog/05-week-5/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/vi/2-worklog/05-week-5/">
-  <meta property="og:site_name" content="Workshop Portfolio AWS">
-  <meta property="og:title" content="Tuần 5">
-  <meta property="og:description" content="Cấu hình IAM nâng cao, khởi tạo S3, AWS CLI và CloudWatch">
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="2-worklog">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tuần 5">
-  <meta name="twitter:description" content="Cấu hình IAM nâng cao, khởi tạo S3, AWS CLI và CloudWatch">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Nhật ký thực tập",
-      "item": "https://long-28.github.io/vi/2-worklog/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Tuần 5",
-      "item": "https://long-28.github.io/vi/2-worklog/05-week-5/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Tuần 5",
-  "name": "Tuần 5",
-  "description": "Cấu hình IAM nâng cao, khởi tạo S3, AWS CLI và CloudWatch",
-  "keywords": [
-    
-  ],
-  "articleBody": "🎯 Mục tiêu tuần 5 Thiết lập IAM User, Group, Role và Custom Policy theo nguyên tắc Least Privilege. Tạo và cấu hình S3 Bucket lưu trữ hình ảnh cho GreenLens Kids. Thiết lập quyền truy cập, CORS và chính sách bảo mật cho S3. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Thiết lập IAM User, Group, Role và Custom Policy theo nguyên tắc Least Privilege.01/06/202601/06/2026AWS Documentation 2Tạo và cấu hình S3 Bucket lưu trữ hình ảnh cho GreenLens Kids.02/06/202602/06/2026AWS Documentation 3Thiết lập quyền truy cập, CORS và chính sách bảo mật cho S3.03/06/202603/06/2026AWS Documentation 4Quản lý tài nguyên AWS bằng AWS CLI.04/06/202604/06/2026AWS Documentation 5Thiết lập giám sát cơ bản và ghi log bằng CloudWatch.05/06/202605/06/2026AWS Documentation 🏆 Thành tích đạt được Cấu hình được nền tảng IAM, S3, AWS CLI và CloudWatch cho môi trường dự án. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. ",
-  "wordCount" : "202",
-  "inLanguage": "vi",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://long-28.github.io/vi/2-worklog/05-week-5/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Workshop Portfolio AWS",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://long-28.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cấu hình IAM nâng cao, khởi tạo S3, AWS CLI và CloudWatch">
+  <title>Tuần 5 · Workshop Portfolio AWS</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/en/" title="English"
-                                aria-label="English">En</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/vi/"><span class="brand-mark">AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="" href="/en/2-worklog/05-week-5/">EN</a><a class="active" href="/vi/2-worklog/05-week-5/">VI</a></div>
+  </div>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">MỤC LỤC</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
     
-    <h1 class="post-title entry-hint-parent">
-      Tuần 5
-    </h1>
-    <div class="post-description">
-      Cấu hình IAM nâng cao, khởi tạo S3, AWS CLI và CloudWatch
-    </div>
-    <div class="post-meta">
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/1-student-information/"><span>01</span>Thông tin sinh viên</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/vi/2-worklog/"><span>02</span>Nhật ký thực tập</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/3-proposal/"><span>03</span>Đề xuất dự án</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/4-blog-posts/"><span>04</span>Bài viết</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/4-blog-posts/01-blog-1/">AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/03-blog-3/">AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/5-events-participated/"><span>05</span>Sự kiện đã tham gia</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/vi/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/6-workshop/01-overview/">Tổng quan</a>
+          
+        
+          <a class="" href="/vi/6-workshop/02-prerequisites/">Điều kiện tiên quyết</a>
+          
+        
+          <a class="" href="/vi/6-workshop/03-architecture/">Kiến trúc</a>
+          
+        
+          <a class="" href="/vi/6-workshop/04-deployment/">Triển khai</a>
+          
+        
+          <a class="" href="/vi/6-workshop/09-cleanup/">Dọn dẹp tài nguyên</a>
+          
+        
+          <a class="" href="/vi/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/7-self-evaluation/"><span>07</span>Tự đánh giá</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/8-sharing-and-feedback/"><span>08</span>Chia sẻ và phản hồi</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Mẹo</strong>
+    <p>Nhấn VI/EN để chuyển ngôn ngữ.</p>
+  </div>
+</aside>
 
-<span>Bản dịch:</span>
-    <ul class="i18n_list">
-        <li>
-            <a href="https://long-28.github.io/en/2-worklog/05-week-5/">En</a>
-        </li>
-    </ul>
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/vi/">Trang chủ</a>
+  <span>/</span><a href="/vi/2-worklog/">Nhật ký thực tập</a>
+  <span>/</span><span>Tuần 5</span>
+</nav>
 
-</div>
-  </header> 
-  <div class="post-content md-content"><h2 id="-mục-tiêu-tuần-5">🎯 Mục tiêu tuần 5<a hidden class="anchor" aria-hidden="true" href="#-mục-tiêu-tuần-5">#</a></h2>
+<header class="page-header journey-header worklog-detail">
+  <span class="eyebrow">NHẬT KÝ HÀNH TRÌNH</span>
+  <span class="journey-stamp">WK-05</span>
+  <h1>Tuần 5</h1>
+  <p>Cấu hình IAM nâng cao, khởi tạo S3, AWS CLI và CloudWatch</p>
+</header>
+<article class="content-card prose" data-search-content><h2 id="-mục-tiêu-tuần-5">🎯 Mục tiêu tuần 5</h2>
 <ul>
 <li>Thiết lập IAM User, Group, Role và Custom Policy theo nguyên tắc Least Privilege.</li>
 <li>Tạo và cấu hình S3 Bucket lưu trữ hình ảnh cho GreenLens Kids.</li>
 <li>Thiết lập quyền truy cập, CORS và chính sách bảo mật cho S3.</li>
 </ul>
-<h2 id="-công-việc-thực-hiện-trong-tuần">📅 Công việc thực hiện trong tuần<a hidden class="anchor" aria-hidden="true" href="#-công-việc-thực-hiện-trong-tuần">#</a></h2>
+<h2 id="-công-việc-thực-hiện-trong-tuần">📅 Công việc thực hiện trong tuần</h2>
 <table class="table table-bordered table-hover"><thead><tr><th style="width:6%">STT</th><th style="width:48%">Nhiệm vụ</th><th style="width:12%">Ngày bắt đầu</th><th style="width:12%">Ngày hoàn thành</th><th style="width:22%">Tài liệu tham khảo</th></tr></thead><tbody>
 <tr><td>1</td><td>Thiết lập IAM User, Group, Role và Custom Policy theo nguyên tắc Least Privilege.</td><td>01/06/2026</td><td>01/06/2026</td><td><a href="https://docs.aws.amazon.com/" target="_blank">AWS Documentation</a></td></tr>
 <tr><td>2</td><td>Tạo và cấu hình S3 Bucket lưu trữ hình ảnh cho GreenLens Kids.</td><td>02/06/2026</td><td>02/06/2026</td><td><a href="https://docs.aws.amazon.com/" target="_blank">AWS Documentation</a></td></tr>
@@ -202,105 +167,26 @@
 <tr><td>4</td><td>Quản lý tài nguyên AWS bằng AWS CLI.</td><td>04/06/2026</td><td>04/06/2026</td><td><a href="https://docs.aws.amazon.com/" target="_blank">AWS Documentation</a></td></tr>
 <tr><td>5</td><td>Thiết lập giám sát cơ bản và ghi log bằng CloudWatch.</td><td>05/06/2026</td><td>05/06/2026</td><td><a href="https://docs.aws.amazon.com/" target="_blank">AWS Documentation</a></td></tr>
 </tbody></table>
-<h2 id="-thành-tích-đạt-được">🏆 Thành tích đạt được<a hidden class="anchor" aria-hidden="true" href="#-thành-tích-đạt-được">#</a></h2>
+<h2 id="-thành-tích-đạt-được">🏆 Thành tích đạt được</h2>
 <ul>
 <li>Cấu hình được nền tảng IAM, S3, AWS CLI và CloudWatch cho môi trường dự án.</li>
 <li>Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần.</li>
 </ul>
-<h2 id="-kiến-thức-rút-ra">💡 Kiến thức rút ra<a hidden class="anchor" aria-hidden="true" href="#-kiến-thức-rút-ra">#</a></h2>
+<h2 id="-kiến-thức-rút-ra">💡 Kiến thức rút ra</h2>
 <ul>
 <li>Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids.</li>
 <li>Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật.</li>
 </ul>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
 </article>
+<nav class="pager">
+  <a href="/vi/2-worklog/06-week-6/">← Tuần 6</a>
+  <a href="/vi/2-worklog/04-week-4/">Tuần 4 →</a>
+</nav>
+
+      <footer class="footer"></footer>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>

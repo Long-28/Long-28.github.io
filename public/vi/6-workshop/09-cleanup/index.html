@@ -1,197 +1,162 @@
-<!DOCTYPE html>
-<html lang="vi" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Dọn dẹp tài nguyên | Workshop Portfolio AWS</title>
-<meta name="keywords" content="">
-<meta name="description" content="Dọn dẹp tài nguyên">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/vi/6-workshop/09-cleanup/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/6-workshop/09-cleanup/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/6-workshop/09-cleanup/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/vi/6-workshop/09-cleanup/">
-  <meta property="og:site_name" content="Workshop Portfolio AWS">
-  <meta property="og:title" content="Dọn dẹp tài nguyên">
-  <meta property="og:description" content="Dọn dẹp tài nguyên">
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="6-workshop">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Dọn dẹp tài nguyên">
-  <meta name="twitter:description" content="Dọn dẹp tài nguyên">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Workshop",
-      "item": "https://long-28.github.io/vi/6-workshop/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Dọn dẹp tài nguyên",
-      "item": "https://long-28.github.io/vi/6-workshop/09-cleanup/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Dọn dẹp tài nguyên",
-  "name": "Dọn dẹp tài nguyên",
-  "description": "Dọn dẹp tài nguyên",
-  "keywords": [
-    
-  ],
-  "articleBody": "Dọn dẹp tài nguyên Sau khi hoàn thành workshop, cần xóa toàn bộ tài nguyên đã tạo trên AWS để tránh phát sinh chi phí không cần thiết. Trong phần này, chúng ta sẽ lần lượt xóa môi trường Elastic Beanstalk, AWS WAF, Amazon RDS, Secrets Manager và các Security Group đã tạo.\nBước 1. Xóa môi trường Elastic Beanstalk Trước tiên, cần xóa môi trường Elastic Beanstalk để giải phóng các tài nguyên như EC2, Load Balancer và Auto Scaling Group.\nThực hiện các bước sau:\nMở dịch vụ Elastic Beanstalk. Chọn môi trường EnterpriseHelpDesk. Nhấn Actions. Chọn Terminate environment. Xác nhận việc xóa môi trường. Chờ AWS hoàn tất quá trình dọn dẹp. Hình 30. Xóa môi trường Elastic Beanstalk.\nBước 2. Xóa Web ACL của AWS WAF Sau khi môi trường Elastic Beanstalk đã được xóa, tiếp tục xóa Web ACL đã tạo trong AWS WAF.\nThực hiện các bước sau:\nMở dịch vụ AWS WAF. Chọn Web ACL EnterpriseHelpDesk-WAF. Nhấn Actions. Chọn Delete protection pack (web ACL). Xác nhận thao tác xóa. Hình 31. Xóa Web ACL trong AWS WAF.\nBước 3. Xóa cơ sở dữ liệu Amazon RDS Sau khi không còn ứng dụng sử dụng cơ sở dữ liệu, tiến hành xóa Amazon RDS.\nThực hiện các bước sau:\nMở dịch vụ Amazon RDS. Chọn cơ sở dữ liệu enterprisehelpdesk-db. Nhấn Actions. Chọn Delete. Bỏ chọn Create final snapshot (nếu không cần sao lưu dữ liệu). Xác nhận việc xóa cơ sở dữ liệu. Hình 32. Xóa cơ sở dữ liệu Amazon RDS.\nBước 4. Xóa Secret trong AWS Secrets Manager Sau khi Amazon RDS đã được xóa, tiếp tục xóa Secret lưu thông tin kết nối cơ sở dữ liệu.\nThực hiện các bước sau:\nMở dịch vụ AWS Secrets Manager. Chọn Secret của hệ thống EnterpriseHelpDesk. Nhấn Actions. Chọn Delete secret. Xác nhận việc xóa Secret. Hình 33. Xóa Secret trong AWS Secrets Manager.\nBước 5. Xóa Security Groups Cuối cùng, xóa các Security Group đã tạo trong phần Amazon VPC.\nThực hiện các bước sau:\nMở dịch vụ Amazon EC2. Chọn Security Groups. Chọn lần lượt các Security Group sau: EnterpriseHelpDesk-ALB-SG EnterpriseHelpDesk-App-SG EnterpriseHelpDesk-RDS-SG Nhấn Actions. Chọn Delete security groups. Xác nhận thao tác xóa. Hình 34. Xóa các Security Group.\nKết quả Sau khi hoàn thành các bước trên, toàn bộ tài nguyên được tạo trong workshop sẽ được dọn dẹp, bao gồm:\nMôi trường AWS Elastic Beanstalk. AWS WAF Web ACL. Cơ sở dữ liệu Amazon RDS. Secret trong AWS Secrets Manager. Các Security Group. Việc dọn dẹp tài nguyên sau khi hoàn thành workshop giúp tránh phát sinh chi phí không cần thiết và giữ cho tài khoản AWS luôn gọn gàng, sẵn sàng cho các lần triển khai tiếp theo.\n",
-  "wordCount" : "462",
-  "inLanguage": "vi",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://long-28.github.io/vi/6-workshop/09-cleanup/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Workshop Portfolio AWS",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://long-28.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dọn dẹp tài nguyên">
+  <title>Dọn dẹp tài nguyên · Workshop Portfolio AWS</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/en/" title="English"
-                                aria-label="English">En</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/vi/"><span class="brand-mark">AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="" href="/en/6-workshop/09-cleanup/">EN</a><a class="active" href="/vi/6-workshop/09-cleanup/">VI</a></div>
+  </div>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">MỤC LỤC</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
     
-    <h1 class="post-title entry-hint-parent">
-      Dọn dẹp tài nguyên
-    </h1>
-    <div class="post-description">
-      Dọn dẹp tài nguyên
-    </div>
-    <div class="post-meta">
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/1-student-information/"><span>01</span>Thông tin sinh viên</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/2-worklog/"><span>02</span>Nhật ký thực tập</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/3-proposal/"><span>03</span>Đề xuất dự án</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/4-blog-posts/"><span>04</span>Bài viết</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/4-blog-posts/01-blog-1/">AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/03-blog-3/">AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/5-events-participated/"><span>05</span>Sự kiện đã tham gia</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/vi/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/vi/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/6-workshop/01-overview/">Tổng quan</a>
+          
+        
+          <a class="" href="/vi/6-workshop/02-prerequisites/">Điều kiện tiên quyết</a>
+          
+        
+          <a class="" href="/vi/6-workshop/03-architecture/">Kiến trúc</a>
+          
+        
+          <a class="" href="/vi/6-workshop/04-deployment/">Triển khai</a>
+          
+        
+          <a class="active" href="/vi/6-workshop/09-cleanup/">Dọn dẹp tài nguyên</a>
+          
+        
+          <a class="" href="/vi/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/7-self-evaluation/"><span>07</span>Tự đánh giá</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/8-sharing-and-feedback/"><span>08</span>Chia sẻ và phản hồi</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Mẹo</strong>
+    <p>Nhấn VI/EN để chuyển ngôn ngữ.</p>
+  </div>
+</aside>
 
-<span>Bản dịch:</span>
-    <ul class="i18n_list">
-        <li>
-            <a href="https://long-28.github.io/en/6-workshop/09-cleanup/">En</a>
-        </li>
-    </ul>
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/vi/">Trang chủ</a>
+  <span>/</span><a href="/vi/6-workshop/">Workshop</a>
+  <span>/</span><span>Dọn dẹp tài nguyên</span>
+</nav>
 
-</div>
-  </header> 
-  <div class="post-content md-content"><h1 id="dọn-dẹp-tài-nguyên">Dọn dẹp tài nguyên<a hidden class="anchor" aria-hidden="true" href="#dọn-dẹp-tài-nguyên">#</a></h1>
+<header class="page-header journey-header">
+  <span class="eyebrow">TÀI LIỆU WORKSHOP</span>
+  
+  <h1>Dọn dẹp tài nguyên</h1>
+  <p>Dọn dẹp tài nguyên</p>
+</header>
+<article class="content-card prose" data-search-content><h1 id="dọn-dẹp-tài-nguyên">Dọn dẹp tài nguyên</h1>
 <p>Sau khi hoàn thành workshop, cần xóa toàn bộ tài nguyên đã tạo trên AWS để tránh phát sinh chi phí không cần thiết. Trong phần này, chúng ta sẽ lần lượt xóa môi trường Elastic Beanstalk, AWS WAF, Amazon RDS, Secrets Manager và các Security Group đã tạo.</p>
 <hr>
-<h3 id="bước-1-xóa-môi-trường-elastic-beanstalk">Bước 1. Xóa môi trường Elastic Beanstalk<a hidden class="anchor" aria-hidden="true" href="#bước-1-xóa-môi-trường-elastic-beanstalk">#</a></h3>
+<h3 id="bước-1-xóa-môi-trường-elastic-beanstalk">Bước 1. Xóa môi trường Elastic Beanstalk</h3>
 <p>Trước tiên, cần xóa môi trường Elastic Beanstalk để giải phóng các tài nguyên như EC2, Load Balancer và Auto Scaling Group.</p>
 <p>Thực hiện các bước sau:</p>
 <ol>
@@ -211,7 +176,7 @@
     <p><i>Hình 30. Xóa môi trường Elastic Beanstalk.</i></p>
 </div>
 <hr>
-<h3 id="bước-2-xóa-web-acl-của-aws-waf">Bước 2. Xóa Web ACL của AWS WAF<a hidden class="anchor" aria-hidden="true" href="#bước-2-xóa-web-acl-của-aws-waf">#</a></h3>
+<h3 id="bước-2-xóa-web-acl-của-aws-waf">Bước 2. Xóa Web ACL của AWS WAF</h3>
 <p>Sau khi môi trường Elastic Beanstalk đã được xóa, tiếp tục xóa Web ACL đã tạo trong AWS WAF.</p>
 <p>Thực hiện các bước sau:</p>
 <ol>
@@ -230,7 +195,7 @@
     <p><i>Hình 31. Xóa Web ACL trong AWS WAF.</i></p>
 </div>
 <hr>
-<h3 id="bước-3-xóa-cơ-sở-dữ-liệu-amazon-rds">Bước 3. Xóa cơ sở dữ liệu Amazon RDS<a hidden class="anchor" aria-hidden="true" href="#bước-3-xóa-cơ-sở-dữ-liệu-amazon-rds">#</a></h3>
+<h3 id="bước-3-xóa-cơ-sở-dữ-liệu-amazon-rds">Bước 3. Xóa cơ sở dữ liệu Amazon RDS</h3>
 <p>Sau khi không còn ứng dụng sử dụng cơ sở dữ liệu, tiến hành xóa Amazon RDS.</p>
 <p>Thực hiện các bước sau:</p>
 <ol>
@@ -250,7 +215,7 @@
     <p><i>Hình 32. Xóa cơ sở dữ liệu Amazon RDS.</i></p>
 </div>
 <hr>
-<h3 id="bước-4-xóa-secret-trong-aws-secrets-manager">Bước 4. Xóa Secret trong AWS Secrets Manager<a hidden class="anchor" aria-hidden="true" href="#bước-4-xóa-secret-trong-aws-secrets-manager">#</a></h3>
+<h3 id="bước-4-xóa-secret-trong-aws-secrets-manager">Bước 4. Xóa Secret trong AWS Secrets Manager</h3>
 <p>Sau khi Amazon RDS đã được xóa, tiếp tục xóa Secret lưu thông tin kết nối cơ sở dữ liệu.</p>
 <p>Thực hiện các bước sau:</p>
 <ol>
@@ -269,7 +234,7 @@
     <p><i>Hình 33. Xóa Secret trong AWS Secrets Manager.</i></p>
 </div>
 <hr>
-<h3 id="bước-5-xóa-security-groups">Bước 5. Xóa Security Groups<a hidden class="anchor" aria-hidden="true" href="#bước-5-xóa-security-groups">#</a></h3>
+<h3 id="bước-5-xóa-security-groups">Bước 5. Xóa Security Groups</h3>
 <p>Cuối cùng, xóa các Security Group đã tạo trong phần Amazon VPC.</p>
 <p>Thực hiện các bước sau:</p>
 <ol>
@@ -295,7 +260,7 @@
     <p><i>Hình 34. Xóa các Security Group.</i></p>
 </div>
 <hr>
-<h2 id="kết-quả">Kết quả<a hidden class="anchor" aria-hidden="true" href="#kết-quả">#</a></h2>
+<h2 id="kết-quả">Kết quả</h2>
 <p>Sau khi hoàn thành các bước trên, toàn bộ tài nguyên được tạo trong workshop sẽ được dọn dẹp, bao gồm:</p>
 <ul>
 <li>Môi trường AWS Elastic Beanstalk.</li>
@@ -305,95 +270,16 @@
 <li>Các Security Group.</li>
 </ul>
 <p>Việc dọn dẹp tài nguyên sau khi hoàn thành workshop giúp tránh phát sinh chi phí không cần thiết và giữ cho tài khoản AWS luôn gọn gàng, sẵn sàng cho các lần triển khai tiếp theo.</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
 </article>
+<nav class="pager">
+  <a href="/vi/6-workshop/demo/">← Demo</a>
+  <a href="/vi/6-workshop/04-deployment/">Triển khai →</a>
+</nav>
+
+      <footer class="footer"></footer>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>

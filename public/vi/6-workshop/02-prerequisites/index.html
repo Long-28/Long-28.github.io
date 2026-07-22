@@ -1,194 +1,161 @@
-<!DOCTYPE html>
-<html lang="vi" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Điều kiện tiên quyết | Workshop Portfolio AWS</title>
-<meta name="keywords" content="">
-<meta name="description" content="Điều kiện tiên quyết
-Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy đủ các điều kiện dưới đây để quá trình triển khai diễn ra thuận lợi.">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/vi/6-workshop/02-prerequisites/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/6-workshop/02-prerequisites/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/6-workshop/02-prerequisites/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/vi/6-workshop/02-prerequisites/">
-  <meta property="og:site_name" content="Workshop Portfolio AWS">
-  <meta property="og:title" content="Điều kiện tiên quyết">
-  <meta property="og:description" content="Điều kiện tiên quyết Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy đủ các điều kiện dưới đây để quá trình triển khai diễn ra thuận lợi.">
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="6-workshop">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Điều kiện tiên quyết">
-  <meta name="twitter:description" content="Điều kiện tiên quyết Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy đủ các điều kiện dưới đây để quá trình triển khai diễn ra thuận lợi.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Workshop",
-      "item": "https://long-28.github.io/vi/6-workshop/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Điều kiện tiên quyết",
-      "item": "https://long-28.github.io/vi/6-workshop/02-prerequisites/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Điều kiện tiên quyết",
-  "name": "Điều kiện tiên quyết",
-  "description": "Điều kiện tiên quyết Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy đủ các điều kiện dưới đây để quá trình triển khai diễn ra thuận lợi.\n",
-  "keywords": [
-    
-  ],
-  "articleBody": "Điều kiện tiên quyết Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy đủ các điều kiện dưới đây để quá trình triển khai diễn ra thuận lợi.\n1. Tài khoản AWS Người thực hiện cần có một tài khoản AWS đang hoạt động và có quyền tạo, chỉnh sửa cũng như xóa các tài nguyên sử dụng trong workshop.\nKhuyến khích:\nCấu hình AWS Budgets để theo dõi chi phí. Lựa chọn Region phù hợp và sử dụng thống nhất trong suốt quá trình triển khai. 2. Kiến thức cơ bản Workshop giả định người thực hiện đã có kiến thức nền tảng về:\nASP.NET Core Razor Pages. Ngôn ngữ lập trình C#. .NET 9. SQL Server. Entity Framework Core. Mô hình Client – Server. Các khái niệm cơ bản về điện toán đám mây AWS. 3. Công cụ phát triển Chuẩn bị các công cụ sau trước khi bắt đầu:\nCông cụ Mục đích Visual Studio 2022 hoặc mới hơn Phát triển và chỉnh sửa ứng dụng .NET 9 SDK Biên dịch và chạy dự án SQL Server Management Studio (SSMS) Quản lý cơ sở dữ liệu SQL Server Git Quản lý mã nguồn AWS Toolkit for Visual Studio (khuyến khích) Hỗ trợ triển khai ứng dụng lên AWS Google Chrome hoặc Microsoft Edge Truy cập AWS Management Console 4. Mã nguồn dự án Chuẩn bị sẵn mã nguồn của hệ thống Enterprise HelpDesk bao gồm:\nỨng dụng ASP.NET Core Razor Pages. Entity Framework Core. ASP.NET Core Identity. File cấu hình ứng dụng. Script cơ sở dữ liệu (nếu có). 5. Dịch vụ AWS sử dụng Workshop sẽ sử dụng các dịch vụ sau trong quá trình triển khai:\nHạ tầng mạng Amazon VPC Internet Gateway Route Table Public Subnet Private Subnet Security Groups Triển khai ứng dụng AWS Elastic Beanstalk Amazon EC2 Application Load Balancer Amazon CloudFront Cơ sở dữ liệu Amazon RDS for SQL Server Quản lý quyền và bảo mật AWS Identity and Access Management (IAM) AWS Secrets Manager AWS WAF Giám sát và quản trị Amazon CloudWatch AWS CloudTrail AWS Systems Manager Sau khi đáp ứng đầy đủ các điều kiện trên, bạn có thể bắt đầu triển khai hệ thống Enterprise HelpDesk theo các bước được trình bày trong những phần tiếp theo của workshop.\n",
-  "wordCount" : "385",
-  "inLanguage": "vi",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://long-28.github.io/vi/6-workshop/02-prerequisites/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Workshop Portfolio AWS",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://long-28.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Điều kiện tiên quyết · Workshop Portfolio AWS</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/en/" title="English"
-                                aria-label="English">En</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/vi/"><span class="brand-mark">AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="" href="/en/6-workshop/02-prerequisites/">EN</a><a class="active" href="/vi/6-workshop/02-prerequisites/">VI</a></div>
+  </div>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">MỤC LỤC</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
     
-    <h1 class="post-title entry-hint-parent">
-      Điều kiện tiên quyết
-    </h1>
-    <div class="post-meta">
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/1-student-information/"><span>01</span>Thông tin sinh viên</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/2-worklog/"><span>02</span>Nhật ký thực tập</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/3-proposal/"><span>03</span>Đề xuất dự án</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/4-blog-posts/"><span>04</span>Bài viết</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/4-blog-posts/01-blog-1/">AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/03-blog-3/">AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/5-events-participated/"><span>05</span>Sự kiện đã tham gia</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/vi/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/vi/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/6-workshop/01-overview/">Tổng quan</a>
+          
+        
+          <a class="active" href="/vi/6-workshop/02-prerequisites/">Điều kiện tiên quyết</a>
+          
+        
+          <a class="" href="/vi/6-workshop/03-architecture/">Kiến trúc</a>
+          
+        
+          <a class="" href="/vi/6-workshop/04-deployment/">Triển khai</a>
+          
+        
+          <a class="" href="/vi/6-workshop/09-cleanup/">Dọn dẹp tài nguyên</a>
+          
+        
+          <a class="" href="/vi/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/7-self-evaluation/"><span>07</span>Tự đánh giá</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/8-sharing-and-feedback/"><span>08</span>Chia sẻ và phản hồi</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Mẹo</strong>
+    <p>Nhấn VI/EN để chuyển ngôn ngữ.</p>
+  </div>
+</aside>
 
-<span>Bản dịch:</span>
-    <ul class="i18n_list">
-        <li>
-            <a href="https://long-28.github.io/en/6-workshop/02-prerequisites/">En</a>
-        </li>
-    </ul>
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/vi/">Trang chủ</a>
+  <span>/</span><a href="/vi/6-workshop/">Workshop</a>
+  <span>/</span><span>Điều kiện tiên quyết</span>
+</nav>
 
-</div>
-  </header> 
-  <div class="post-content md-content"><h1 id="điều-kiện-tiên-quyết">Điều kiện tiên quyết<a hidden class="anchor" aria-hidden="true" href="#điều-kiện-tiên-quyết">#</a></h1>
+<header class="page-header journey-header">
+  <span class="eyebrow">TÀI LIỆU WORKSHOP</span>
+  
+  <h1>Điều kiện tiên quyết</h1>
+  
+</header>
+<article class="content-card prose" data-search-content><h1 id="điều-kiện-tiên-quyết">Điều kiện tiên quyết</h1>
 <p>Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy đủ các điều kiện dưới đây để quá trình triển khai diễn ra thuận lợi.</p>
-<h2 id="1-tài-khoản-aws">1. Tài khoản AWS<a hidden class="anchor" aria-hidden="true" href="#1-tài-khoản-aws">#</a></h2>
+<h2 id="1-tài-khoản-aws">1. Tài khoản AWS</h2>
 <p>Người thực hiện cần có một tài khoản AWS đang hoạt động và có quyền tạo, chỉnh sửa cũng như xóa các tài nguyên sử dụng trong workshop.</p>
 <p>Khuyến khích:</p>
 <ul>
@@ -196,7 +163,7 @@ Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy �
 <li>Lựa chọn Region phù hợp và sử dụng thống nhất trong suốt quá trình triển khai.</li>
 </ul>
 <hr>
-<h2 id="2-kiến-thức-cơ-bản">2. Kiến thức cơ bản<a hidden class="anchor" aria-hidden="true" href="#2-kiến-thức-cơ-bản">#</a></h2>
+<h2 id="2-kiến-thức-cơ-bản">2. Kiến thức cơ bản</h2>
 <p>Workshop giả định người thực hiện đã có kiến thức nền tảng về:</p>
 <ul>
 <li>ASP.NET Core Razor Pages.</li>
@@ -208,7 +175,7 @@ Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy �
 <li>Các khái niệm cơ bản về điện toán đám mây AWS.</li>
 </ul>
 <hr>
-<h2 id="3-công-cụ-phát-triển">3. Công cụ phát triển<a hidden class="anchor" aria-hidden="true" href="#3-công-cụ-phát-triển">#</a></h2>
+<h2 id="3-công-cụ-phát-triển">3. Công cụ phát triển</h2>
 <p>Chuẩn bị các công cụ sau trước khi bắt đầu:</p>
 <table>
 	<thead>
@@ -245,7 +212,7 @@ Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy �
 	</tbody>
 </table>
 <hr>
-<h2 id="4-mã-nguồn-dự-án">4. Mã nguồn dự án<a hidden class="anchor" aria-hidden="true" href="#4-mã-nguồn-dự-án">#</a></h2>
+<h2 id="4-mã-nguồn-dự-án">4. Mã nguồn dự án</h2>
 <p>Chuẩn bị sẵn mã nguồn của hệ thống Enterprise HelpDesk bao gồm:</p>
 <ul>
 <li>Ứng dụng ASP.NET Core Razor Pages.</li>
@@ -255,9 +222,9 @@ Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy �
 <li>Script cơ sở dữ liệu (nếu có).</li>
 </ul>
 <hr>
-<h2 id="5-dịch-vụ-aws-sử-dụng">5. Dịch vụ AWS sử dụng<a hidden class="anchor" aria-hidden="true" href="#5-dịch-vụ-aws-sử-dụng">#</a></h2>
+<h2 id="5-dịch-vụ-aws-sử-dụng">5. Dịch vụ AWS sử dụng</h2>
 <p>Workshop sẽ sử dụng các dịch vụ sau trong quá trình triển khai:</p>
-<h3 id="hạ-tầng-mạng">Hạ tầng mạng<a hidden class="anchor" aria-hidden="true" href="#hạ-tầng-mạng">#</a></h3>
+<h3 id="hạ-tầng-mạng">Hạ tầng mạng</h3>
 <ul>
 <li>Amazon VPC</li>
 <li>Internet Gateway</li>
@@ -266,24 +233,24 @@ Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy �
 <li>Private Subnet</li>
 <li>Security Groups</li>
 </ul>
-<h3 id="triển-khai-ứng-dụng">Triển khai ứng dụng<a hidden class="anchor" aria-hidden="true" href="#triển-khai-ứng-dụng">#</a></h3>
+<h3 id="triển-khai-ứng-dụng">Triển khai ứng dụng</h3>
 <ul>
 <li>AWS Elastic Beanstalk</li>
 <li>Amazon EC2</li>
 <li>Application Load Balancer</li>
 <li>Amazon CloudFront</li>
 </ul>
-<h3 id="cơ-sở-dữ-liệu">Cơ sở dữ liệu<a hidden class="anchor" aria-hidden="true" href="#cơ-sở-dữ-liệu">#</a></h3>
+<h3 id="cơ-sở-dữ-liệu">Cơ sở dữ liệu</h3>
 <ul>
 <li>Amazon RDS for SQL Server</li>
 </ul>
-<h3 id="quản-lý-quyền-và-bảo-mật">Quản lý quyền và bảo mật<a hidden class="anchor" aria-hidden="true" href="#quản-lý-quyền-và-bảo-mật">#</a></h3>
+<h3 id="quản-lý-quyền-và-bảo-mật">Quản lý quyền và bảo mật</h3>
 <ul>
 <li>AWS Identity and Access Management (IAM)</li>
 <li>AWS Secrets Manager</li>
 <li>AWS WAF</li>
 </ul>
-<h3 id="giám-sát-và-quản-trị">Giám sát và quản trị<a hidden class="anchor" aria-hidden="true" href="#giám-sát-và-quản-trị">#</a></h3>
+<h3 id="giám-sát-và-quản-trị">Giám sát và quản trị</h3>
 <ul>
 <li>Amazon CloudWatch</li>
 <li>AWS CloudTrail</li>
@@ -291,95 +258,16 @@ Trước khi bắt đầu workshop, hãy đảm bảo đã chuẩn bị đầy �
 </ul>
 <hr>
 <p>Sau khi đáp ứng đầy đủ các điều kiện trên, bạn có thể bắt đầu triển khai hệ thống Enterprise HelpDesk theo các bước được trình bày trong những phần tiếp theo của workshop.</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
 </article>
+<nav class="pager">
+  <a href="/vi/6-workshop/03-architecture/">← Kiến trúc</a>
+  <a href="/vi/6-workshop/01-overview/">Tổng quan →</a>
+</nav>
+
+      <footer class="footer"></footer>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>

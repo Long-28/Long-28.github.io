@@ -1,202 +1,165 @@
-<!DOCTYPE html>
-<html lang="vi" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số | Workshop Portfolio AWS</title>
-<meta name="keywords" content="">
-<meta name="description" content="Tìm hiểu AWS Deadline Cloud, dịch vụ quản lý render trên nền tảng AWS dành cho các lĩnh vực phim ảnh, game, kiến trúc và đồ họa 3D.">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/vi/4-blog-posts/03-blog-3/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/4-blog-posts/03-blog-3/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/4-blog-posts/03-blog-3/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/vi/4-blog-posts/03-blog-3/">
-  <meta property="og:site_name" content="Workshop Portfolio AWS">
-  <meta property="og:title" content="AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số">
-  <meta property="og:description" content="Tìm hiểu AWS Deadline Cloud, dịch vụ quản lý render trên nền tảng AWS dành cho các lĩnh vực phim ảnh, game, kiến trúc và đồ họa 3D.">
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="4-blog-posts">
-    <meta property="article:published_time" content="2026-07-22T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-07-22T00:00:00+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số">
-  <meta name="twitter:description" content="Tìm hiểu AWS Deadline Cloud, dịch vụ quản lý render trên nền tảng AWS dành cho các lĩnh vực phim ảnh, game, kiến trúc và đồ họa 3D.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Bài viết",
-      "item": "https://long-28.github.io/vi/4-blog-posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số",
-      "item": "https://long-28.github.io/vi/4-blog-posts/03-blog-3/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số",
-  "name": "AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số",
-  "description": "Tìm hiểu AWS Deadline Cloud, dịch vụ quản lý render trên nền tảng AWS dành cho các lĩnh vực phim ảnh, game, kiến trúc và đồ họa 3D.",
-  "keywords": [
-    
-  ],
-  "articleBody": "AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số Xin chào mọi người!\nKhi nhắc đến Amazon Web Services (AWS), nhiều người thường nghĩ ngay đến các dịch vụ phổ biến như Amazon EC2, Amazon S3 hay AWS Lambda. Tuy nhiên, AWS còn cung cấp nhiều dịch vụ chuyên biệt dành cho từng lĩnh vực khác nhau.\nMột trong số đó là AWS Deadline Cloud – dịch vụ giúp các studio làm phim, thiết kế đồ họa, kỹ xảo điện ảnh (VFX), phát triển game và kiến trúc 3D có thể thực hiện quá trình render trực tiếp trên nền tảng đám mây mà không cần đầu tư hệ thống Render Farm vật lý.\nTrong bài viết này, mình sẽ chia sẻ những kiến thức cơ bản về AWS Deadline Cloud và những lợi ích mà dịch vụ này mang lại.\nAWS Deadline Cloud là gì? AWS Deadline Cloud là dịch vụ quản lý Render Farm trên nền tảng AWS, cho phép người dùng tạo, vận hành và mở rộng các tác vụ render trong môi trường Cloud.\nRender là quá trình chuyển đổi dữ liệu từ mô hình 3D, hiệu ứng hoặc cảnh phim thành hình ảnh hoặc video hoàn chỉnh.\nĐối với các dự án lớn như:\nPhim hoạt hình Phim điện ảnh Game Quảng cáo Kiến trúc 3D Mô phỏng kỹ thuật quá trình render thường yêu cầu:\nNăng lực tính toán rất lớn. Sử dụng nhiều CPU hoặc GPU. Thời gian xử lý kéo dài. Chi phí đầu tư phần cứng cao. AWS Deadline Cloud giúp đưa toàn bộ quy trình này lên môi trường Cloud, giảm đáng kể áp lực về hạ tầng.\nVì sao cần Render trên Cloud? Trước đây, các studio thường xây dựng Render Farm riêng với nhiều máy chủ có cấu hình mạnh.\nTuy nhiên, phương pháp này tồn tại nhiều hạn chế:\nChi phí đầu tư ban đầu lớn. Khó mở rộng khi dự án tăng quy mô. Tốn chi phí bảo trì và vận hành. Thiết bị có thể không được sử dụng hết công suất. Khi sử dụng AWS Deadline Cloud, tài nguyên có thể mở rộng hoặc thu hẹp linh hoạt theo nhu cầu:\nDự án nhỏ sử dụng ít tài nguyên. Dự án lớn có thể nhanh chóng mở rộng số lượng máy render. Sau khi hoàn thành, tài nguyên có thể được giải phóng để tối ưu chi phí. Những điểm nổi bật của AWS Deadline Cloud 1. Không cần xây dựng Render Farm Doanh nghiệp không cần đầu tư hàng chục máy chủ GPU hoặc CPU để phục vụ render.\nMọi tài nguyên đều được cung cấp theo nhu cầu trên nền tảng AWS.\n2. Dễ dàng mở rộng Deadline Cloud cho phép mở rộng hoặc thu hẹp số lượng Render Worker tùy theo khối lượng công việc.\nĐiều này giúp rút ngắn thời gian xử lý đối với các dự án lớn.\n3. Hỗ trợ quy trình sản xuất chuyên nghiệp AWS Deadline Cloud được thiết kế để phục vụ nhiều lĩnh vực như:\nAnimation Visual Effects (VFX) Motion Graphics 3D Rendering Game Development Dịch vụ có thể tích hợp với nhiều phần mềm đồ họa phổ biến trong ngành công nghiệp sáng tạo.\n4. Quản lý chi phí hiệu quả Thay vì đầu tư hệ thống phần cứng lớn, doanh nghiệp chỉ thanh toán cho lượng tài nguyên thực tế đã sử dụng.\nĐiều này giúp tối ưu ngân sách và nâng cao hiệu quả vận hành.\nỨng dụng thực tế Ngành điện ảnh Các studio có thể sử dụng Deadline Cloud để render các cảnh phim có hiệu ứng phức tạp trong thời gian ngắn hơn.\nNgành phát triển game Deadline Cloud hỗ trợ render:\nTrailer Cinematic Mô hình 3D Hiệu ứng hình ảnh Kiến trúc và thiết kế Các công ty kiến trúc có thể tạo:\nHình ảnh công trình Nội thất Mô phỏng không gian Phối cảnh 3D chất lượng cao So sánh Render truyền thống và AWS Deadline Cloud Render truyền thống AWS Deadline Cloud Đầu tư phần cứng lớn Không cần mua phần cứng Khó mở rộng Mở rộng linh hoạt Chi phí bảo trì cao Thanh toán theo nhu cầu Quản lý thủ công Quản lý tập trung trên AWS Phụ thuộc Render Farm Sử dụng hạ tầng Cloud Những điều mình học được Sau khi tìm hiểu AWS Deadline Cloud, mình nhận thấy đây là một dịch vụ rất thú vị vì cho thấy Cloud Computing không chỉ phục vụ các hệ thống doanh nghiệp mà còn hỗ trợ mạnh mẽ cho ngành công nghiệp sáng tạo.\nMột số điều mình rút ra:\nCloud Computing có thể giải quyết các bài toán cần năng lực tính toán lớn. Deadline Cloud giúp giảm chi phí đầu tư hạ tầng. Khả năng mở rộng linh hoạt là một lợi thế lớn của Cloud. Người dùng chỉ cần tập trung vào công việc render thay vì quản lý Render Farm. Đây là dịch vụ phù hợp với các doanh nghiệp sản xuất nội dung số. Kết luận AWS Deadline Cloud là minh chứng cho việc điện toán đám mây đang mở rộng sang nhiều lĩnh vực ngoài phát triển phần mềm truyền thống.\nThông qua việc đưa quy trình render lên AWS, doanh nghiệp có thể tiết kiệm chi phí, tăng tốc độ xử lý và mở rộng tài nguyên linh hoạt theo nhu cầu.\nMặc dù đây chưa phải là dịch vụ phổ biến với người mới học AWS, nhưng việc tìm hiểu Deadline Cloud giúp mình có thêm góc nhìn về những ứng dụng thực tế của Cloud Computing trong ngành công nghiệp sáng tạo.\nTài liệu tham khảo AWS Deadline Cloud\nhttps://aws.amazon.com/deadline-cloud/\nAWS Deadline Cloud Documentation\nhttps://docs.aws.amazon.com/deadline-cloud/\n",
-  "wordCount" : "972",
-  "inLanguage": "vi",
-  "datePublished": "2026-07-22T00:00:00Z",
-  "dateModified": "2026-07-22T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://long-28.github.io/vi/4-blog-posts/03-blog-3/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Workshop Portfolio AWS",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://long-28.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tìm hiểu AWS Deadline Cloud, dịch vụ quản lý render trên nền tảng AWS dành cho các lĩnh vực phim ảnh, game, kiến trúc và đồ họa 3D.">
+  <title>AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số · Workshop Portfolio AWS</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/en/" title="English"
-                                aria-label="English">En</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/vi/"><span class="brand-mark">AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="" href="/en/4-blog-posts/03-blog-3/">EN</a><a class="active" href="/vi/4-blog-posts/03-blog-3/">VI</a></div>
+  </div>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">MỤC LỤC</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
     
-    <h1 class="post-title entry-hint-parent">
-      AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số
-    </h1>
-    <div class="post-description">
-      Tìm hiểu AWS Deadline Cloud, dịch vụ quản lý render trên nền tảng AWS dành cho các lĩnh vực phim ảnh, game, kiến trúc và đồ họa 3D.
-    </div>
-    <div class="post-meta">
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/1-student-information/"><span>01</span>Thông tin sinh viên</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/2-worklog/"><span>02</span>Nhật ký thực tập</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/3-proposal/"><span>03</span>Đề xuất dự án</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/vi/4-blog-posts/"><span>04</span>Bài viết</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/4-blog-posts/01-blog-1/">AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
+          
+        
+          <a class="active" href="/vi/4-blog-posts/03-blog-3/">AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/5-events-participated/"><span>05</span>Sự kiện đã tham gia</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/vi/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/6-workshop/01-overview/">Tổng quan</a>
+          
+        
+          <a class="" href="/vi/6-workshop/02-prerequisites/">Điều kiện tiên quyết</a>
+          
+        
+          <a class="" href="/vi/6-workshop/03-architecture/">Kiến trúc</a>
+          
+        
+          <a class="" href="/vi/6-workshop/04-deployment/">Triển khai</a>
+          
+        
+          <a class="" href="/vi/6-workshop/09-cleanup/">Dọn dẹp tài nguyên</a>
+          
+        
+          <a class="" href="/vi/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/7-self-evaluation/"><span>07</span>Tự đánh giá</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/8-sharing-and-feedback/"><span>08</span>Chia sẻ và phản hồi</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Mẹo</strong>
+    <p>Nhấn VI/EN để chuyển ngôn ngữ.</p>
+  </div>
+</aside>
 
-<span title='2026-07-22 00:00:00 +0000 UTC'>22 tháng 7, 2026</span>&nbsp;|&nbsp;<span>Bản dịch:</span>
-    <ul class="i18n_list">
-        <li>
-            <a href="https://long-28.github.io/en/4-blog-posts/03-blog-3/">En</a>
-        </li>
-    </ul>
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/vi/">Trang chủ</a>
+  <span>/</span><a href="/vi/4-blog-posts/">Bài viết</a>
+  <span>/</span><span>AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</span>
+</nav>
 
-</div>
-  </header> 
-  <div class="post-content md-content"><h1 id="aws-deadline-cloud---giải-pháp-render-trên-cloud-giúp-tối-ưu-quy-trình-sản-xuất-nội-dung-số">AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số<a hidden class="anchor" aria-hidden="true" href="#aws-deadline-cloud---giải-pháp-render-trên-cloud-giúp-tối-ưu-quy-trình-sản-xuất-nội-dung-số">#</a></h1>
+<header class="page-header journey-header">
+  <span class="eyebrow">TÀI LIỆU WORKSHOP</span>
+  
+  <h1>AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</h1>
+  <p>Tìm hiểu AWS Deadline Cloud, dịch vụ quản lý render trên nền tảng AWS dành cho các lĩnh vực phim ảnh, game, kiến trúc và đồ họa 3D.</p>
+</header>
+<article class="content-card prose" data-search-content><h1 id="aws-deadline-cloud---giải-pháp-render-trên-cloud-giúp-tối-ưu-quy-trình-sản-xuất-nội-dung-số">AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</h1>
 <p>Xin chào mọi người!</p>
 <p>Khi nhắc đến Amazon Web Services (AWS), nhiều người thường nghĩ ngay đến các dịch vụ phổ biến như Amazon EC2, Amazon S3 hay AWS Lambda. Tuy nhiên, AWS còn cung cấp nhiều dịch vụ chuyên biệt dành cho từng lĩnh vực khác nhau.</p>
 <p>Một trong số đó là <strong>AWS Deadline Cloud</strong> – dịch vụ giúp các studio làm phim, thiết kế đồ họa, kỹ xảo điện ảnh (VFX), phát triển game và kiến trúc 3D có thể thực hiện quá trình render trực tiếp trên nền tảng đám mây mà không cần đầu tư hệ thống Render Farm vật lý.</p>
 <p>Trong bài viết này, mình sẽ chia sẻ những kiến thức cơ bản về AWS Deadline Cloud và những lợi ích mà dịch vụ này mang lại.</p>
 <hr>
-<h1 id="aws-deadline-cloud-là-gì">AWS Deadline Cloud là gì?<a hidden class="anchor" aria-hidden="true" href="#aws-deadline-cloud-là-gì">#</a></h1>
+<h1 id="aws-deadline-cloud-là-gì">AWS Deadline Cloud là gì?</h1>
 <p>AWS Deadline Cloud là dịch vụ quản lý Render Farm trên nền tảng AWS, cho phép người dùng tạo, vận hành và mở rộng các tác vụ render trong môi trường Cloud.</p>
 <p>Render là quá trình chuyển đổi dữ liệu từ mô hình 3D, hiệu ứng hoặc cảnh phim thành hình ảnh hoặc video hoàn chỉnh.</p>
 <p>Đối với các dự án lớn như:</p>
@@ -217,7 +180,7 @@
 </ul>
 <p>AWS Deadline Cloud giúp đưa toàn bộ quy trình này lên môi trường Cloud, giảm đáng kể áp lực về hạ tầng.</p>
 <hr>
-<h1 id="vì-sao-cần-render-trên-cloud">Vì sao cần Render trên Cloud?<a hidden class="anchor" aria-hidden="true" href="#vì-sao-cần-render-trên-cloud">#</a></h1>
+<h1 id="vì-sao-cần-render-trên-cloud">Vì sao cần Render trên Cloud?</h1>
 <p>Trước đây, các studio thường xây dựng Render Farm riêng với nhiều máy chủ có cấu hình mạnh.</p>
 <p>Tuy nhiên, phương pháp này tồn tại nhiều hạn chế:</p>
 <ul>
@@ -233,16 +196,16 @@
 <li>Sau khi hoàn thành, tài nguyên có thể được giải phóng để tối ưu chi phí.</li>
 </ul>
 <hr>
-<h1 id="những-điểm-nổi-bật-của-aws-deadline-cloud">Những điểm nổi bật của AWS Deadline Cloud<a hidden class="anchor" aria-hidden="true" href="#những-điểm-nổi-bật-của-aws-deadline-cloud">#</a></h1>
-<h2 id="1-không-cần-xây-dựng-render-farm">1. Không cần xây dựng Render Farm<a hidden class="anchor" aria-hidden="true" href="#1-không-cần-xây-dựng-render-farm">#</a></h2>
+<h1 id="những-điểm-nổi-bật-của-aws-deadline-cloud">Những điểm nổi bật của AWS Deadline Cloud</h1>
+<h2 id="1-không-cần-xây-dựng-render-farm">1. Không cần xây dựng Render Farm</h2>
 <p>Doanh nghiệp không cần đầu tư hàng chục máy chủ GPU hoặc CPU để phục vụ render.</p>
 <p>Mọi tài nguyên đều được cung cấp theo nhu cầu trên nền tảng AWS.</p>
 <hr>
-<h2 id="2-dễ-dàng-mở-rộng">2. Dễ dàng mở rộng<a hidden class="anchor" aria-hidden="true" href="#2-dễ-dàng-mở-rộng">#</a></h2>
+<h2 id="2-dễ-dàng-mở-rộng">2. Dễ dàng mở rộng</h2>
 <p>Deadline Cloud cho phép mở rộng hoặc thu hẹp số lượng Render Worker tùy theo khối lượng công việc.</p>
 <p>Điều này giúp rút ngắn thời gian xử lý đối với các dự án lớn.</p>
 <hr>
-<h2 id="3-hỗ-trợ-quy-trình-sản-xuất-chuyên-nghiệp">3. Hỗ trợ quy trình sản xuất chuyên nghiệp<a hidden class="anchor" aria-hidden="true" href="#3-hỗ-trợ-quy-trình-sản-xuất-chuyên-nghiệp">#</a></h2>
+<h2 id="3-hỗ-trợ-quy-trình-sản-xuất-chuyên-nghiệp">3. Hỗ trợ quy trình sản xuất chuyên nghiệp</h2>
 <p>AWS Deadline Cloud được thiết kế để phục vụ nhiều lĩnh vực như:</p>
 <ul>
 <li>Animation</li>
@@ -253,15 +216,15 @@
 </ul>
 <p>Dịch vụ có thể tích hợp với nhiều phần mềm đồ họa phổ biến trong ngành công nghiệp sáng tạo.</p>
 <hr>
-<h2 id="4-quản-lý-chi-phí-hiệu-quả">4. Quản lý chi phí hiệu quả<a hidden class="anchor" aria-hidden="true" href="#4-quản-lý-chi-phí-hiệu-quả">#</a></h2>
+<h2 id="4-quản-lý-chi-phí-hiệu-quả">4. Quản lý chi phí hiệu quả</h2>
 <p>Thay vì đầu tư hệ thống phần cứng lớn, doanh nghiệp chỉ thanh toán cho lượng tài nguyên thực tế đã sử dụng.</p>
 <p>Điều này giúp tối ưu ngân sách và nâng cao hiệu quả vận hành.</p>
 <hr>
-<h1 id="ứng-dụng-thực-tế">Ứng dụng thực tế<a hidden class="anchor" aria-hidden="true" href="#ứng-dụng-thực-tế">#</a></h1>
-<h2 id="ngành-điện-ảnh">Ngành điện ảnh<a hidden class="anchor" aria-hidden="true" href="#ngành-điện-ảnh">#</a></h2>
+<h1 id="ứng-dụng-thực-tế">Ứng dụng thực tế</h1>
+<h2 id="ngành-điện-ảnh">Ngành điện ảnh</h2>
 <p>Các studio có thể sử dụng Deadline Cloud để render các cảnh phim có hiệu ứng phức tạp trong thời gian ngắn hơn.</p>
 <hr>
-<h2 id="ngành-phát-triển-game">Ngành phát triển game<a hidden class="anchor" aria-hidden="true" href="#ngành-phát-triển-game">#</a></h2>
+<h2 id="ngành-phát-triển-game">Ngành phát triển game</h2>
 <p>Deadline Cloud hỗ trợ render:</p>
 <ul>
 <li>Trailer</li>
@@ -270,7 +233,7 @@
 <li>Hiệu ứng hình ảnh</li>
 </ul>
 <hr>
-<h2 id="kiến-trúc-và-thiết-kế">Kiến trúc và thiết kế<a hidden class="anchor" aria-hidden="true" href="#kiến-trúc-và-thiết-kế">#</a></h2>
+<h2 id="kiến-trúc-và-thiết-kế">Kiến trúc và thiết kế</h2>
 <p>Các công ty kiến trúc có thể tạo:</p>
 <ul>
 <li>Hình ảnh công trình</li>
@@ -279,7 +242,7 @@
 <li>Phối cảnh 3D chất lượng cao</li>
 </ul>
 <hr>
-<h1 id="so-sánh-render-truyền-thống-và-aws-deadline-cloud">So sánh Render truyền thống và AWS Deadline Cloud<a hidden class="anchor" aria-hidden="true" href="#so-sánh-render-truyền-thống-và-aws-deadline-cloud">#</a></h1>
+<h1 id="so-sánh-render-truyền-thống-và-aws-deadline-cloud">So sánh Render truyền thống và AWS Deadline Cloud</h1>
 <table>
 	<thead>
 			<tr>
@@ -311,7 +274,7 @@
 	</tbody>
 </table>
 <hr>
-<h1 id="những-điều-mình-học-được">Những điều mình học được<a hidden class="anchor" aria-hidden="true" href="#những-điều-mình-học-được">#</a></h1>
+<h1 id="những-điều-mình-học-được">Những điều mình học được</h1>
 <p>Sau khi tìm hiểu AWS Deadline Cloud, mình nhận thấy đây là một dịch vụ rất thú vị vì cho thấy Cloud Computing không chỉ phục vụ các hệ thống doanh nghiệp mà còn hỗ trợ mạnh mẽ cho ngành công nghiệp sáng tạo.</p>
 <p>Một số điều mình rút ra:</p>
 <ul>
@@ -322,12 +285,12 @@
 <li>Đây là dịch vụ phù hợp với các doanh nghiệp sản xuất nội dung số.</li>
 </ul>
 <hr>
-<h1 id="kết-luận">Kết luận<a hidden class="anchor" aria-hidden="true" href="#kết-luận">#</a></h1>
+<h1 id="kết-luận">Kết luận</h1>
 <p>AWS Deadline Cloud là minh chứng cho việc điện toán đám mây đang mở rộng sang nhiều lĩnh vực ngoài phát triển phần mềm truyền thống.</p>
 <p>Thông qua việc đưa quy trình render lên AWS, doanh nghiệp có thể tiết kiệm chi phí, tăng tốc độ xử lý và mở rộng tài nguyên linh hoạt theo nhu cầu.</p>
 <p>Mặc dù đây chưa phải là dịch vụ phổ biến với người mới học AWS, nhưng việc tìm hiểu Deadline Cloud giúp mình có thêm góc nhìn về những ứng dụng thực tế của Cloud Computing trong ngành công nghiệp sáng tạo.</p>
 <hr>
-<h1 id="tài-liệu-tham-khảo">Tài liệu tham khảo<a hidden class="anchor" aria-hidden="true" href="#tài-liệu-tham-khảo">#</a></h1>
+<h1 id="tài-liệu-tham-khảo">Tài liệu tham khảo</h1>
 <ul>
 <li>
 <p>AWS Deadline Cloud<br>
@@ -339,95 +302,16 @@
 </li>
 </ul>
 <hr>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
 </article>
+<nav class="pager">
+  <span></span>
+  <a href="/vi/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống →</a>
+</nav>
+
+      <footer class="footer"></footer>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>

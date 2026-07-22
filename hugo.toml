@@ -1,6 +1,7 @@
 baseURL = 'https://long-28.github.io/'
 title = 'AWS Portfolio Workshop'
 theme = 'PaperMod'
+layoutDir = '.github/layouts'
 languageCode = 'en-US'
 
 defaultContentLanguage = "en"

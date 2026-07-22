@@ -1,202 +1,165 @@
-<!DOCTYPE html>
-<html lang="vi" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services | Workshop Portfolio AWS</title>
-<meta name="keywords" content="">
-<meta name="description" content="Chia sẻ kiến thức cơ bản về AWS Identity and Access Management (IAM) và lý do đây là dịch vụ đầu tiên nên học khi bắt đầu với AWS.">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/vi/4-blog-posts/01-blog-1/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/4-blog-posts/01-blog-1/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/4-blog-posts/01-blog-1/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/vi/4-blog-posts/01-blog-1/">
-  <meta property="og:site_name" content="Workshop Portfolio AWS">
-  <meta property="og:title" content="AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services">
-  <meta property="og:description" content="Chia sẻ kiến thức cơ bản về AWS Identity and Access Management (IAM) và lý do đây là dịch vụ đầu tiên nên học khi bắt đầu với AWS.">
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="4-blog-posts">
-    <meta property="article:published_time" content="2026-07-22T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-07-22T00:00:00+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services">
-  <meta name="twitter:description" content="Chia sẻ kiến thức cơ bản về AWS Identity and Access Management (IAM) và lý do đây là dịch vụ đầu tiên nên học khi bắt đầu với AWS.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Bài viết",
-      "item": "https://long-28.github.io/vi/4-blog-posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services",
-      "item": "https://long-28.github.io/vi/4-blog-posts/01-blog-1/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services",
-  "name": "AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services",
-  "description": "Chia sẻ kiến thức cơ bản về AWS Identity and Access Management (IAM) và lý do đây là dịch vụ đầu tiên nên học khi bắt đầu với AWS.",
-  "keywords": [
-    
-  ],
-  "articleBody": "AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services Xin chào mọi người!\nKhi bắt đầu tìm hiểu về Amazon Web Services (AWS), mình từng nghĩ rằng nên học ngay những dịch vụ phổ biến như Amazon EC2 hoặc Amazon S3. Tuy nhiên, sau quá trình học tập và thực hành, mình nhận ra rằng AWS Identity and Access Management (IAM) mới là nền tảng quan trọng nhất.\nLý do rất đơn giản: gần như mọi dịch vụ trên AWS đều liên quan đến việc quản lý quyền truy cập. Nếu không hiểu IAM, rất dễ gặp các lỗi về phân quyền hoặc vô tình tạo ra những rủi ro bảo mật.\nTrong bài viết này, mình sẽ chia sẻ những kiến thức cơ bản về IAM cũng như những điều mình học được trong quá trình tìm hiểu.\nIAM là gì? AWS Identity and Access Management (IAM) là dịch vụ giúp quản lý danh tính và quyền truy cập đối với các tài nguyên trên AWS.\nIAM giúp trả lời ba câu hỏi quan trọng:\nAi được phép truy cập hệ thống? Người đó được phép thực hiện những hành động nào? Người đó được phép truy cập những tài nguyên nào? Thay vì sử dụng tài khoản Root cho mọi thao tác, AWS khuyến nghị sử dụng IAM User hoặc IAM Role với các quyền phù hợp nhằm tăng tính bảo mật.\nCác thành phần chính của IAM IAM User IAM User đại diện cho một người dùng hoặc một ứng dụng cần truy cập AWS.\nMỗi người dùng nên có một tài khoản riêng để:\nDễ dàng quản lý. Theo dõi lịch sử hoạt động. Thu hồi quyền khi không còn sử dụng. IAM Group IAM Group là tập hợp nhiều User có cùng quyền truy cập.\nVí dụ:\nDevelopers DevOps Administrators Khi một User được thêm vào Group, người dùng đó sẽ tự động nhận toàn bộ quyền đã được cấu hình cho Group.\nĐiều này giúp việc quản lý trở nên đơn giản hơn so với việc cấp quyền riêng lẻ cho từng User.\nIAM Policy IAM Policy là tập hợp các quyền được định nghĩa dưới dạng JSON.\nMột Policy có thể cho phép:\nĐọc dữ liệu từ Amazon S3. Khởi động hoặc dừng Amazon EC2. Xem log trên Amazon CloudWatch. Policy có thể được gắn vào User, Group hoặc Role để kiểm soát quyền truy cập.\nIAM Role Khác với IAM User, IAM Role không đại diện cho một người dùng cụ thể mà được sử dụng để cấp quyền tạm thời cho dịch vụ hoặc ứng dụng.\nVí dụ:\nAmazon EC2 cần đọc dữ liệu từ Amazon S3. AWS Lambda cần ghi log lên Amazon CloudWatch. Thay vì lưu Access Key trong ứng dụng, EC2 hoặc Lambda sẽ sử dụng IAM Role để lấy quyền truy cập một cách an toàn hơn.\nNguyên tắc Least Privilege Một trong những nguyên tắc quan trọng nhất khi sử dụng IAM là Least Privilege (quyền tối thiểu cần thiết).\nĐiều này có nghĩa là chỉ cấp đúng những quyền mà người dùng hoặc dịch vụ thực sự cần để hoàn thành công việc.\nVí dụ:\nLập trình viên chỉ cần triển khai ứng dụng thì không nên có quyền xóa Amazon S3 Bucket. Nhân viên phân tích dữ liệu chỉ cần quyền đọc dữ liệu, không cần quyền chỉnh sửa hoặc xóa. Việc áp dụng nguyên tắc này giúp giảm thiểu rủi ro khi tài khoản bị lộ hoặc bị sử dụng sai mục đích.\nNhững điều mình học được Sau quá trình thực hành IAM, mình nhận thấy đây không chỉ là dịch vụ để tạo tài khoản người dùng mà còn là nền tảng để xây dựng một hệ thống an toàn và dễ quản lý.\nMột số kinh nghiệm mình rút ra:\nKhông sử dụng tài khoản Root cho công việc hằng ngày. Phân quyền thông qua Group thay vì cấp trực tiếp cho từng User. Chỉ cấp đúng những quyền cần thiết. Sử dụng IAM Role thay cho Access Key khi ứng dụng chạy trên AWS. Thường xuyên rà soát và loại bỏ các quyền không còn sử dụng. Đây cũng là những Best Practices được AWS khuyến nghị áp dụng trong môi trường thực tế.\nKết luận IAM là dịch vụ đầu tiên mình lựa chọn khi bắt đầu học AWS vì đây là nền tảng của hầu hết các dịch vụ trên nền tảng đám mây.\nHiểu rõ IAM không chỉ giúp quản lý người dùng và quyền truy cập hiệu quả mà còn tạo tiền đề để tiếp cận các dịch vụ khác như Amazon EC2, Amazon S3, Amazon RDS, AWS Lambda hay Amazon CloudWatch.\nTrong bài viết tiếp theo, mình sẽ chia sẻ về AWS CloudTrail – dịch vụ giúp ghi lại toàn bộ hoạt động trên tài khoản AWS, hỗ trợ theo dõi, kiểm tra và điều tra các sự cố bảo mật.\nCảm ơn mọi người đã dành thời gian đọc bài viết. Nếu có góp ý hoặc kinh nghiệm về AWS IAM, mình rất mong được trao đổi trong phần bình luận.\nhttps://www.facebook.com/groups/awsstudygroupfcj/permalink/2219720912126202/?rdid=yUch2Eicv7H4YBwW#\n",
-  "wordCount" : "864",
-  "inLanguage": "vi",
-  "datePublished": "2026-07-22T00:00:00Z",
-  "dateModified": "2026-07-22T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://long-28.github.io/vi/4-blog-posts/01-blog-1/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Workshop Portfolio AWS",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://long-28.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chia sẻ kiến thức cơ bản về AWS Identity and Access Management (IAM) và lý do đây là dịch vụ đầu tiên nên học khi bắt đầu với AWS.">
+  <title>AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services · Workshop Portfolio AWS</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/en/" title="English"
-                                aria-label="English">En</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/vi/"><span class="brand-mark">AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="" href="/en/4-blog-posts/01-blog-1/">EN</a><a class="active" href="/vi/4-blog-posts/01-blog-1/">VI</a></div>
+  </div>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">MỤC LỤC</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
     
-    <h1 class="post-title entry-hint-parent">
-      AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services
-    </h1>
-    <div class="post-description">
-      Chia sẻ kiến thức cơ bản về AWS Identity and Access Management (IAM) và lý do đây là dịch vụ đầu tiên nên học khi bắt đầu với AWS.
-    </div>
-    <div class="post-meta">
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/1-student-information/"><span>01</span>Thông tin sinh viên</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/2-worklog/"><span>02</span>Nhật ký thực tập</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/3-proposal/"><span>03</span>Đề xuất dự án</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/vi/4-blog-posts/"><span>04</span>Bài viết</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="active" href="/vi/4-blog-posts/01-blog-1/">AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/03-blog-3/">AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/5-events-participated/"><span>05</span>Sự kiện đã tham gia</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/vi/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/6-workshop/01-overview/">Tổng quan</a>
+          
+        
+          <a class="" href="/vi/6-workshop/02-prerequisites/">Điều kiện tiên quyết</a>
+          
+        
+          <a class="" href="/vi/6-workshop/03-architecture/">Kiến trúc</a>
+          
+        
+          <a class="" href="/vi/6-workshop/04-deployment/">Triển khai</a>
+          
+        
+          <a class="" href="/vi/6-workshop/09-cleanup/">Dọn dẹp tài nguyên</a>
+          
+        
+          <a class="" href="/vi/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/7-self-evaluation/"><span>07</span>Tự đánh giá</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/8-sharing-and-feedback/"><span>08</span>Chia sẻ và phản hồi</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Mẹo</strong>
+    <p>Nhấn VI/EN để chuyển ngôn ngữ.</p>
+  </div>
+</aside>
 
-<span title='2026-07-22 00:00:00 +0000 UTC'>22 tháng 7, 2026</span>&nbsp;|&nbsp;<span>Bản dịch:</span>
-    <ul class="i18n_list">
-        <li>
-            <a href="https://long-28.github.io/en/4-blog-posts/01-blog-1/">En</a>
-        </li>
-    </ul>
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/vi/">Trang chủ</a>
+  <span>/</span><a href="/vi/4-blog-posts/">Bài viết</a>
+  <span>/</span><span>AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</span>
+</nav>
 
-</div>
-  </header> 
-  <div class="post-content md-content"><h1 id="aws-iam---nền-tảng-đầu-tiên-khi-bắt-đầu-học-amazon-web-services">AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services<a hidden class="anchor" aria-hidden="true" href="#aws-iam---nền-tảng-đầu-tiên-khi-bắt-đầu-học-amazon-web-services">#</a></h1>
+<header class="page-header journey-header">
+  <span class="eyebrow">TÀI LIỆU WORKSHOP</span>
+  
+  <h1>AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</h1>
+  <p>Chia sẻ kiến thức cơ bản về AWS Identity and Access Management (IAM) và lý do đây là dịch vụ đầu tiên nên học khi bắt đầu với AWS.</p>
+</header>
+<article class="content-card prose" data-search-content><h1 id="aws-iam---nền-tảng-đầu-tiên-khi-bắt-đầu-học-amazon-web-services">AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</h1>
 <p>Xin chào mọi người!</p>
 <p>Khi bắt đầu tìm hiểu về Amazon Web Services (AWS), mình từng nghĩ rằng nên học ngay những dịch vụ phổ biến như Amazon EC2 hoặc Amazon S3. Tuy nhiên, sau quá trình học tập và thực hành, mình nhận ra rằng <strong>AWS Identity and Access Management (IAM)</strong> mới là nền tảng quan trọng nhất.</p>
 <p>Lý do rất đơn giản: gần như mọi dịch vụ trên AWS đều liên quan đến việc quản lý quyền truy cập. Nếu không hiểu IAM, rất dễ gặp các lỗi về phân quyền hoặc vô tình tạo ra những rủi ro bảo mật.</p>
 <p>Trong bài viết này, mình sẽ chia sẻ những kiến thức cơ bản về IAM cũng như những điều mình học được trong quá trình tìm hiểu.</p>
 <hr>
-<h1 id="iam-là-gì">IAM là gì?<a hidden class="anchor" aria-hidden="true" href="#iam-là-gì">#</a></h1>
+<h1 id="iam-là-gì">IAM là gì?</h1>
 <p>AWS Identity and Access Management (IAM) là dịch vụ giúp quản lý danh tính và quyền truy cập đối với các tài nguyên trên AWS.</p>
 <p>IAM giúp trả lời ba câu hỏi quan trọng:</p>
 <ul>
@@ -206,8 +169,8 @@
 </ul>
 <p>Thay vì sử dụng tài khoản Root cho mọi thao tác, AWS khuyến nghị sử dụng IAM User hoặc IAM Role với các quyền phù hợp nhằm tăng tính bảo mật.</p>
 <hr>
-<h1 id="các-thành-phần-chính-của-iam">Các thành phần chính của IAM<a hidden class="anchor" aria-hidden="true" href="#các-thành-phần-chính-của-iam">#</a></h1>
-<h2 id="iam-user">IAM User<a hidden class="anchor" aria-hidden="true" href="#iam-user">#</a></h2>
+<h1 id="các-thành-phần-chính-của-iam">Các thành phần chính của IAM</h1>
+<h2 id="iam-user">IAM User</h2>
 <p>IAM User đại diện cho một người dùng hoặc một ứng dụng cần truy cập AWS.</p>
 <p>Mỗi người dùng nên có một tài khoản riêng để:</p>
 <ul>
@@ -216,7 +179,7 @@
 <li>Thu hồi quyền khi không còn sử dụng.</li>
 </ul>
 <hr>
-<h2 id="iam-group">IAM Group<a hidden class="anchor" aria-hidden="true" href="#iam-group">#</a></h2>
+<h2 id="iam-group">IAM Group</h2>
 <p>IAM Group là tập hợp nhiều User có cùng quyền truy cập.</p>
 <p>Ví dụ:</p>
 <ul>
@@ -227,7 +190,7 @@
 <p>Khi một User được thêm vào Group, người dùng đó sẽ tự động nhận toàn bộ quyền đã được cấu hình cho Group.</p>
 <p>Điều này giúp việc quản lý trở nên đơn giản hơn so với việc cấp quyền riêng lẻ cho từng User.</p>
 <hr>
-<h2 id="iam-policy">IAM Policy<a hidden class="anchor" aria-hidden="true" href="#iam-policy">#</a></h2>
+<h2 id="iam-policy">IAM Policy</h2>
 <p>IAM Policy là tập hợp các quyền được định nghĩa dưới dạng JSON.</p>
 <p>Một Policy có thể cho phép:</p>
 <ul>
@@ -237,7 +200,7 @@
 </ul>
 <p>Policy có thể được gắn vào User, Group hoặc Role để kiểm soát quyền truy cập.</p>
 <hr>
-<h2 id="iam-role">IAM Role<a hidden class="anchor" aria-hidden="true" href="#iam-role">#</a></h2>
+<h2 id="iam-role">IAM Role</h2>
 <p>Khác với IAM User, IAM Role không đại diện cho một người dùng cụ thể mà được sử dụng để cấp quyền tạm thời cho dịch vụ hoặc ứng dụng.</p>
 <p>Ví dụ:</p>
 <ul>
@@ -246,7 +209,7 @@
 </ul>
 <p>Thay vì lưu Access Key trong ứng dụng, EC2 hoặc Lambda sẽ sử dụng IAM Role để lấy quyền truy cập một cách an toàn hơn.</p>
 <hr>
-<h1 id="nguyên-tắc-least-privilege">Nguyên tắc Least Privilege<a hidden class="anchor" aria-hidden="true" href="#nguyên-tắc-least-privilege">#</a></h1>
+<h1 id="nguyên-tắc-least-privilege">Nguyên tắc Least Privilege</h1>
 <p>Một trong những nguyên tắc quan trọng nhất khi sử dụng IAM là <strong>Least Privilege</strong> (quyền tối thiểu cần thiết).</p>
 <p>Điều này có nghĩa là chỉ cấp đúng những quyền mà người dùng hoặc dịch vụ thực sự cần để hoàn thành công việc.</p>
 <p>Ví dụ:</p>
@@ -256,7 +219,7 @@
 </ul>
 <p>Việc áp dụng nguyên tắc này giúp giảm thiểu rủi ro khi tài khoản bị lộ hoặc bị sử dụng sai mục đích.</p>
 <hr>
-<h1 id="những-điều-mình-học-được">Những điều mình học được<a hidden class="anchor" aria-hidden="true" href="#những-điều-mình-học-được">#</a></h1>
+<h1 id="những-điều-mình-học-được">Những điều mình học được</h1>
 <p>Sau quá trình thực hành IAM, mình nhận thấy đây không chỉ là dịch vụ để tạo tài khoản người dùng mà còn là nền tảng để xây dựng một hệ thống an toàn và dễ quản lý.</p>
 <p>Một số kinh nghiệm mình rút ra:</p>
 <ul>
@@ -268,102 +231,23 @@
 </ul>
 <p>Đây cũng là những Best Practices được AWS khuyến nghị áp dụng trong môi trường thực tế.</p>
 <hr>
-<h1 id="kết-luận">Kết luận<a hidden class="anchor" aria-hidden="true" href="#kết-luận">#</a></h1>
+<h1 id="kết-luận">Kết luận</h1>
 <p>IAM là dịch vụ đầu tiên mình lựa chọn khi bắt đầu học AWS vì đây là nền tảng của hầu hết các dịch vụ trên nền tảng đám mây.</p>
 <p>Hiểu rõ IAM không chỉ giúp quản lý người dùng và quyền truy cập hiệu quả mà còn tạo tiền đề để tiếp cận các dịch vụ khác như Amazon EC2, Amazon S3, Amazon RDS, AWS Lambda hay Amazon CloudWatch.</p>
 <p>Trong bài viết tiếp theo, mình sẽ chia sẻ về <strong>AWS CloudTrail</strong> – dịch vụ giúp ghi lại toàn bộ hoạt động trên tài khoản AWS, hỗ trợ theo dõi, kiểm tra và điều tra các sự cố bảo mật.</p>
 <p>Cảm ơn mọi người đã dành thời gian đọc bài viết. Nếu có góp ý hoặc kinh nghiệm về AWS IAM, mình rất mong được trao đổi trong phần bình luận.</p>
 <hr>
 <p><a href="https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219720912126202/?rdid=yUch2Eicv7H4YBwW">https://www.facebook.com/groups/awsstudygroupfcj/permalink/2219720912126202/?rdid=yUch2Eicv7H4YBwW#</a></p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
 </article>
+<nav class="pager">
+  <a href="/vi/4-blog-posts/02-blog-2/">← AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
+  
+</nav>
+
+      <footer class="footer"></footer>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>

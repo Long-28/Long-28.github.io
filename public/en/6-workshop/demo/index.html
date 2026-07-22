@@ -1,197 +1,162 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Demo | AWS Portfolio Workshop</title>
-<meta name="keywords" content="">
-<meta name="description" content="Verify the functionality of the Enterprise HelpDesk system after deployment on AWS.">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/en/6-workshop/demo/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/6-workshop/demo/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/6-workshop/demo/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/en/6-workshop/demo/">
-  <meta property="og:site_name" content="AWS Portfolio Workshop">
-  <meta property="og:title" content="Demo">
-  <meta property="og:description" content="Verify the functionality of the Enterprise HelpDesk system after deployment on AWS.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="6-workshop">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Demo">
-  <meta name="twitter:description" content="Verify the functionality of the Enterprise HelpDesk system after deployment on AWS.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Workshop",
-      "item": "https://long-28.github.io/en/6-workshop/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Demo",
-      "item": "https://long-28.github.io/en/6-workshop/demo/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Demo",
-  "name": "Demo",
-  "description": "Verify the functionality of the Enterprise HelpDesk system after deployment on AWS.",
-  "keywords": [
-    
-  ],
-  "articleBody": "Enterprise HelpDesk System Demo In this section, you will verify the functionality of the Enterprise HelpDesk system after it has been successfully deployed on AWS. The application’s business features and AWS services are demonstrated through real-world scenarios to validate that the system operates reliably, securely, and according to the designed architecture.\nDemo 1. User Sign-In Users enter their username and password to authenticate. After a successful sign-in, the system identifies the user’s role and displays the appropriate interface.\nFigure 35. User signing in to the Enterprise HelpDesk system.\nDemo 2. User Authentication with Amazon RDS User accounts, access permissions, and business data are stored in Amazon RDS for SQL Server. During sign-in, the application queries the database to authenticate the user.\nFigure 36. Authenticating users using data stored in Amazon RDS.\nDemo 3. AWS Secrets Manager Database credentials are securely stored in AWS Secrets Manager instead of being embedded in the application source code. This approach enhances security and reduces the risk of exposing sensitive information.\nFigure 37. Storing database connection information in AWS Secrets Manager.\nDemo 4. IAM Instance Profile The Amazon EC2 instances use an IAM instance profile to obtain permission to access AWS Secrets Manager. This enables the application to retrieve database connection information securely without using access keys.\nFigure 38. Amazon EC2 using an IAM instance profile to access AWS Secrets Manager.\nDemo 5. Create a Ticket An employee enters the required information, including the ticket title, category, priority, and description, to create a new support request.\nFigure 39. Creating a new support request in the system.\nDemo 6. Ticket Saved After the ticket is successfully created, the system generates a ticket ID and stores the information in the database. At the same time, a history record is created to support tracking throughout the ticket lifecycle.\nFigure 40. The ticket is successfully created and stored in the database.\nDemo 7. Business Logic Running on AWS Elastic Beanstalk Business operations such as creating tickets, assigning requests, updating ticket status, adding comments, and maintaining processing history are executed by the ASP.NET Core application running on AWS Elastic Beanstalk. All application data is stored centrally in Amazon RDS for SQL Server.\nFigure 41. AWS Elastic Beanstalk processing the Enterprise HelpDesk application's business operations.\nDemo 8. AWS Elastic Beanstalk Environment AWS Elastic Beanstalk is responsible for deploying and managing the ASP.NET Core application. All incoming user requests are routed to this environment for processing.\nFigure 42. The AWS Elastic Beanstalk environment hosting the application.\nDemo 9. Amazon EC2 Instances Amazon EC2 instances host the Enterprise HelpDesk application. Business operations such as ticket creation, authorization, and request processing are executed on these instances.\nFigure 43. Amazon EC2 instances running the Enterprise HelpDesk application.\nDemo 10. Amazon CloudWatch Amazon CloudWatch collects metrics such as request count, response time, and system performance to support monitoring and operational visibility.\nFigure 44. Monitoring the system with Amazon CloudWatch.\nDemo 11. Support Agent Support agents receive tickets, update their processing status, and add discussion notes while resolving user requests. All changes are recorded to ensure complete traceability throughout the support process.\nFigure 45. A support agent receiving and processing support tickets.\nDemo 12. Application Load Balancer The Application Load Balancer (ALB) routes requests only to healthy Amazon EC2 instances, ensuring that users are always served by available and healthy application servers.\nFigure 46. The Application Load Balancer distributing requests to healthy Amazon EC2 instances.\nDemo 13. Amazon EC2 Auto Scaling Amazon EC2 Auto Scaling manages the number of Amazon EC2 instances based on the configured minimum and maximum capacity. It also automatically replaces unhealthy instances to maintain application availability and scalability.\nFigure 47. Amazon EC2 Auto Scaling managing the application's EC2 instances.\nDemo 14. System Dashboard The dashboard provides an overview of ticket processing, ticket distribution by status, and SLA metrics, enabling administrators to monitor operational performance.\nFigure 48. The Enterprise HelpDesk system dashboard.\nDemo 15. Amazon RDS Monitoring Amazon RDS provides metrics such as CPU utilization, database connections, and storage usage to help monitor database performance and operational health.\nFigure 49. Monitoring Amazon RDS performance metrics.\nDemo 16. User Management Administrators can create, update, or disable user accounts, assign roles, and associate users with departments to ensure centralized account administration.\nFigure 50. Administrators managing user accounts and permissions.\nDemo 17. AWS WAF AWS WAF uses managed rules to inspect and filter potentially malicious requests before forwarding them to the Application Load Balancer, improving the security of the application.\nFigure 51. AWS WAF protecting the application from malicious requests.\nDemo 18. AWS CloudTrail AWS CloudTrail records administrative activities performed within the AWS environment, such as deploying Elastic Beanstalk environments, modifying IAM roles, and updating security groups. These audit logs support governance, compliance, and operational troubleshooting.\nFigure 52. AWS CloudTrail recording administrative activities across the AWS infrastructure.\nDemo 19. Security Groups The system uses security groups to isolate network access between the Application Load Balancer, Amazon EC2, and Amazon RDS. Only authorized connections are allowed between each layer of the architecture, strengthening the overall security of the application.\nFigure 53. Security groups controlling network traffic between the system components.\nResult After completing this demonstration, the Enterprise HelpDesk system has been successfully validated on the AWS platform.\nCore business functions—including user authentication, ticket creation, request assignment, and support request processing—operate reliably within the ASP.NET Core application deployed on AWS Elastic Beanstalk. Application data is centrally stored in Amazon RDS for SQL Server, while AWS Secrets Manager securely manages the database connection credentials.\nIn addition, AWS services including the Application Load Balancer, Amazon EC2 Auto Scaling, Amazon CloudWatch, AWS WAF, and AWS CloudTrail have been configured and are functioning as intended within the solution architecture, providing scalability, monitoring, security, and high availability.\nThrough deployment and functional validation, the AWS architecture has demonstrated its ability to meet the operational requirements of the Enterprise HelpDesk system while providing a solid foundation for future growth and production workloads.\n",
-  "wordCount" : "986",
-  "inLanguage": "en",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://long-28.github.io/en/6-workshop/demo/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "AWS Portfolio Workshop",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://long-28.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Verify the functionality of the Enterprise HelpDesk system after deployment on AWS.">
+  <title>Demo · AWS Portfolio Workshop</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/en/" accesskey="h" title="AWS Portfolio Workshop (Alt + H)">AWS Portfolio Workshop</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/vi/" title="Tiếng Việt"
-                                aria-label="Tiếng Việt">Vi</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/en/"><span class="brand-mark">AWS</span><span><strong>AWS Portfolio Workshop</strong><small>Internship report, cloud project, and hands-on workshop</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="active" href="/en/6-workshop/demo/">EN</a><a class="" href="/vi/6-workshop/demo/">VI</a></div>
+  </div>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">CONTENTS</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
     
-    <h1 class="post-title entry-hint-parent">
-      Demo
-    </h1>
-    <div class="post-description">
-      Verify the functionality of the Enterprise HelpDesk system after deployment on AWS.
-    </div>
-    <div class="post-meta">
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/1-student-information/"><span>01</span>Student Information</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/2-worklog/"><span>02</span>Internship Worklog</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/3-proposal/"><span>03</span>Project Proposal</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/4-blog-posts/"><span>04</span>Blog Posts</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/4-blog-posts/01-blog-1/">AWS IAM - The First Foundation When Learning Amazon Web Services</a>
+          
+        
+          <a class="" href="/en/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</a>
+          
+        
+          <a class="" href="/en/4-blog-posts/03-blog-3/">AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/5-events-participated/"><span>05</span>Events Participated</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/en/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/en/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/6-workshop/01-overview/">Overview</a>
+          
+        
+          <a class="" href="/en/6-workshop/02-prerequisites/">Prerequisites</a>
+          
+        
+          <a class="" href="/en/6-workshop/03-architecture/">Architecture</a>
+          
+        
+          <a class="" href="/en/6-workshop/04-deployment/">Deployment</a>
+          
+        
+          <a class="" href="/en/6-workshop/09-cleanup/">Clean Up Resources</a>
+          
+        
+          <a class="active" href="/en/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/7-self-evaluation/"><span>07</span>Self-evaluation</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/8-sharing-and-feedback/"><span>08</span>Sharing and feedback</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Tip</strong>
+    <p>Use VI/EN to switch languages.</p>
+  </div>
+</aside>
 
-<span>Translations:</span>
-    <ul class="i18n_list">
-        <li>
-            <a href="https://long-28.github.io/vi/6-workshop/demo/">Vi</a>
-        </li>
-    </ul>
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/en/">Home</a>
+  <span>/</span><a href="/en/6-workshop/">Workshop</a>
+  <span>/</span><span>Demo</span>
+</nav>
 
-</div>
-  </header> 
-  <div class="post-content md-content"><h1 id="enterprise-helpdesk-system-demo">Enterprise HelpDesk System Demo<a hidden class="anchor" aria-hidden="true" href="#enterprise-helpdesk-system-demo">#</a></h1>
+<header class="page-header journey-header">
+  <span class="eyebrow">WORKSHOP DOCUMENTATION</span>
+  
+  <h1>Demo</h1>
+  <p>Verify the functionality of the Enterprise HelpDesk system after deployment on AWS.</p>
+</header>
+<article class="content-card prose" data-search-content><h1 id="enterprise-helpdesk-system-demo">Enterprise HelpDesk System Demo</h1>
 <p>In this section, you will verify the functionality of the Enterprise HelpDesk system after it has been successfully deployed on AWS. The application&rsquo;s business features and AWS services are demonstrated through real-world scenarios to validate that the system operates reliably, securely, and according to the designed architecture.</p>
 <hr>
-<h2 id="demo-1-user-sign-in">Demo 1. User Sign-In<a hidden class="anchor" aria-hidden="true" href="#demo-1-user-sign-in">#</a></h2>
+<h2 id="demo-1-user-sign-in">Demo 1. User Sign-In</h2>
 <p>Users enter their username and password to authenticate. After a successful sign-in, the system identifies the user&rsquo;s role and displays the appropriate interface.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/35-user-login.jpg" target="_blank">
@@ -202,7 +167,7 @@
     <p><i>Figure 35. User signing in to the Enterprise HelpDesk system.</i></p>
 </div>
 <hr>
-<h2 id="demo-2-user-authentication-with-amazon-rds">Demo 2. User Authentication with Amazon RDS<a hidden class="anchor" aria-hidden="true" href="#demo-2-user-authentication-with-amazon-rds">#</a></h2>
+<h2 id="demo-2-user-authentication-with-amazon-rds">Demo 2. User Authentication with Amazon RDS</h2>
 <p>User accounts, access permissions, and business data are stored in <strong>Amazon RDS for SQL Server</strong>. During sign-in, the application queries the database to authenticate the user.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/36-rds-authentication.jpg" target="_blank">
@@ -213,7 +178,7 @@
     <p><i>Figure 36. Authenticating users using data stored in Amazon RDS.</i></p>
 </div>
 <hr>
-<h2 id="demo-3-aws-secrets-manager">Demo 3. AWS Secrets Manager<a hidden class="anchor" aria-hidden="true" href="#demo-3-aws-secrets-manager">#</a></h2>
+<h2 id="demo-3-aws-secrets-manager">Demo 3. AWS Secrets Manager</h2>
 <p>Database credentials are securely stored in <strong>AWS Secrets Manager</strong> instead of being embedded in the application source code. This approach enhances security and reduces the risk of exposing sensitive information.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/37-secrets-manager.jpg" target="_blank">
@@ -224,7 +189,7 @@
     <p><i>Figure 37. Storing database connection information in AWS Secrets Manager.</i></p>
 </div>
 <hr>
-<h2 id="demo-4-iam-instance-profile">Demo 4. IAM Instance Profile<a hidden class="anchor" aria-hidden="true" href="#demo-4-iam-instance-profile">#</a></h2>
+<h2 id="demo-4-iam-instance-profile">Demo 4. IAM Instance Profile</h2>
 <p>The Amazon EC2 instances use an <strong>IAM instance profile</strong> to obtain permission to access <strong>AWS Secrets Manager</strong>. This enables the application to retrieve database connection information securely without using access keys.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/38-iam-instance-profile.jpg" target="_blank">
@@ -235,7 +200,7 @@
     <p><i>Figure 38. Amazon EC2 using an IAM instance profile to access AWS Secrets Manager.</i></p>
 </div>
 <hr>
-<h2 id="demo-5-create-a-ticket">Demo 5. Create a Ticket<a hidden class="anchor" aria-hidden="true" href="#demo-5-create-a-ticket">#</a></h2>
+<h2 id="demo-5-create-a-ticket">Demo 5. Create a Ticket</h2>
 <p>An employee enters the required information, including the ticket title, category, priority, and description, to create a new support request.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/39-create-ticket.jpg" target="_blank">
@@ -246,7 +211,7 @@
     <p><i>Figure 39. Creating a new support request in the system.</i></p>
 </div>
 <hr>
-<h2 id="demo-6-ticket-saved">Demo 6. Ticket Saved<a hidden class="anchor" aria-hidden="true" href="#demo-6-ticket-saved">#</a></h2>
+<h2 id="demo-6-ticket-saved">Demo 6. Ticket Saved</h2>
 <p>After the ticket is successfully created, the system generates a ticket ID and stores the information in the database. At the same time, a history record is created to support tracking throughout the ticket lifecycle.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/40-ticket-created.jpg" target="_blank">
@@ -257,7 +222,7 @@
     <p><i>Figure 40. The ticket is successfully created and stored in the database.</i></p>
 </div>
 <hr>
-<h2 id="demo-7-business-logic-running-on-aws-elastic-beanstalk">Demo 7. Business Logic Running on AWS Elastic Beanstalk<a hidden class="anchor" aria-hidden="true" href="#demo-7-business-logic-running-on-aws-elastic-beanstalk">#</a></h2>
+<h2 id="demo-7-business-logic-running-on-aws-elastic-beanstalk">Demo 7. Business Logic Running on AWS Elastic Beanstalk</h2>
 <p>Business operations such as creating tickets, assigning requests, updating ticket status, adding comments, and maintaining processing history are executed by the ASP.NET Core application running on <strong>AWS Elastic Beanstalk</strong>. All application data is stored centrally in <strong>Amazon RDS for SQL Server</strong>.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/41-ticket-processing.jpg" target="_blank">
@@ -268,7 +233,7 @@
     <p><i>Figure 41. AWS Elastic Beanstalk processing the Enterprise HelpDesk application's business operations.</i></p>
 </div>
 <hr>
-<h2 id="demo-8-aws-elastic-beanstalk-environment">Demo 8. AWS Elastic Beanstalk Environment<a hidden class="anchor" aria-hidden="true" href="#demo-8-aws-elastic-beanstalk-environment">#</a></h2>
+<h2 id="demo-8-aws-elastic-beanstalk-environment">Demo 8. AWS Elastic Beanstalk Environment</h2>
 <p>AWS Elastic Beanstalk is responsible for deploying and managing the ASP.NET Core application. All incoming user requests are routed to this environment for processing.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/42-elastic-beanstalk-environment.jpg" target="_blank">
@@ -279,7 +244,7 @@
     <p><i>Figure 42. The AWS Elastic Beanstalk environment hosting the application.</i></p>
 </div>
 <hr>
-<h2 id="demo-9-amazon-ec2-instances">Demo 9. Amazon EC2 Instances<a hidden class="anchor" aria-hidden="true" href="#demo-9-amazon-ec2-instances">#</a></h2>
+<h2 id="demo-9-amazon-ec2-instances">Demo 9. Amazon EC2 Instances</h2>
 <p>Amazon EC2 instances host the Enterprise HelpDesk application. Business operations such as ticket creation, authorization, and request processing are executed on these instances.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/43-ec2-instance.jpg" target="_blank">
@@ -290,7 +255,7 @@
     <p><i>Figure 43. Amazon EC2 instances running the Enterprise HelpDesk application.</i></p>
 </div>
 <hr>
-<h2 id="demo-10-amazon-cloudwatch">Demo 10. Amazon CloudWatch<a hidden class="anchor" aria-hidden="true" href="#demo-10-amazon-cloudwatch">#</a></h2>
+<h2 id="demo-10-amazon-cloudwatch">Demo 10. Amazon CloudWatch</h2>
 <p>Amazon CloudWatch collects metrics such as request count, response time, and system performance to support monitoring and operational visibility.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/44-cloudwatch-monitoring.jpg" target="_blank">
@@ -301,7 +266,7 @@
     <p><i>Figure 44. Monitoring the system with Amazon CloudWatch.</i></p>
 </div>
 <hr>
-<h2 id="demo-11-support-agent">Demo 11. Support Agent<a hidden class="anchor" aria-hidden="true" href="#demo-11-support-agent">#</a></h2>
+<h2 id="demo-11-support-agent">Demo 11. Support Agent</h2>
 <p>Support agents receive tickets, update their processing status, and add discussion notes while resolving user requests. All changes are recorded to ensure complete traceability throughout the support process.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/45-support-agent.jpg" target="_blank">
@@ -312,7 +277,7 @@
     <p><i>Figure 45. A support agent receiving and processing support tickets.</i></p>
 </div>
 <hr>
-<h2 id="demo-12-application-load-balancer">Demo 12. Application Load Balancer<a hidden class="anchor" aria-hidden="true" href="#demo-12-application-load-balancer">#</a></h2>
+<h2 id="demo-12-application-load-balancer">Demo 12. Application Load Balancer</h2>
 <p>The <strong>Application Load Balancer (ALB)</strong> routes requests only to healthy Amazon EC2 instances, ensuring that users are always served by available and healthy application servers.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/46-application-load-balancer.jpg" target="_blank">
@@ -323,7 +288,7 @@
     <p><i>Figure 46. The Application Load Balancer distributing requests to healthy Amazon EC2 instances.</i></p>
 </div>
 <hr>
-<h2 id="demo-13-amazon-ec2-auto-scaling">Demo 13. Amazon EC2 Auto Scaling<a hidden class="anchor" aria-hidden="true" href="#demo-13-amazon-ec2-auto-scaling">#</a></h2>
+<h2 id="demo-13-amazon-ec2-auto-scaling">Demo 13. Amazon EC2 Auto Scaling</h2>
 <p><strong>Amazon EC2 Auto Scaling</strong> manages the number of Amazon EC2 instances based on the configured minimum and maximum capacity. It also automatically replaces unhealthy instances to maintain application availability and scalability.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/47-auto-scaling-group.jpg" target="_blank">
@@ -334,7 +299,7 @@
     <p><i>Figure 47. Amazon EC2 Auto Scaling managing the application's EC2 instances.</i></p>
 </div>
 <hr>
-<h2 id="demo-14-system-dashboard">Demo 14. System Dashboard<a hidden class="anchor" aria-hidden="true" href="#demo-14-system-dashboard">#</a></h2>
+<h2 id="demo-14-system-dashboard">Demo 14. System Dashboard</h2>
 <p>The dashboard provides an overview of ticket processing, ticket distribution by status, and SLA metrics, enabling administrators to monitor operational performance.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/48-dashboard-overview.jpg" target="_blank">
@@ -345,7 +310,7 @@
     <p><i>Figure 48. The Enterprise HelpDesk system dashboard.</i></p>
 </div>
 <hr>
-<h2 id="demo-15-amazon-rds-monitoring">Demo 15. Amazon RDS Monitoring<a hidden class="anchor" aria-hidden="true" href="#demo-15-amazon-rds-monitoring">#</a></h2>
+<h2 id="demo-15-amazon-rds-monitoring">Demo 15. Amazon RDS Monitoring</h2>
 <p>Amazon RDS provides metrics such as CPU utilization, database connections, and storage usage to help monitor database performance and operational health.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/49-rds-monitoring.jpg" target="_blank">
@@ -356,7 +321,7 @@
     <p><i>Figure 49. Monitoring Amazon RDS performance metrics.</i></p>
 </div>
 <hr>
-<h2 id="demo-16-user-management">Demo 16. User Management<a hidden class="anchor" aria-hidden="true" href="#demo-16-user-management">#</a></h2>
+<h2 id="demo-16-user-management">Demo 16. User Management</h2>
 <p>Administrators can create, update, or disable user accounts, assign roles, and associate users with departments to ensure centralized account administration.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/50-user-management.jpg" target="_blank">
@@ -367,7 +332,7 @@
     <p><i>Figure 50. Administrators managing user accounts and permissions.</i></p>
 </div>
 <hr>
-<h2 id="demo-17-aws-waf">Demo 17. AWS WAF<a hidden class="anchor" aria-hidden="true" href="#demo-17-aws-waf">#</a></h2>
+<h2 id="demo-17-aws-waf">Demo 17. AWS WAF</h2>
 <p>AWS WAF uses managed rules to inspect and filter potentially malicious requests before forwarding them to the <strong>Application Load Balancer</strong>, improving the security of the application.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/51-aws-waf.jpg" target="_blank">
@@ -378,7 +343,7 @@
     <p><i>Figure 51. AWS WAF protecting the application from malicious requests.</i></p>
 </div>
 <hr>
-<h2 id="demo-18-aws-cloudtrail">Demo 18. AWS CloudTrail<a hidden class="anchor" aria-hidden="true" href="#demo-18-aws-cloudtrail">#</a></h2>
+<h2 id="demo-18-aws-cloudtrail">Demo 18. AWS CloudTrail</h2>
 <p>AWS CloudTrail records administrative activities performed within the AWS environment, such as deploying Elastic Beanstalk environments, modifying IAM roles, and updating security groups. These audit logs support governance, compliance, and operational troubleshooting.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/52-cloudtrail-events.jpg" target="_blank">
@@ -389,7 +354,7 @@
     <p><i>Figure 52. AWS CloudTrail recording administrative activities across the AWS infrastructure.</i></p>
 </div>
 <hr>
-<h2 id="demo-19-security-groups">Demo 19. Security Groups<a hidden class="anchor" aria-hidden="true" href="#demo-19-security-groups">#</a></h2>
+<h2 id="demo-19-security-groups">Demo 19. Security Groups</h2>
 <p>The system uses security groups to isolate network access between the <strong>Application Load Balancer</strong>, <strong>Amazon EC2</strong>, and <strong>Amazon RDS</strong>. Only authorized connections are allowed between each layer of the architecture, strengthening the overall security of the application.</p>
 <div style="text-align:center; margin:20px 0;">
     <a href="/images/workshop/53-security-groups.jpg" target="_blank">
@@ -400,100 +365,21 @@
     <p><i>Figure 53. Security groups controlling network traffic between the system components.</i></p>
 </div>
 <hr>
-<h1 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">#</a></h1>
+<h1 id="result">Result</h1>
 <p>After completing this demonstration, the <strong>Enterprise HelpDesk</strong> system has been successfully validated on the AWS platform.</p>
 <p>Core business functions—including user authentication, ticket creation, request assignment, and support request processing—operate reliably within the ASP.NET Core application deployed on <strong>AWS Elastic Beanstalk</strong>. Application data is centrally stored in <strong>Amazon RDS for SQL Server</strong>, while <strong>AWS Secrets Manager</strong> securely manages the database connection credentials.</p>
 <p>In addition, AWS services including the <strong>Application Load Balancer</strong>, <strong>Amazon EC2 Auto Scaling</strong>, <strong>Amazon CloudWatch</strong>, <strong>AWS WAF</strong>, and <strong>AWS CloudTrail</strong> have been configured and are functioning as intended within the solution architecture, providing scalability, monitoring, security, and high availability.</p>
 <p>Through deployment and functional validation, the AWS architecture has demonstrated its ability to meet the operational requirements of the Enterprise HelpDesk system while providing a solid foundation for future growth and production workloads.</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
 </article>
+<nav class="pager">
+  <span></span>
+  <a href="/en/6-workshop/09-cleanup/">Clean Up Resources →</a>
+</nav>
+
+      <footer class="footer"></footer>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/en/">AWS Portfolio Workshop</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>

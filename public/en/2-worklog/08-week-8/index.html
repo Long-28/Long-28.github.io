@@ -1,200 +1,165 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Week 8 | AWS Portfolio Workshop</title>
-<meta name="keywords" content="">
-<meta name="description" content="Amazon Cognito authentication and authorization">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/en/2-worklog/08-week-8/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/2-worklog/08-week-8/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/2-worklog/08-week-8/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/en/2-worklog/08-week-8/">
-  <meta property="og:site_name" content="AWS Portfolio Workshop">
-  <meta property="og:title" content="Week 8">
-  <meta property="og:description" content="Amazon Cognito authentication and authorization">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="2-worklog">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Week 8">
-  <meta name="twitter:description" content="Amazon Cognito authentication and authorization">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Internship Worklog",
-      "item": "https://long-28.github.io/en/2-worklog/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Week 8",
-      "item": "https://long-28.github.io/en/2-worklog/08-week-8/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Week 8",
-  "name": "Week 8",
-  "description": "Amazon Cognito authentication and authorization",
-  "keywords": [
-    
-  ],
-  "articleBody": "🎯 Week 8 objectives Create and configure a Cognito User Pool for registration and login. Study the Identity Pool and AWS resource authorization. Integrate a Cognito Authorizer with API Gateway. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Create and configure a Cognito User Pool for registration and login.22/06/202622/06/2026AWS Documentation 2Study the Identity Pool and AWS resource authorization.23/06/202623/06/2026AWS Documentation 3Integrate a Cognito Authorizer with API Gateway.24/06/202624/06/2026AWS Documentation 4Test JWT tokens and API access permissions.25/06/202625/06/2026AWS Documentation 5Configure S3 access for authenticated users.26/06/202626/06/2026AWS Documentation 6Create and configure a Cognito User Pool for registration and login.undefinedundefinedAWS Documentation 7Study the Identity Pool and AWS resource authorization.undefinedundefinedAWS Documentation 🏆 Achievements Protect APIs with Cognito and JWT and apply user-based resource permissions. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. ",
-  "wordCount" : "151",
-  "inLanguage": "en",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://long-28.github.io/en/2-worklog/08-week-8/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "AWS Portfolio Workshop",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://long-28.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Amazon Cognito authentication and authorization">
+  <title>Week 8 · AWS Portfolio Workshop</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/en/" accesskey="h" title="AWS Portfolio Workshop (Alt + H)">AWS Portfolio Workshop</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/vi/" title="Tiếng Việt"
-                                aria-label="Tiếng Việt">Vi</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/en/"><span class="brand-mark">AWS</span><span><strong>AWS Portfolio Workshop</strong><small>Internship report, cloud project, and hands-on workshop</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="active" href="/en/2-worklog/08-week-8/">EN</a><a class="" href="/vi/2-worklog/08-week-8/">VI</a></div>
+  </div>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">CONTENTS</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
     
-    <h1 class="post-title entry-hint-parent">
-      Week 8
-    </h1>
-    <div class="post-description">
-      Amazon Cognito authentication and authorization
-    </div>
-    <div class="post-meta">
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/1-student-information/"><span>01</span>Student Information</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/en/2-worklog/"><span>02</span>Internship Worklog</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/3-proposal/"><span>03</span>Project Proposal</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/4-blog-posts/"><span>04</span>Blog Posts</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/4-blog-posts/01-blog-1/">AWS IAM - The First Foundation When Learning Amazon Web Services</a>
+          
+        
+          <a class="" href="/en/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</a>
+          
+        
+          <a class="" href="/en/4-blog-posts/03-blog-3/">AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/5-events-participated/"><span>05</span>Events Participated</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/en/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/6-workshop/01-overview/">Overview</a>
+          
+        
+          <a class="" href="/en/6-workshop/02-prerequisites/">Prerequisites</a>
+          
+        
+          <a class="" href="/en/6-workshop/03-architecture/">Architecture</a>
+          
+        
+          <a class="" href="/en/6-workshop/04-deployment/">Deployment</a>
+          
+        
+          <a class="" href="/en/6-workshop/09-cleanup/">Clean Up Resources</a>
+          
+        
+          <a class="" href="/en/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/7-self-evaluation/"><span>07</span>Self-evaluation</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/8-sharing-and-feedback/"><span>08</span>Sharing and feedback</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Tip</strong>
+    <p>Use VI/EN to switch languages.</p>
+  </div>
+</aside>
 
-<span>Translations:</span>
-    <ul class="i18n_list">
-        <li>
-            <a href="https://long-28.github.io/vi/2-worklog/08-week-8/">Vi</a>
-        </li>
-    </ul>
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/en/">Home</a>
+  <span>/</span><a href="/en/2-worklog/">Internship Worklog</a>
+  <span>/</span><span>Week 8</span>
+</nav>
 
-</div>
-  </header> 
-  <div class="post-content md-content"><h2 id="-week-8-objectives">🎯 Week 8 objectives<a hidden class="anchor" aria-hidden="true" href="#-week-8-objectives">#</a></h2>
+<header class="page-header journey-header worklog-detail">
+  <span class="eyebrow">JOURNEY FIELD NOTES</span>
+  <span class="journey-stamp">WK-08</span>
+  <h1>Week 8</h1>
+  <p>Amazon Cognito authentication and authorization</p>
+</header>
+<article class="content-card prose" data-search-content><h2 id="-week-8-objectives">🎯 Week 8 objectives</h2>
 <ul>
 <li>Create and configure a Cognito User Pool for registration and login.</li>
 <li>Study the Identity Pool and AWS resource authorization.</li>
 <li>Integrate a Cognito Authorizer with API Gateway.</li>
 </ul>
-<h2 id="-work-completed-during-the-week">📅 Work completed during the week<a hidden class="anchor" aria-hidden="true" href="#-work-completed-during-the-week">#</a></h2>
+<h2 id="-work-completed-during-the-week">📅 Work completed during the week</h2>
 <table class="table table-bordered table-hover"><thead><tr><th style="width:6%">No.</th><th style="width:48%">Task</th><th style="width:12%">Start date</th><th style="width:12%">Completion date</th><th style="width:22%">References</th></tr></thead><tbody>
 <tr><td>1</td><td>Create and configure a Cognito User Pool for registration and login.</td><td>22/06/2026</td><td>22/06/2026</td><td><a href="https://docs.aws.amazon.com/" target="_blank">AWS Documentation</a></td></tr>
 <tr><td>2</td><td>Study the Identity Pool and AWS resource authorization.</td><td>23/06/2026</td><td>23/06/2026</td><td><a href="https://docs.aws.amazon.com/" target="_blank">AWS Documentation</a></td></tr>
@@ -204,105 +169,26 @@
 <tr><td>6</td><td>Create and configure a Cognito User Pool for registration and login.</td><td>undefined</td><td>undefined</td><td><a href="https://docs.aws.amazon.com/" target="_blank">AWS Documentation</a></td></tr>
 <tr><td>7</td><td>Study the Identity Pool and AWS resource authorization.</td><td>undefined</td><td>undefined</td><td><a href="https://docs.aws.amazon.com/" target="_blank">AWS Documentation</a></td></tr>
 </tbody></table>
-<h2 id="-achievements">🏆 Achievements<a hidden class="anchor" aria-hidden="true" href="#-achievements">#</a></h2>
+<h2 id="-achievements">🏆 Achievements</h2>
 <ul>
 <li>Protect APIs with Cognito and JWT and apply user-based resource permissions.</li>
 <li>Completed the planned practical activities and documented the weekly results.</li>
 </ul>
-<h2 id="-knowledge-gained">💡 Knowledge gained<a hidden class="anchor" aria-hidden="true" href="#-knowledge-gained">#</a></h2>
+<h2 id="-knowledge-gained">💡 Knowledge gained</h2>
 <ul>
 <li>Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.</li>
 <li>Improved skills in analysis, testing, technical documentation and presentation.</li>
 </ul>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
 </article>
+<nav class="pager">
+  <a href="/en/2-worklog/09-week-9/">← Week 9</a>
+  <a href="/en/2-worklog/07-week-7/">Week 7 →</a>
+</nav>
+
+      <footer class="footer"></footer>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/en/">AWS Portfolio Workshop</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>

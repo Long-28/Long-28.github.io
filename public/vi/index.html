@@ -1,366 +1,185 @@
-<!DOCTYPE html>
-<html lang="vi" dir="auto" data-theme="auto">
-
+<!doctype html>
+<html lang="vi">
 <head>
-	<meta name="generator" content="Hugo 0.164.0"><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Workshop Portfolio AWS</title>
-
-<meta name="description" content="Website độc lập này sẽ chứa toàn bộ báo cáo thực tập và workshop kỹ thuật AWS từ đầu đến cuối. Nội dung mẫu sẽ được thay thế dần khi hoàn thiện tài liệu dự án.">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/vi/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://long-28.github.io/vi/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/vi/">
-  <meta property="og:site_name" content="Workshop Portfolio AWS">
-  <meta property="og:title" content="Workshop Portfolio AWS">
-  <meta property="og:description" content="Website độc lập này sẽ chứa toàn bộ báo cáo thực tập và workshop kỹ thuật AWS từ đầu đến cuối. Nội dung mẫu sẽ được thay thế dần khi hoàn thiện tài liệu dự án.">
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Workshop Portfolio AWS">
-  <meta name="twitter:description" content="Website độc lập này sẽ chứa toàn bộ báo cáo thực tập và workshop kỹ thuật AWS từ đầu đến cuối. Nội dung mẫu sẽ được thay thế dần khi hoàn thiện tài liệu dự án.">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Workshop Portfolio AWS",
-  "url": "https://long-28.github.io/vi/",
-  "description": "",
-  "logo": "https://long-28.github.io/favicon.ico",
-  "sameAs": [
-      
-  ]
-}
-</script>
+	<meta name="generator" content="Hugo 0.164.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website độc lập này sẽ chứa toàn bộ báo cáo thực tập và workshop kỹ thuật AWS từ đầu đến cuối. Nội dung mẫu sẽ được thay thế dần khi hoàn thiện tài liệu dự án.">
+  <title>Workshop Portfolio AWS</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body class="list" id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/vi/" accesskey="h" title="Workshop Portfolio AWS (Alt + H)">Workshop Portfolio AWS</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/en/" title="English"
-                                aria-label="English">En</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/vi/"><span class="brand-mark">AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="" href="/en/">EN</a><a class="active" href="/vi/">VI</a></div>
+  </div>
 </header>
-<main class="main"> 
-<div class="post-content md-content"><p>Website độc lập này sẽ chứa toàn bộ báo cáo thực tập và workshop kỹ thuật AWS từ đầu đến cuối. Nội dung mẫu sẽ được thay thế dần khi hoàn thiện tài liệu dự án.</p>
 
-
-</div>
-
-<article class="first-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 1
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 1 Tìm hiểu lịch sử, văn hóa, nội quy thực tập và quy trình làm việc tại AWS Việt Nam. Khởi tạo, xác minh và bảo mật tài khoản AWS cá nhân phục vụ thực hành. Chuẩn bị IDE, AWS CLI và công cụ thiết kế sơ đồ kiến trúc. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Tìm hiểu lịch sử, văn hóa doanh nghiệp, nội quy thực tập và quy trình làm việc tại AWS Việt Nam.05/05/202605/05/2026AWS About 2Khởi tạo tài khoản AWS cá nhân, xác minh thông tin và kích hoạt quyền truy cập AWS Console.06/05/202606/05/2026AWS Account 3Thiết lập MFA, tìm hiểu nguyên tắc bảo mật tài khoản và quản lý thông tin đăng nhập.07/05/202607/05/2026AWS IAM MFA 4Cài đặt và kiểm tra IDE, AWS CLI cùng các công cụ hỗ trợ thiết kế sơ đồ kiến trúc.08/05/202608/05/2026AWS CLI 5Kiểm tra toàn bộ môi trường thực hành và ghi nhận các yêu cầu kỹ thuật ban đầu.09/05/202610/05/2026AWS Getting Started 🏆 Thành tích đạt được Nắm được văn hóa, quy trình làm việc và các yêu cầu bảo mật trong kỳ thực tập. Khởi tạo, bảo mật tài khoản AWS và chuẩn bị đầy đủ môi trường thực hành. 💡 Kiến thức rút ra Hiểu quy trình đăng ký, kích hoạt và bảo vệ tài khoản AWS. Biết cách thiết lập AWS CLI và các công cụ hỗ trợ thiết kế hệ thống. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 1" href="https://long-28.github.io/vi/2-worklog/01-week-1/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 2
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 2 Thao tác trên AWS Management Console và thực hành các bài Workshop cơ bản. Học quy trình viết Lab Guide chuẩn hóa, có hình ảnh minh họa. Vẽ sơ đồ kiến trúc và luồng dữ liệu bằng bộ biểu tượng AWS trên draw.io. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Thao tác trên AWS Management Console và thực hành các bài Workshop cơ bản.11/05/202611/05/2026AWS Documentation 2Học quy trình viết Lab Guide chuẩn hóa, có hình ảnh minh họa.12/05/202612/05/2026AWS Documentation 3Vẽ sơ đồ kiến trúc và luồng dữ liệu bằng bộ biểu tượng AWS trên draw.io.13/05/202613/05/2026AWS Documentation 4Nghiên cứu IAM, S3, Lambda, API Gateway, DynamoDB, CloudWatch và Cognito.14/05/202614/05/2026AWS Documentation 5Tổng hợp kiến thức nền tảng cho dự án GreenLens Kids.15/05/202615/05/2026AWS Documentation 🏆 Thành tích đạt được Nắm được vai trò của các dịch vụ AWS cốt lõi và cách trình bày kiến thức kỹ thuật bằng Lab Guide. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 2" href="https://long-28.github.io/vi/2-worklog/02-week-2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 3
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 3 Phân tích bài toán, xác định chức năng và yêu cầu kỹ thuật của GreenLens Kids. Tìm hiểu Amazon S3 và mô hình Object Storage. Thực hành Amazon EBS và mô hình Block Storage. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Phân tích bài toán, xác định chức năng và yêu cầu kỹ thuật của GreenLens Kids.18/05/202618/05/2026AWS Documentation 2Tìm hiểu Amazon S3 và mô hình Object Storage.19/05/202619/05/2026AWS Documentation 3Thực hành Amazon EBS và mô hình Block Storage.20/05/202620/05/2026AWS Documentation 4Thực hành Amazon EFS và mô hình File Storage.21/05/202621/05/2026AWS Documentation 5So sánh chi phí, hiệu năng và lựa chọn giải pháp lưu trữ phù hợp cho dự án.22/05/202622/05/2026AWS Documentation 🏆 Thành tích đạt được Phân biệt S3, EBS và EFS; hoàn thiện yêu cầu và định hướng lưu trữ cho GreenLens Kids. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 3" href="https://long-28.github.io/vi/2-worklog/03-week-3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 4
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 4 Phác thảo kiến trúc tổng thể trên draw.io. Mô hình hóa tương tác giữa API Gateway, Lambda, S3, DynamoDB và Cognito. Xác định luồng dữ liệu và các điểm tích hợp giữa các thành phần. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Phác thảo kiến trúc tổng thể trên draw.io.25/05/202625/05/2026AWS Documentation 2Mô hình hóa tương tác giữa API Gateway, Lambda, S3, DynamoDB và Cognito.26/05/202626/05/2026AWS Documentation 3Xác định luồng dữ liệu và các điểm tích hợp giữa các thành phần.27/05/202627/05/2026AWS Documentation 4Đánh giá tính hợp lý, khả năng sẵn sàng và độ trễ của kiến trúc.28/05/202628/05/2026AWS Documentation 5Rà soát bảo mật và hoàn thiện tài liệu thiết kế hệ thống.29/05/202629/05/2026AWS Documentation 🏆 Thành tích đạt được Hoàn thiện sơ đồ kiến trúc Serverless và bộ tài liệu thiết kế phục vụ phát triển. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 4" href="https://long-28.github.io/vi/2-worklog/04-week-4/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 5
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 5 Thiết lập IAM User, Group, Role và Custom Policy theo nguyên tắc Least Privilege. Tạo và cấu hình S3 Bucket lưu trữ hình ảnh cho GreenLens Kids. Thiết lập quyền truy cập, CORS và chính sách bảo mật cho S3. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Thiết lập IAM User, Group, Role và Custom Policy theo nguyên tắc Least Privilege.01/06/202601/06/2026AWS Documentation 2Tạo và cấu hình S3 Bucket lưu trữ hình ảnh cho GreenLens Kids.02/06/202602/06/2026AWS Documentation 3Thiết lập quyền truy cập, CORS và chính sách bảo mật cho S3.03/06/202603/06/2026AWS Documentation 4Quản lý tài nguyên AWS bằng AWS CLI.04/06/202604/06/2026AWS Documentation 5Thiết lập giám sát cơ bản và ghi log bằng CloudWatch.05/06/202605/06/2026AWS Documentation 🏆 Thành tích đạt được Cấu hình được nền tảng IAM, S3, AWS CLI và CloudWatch cho môi trường dự án. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 5" href="https://long-28.github.io/vi/2-worklog/05-week-5/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 6
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 6 Phát triển Lambda Function xử lý logic nghiệp vụ. Thiết kế RESTful API bằng Amazon API Gateway. Cấu hình tích hợp API Gateway với Lambda. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Phát triển Lambda Function xử lý logic nghiệp vụ.08/06/202608/06/2026AWS Documentation 2Thiết kế RESTful API bằng Amazon API Gateway.09/06/202609/06/2026AWS Documentation 3Cấu hình tích hợp API Gateway với Lambda.10/06/202610/06/2026AWS Documentation 4Xử lý dữ liệu JSON giữa client và backend.11/06/202611/06/2026AWS Documentation 5Kiểm thử HTTP Request/Response và hoàn thiện các endpoint.12/06/202612/06/2026AWS Documentation 🏆 Thành tích đạt được Xây dựng và kiểm thử thành công backend Serverless với Lambda và API Gateway. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 6" href="https://long-28.github.io/vi/2-worklog/06-week-6/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 7
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 7 Nghiên cứu mô hình dữ liệu NoSQL cho GreenLens Kids. Thiết kế bảng, Partition Key và Sort Key trên DynamoDB. Triển khai bảng và cấu hình các thuộc tính dữ liệu. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Nghiên cứu mô hình dữ liệu NoSQL cho GreenLens Kids.15/06/202615/06/2026AWS Documentation 2Thiết kế bảng, Partition Key và Sort Key trên DynamoDB.16/06/202616/06/2026AWS Documentation 3Triển khai bảng và cấu hình các thuộc tính dữ liệu.17/06/202617/06/2026AWS Documentation 4Tích hợp AWS SDK vào Lambda để thực hiện CRUD.18/06/202618/06/2026AWS Documentation 5Tạo GSI và kiểm thử khả năng truy vấn dữ liệu.19/06/202619/06/2026AWS Documentation 🏆 Thành tích đạt được Nắm vững thiết kế khóa, chỉ mục và thao tác CRUD trên DynamoDB bằng AWS SDK. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 7" href="https://long-28.github.io/vi/2-worklog/07-week-7/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 8
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 8 Tạo và cấu hình Cognito User Pool cho đăng ký, đăng nhập. Tìm hiểu Identity Pool và cơ chế ủy quyền tài nguyên AWS. Tích hợp Cognito Authorizer vào API Gateway. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Tạo và cấu hình Cognito User Pool cho đăng ký, đăng nhập.22/06/202622/06/2026AWS Documentation 2Tìm hiểu Identity Pool và cơ chế ủy quyền tài nguyên AWS.23/06/202623/06/2026AWS Documentation 3Tích hợp Cognito Authorizer vào API Gateway.24/06/202624/06/2026AWS Documentation 4Kiểm thử JWT Token và quyền truy cập API.25/06/202625/06/2026AWS Documentation 5Cấu hình quyền truy cập S3 cho người dùng đã xác thực.26/06/202626/06/2026AWS Documentation 🏆 Thành tích đạt được Bảo vệ API bằng Cognito, JWT và phân quyền tài nguyên theo người dùng. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 8" href="https://long-28.github.io/vi/2-worklog/08-week-8/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 9
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 9 Tập trung log của API Gateway, Lambda và DynamoDB về CloudWatch Logs. Thiết lập Metrics, CloudWatch Alarm và Dashboard. Theo dõi hiệu năng, phát hiện điểm nghẽn và lỗi phát sinh. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Tập trung log của API Gateway, Lambda và DynamoDB về CloudWatch Logs.29/06/202629/06/2026AWS Documentation 2Thiết lập Metrics, CloudWatch Alarm và Dashboard.30/06/202630/06/2026AWS Documentation 3Theo dõi hiệu năng, phát hiện điểm nghẽn và lỗi phát sinh.01/07/202601/07/2026AWS Documentation 4Sử dụng Logs Insights và AWS X-Ray để tìm nguyên nhân gốc.02/07/202602/07/2026AWS Documentation 5Cấu hình cảnh báo tự động qua Amazon SNS và xử lý sự cố.03/07/202603/07/2026AWS Documentation 🏆 Thành tích đạt được Hoàn thiện hệ thống giám sát, cảnh báo và quy trình xử lý sự cố cho GreenLens Kids. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 9" href="https://long-28.github.io/vi/2-worklog/09-week-9/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tuần 10
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Mục tiêu tuần 10 Thực hiện kiểm thử End-to-End toàn bộ hệ thống GreenLens Kids. Tối ưu Lambda, API và DynamoDB để giảm thời gian phản hồi. Kiểm tra quyền truy cập, bảo mật S3 và API. 📅 Công việc thực hiện trong tuần STTNhiệm vụNgày bắt đầuNgày hoàn thànhTài liệu tham khảo 1Thực hiện kiểm thử End-to-End toàn bộ hệ thống GreenLens Kids.06/07/202606/07/2026AWS Documentation 2Tối ưu Lambda, API và DynamoDB để giảm thời gian phản hồi.07/07/202607/07/2026AWS Documentation 3Kiểm tra quyền truy cập, bảo mật S3 và API.08/07/202608/07/2026AWS Documentation 4Phân tích chi phí và áp dụng các biện pháp AWS Cost Optimization.09/07/202609/07/2026AWS Documentation 5Đánh giá kết quả kiểm thử và hoàn thiện cấu hình triển khai.10/07/202610/07/2026AWS Documentation 🏆 Thành tích đạt được Kiểm thử toàn diện, cải thiện hiệu năng, bảo mật và chi phí vận hành hệ thống. Hoàn thành các nhiệm vụ thực hành và ghi nhận kết quả theo kế hoạch tuần. 💡 Kiến thức rút ra Củng cố kiến thức AWS và kỹ năng triển khai hệ thống theo lộ trình GreenLens Kids. Rèn luyện kỹ năng phân tích, kiểm thử, tài liệu hóa và trình bày kết quả kỹ thuật. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Tuần 10" href="https://long-28.github.io/vi/2-worklog/10-week-10/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="next" href="https://long-28.github.io/vi/page/2/">Trang tiếp theo&nbsp;&nbsp;»
-    </a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">MỤC LỤC</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/1-student-information/"><span>01</span>Thông tin sinh viên</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/2-worklog/"><span>02</span>Nhật ký thực tập</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/3-proposal/"><span>03</span>Đề xuất dự án</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/4-blog-posts/"><span>04</span>Bài viết</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/4-blog-posts/01-blog-1/">AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/03-blog-3/">AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/5-events-participated/"><span>05</span>Sự kiện đã tham gia</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/vi/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/6-workshop/01-overview/">Tổng quan</a>
+          
+        
+          <a class="" href="/vi/6-workshop/02-prerequisites/">Điều kiện tiên quyết</a>
+          
+        
+          <a class="" href="/vi/6-workshop/03-architecture/">Kiến trúc</a>
+          
+        
+          <a class="" href="/vi/6-workshop/04-deployment/">Triển khai</a>
+          
+        
+          <a class="" href="/vi/6-workshop/09-cleanup/">Dọn dẹp tài nguyên</a>
+          
+        
+          <a class="" href="/vi/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/7-self-evaluation/"><span>07</span>Tự đánh giá</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/8-sharing-and-feedback/"><span>08</span>Chia sẻ và phản hồi</a>
+        
+      </summary>
+      
+    </details>
+    
   </nav>
-</footer>
+  <div class="sidebar-note">
+    <strong>Mẹo</strong>
+    <p>Nhấn VI/EN để chuyển ngôn ngữ.</p>
+  </div>
+</aside>
+
+    <main class="main-content" id="main-content">
+      
+
+
+<header class="page-header">
+  <span class="eyebrow">THÔNG TIN SINH VIÊN</span>
+  <h1>Thông tin sinh viên</h1>
+  
+</header>
+<article class="content-card prose" data-search-content>
+  <h1 id="báo-cáo-thực-tập">BÁO CÁO THỰC TẬP</h1>
+<table style="width:100%; border:none;">
+<tr>
+<td style="width:60%; vertical-align:top;">
+<p><strong>Họ và tên:</strong> Văn Tường Duy</p>
+<p><strong>MSSV:</strong> 2280600501</p>
+<p><strong>Email:</strong> <a href="mailto:vantuongduy123@gmail.com">vantuongduy123@gmail.com</a></p>
+<p><strong>Số điện thoại:</strong> 0704415277</p>
+<p><strong>Trường:</strong> Đại học Công Nghệ TP.HCM(HUTECH)</p>
+<p><strong>Ngành:</strong> Công nghệ Thông tin</p>
+<p><strong>Lớp:</strong> 22DTHB4</p>
+<p><strong>Công ty thực tập:</strong> Công ty TNHH Amazon Web Services Việt Nam</p>
+<p><strong>Vị trí:</strong> Chương trình huấn luyện nhân lực - Hành trình AI trên nền tảng First Cloud</p>
+<p><strong>Thời gian thực tập:</strong></p>
+<p>04/05/2026  - 30/07/2026</p>
+</td>
+<td style="width:40%; text-align:center;">
+<img src="/images/Long.png" width="260" alt="Ảnh đại diện" loading="eager">
+
+<p><strong>Ảnh đại diện</strong></p>
+</td>
+</tr>
+</table>
+</article>
+
+
+      <footer class="footer"></footer>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/vi/">Workshop Portfolio AWS</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>

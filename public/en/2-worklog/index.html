@@ -1,382 +1,306 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Internship Worklog | AWS Portfolio Workshop</title>
-<meta name="keywords" content="">
-<meta name="description" content="Work and results from Week 1 to Week 12.">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/en/2-worklog/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://long-28.github.io/en/2-worklog/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/2-worklog/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/2-worklog/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/en/2-worklog/">
-  <meta property="og:site_name" content="AWS Portfolio Workshop">
-  <meta property="og:title" content="Internship Worklog">
-  <meta property="og:description" content="Work and results from Week 1 to Week 12.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Internship Worklog">
-  <meta name="twitter:description" content="Work and results from Week 1 to Week 12.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Internship Worklog",
-      "item": "https://long-28.github.io/en/2-worklog/"
-    }
-  ]
-}
-</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Work and results from Week 1 to Week 12.">
+  <title>Internship Worklog · AWS Portfolio Workshop</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body class="list" id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/en/" accesskey="h" title="AWS Portfolio Workshop (Alt + H)">AWS Portfolio Workshop</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/vi/" title="Tiếng Việt"
-                                aria-label="Tiếng Việt">Vi</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Internship Worklog
-  </h1>
-  <div class="post-description">
-    Work and results from Week 1 to Week 12.
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/en/"><span class="brand-mark">AWS</span><span><strong>AWS Portfolio Workshop</strong><small>Internship report, cloud project, and hands-on workshop</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="active" href="/en/2-worklog/">EN</a><a class="" href="/vi/2-worklog/">VI</a></div>
   </div>
 </header>
-<div class="post-content md-content"><h1 id="internship-worklog">Internship Worklog<a hidden class="anchor" aria-hidden="true" href="#internship-worklog">#</a></h1>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">CONTENTS</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/1-student-information/"><span>01</span>Student Information</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/en/2-worklog/"><span>02</span>Internship Worklog</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/3-proposal/"><span>03</span>Project Proposal</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/4-blog-posts/"><span>04</span>Blog Posts</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/4-blog-posts/01-blog-1/">AWS IAM - The First Foundation When Learning Amazon Web Services</a>
+          
+        
+          <a class="" href="/en/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</a>
+          
+        
+          <a class="" href="/en/4-blog-posts/03-blog-3/">AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/5-events-participated/"><span>05</span>Events Participated</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/en/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/6-workshop/01-overview/">Overview</a>
+          
+        
+          <a class="" href="/en/6-workshop/02-prerequisites/">Prerequisites</a>
+          
+        
+          <a class="" href="/en/6-workshop/03-architecture/">Architecture</a>
+          
+        
+          <a class="" href="/en/6-workshop/04-deployment/">Deployment</a>
+          
+        
+          <a class="" href="/en/6-workshop/09-cleanup/">Clean Up Resources</a>
+          
+        
+          <a class="" href="/en/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/7-self-evaluation/"><span>07</span>Self-evaluation</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/8-sharing-and-feedback/"><span>08</span>Sharing and feedback</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Tip</strong>
+    <p>Use VI/EN to switch languages.</p>
+  </div>
+</aside>
+
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/en/">Home</a>
+  
+  <span>/</span><span>Internship Worklog</span>
+</nav>
+
+<header class="page-header">
+  <span class="eyebrow">SECTION</span>
+  <h1>Internship Worklog</h1>
+  <p>Work and results from Week 1 to Week 12.</p>
+</header>
+<article class="content-card prose"><h1 id="internship-worklog">Internship Worklog</h1>
 <p>This is the 12-week record of my internship journey, <strong>AI Journey on the First Cloud Platform</strong>. Each week documents the AWS services I studied, the tasks I completed, the evidence I collected, and the lessons I learned.</p>
-<h2 id="how-to-read-this-log">How to read this log<a hidden class="anchor" aria-hidden="true" href="#how-to-read-this-log">#</a></h2>
+<h2 id="how-to-read-this-log">How to read this log</h2>
 <p>The <code>WK-01</code> to <code>WK-12</code> milestones follow the order in which the work was completed. Open each week to see its objectives, activities, achievements, and lessons learned.</p>
 <p>The journey starts with AWS accounts, IAM, and networking, then moves through databases, migration, operations, automation, security, containers, and application services. It ends with monitoring, backup, and reflection.</p>
 <blockquote>
 <p>Each week is a small milestone; together, the 12 weeks form a map of professional growth in the Cloud.</p>
 </blockquote>
-
-
+</article>
+<div class="section-grid worklog-trail">
+  
+  <a class="section-card" href="/en/2-worklog/01-week-1/">
+    <span class="section-index">WK-01</span>
+    <div>
+      
+        <h2>Week 1</h2>
+        <p>Departure: AWS account, IAM and foundational networking</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/02-week-2/">
+    <span class="section-index">WK-02</span>
+    <div>
+      
+        <h2>Week 2</h2>
+        <p>Foundation: EC2, IAM Roles and Security Groups</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/03-week-3/">
+    <span class="section-index">WK-03</span>
+    <div>
+      
+        <h2>Week 3</h2>
+        <p>Expanding the route: Auto Scaling, Load Balancing and CloudWatch</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/04-week-4/">
+    <span class="section-index">WK-04</span>
+    <div>
+      
+        <h2>Week 4</h2>
+        <p>Data stop: RDS, DynamoDB, ElastiCache and CloudFront</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/05-week-5/">
+    <span class="section-index">WK-05</span>
+    <div>
+      
+        <h2>Week 5</h2>
+        <p>Safe migration: DMS, Lambda and Disaster Recovery</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/06-week-6/">
+    <span class="section-index">WK-06</span>
+    <div>
+      
+        <h2>Week 6</h2>
+        <p>System observability: Logs, Grafana and Systems Manager</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/07-week-7/">
+    <span class="section-index">WK-07</span>
+    <div>
+      
+        <h2>Week 7</h2>
+        <p>Infrastructure as code: CloudFormation, CDK and cost awareness</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/08-week-8/">
+    <span class="section-index">WK-08</span>
+    <div>
+      
+        <h2>Week 8</h2>
+        <p>Layered defense: KMS, Secrets Manager, WAF and GuardDuty</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/09-week-9/">
+    <span class="section-index">WK-09</span>
+    <div>
+      
+        <h2>Week 9</h2>
+        <p>Packaging the journey: Docker, ECS and CodePipeline</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/10-week-10/">
+    <span class="section-index">WK-10</span>
+    <div>
+      
+        <h2>Week 10</h2>
+        <p>Event-driven applications: Lambda, API Gateway and Cognito</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/11-week-11/">
+    <span class="section-index">WK-11</span>
+    <div>
+      
+        <h2>Week 11</h2>
+        <p>Private production networking: VPC, Security Groups and RDS SQL Server</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
+  <a class="section-card" href="/en/2-worklog/12-week-12/">
+    <span class="section-index">WK-12</span>
+    <div>
+      
+        <h2>Week 12</h2>
+        <p>Arrival: CloudWatch, Backup and reflection</p>
+      
+    </div>
+    <span>→</span>
+  </a>
+  
 </div>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 1
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 1 objectives Learn AWS Vietnam’s history, culture, internship rules and work processes. Create, verify and secure a personal AWS account for practice. Prepare the IDE, AWS CLI and architecture design tools. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Learn AWS Vietnam’s history, culture, internship rules and work processes.05/05/202605/05/2026AWS Documentation 2Create, verify and secure a personal AWS account for practice.06/05/202606/05/2026AWS Documentation 3Prepare the IDE, AWS CLI and architecture design tools.07/05/202607/05/2026AWS Documentation 4Learn AWS Vietnam’s history, culture, internship rules and work processes.08/05/202608/05/2026AWS Documentation 5Create, verify and secure a personal AWS account for practice.09/05/202609/05/2026AWS Documentation 🏆 Achievements Learn AWS Vietnam’s work culture and security requirements; prepare a complete AWS practice environment. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
+      <footer class="footer"></footer>
 
-</footer>
-  <a class="entry-link" aria-label="post link to Week 1" href="https://long-28.github.io/en/2-worklog/01-week-1/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 2
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 2 objectives Practice using the AWS Management Console and basic workshops. Learn how to write a standardized Lab Guide with screenshots. Draw AWS architecture and data-flow diagrams with draw.io. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Practice using the AWS Management Console and basic workshops.11/05/202611/05/2026AWS Documentation 2Learn how to write a standardized Lab Guide with screenshots.12/05/202612/05/2026AWS Documentation 3Draw AWS architecture and data-flow diagrams with draw.io.13/05/202613/05/2026AWS Documentation 4Study IAM, S3, Lambda, API Gateway, DynamoDB, CloudWatch and Cognito.14/05/202614/05/2026AWS Documentation 5Summarize the foundation for the GreenLens Kids project.15/05/202615/05/2026AWS Documentation 6Practice using the AWS Management Console and basic workshops.undefinedundefinedAWS Documentation 7Learn how to write a standardized Lab Guide with screenshots.undefinedundefinedAWS Documentation 🏆 Achievements Understand core AWS services and present technical knowledge through a clear Lab Guide. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Week 2" href="https://long-28.github.io/en/2-worklog/02-week-2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 3
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 3 objectives Analyze the problem, functions and technical requirements of GreenLens Kids. Study Amazon S3 and the Object Storage model. Practice Amazon EBS and the Block Storage model. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Analyze the problem, functions and technical requirements of GreenLens Kids.18/05/202618/05/2026AWS Documentation 2Study Amazon S3 and the Object Storage model.19/05/202619/05/2026AWS Documentation 3Practice Amazon EBS and the Block Storage model.20/05/202620/05/2026AWS Documentation 4Practice Amazon EFS and the File Storage model.21/05/202621/05/2026AWS Documentation 5Compare cost and performance and select a suitable storage solution.22/05/202622/05/2026AWS Documentation 6Analyze the problem, functions and technical requirements of GreenLens Kids.undefinedundefinedAWS Documentation 7Study Amazon S3 and the Object Storage model.undefinedundefinedAWS Documentation 🏆 Achievements Differentiate S3, EBS and EFS; finalize project requirements and the storage direction. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Week 3" href="https://long-28.github.io/en/2-worklog/03-week-3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 4
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 4 objectives Create the overall architecture draft in draw.io. Model interactions between API Gateway, Lambda, S3, DynamoDB and Cognito. Define data flows and integration points between components. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Create the overall architecture draft in draw.io.25/05/202625/05/2026AWS Documentation 2Model interactions between API Gateway, Lambda, S3, DynamoDB and Cognito.26/05/202626/05/2026AWS Documentation 3Define data flows and integration points between components.27/05/202627/05/2026AWS Documentation 4Evaluate architecture validity, availability and latency.28/05/202628/05/2026AWS Documentation 5Review security and finalize the system design documentation.29/05/202629/05/2026AWS Documentation 6Create the overall architecture draft in draw.io.undefinedundefinedAWS Documentation 7Model interactions between API Gateway, Lambda, S3, DynamoDB and Cognito.undefinedundefinedAWS Documentation 🏆 Achievements Complete the Serverless architecture diagram and design documentation for development. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Week 4" href="https://long-28.github.io/en/2-worklog/04-week-4/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 5
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 5 objectives Configure IAM Users, Groups, Roles and Custom Policies using Least Privilege. Create and configure an S3 Bucket for GreenLens Kids images. Configure S3 access permissions, CORS and security policies. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Configure IAM Users, Groups, Roles and Custom Policies using Least Privilege.01/06/202601/06/2026AWS Documentation 2Create and configure an S3 Bucket for GreenLens Kids images.02/06/202602/06/2026AWS Documentation 3Configure S3 access permissions, CORS and security policies.03/06/202603/06/2026AWS Documentation 4Manage AWS resources with the AWS CLI.04/06/202604/06/2026AWS Documentation 5Set up basic monitoring and logging with CloudWatch.05/06/202605/06/2026AWS Documentation 6Configure IAM Users, Groups, Roles and Custom Policies using Least Privilege.undefinedundefinedAWS Documentation 7Create and configure an S3 Bucket for GreenLens Kids images.undefinedundefinedAWS Documentation 🏆 Achievements Configure the IAM, S3, AWS CLI and CloudWatch foundation for the project. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Week 5" href="https://long-28.github.io/en/2-worklog/05-week-5/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 6
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 6 objectives Develop Lambda Functions for business logic. Design RESTful APIs with Amazon API Gateway. Configure API Gateway integration with Lambda. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Develop Lambda Functions for business logic.08/06/202608/06/2026AWS Documentation 2Design RESTful APIs with Amazon API Gateway.09/06/202609/06/2026AWS Documentation 3Configure API Gateway integration with Lambda.10/06/202610/06/2026AWS Documentation 4Process JSON data between the client and backend.11/06/202611/06/2026AWS Documentation 5Test HTTP requests and responses and finalize the endpoints.12/06/202612/06/2026AWS Documentation 6Develop Lambda Functions for business logic.undefinedundefinedAWS Documentation 7Design RESTful APIs with Amazon API Gateway.undefinedundefinedAWS Documentation 🏆 Achievements Build and successfully test the Serverless backend with Lambda and API Gateway. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Week 6" href="https://long-28.github.io/en/2-worklog/06-week-6/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 7
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 7 objectives Study the NoSQL data model for GreenLens Kids. Design tables, Partition Keys and Sort Keys in DynamoDB. Deploy tables and configure data attributes. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Study the NoSQL data model for GreenLens Kids.15/06/202615/06/2026AWS Documentation 2Design tables, Partition Keys and Sort Keys in DynamoDB.16/06/202616/06/2026AWS Documentation 3Deploy tables and configure data attributes.17/06/202617/06/2026AWS Documentation 4Integrate the AWS SDK with Lambda for CRUD operations.18/06/202618/06/2026AWS Documentation 5Create a GSI and test data-query performance.19/06/202619/06/2026AWS Documentation 6Study the NoSQL data model for GreenLens Kids.undefinedundefinedAWS Documentation 7Design tables, Partition Keys and Sort Keys in DynamoDB.undefinedundefinedAWS Documentation 🏆 Achievements Master key and index design and CRUD operations on DynamoDB with the AWS SDK. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Week 7" href="https://long-28.github.io/en/2-worklog/07-week-7/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 8
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 8 objectives Create and configure a Cognito User Pool for registration and login. Study the Identity Pool and AWS resource authorization. Integrate a Cognito Authorizer with API Gateway. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Create and configure a Cognito User Pool for registration and login.22/06/202622/06/2026AWS Documentation 2Study the Identity Pool and AWS resource authorization.23/06/202623/06/2026AWS Documentation 3Integrate a Cognito Authorizer with API Gateway.24/06/202624/06/2026AWS Documentation 4Test JWT tokens and API access permissions.25/06/202625/06/2026AWS Documentation 5Configure S3 access for authenticated users.26/06/202626/06/2026AWS Documentation 6Create and configure a Cognito User Pool for registration and login.undefinedundefinedAWS Documentation 7Study the Identity Pool and AWS resource authorization.undefinedundefinedAWS Documentation 🏆 Achievements Protect APIs with Cognito and JWT and apply user-based resource permissions. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Week 8" href="https://long-28.github.io/en/2-worklog/08-week-8/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 9
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 9 objectives Centralize API Gateway, Lambda and DynamoDB logs in CloudWatch Logs. Configure Metrics, CloudWatch Alarms and a Dashboard. Monitor performance and identify bottlenecks and errors. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Centralize API Gateway, Lambda and DynamoDB logs in CloudWatch Logs.29/06/202629/06/2026AWS Documentation 2Configure Metrics, CloudWatch Alarms and a Dashboard.30/06/202630/06/2026AWS Documentation 3Monitor performance and identify bottlenecks and errors.01/07/202601/07/2026AWS Documentation 4Use Logs Insights and AWS X-Ray to find root causes.02/07/202602/07/2026AWS Documentation 5Configure automatic alerts through Amazon SNS and handle incidents.03/07/202603/07/2026AWS Documentation 6Centralize API Gateway, Lambda and DynamoDB logs in CloudWatch Logs.undefinedundefinedAWS Documentation 7Configure Metrics, CloudWatch Alarms and a Dashboard.undefinedundefinedAWS Documentation 🏆 Achievements Complete monitoring, alerting and incident-handling processes for GreenLens Kids. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Week 9" href="https://long-28.github.io/en/2-worklog/09-week-9/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Week 10
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Week 10 objectives Perform end-to-end testing of the GreenLens Kids system. Optimize Lambda, APIs and DynamoDB to reduce response time. Review S3 and API access permissions and security. 📅 Work completed during the week No.TaskStart dateCompletion dateReferences 1Perform end-to-end testing of the GreenLens Kids system.06/07/202606/07/2026AWS Documentation 2Optimize Lambda, APIs and DynamoDB to reduce response time.07/07/202607/07/2026AWS Documentation 3Review S3 and API access permissions and security.08/07/202608/07/2026AWS Documentation 4Analyze costs and apply AWS Cost Optimization practices.09/07/202609/07/2026AWS Documentation 5Evaluate test results and finalize the deployment configuration.10/07/202610/07/2026AWS Documentation 6Perform end-to-end testing of the GreenLens Kids system.undefinedundefinedAWS Documentation 7Optimize Lambda, APIs and DynamoDB to reduce response time.undefinedundefinedAWS Documentation 🏆 Achievements Complete system testing and improve performance, security and operating costs. Completed the planned practical activities and documented the weekly results. 💡 Knowledge gained Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap. Improved skills in analysis, testing, technical documentation and presentation. </p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to Week 10" href="https://long-28.github.io/en/2-worklog/10-week-10/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="next" href="https://long-28.github.io/en/2-worklog/page/2/">Next&nbsp;&nbsp;»
-    </a>
-  </nav>
-</footer>
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/en/">AWS Portfolio Workshop</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>

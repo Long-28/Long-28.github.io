@@ -1,197 +1,162 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Clean Up Resources | AWS Portfolio Workshop</title>
-<meta name="keywords" content="">
-<meta name="description" content="Clean Up Resources">
-<meta name="author" content="">
-<link rel="canonical" href="https://long-28.github.io/en/6-workshop/09-cleanup/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://long-28.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://long-28.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://long-28.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://long-28.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://long-28.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://long-28.github.io/en/6-workshop/09-cleanup/">
-<link rel="alternate" hreflang="vi" href="https://long-28.github.io/vi/6-workshop/09-cleanup/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://long-28.github.io/en/6-workshop/09-cleanup/">
-  <meta property="og:site_name" content="AWS Portfolio Workshop">
-  <meta property="og:title" content="Clean Up Resources">
-  <meta property="og:description" content="Clean Up Resources">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="6-workshop">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Clean Up Resources">
-  <meta name="twitter:description" content="Clean Up Resources">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Workshop",
-      "item": "https://long-28.github.io/en/6-workshop/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Clean Up Resources",
-      "item": "https://long-28.github.io/en/6-workshop/09-cleanup/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Clean Up Resources",
-  "name": "Clean Up Resources",
-  "description": "Clean Up Resources",
-  "keywords": [
-    
-  ],
-  "articleBody": "Clean Up Resources After completing this workshop, you should delete all AWS resources that were created to avoid unnecessary charges. In this section, you will remove the AWS Elastic Beanstalk environment, AWS WAF Web ACL, Amazon RDS database, AWS Secrets Manager secret, and the security groups created during the workshop.\nStep 1. Terminate the AWS Elastic Beanstalk Environment Begin by terminating the AWS Elastic Beanstalk environment. This automatically releases the associated resources, including Amazon EC2 instances, the Application Load Balancer, and the Auto Scaling group.\nComplete the following steps:\nOpen the AWS Elastic Beanstalk console. Select the EnterpriseHelpDesk environment. Choose Actions. Select Terminate environment. Confirm the termination. Wait for AWS to complete the cleanup process. Figure 30. Terminating the AWS Elastic Beanstalk environment.\nStep 2. Delete the AWS WAF Web ACL After the Elastic Beanstalk environment has been terminated, delete the AWS WAF Web ACL that was created for the application.\nComplete the following steps:\nOpen the AWS WAF console. Select the EnterpriseHelpDesk-WAF Web ACL. Choose Actions. Select Delete protection pack (web ACL). Confirm the deletion. Figure 31. Deleting the AWS WAF Web ACL.\nStep 3. Delete the Amazon RDS Database After the application no longer requires the database, delete the Amazon RDS database instance.\nComplete the following steps:\nOpen the Amazon RDS console. Select the enterprisehelpdesk-db database. Choose Actions. Select Delete. Clear the Create final snapshot option if you do not need to back up the database. Confirm the deletion. Figure 32. Deleting the Amazon RDS database.\nStep 4. Delete the Secret in AWS Secrets Manager After the Amazon RDS database has been deleted, remove the secret that stores the database connection information.\nComplete the following steps:\nOpen the AWS Secrets Manager console. Select the EnterpriseHelpDesk secret. Choose Actions. Select Delete secret. Confirm the deletion. Figure 33. Deleting the secret in AWS Secrets Manager.\nStep 5. Delete the Security Groups Finally, delete the security groups that were created in Amazon VPC for this workshop.\nComplete the following steps:\nOpen the Amazon EC2 console. Choose Security Groups. Select the following security groups: EnterpriseHelpDesk-ALB-SG EnterpriseHelpDesk-App-SG EnterpriseHelpDesk-RDS-SG Choose Actions. Select Delete security groups. Confirm the deletion. Figure 34. Deleting the security groups.\nResult After completing the steps above, all resources created during this workshop will have been removed, including:\nThe AWS Elastic Beanstalk environment. The AWS WAF Web ACL. The Amazon RDS database. The secret stored in AWS Secrets Manager. The security groups. Cleaning up resources after completing the workshop helps prevent unnecessary AWS charges and keeps your AWS account organized and ready for future deployments.\n",
-  "wordCount" : "424",
-  "inLanguage": "en",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://long-28.github.io/en/6-workshop/09-cleanup/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "AWS Portfolio Workshop",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://long-28.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Clean Up Resources">
+  <title>Clean Up Resources · AWS Portfolio Workshop</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://long-28.github.io/en/" accesskey="h" title="AWS Portfolio Workshop (Alt + H)">AWS Portfolio Workshop</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button><span class="nav-sep">|</span>
-                    <ul class="lang-menu">
-                        <li>
-                            <a href="https://long-28.github.io/vi/" title="Tiếng Việt"
-                                aria-label="Tiếng Việt">Vi</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-        </ul>
-    </nav>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/en/"><span class="brand-mark">AWS</span><span><strong>AWS Portfolio Workshop</strong><small>Internship report, cloud project, and hands-on workshop</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="active" href="/en/6-workshop/09-cleanup/">EN</a><a class="" href="/vi/6-workshop/09-cleanup/">VI</a></div>
+  </div>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">CONTENTS</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
     
-    <h1 class="post-title entry-hint-parent">
-      Clean Up Resources
-    </h1>
-    <div class="post-description">
-      Clean Up Resources
-    </div>
-    <div class="post-meta">
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/1-student-information/"><span>01</span>Student Information</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/2-worklog/"><span>02</span>Internship Worklog</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/3-proposal/"><span>03</span>Project Proposal</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/4-blog-posts/"><span>04</span>Blog Posts</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/4-blog-posts/01-blog-1/">AWS IAM - The First Foundation When Learning Amazon Web Services</a>
+          
+        
+          <a class="" href="/en/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</a>
+          
+        
+          <a class="" href="/en/4-blog-posts/03-blog-3/">AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/5-events-participated/"><span>05</span>Events Participated</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/en/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/en/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/en/6-workshop/01-overview/">Overview</a>
+          
+        
+          <a class="" href="/en/6-workshop/02-prerequisites/">Prerequisites</a>
+          
+        
+          <a class="" href="/en/6-workshop/03-architecture/">Architecture</a>
+          
+        
+          <a class="" href="/en/6-workshop/04-deployment/">Deployment</a>
+          
+        
+          <a class="active" href="/en/6-workshop/09-cleanup/">Clean Up Resources</a>
+          
+        
+          <a class="" href="/en/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/7-self-evaluation/"><span>07</span>Self-evaluation</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/en/8-sharing-and-feedback/"><span>08</span>Sharing and feedback</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Tip</strong>
+    <p>Use VI/EN to switch languages.</p>
+  </div>
+</aside>
 
-<span>Translations:</span>
-    <ul class="i18n_list">
-        <li>
-            <a href="https://long-28.github.io/vi/6-workshop/09-cleanup/">Vi</a>
-        </li>
-    </ul>
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/en/">Home</a>
+  <span>/</span><a href="/en/6-workshop/">Workshop</a>
+  <span>/</span><span>Clean Up Resources</span>
+</nav>
 
-</div>
-  </header> 
-  <div class="post-content md-content"><h1 id="clean-up-resources">Clean Up Resources<a hidden class="anchor" aria-hidden="true" href="#clean-up-resources">#</a></h1>
+<header class="page-header journey-header">
+  <span class="eyebrow">WORKSHOP DOCUMENTATION</span>
+  
+  <h1>Clean Up Resources</h1>
+  <p>Clean Up Resources</p>
+</header>
+<article class="content-card prose" data-search-content><h1 id="clean-up-resources">Clean Up Resources</h1>
 <p>After completing this workshop, you should delete all AWS resources that were created to avoid unnecessary charges. In this section, you will remove the AWS Elastic Beanstalk environment, AWS WAF Web ACL, Amazon RDS database, AWS Secrets Manager secret, and the security groups created during the workshop.</p>
 <hr>
-<h3 id="step-1-terminate-the-aws-elastic-beanstalk-environment">Step 1. Terminate the AWS Elastic Beanstalk Environment<a hidden class="anchor" aria-hidden="true" href="#step-1-terminate-the-aws-elastic-beanstalk-environment">#</a></h3>
+<h3 id="step-1-terminate-the-aws-elastic-beanstalk-environment">Step 1. Terminate the AWS Elastic Beanstalk Environment</h3>
 <p>Begin by terminating the AWS Elastic Beanstalk environment. This automatically releases the associated resources, including Amazon EC2 instances, the Application Load Balancer, and the Auto Scaling group.</p>
 <p>Complete the following steps:</p>
 <ol>
@@ -211,7 +176,7 @@
     <p><i>Figure 30. Terminating the AWS Elastic Beanstalk environment.</i></p>
 </div>
 <hr>
-<h3 id="step-2-delete-the-aws-waf-web-acl">Step 2. Delete the AWS WAF Web ACL<a hidden class="anchor" aria-hidden="true" href="#step-2-delete-the-aws-waf-web-acl">#</a></h3>
+<h3 id="step-2-delete-the-aws-waf-web-acl">Step 2. Delete the AWS WAF Web ACL</h3>
 <p>After the Elastic Beanstalk environment has been terminated, delete the AWS WAF Web ACL that was created for the application.</p>
 <p>Complete the following steps:</p>
 <ol>
@@ -230,7 +195,7 @@
     <p><i>Figure 31. Deleting the AWS WAF Web ACL.</i></p>
 </div>
 <hr>
-<h3 id="step-3-delete-the-amazon-rds-database">Step 3. Delete the Amazon RDS Database<a hidden class="anchor" aria-hidden="true" href="#step-3-delete-the-amazon-rds-database">#</a></h3>
+<h3 id="step-3-delete-the-amazon-rds-database">Step 3. Delete the Amazon RDS Database</h3>
 <p>After the application no longer requires the database, delete the Amazon RDS database instance.</p>
 <p>Complete the following steps:</p>
 <ol>
@@ -250,7 +215,7 @@
     <p><i>Figure 32. Deleting the Amazon RDS database.</i></p>
 </div>
 <hr>
-<h3 id="step-4-delete-the-secret-in-aws-secrets-manager">Step 4. Delete the Secret in AWS Secrets Manager<a hidden class="anchor" aria-hidden="true" href="#step-4-delete-the-secret-in-aws-secrets-manager">#</a></h3>
+<h3 id="step-4-delete-the-secret-in-aws-secrets-manager">Step 4. Delete the Secret in AWS Secrets Manager</h3>
 <p>After the Amazon RDS database has been deleted, remove the secret that stores the database connection information.</p>
 <p>Complete the following steps:</p>
 <ol>
@@ -269,7 +234,7 @@
     <p><i>Figure 33. Deleting the secret in AWS Secrets Manager.</i></p>
 </div>
 <hr>
-<h3 id="step-5-delete-the-security-groups">Step 5. Delete the Security Groups<a hidden class="anchor" aria-hidden="true" href="#step-5-delete-the-security-groups">#</a></h3>
+<h3 id="step-5-delete-the-security-groups">Step 5. Delete the Security Groups</h3>
 <p>Finally, delete the security groups that were created in Amazon VPC for this workshop.</p>
 <p>Complete the following steps:</p>
 <ol>
@@ -295,7 +260,7 @@
     <p><i>Figure 34. Deleting the security groups.</i></p>
 </div>
 <hr>
-<h2 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">#</a></h2>
+<h2 id="result">Result</h2>
 <p>After completing the steps above, all resources created during this workshop will have been removed, including:</p>
 <ul>
 <li>The AWS Elastic Beanstalk environment.</li>
@@ -305,95 +270,16 @@
 <li>The security groups.</li>
 </ul>
 <p>Cleaning up resources after completing the workshop helps prevent unnecessary AWS charges and keeps your AWS account organized and ready for future deployments.</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
 </article>
+<nav class="pager">
+  <a href="/en/6-workshop/demo/">← Demo</a>
+  <a href="/en/6-workshop/04-deployment/">Deployment →</a>
+</nav>
+
+      <footer class="footer"></footer>
+
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://long-28.github.io/en/">AWS Portfolio Workshop</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
+  </div>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>
