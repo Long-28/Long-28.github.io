@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{ $studentPage := .Site.GetPage "/1-student-information" }}
+{{ with $studentPage }}
+<header class="page-header">
+  <span class="eyebrow">{{ if eq .Site.Language.Lang "vi" }}THÔNG TIN SINH VIÊN{{ else }}STUDENT INFORMATION{{ end }}</span>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+</header>
+<article class="content-card prose" data-search-content>
+  {{ .Content }}
+</article>
+{{ end }}
+{{ end }}

@@ -1,0 +1,8 @@
+<header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="{{ .Site.Home.RelPermalink }}"><span class="brand-mark">AWS</span><span><strong>{{ .Site.Title }}</strong><small>{{ .Site.Language.Params.tagline }}</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher">{{ range .AllTranslations }}<a class="{{ if eq $.Site.Language.Lang .Language.Lang }}active{{ end }}" href="{{ .RelPermalink }}">{{ upper .Language.Lang }}</a>{{ end }}</div>
+  </div>
+</header>

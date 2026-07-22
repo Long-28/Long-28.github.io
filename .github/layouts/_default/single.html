@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+<header class="page-header journey-header{{ if eq .Parent.Weight 2 }} worklog-detail{{ end }}">
+  <span class="eyebrow">{{ if eq .Parent.Weight 2 }}{{ if eq .Site.Language.Lang "vi" }}NHẬT KÝ HÀNH TRÌNH{{ else }}JOURNEY FIELD NOTES{{ end }}{{ else }}{{ if eq .Site.Language.Lang "vi" }}TÀI LIỆU WORKSHOP{{ else }}WORKSHOP DOCUMENTATION{{ end }}{{ end }}</span>
+  {{ if eq .Parent.Weight 2 }}<span class="journey-stamp">WK-{{ printf "%02d" .Weight }}</span>{{ end }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+</header>
+<article class="content-card prose" data-search-content>{{ .Content }}</article>
+<nav class="pager">
+  {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ else }}<span></span>{{ end }}
+  {{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
+</nav>
+{{ end }}

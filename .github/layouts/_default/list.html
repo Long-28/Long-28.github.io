@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+<header class="page-header">
+  <span class="eyebrow">{{ if eq .Site.Language.Lang "vi" }}CHUYÊN MỤC{{ else }}SECTION{{ end }}</span>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+</header>
+{{ with .Content }}<article class="content-card prose">{{ . }}</article>{{ end }}
+<div class="section-grid {{ if eq .Weight 2 }}worklog-trail{{ else if or (eq .Weight 4) (eq .Weight 5) (eq .Weight 6) }}postcard-grid{{ end }}">
+  {{ range .Pages.ByWeight }}
+  <a class="section-card" href="{{ .RelPermalink }}">
+    <span class="section-index">{{ if eq $.Weight 2 }}WK-{{ printf "%02d" .Weight }}{{ else }}{{ printf "%02d" .Weight }}{{ end }}</span>
+    <div>
+      {{ if eq $.Weight 2 }}
+        <h2>{{ if eq $.Site.Language.Lang "vi" }}Tuần {{ .Weight }}{{ else }}Week {{ .Weight }}{{ end }}</h2>
+        <p>{{ if eq $.Site.Language.Lang "vi" }}{{ if eq .Weight 1 }}Khởi hành: tài khoản AWS, IAM và mạng nền tảng{{ else if eq .Weight 2 }}Đặt nền móng: EC2, IAM Role và Security Group{{ else if eq .Weight 3 }}Mở rộng tuyến đường: Auto Scaling, Load Balancer và CloudWatch{{ else if eq .Weight 4 }}Trạm dữ liệu: RDS, DynamoDB, ElastiCache và CloudFront{{ else if eq .Weight 5 }}Di chuyển an toàn: DMS, Lambda và Disaster Recovery{{ else if eq .Weight 6 }}Quan sát hệ thống: Logs, Grafana và Systems Manager{{ else if eq .Weight 7 }}Hạ tầng bằng mã: CloudFormation, CDK và tối ưu chi phí{{ else if eq .Weight 8 }}Phòng thủ nhiều lớp: KMS, Secrets Manager, WAF và GuardDuty{{ else if eq .Weight 9 }}Đóng gói hành trình: Docker, ECS và CodePipeline{{ else if eq .Weight 10 }}Ứng dụng hướng sự kiện: Lambda, API Gateway và Cognito{{ else if eq .Weight 11 }}Mạng riêng production: VPC, Security Group và RDS SQL Server{{ else }}Về đích: CloudWatch, Backup và tổng kết{{ end }}{{ else }}{{ if eq .Weight 1 }}Departure: AWS account, IAM and foundational networking{{ else if eq .Weight 2 }}Foundation: EC2, IAM Roles and Security Groups{{ else if eq .Weight 3 }}Expanding the route: Auto Scaling, Load Balancing and CloudWatch{{ else if eq .Weight 4 }}Data stop: RDS, DynamoDB, ElastiCache and CloudFront{{ else if eq .Weight 5 }}Safe migration: DMS, Lambda and Disaster Recovery{{ else if eq .Weight 6 }}System observability: Logs, Grafana and Systems Manager{{ else if eq .Weight 7 }}Infrastructure as code: CloudFormation, CDK and cost awareness{{ else if eq .Weight 8 }}Layered defense: KMS, Secrets Manager, WAF and GuardDuty{{ else if eq .Weight 9 }}Packaging the journey: Docker, ECS and CodePipeline{{ else if eq .Weight 10 }}Event-driven applications: Lambda, API Gateway and Cognito{{ else if eq .Weight 11 }}Private production networking: VPC, Security Groups and RDS SQL Server{{ else }}Arrival: CloudWatch, Backup and reflection{{ end }}{{ end }}</p>
+      {{ else if eq $.Weight 5 }}
+        <h2>{{ if eq $.Site.Language.Lang "vi" }}Bưu thiếp {{ .Weight }}{{ else }}Postcard {{ .Weight }}{{ end }}</h2>
+        <p>{{ if eq .Weight 1 }}{{ if eq $.Site.Language.Lang "vi" }}Community Day: gặp gỡ cộng đồng AI và Cloud tại Thành phố Hồ Chí Minh{{ else }}Community Day: meeting the AI and Cloud community in Ho Chi Minh City{{ end }}{{ else }}{{ if eq $.Site.Language.Lang "vi" }}Mini Meetup: Docker, WAF, Neptune, WebSocket và định hướng nghề nghiệp{{ else }}Mini Meetup: Docker, WAF, Neptune, WebSocket and Cloud career paths{{ end }}{{ end }}</p>
+      {{ else }}
+        <h2>{{ .Title }}</h2>
+        <p>{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 120 }}{{ end }}</p>
+      {{ end }}
+    </div>
+    <span>→</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}

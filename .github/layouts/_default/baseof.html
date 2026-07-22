@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+</head>
+<body>
+  {{ partial "header.html" . }}
+  <div class="app-shell">
+    {{ partial "sidebar.html" . }}
+    <main class="main-content" id="main-content">
+      {{ block "main" . }}{{ end }}
+      {{ partial "footer.html" . }}
+    </main>
+  </div>
+  <script src="{{ "js/site.js" | relURL }}" defer></script>
+</body>
+</html>

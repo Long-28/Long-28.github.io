@@ -1,0 +1,29 @@
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">{{ if eq .Site.Language.Lang "vi" }}MỤC LỤC{{ else }}CONTENTS{{ end }}</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
+    {{ range .Site.Sections.ByWeight }}
+    <details class="nav-group" {{ if or ($.IsDescendant .) (eq $.RelPermalink .RelPermalink) }}open{{ end }}>
+      <summary>
+        <a href="{{ .RelPermalink }}"><span>{{ printf "%02d" .Weight }}</span>{{ .Title }}</a>
+        {{ if .Pages }}<b>⌄</b>{{ end }}
+      </summary>
+      {{ if and .Pages (ne .Weight 2) }}
+      <div class="nav-children">
+        {{ range .Pages.ByWeight }}
+          <a class="{{ if eq $.RelPermalink .RelPermalink }}active{{ end }}" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ if .Pages }}
+            <div class="nav-grandchildren">
+              {{ range .Pages.ByWeight }}<a class="{{ if eq $.RelPermalink .RelPermalink }}active{{ end }}" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </details>
+    {{ end }}
+  </nav>
+  <div class="sidebar-note">
+    <strong>{{ if eq .Site.Language.Lang "vi" }}Mẹo{{ else }}Tip{{ end }}</strong>
+    <p>{{ if eq .Site.Language.Lang "vi" }}Nhấn VI/EN để chuyển ngôn ngữ.{{ else }}Use VI/EN to switch languages.{{ end }}</p>
+  </div>
+</aside>

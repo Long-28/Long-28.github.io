@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dọn dẹp tài nguyên">
+  <title>Dọn dẹp tài nguyên · Workshop Portfolio AWS</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('aws-workshop-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="topbar">
+  <button class="icon-button mobile-only" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <a class="brand" href="/vi/"><span class="brand-mark">AWS</span><span><strong>Workshop Portfolio AWS</strong><small>Báo cáo thực tập, dự án cloud và workshop thực hành</small></span></a>
+  <div class="topbar-actions">
+    <label class="search-box"><span>⌕</span><input id="site-search" type="search" placeholder="Search navigation..."></label>
+    <div class="language-switcher"><a class="" href="/en/6-workshop/09-cleanup/">EN</a><a class="active" href="/vi/6-workshop/09-cleanup/">VI</a></div>
+  </div>
+</header>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">MỤC LỤC</div>
+  <nav class="sidebar-nav" id="sidebar-nav">
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/1-student-information/"><span>01</span>Thông tin sinh viên</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/2-worklog/"><span>02</span>Nhật ký thực tập</a>
+        <b>⌄</b>
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/3-proposal/"><span>03</span>Đề xuất dự án</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/4-blog-posts/"><span>04</span>Bài viết</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/4-blog-posts/01-blog-1/">AWS IAM - Nền tảng đầu tiên khi bắt đầu học Amazon Web Services</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/02-blog-2/">AWS CloudTrail Lake - Phân tích hoạt động AWS bằng SQL để nâng cao bảo mật hệ thống</a>
+          
+        
+          <a class="" href="/vi/4-blog-posts/03-blog-3/">AWS Deadline Cloud - Giải pháp render trên Cloud giúp tối ưu quy trình sản xuất nội dung số</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/5-events-participated/"><span>05</span>Sự kiện đã tham gia</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/5-events-participated/01-event-1/">AWS First Cloud AI Journey Community Day 2026</a>
+          
+        
+          <a class="" href="/vi/5-events-participated/02-event-2/">Mini Meetup – First Cloud AI Journey 06/06/2026</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" open>
+      <summary>
+        <a href="/vi/6-workshop/"><span>06</span>Workshop</a>
+        <b>⌄</b>
+      </summary>
+      
+      <div class="nav-children">
+        
+          <a class="" href="/vi/6-workshop/01-overview/">Tổng quan</a>
+          
+        
+          <a class="" href="/vi/6-workshop/02-prerequisites/">Điều kiện tiên quyết</a>
+          
+        
+          <a class="" href="/vi/6-workshop/03-architecture/">Kiến trúc</a>
+          
+        
+          <a class="" href="/vi/6-workshop/04-deployment/">Triển khai</a>
+          
+        
+          <a class="active" href="/vi/6-workshop/09-cleanup/">Dọn dẹp tài nguyên</a>
+          
+        
+          <a class="" href="/vi/6-workshop/demo/">Demo</a>
+          
+        
+      </div>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/7-self-evaluation/"><span>07</span>Tự đánh giá</a>
+        
+      </summary>
+      
+    </details>
+    
+    <details class="nav-group" >
+      <summary>
+        <a href="/vi/8-sharing-and-feedback/"><span>08</span>Chia sẻ và phản hồi</a>
+        
+      </summary>
+      
+    </details>
+    
+  </nav>
+  <div class="sidebar-note">
+    <strong>Mẹo</strong>
+    <p>Nhấn VI/EN để chuyển ngôn ngữ.</p>
+  </div>
+</aside>
+
+    <main class="main-content" id="main-content">
+      
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/vi/">Trang chủ</a>
+  <span>/</span><a href="/vi/6-workshop/">Workshop</a>
+  <span>/</span><span>Dọn dẹp tài nguyên</span>
+</nav>
+
+<header class="page-header journey-header">
+  <span class="eyebrow">TÀI LIỆU WORKSHOP</span>
+  
+  <h1>Dọn dẹp tài nguyên</h1>
+  <p>Dọn dẹp tài nguyên</p>
+</header>
+<article class="content-card prose" data-search-content><h1 id="dọn-dẹp-tài-nguyên">Dọn dẹp tài nguyên</h1>
+<p>Sau khi hoàn thành workshop, cần xóa toàn bộ tài nguyên đã tạo trên AWS để tránh phát sinh chi phí không cần thiết. Trong phần này, chúng ta sẽ lần lượt xóa môi trường Elastic Beanstalk, AWS WAF, Amazon RDS, Secrets Manager và các Security Group đã tạo.</p>
+<hr>
+<h3 id="bước-1-xóa-môi-trường-elastic-beanstalk">Bước 1. Xóa môi trường Elastic Beanstalk</h3>
+<p>Trước tiên, cần xóa môi trường Elastic Beanstalk để giải phóng các tài nguyên như EC2, Load Balancer và Auto Scaling Group.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Mở dịch vụ <strong>Elastic Beanstalk</strong>.</li>
+<li>Chọn môi trường <strong>EnterpriseHelpDesk</strong>.</li>
+<li>Nhấn <strong>Actions</strong>.</li>
+<li>Chọn <strong>Terminate environment</strong>.</li>
+<li>Xác nhận việc xóa môi trường.</li>
+<li>Chờ AWS hoàn tất quá trình dọn dẹp.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/30-terminate-environment.jpg" target="_blank">
+        <img src="/images/workshop/30-terminate-environment.jpg"
+             alt="Terminate Elastic Beanstalk Environment"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 30. Xóa môi trường Elastic Beanstalk.</i></p>
+</div>
+<hr>
+<h3 id="bước-2-xóa-web-acl-của-aws-waf">Bước 2. Xóa Web ACL của AWS WAF</h3>
+<p>Sau khi môi trường Elastic Beanstalk đã được xóa, tiếp tục xóa Web ACL đã tạo trong AWS WAF.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Mở dịch vụ <strong>AWS WAF</strong>.</li>
+<li>Chọn Web ACL <strong>EnterpriseHelpDesk-WAF</strong>.</li>
+<li>Nhấn <strong>Actions</strong>.</li>
+<li>Chọn <strong>Delete protection pack (web ACL)</strong>.</li>
+<li>Xác nhận thao tác xóa.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/31-delete-web-acl.jpg" target="_blank">
+        <img src="/images/workshop/31-delete-web-acl.jpg"
+             alt="Delete AWS WAF Web ACL"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 31. Xóa Web ACL trong AWS WAF.</i></p>
+</div>
+<hr>
+<h3 id="bước-3-xóa-cơ-sở-dữ-liệu-amazon-rds">Bước 3. Xóa cơ sở dữ liệu Amazon RDS</h3>
+<p>Sau khi không còn ứng dụng sử dụng cơ sở dữ liệu, tiến hành xóa Amazon RDS.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Mở dịch vụ <strong>Amazon RDS</strong>.</li>
+<li>Chọn cơ sở dữ liệu <strong>enterprisehelpdesk-db</strong>.</li>
+<li>Nhấn <strong>Actions</strong>.</li>
+<li>Chọn <strong>Delete</strong>.</li>
+<li>Bỏ chọn <strong>Create final snapshot</strong> (nếu không cần sao lưu dữ liệu).</li>
+<li>Xác nhận việc xóa cơ sở dữ liệu.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/32-delete-rds.jpg" target="_blank">
+        <img src="/images/workshop/32-delete-rds.jpg"
+             alt="Delete Amazon RDS"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 32. Xóa cơ sở dữ liệu Amazon RDS.</i></p>
+</div>
+<hr>
+<h3 id="bước-4-xóa-secret-trong-aws-secrets-manager">Bước 4. Xóa Secret trong AWS Secrets Manager</h3>
+<p>Sau khi Amazon RDS đã được xóa, tiếp tục xóa Secret lưu thông tin kết nối cơ sở dữ liệu.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Mở dịch vụ <strong>AWS Secrets Manager</strong>.</li>
+<li>Chọn Secret của hệ thống <strong>EnterpriseHelpDesk</strong>.</li>
+<li>Nhấn <strong>Actions</strong>.</li>
+<li>Chọn <strong>Delete secret</strong>.</li>
+<li>Xác nhận việc xóa Secret.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/33-delete-secret.jpg" target="_blank">
+        <img src="/images/workshop/33-delete-secret.jpg"
+             alt="Delete Secret"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 33. Xóa Secret trong AWS Secrets Manager.</i></p>
+</div>
+<hr>
+<h3 id="bước-5-xóa-security-groups">Bước 5. Xóa Security Groups</h3>
+<p>Cuối cùng, xóa các Security Group đã tạo trong phần Amazon VPC.</p>
+<p>Thực hiện các bước sau:</p>
+<ol>
+<li>Mở dịch vụ <strong>Amazon EC2</strong>.</li>
+<li>Chọn <strong>Security Groups</strong>.</li>
+<li>Chọn lần lượt các Security Group sau:
+<ul>
+<li><strong>EnterpriseHelpDesk-ALB-SG</strong></li>
+<li><strong>EnterpriseHelpDesk-App-SG</strong></li>
+<li><strong>EnterpriseHelpDesk-RDS-SG</strong></li>
+</ul>
+</li>
+<li>Nhấn <strong>Actions</strong>.</li>
+<li>Chọn <strong>Delete security groups</strong>.</li>
+<li>Xác nhận thao tác xóa.</li>
+</ol>
+<div style="text-align:center; margin:20px 0;">
+    <a href="/images/workshop/34-delete-security-groups.jpg" target="_blank">
+        <img src="/images/workshop/34-delete-security-groups.jpg"
+             alt="Delete Security Groups"
+             style="width:65%; cursor:zoom-in;">
+    </a>
+    <p><i>Hình 34. Xóa các Security Group.</i></p>
+</div>
+<hr>
+<h2 id="kết-quả">Kết quả</h2>
+<p>Sau khi hoàn thành các bước trên, toàn bộ tài nguyên được tạo trong workshop sẽ được dọn dẹp, bao gồm:</p>
+<ul>
+<li>Môi trường AWS Elastic Beanstalk.</li>
+<li>AWS WAF Web ACL.</li>
+<li>Cơ sở dữ liệu Amazon RDS.</li>
+<li>Secret trong AWS Secrets Manager.</li>
+<li>Các Security Group.</li>
+</ul>
+<p>Việc dọn dẹp tài nguyên sau khi hoàn thành workshop giúp tránh phát sinh chi phí không cần thiết và giữ cho tài khoản AWS luôn gọn gàng, sẵn sàng cho các lần triển khai tiếp theo.</p>
+</article>
+<nav class="pager">
+  <a href="/vi/6-workshop/demo/">← Demo</a>
+  <a href="/vi/6-workshop/04-deployment/">Triển khai →</a>
+</nav>
+
+      <footer class="footer"></footer>
+
+    </main>
+  </div>
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

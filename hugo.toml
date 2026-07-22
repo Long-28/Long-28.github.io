@@ -1,4 +1,41 @@
-baseURL = 'https://Long-28.github.io/'
-languageCode = 'vi'
-title = 'My Website'
-theme = 'PaperMod'
+baseURL = "/"
+title = "AWS Portfolio Workshop"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+summaryLength = 24
+
+[params]
+  baseURL = 'https://Long-28.github.io/'
+  languageCode = 'vi'
+  title = 'My Website'
+  theme = 'PaperMod'
+
+[languages]
+  [languages.en]
+    languageCode = "en-US"
+    languageName = "English"
+    contentDir = "content/en"
+    weight = 1
+    title = "AWS Portfolio Workshop"
+    [languages.en.params]
+      tagline = "Internship report, cloud project, and hands-on workshop"
+  [languages.vi]
+    languageCode = "vi-VN"
+    languageName = "Tiếng Việt"
+    contentDir = "content/vi"
+    weight = 2
+    title = "Workshop Portfolio AWS"
+    [languages.vi.params]
+      tagline = "Báo cáo thực tập, dự án cloud và workshop thực hành"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+    style = "github-dark"
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
