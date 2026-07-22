@@ -1,0 +1,4 @@
+baseURL = 'https://Long-28.github.io/'
+languageCode = 'vi'
+title = 'My Website'
+theme = 'PaperMod'
