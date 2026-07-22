@@ -14,13 +14,13 @@ weight: 1
 
 
 
-**Họ và tên:** Văn Tường Duy
+**Họ và tên:** Võ Minh Long
 
-**MSSV:** 2280600501
+**MSSV:** 2280601794
 
-**Email:** vantuongduy123@gmail.com
+**Email:** vmldt123@gmail.com
 
-**Số điện thoại:** 0704415277
+**Số điện thoại:** 0379346950
 
 **Trường:** Đại học Công Nghệ TP.HCM(HUTECH)
 
