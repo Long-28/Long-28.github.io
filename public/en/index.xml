@@ -1,177 +1,178 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>AWS Portfolio Workshop</title>
-    <link>https://long-28.github.io/en/</link>
-    <description>Recent content on AWS Portfolio Workshop</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Wed, 22 Jul 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://long-28.github.io/en/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AWS IAM - The First Foundation When Learning Amazon Web Services</title>
-      <link>https://long-28.github.io/en/4-blog-posts/01-blog-1/</link>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/4-blog-posts/01-blog-1/</guid>
-      <description>An introduction to AWS Identity and Access Management (IAM) and why it should be the first AWS service you learn.</description>
-    </item>
-    <item>
-      <title>AWS First Cloud AI Journey Community Day 2026</title>
-      <link>https://long-28.github.io/en/5-events-participated/01-event-1/</link>
-      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/5-events-participated/01-event-1/</guid>
-      <description>Attended AWS First Cloud AI Journey Community Day 2026 in Ho Chi Minh City.</description>
-    </item>
-    <item>
-      <title>Overview</title>
-      <link>https://long-28.github.io/en/6-workshop/01-overview/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/6-workshop/01-overview/</guid>
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
-&lt;p&gt;This workshop provides a step-by-step guide to deploying the &lt;strong&gt;Enterprise HelpDesk&lt;/strong&gt; system on &lt;strong&gt;Amazon Web Services (AWS)&lt;/strong&gt;, covering the complete deployment process from building the network infrastructure to deploying the application, monitoring the environment, and optimizing AWS resources.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 1</title>
-      <link>https://long-28.github.io/en/2-worklog/01-week-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/01-week-1/</guid>
-      <description>AWS Vietnam, work processes, AWS Account and practice environment</description>
-    </item>
-    <item>
-      <title>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</title>
-      <link>https://long-28.github.io/en/4-blog-posts/02-blog-2/</link>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/4-blog-posts/02-blog-2/</guid>
-      <description>Learn about AWS CloudTrail Lake, how to query event data using SQL, and its role in monitoring, auditing, and investigating security events on AWS.</description>
-    </item>
-    <item>
-      <title>Mini Meetup – First Cloud AI Journey 06/06/2026</title>
-      <link>https://long-28.github.io/en/5-events-participated/02-event-2/</link>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/5-events-participated/02-event-2/</guid>
-      <description>Attended a meetup covering Docker, AWS WAF, Neptune, WebSocket, and Cloud careers.</description>
-    </item>
-    <item>
-      <title>Prerequisites</title>
-      <link>https://long-28.github.io/en/6-workshop/02-prerequisites/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/6-workshop/02-prerequisites/</guid>
-      <description>&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
-&lt;p&gt;Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.&lt;/p&gt;
-&lt;h2 id=&#34;1-aws-account&#34;&gt;1. AWS Account&lt;/h2&gt;
-&lt;p&gt;You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Week 2</title>
-      <link>https://long-28.github.io/en/2-worklog/02-week-2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/02-week-2/</guid>
-      <description>AWS Console, Lab Guide, architecture diagrams and core AWS services</description>
-    </item>
-    <item>
-      <title>AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</title>
-      <link>https://long-28.github.io/en/4-blog-posts/03-blog-3/</link>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/4-blog-posts/03-blog-3/</guid>
-      <description>Learn about AWS Deadline Cloud, a fully managed cloud rendering service on AWS for film production, game development, architecture, and 3D graphics.</description>
-    </item>
-    <item>
-      <title>Architecture</title>
-      <link>https://long-28.github.io/en/6-workshop/03-architecture/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/6-workshop/03-architecture/</guid>
-      <description>Architecture</description>
-    </item>
-    <item>
-      <title>Week 3</title>
-      <link>https://long-28.github.io/en/2-worklog/03-week-3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/03-week-3/</guid>
-      <description>GreenLens Kids requirements analysis and AWS storage services</description>
-    </item>
-    <item>
-      <title>Deployment</title>
-      <link>https://long-28.github.io/en/6-workshop/04-deployment/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/6-workshop/04-deployment/</guid>
-      <description>Deploying the Enterprise HelpDesk System on AWS</description>
-    </item>
-    <item>
-      <title>Week 4</title>
-      <link>https://long-28.github.io/en/2-worklog/04-week-4/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/04-week-4/</guid>
-      <description>Detailed architecture design for the GreenLens Kids system</description>
-    </item>
-    <item>
-      <title>Week 5</title>
-      <link>https://long-28.github.io/en/2-worklog/05-week-5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/05-week-5/</guid>
-      <description>Advanced IAM, Amazon S3, AWS CLI and CloudWatch</description>
-    </item>
-    <item>
-      <title>Week 6</title>
-      <link>https://long-28.github.io/en/2-worklog/06-week-6/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/06-week-6/</guid>
-      <description>AWS Lambda and Amazon API Gateway integration</description>
-    </item>
-    <item>
-      <title>Week 7</title>
-      <link>https://long-28.github.io/en/2-worklog/07-week-7/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/07-week-7/</guid>
-      <description>Amazon DynamoDB design and implementation</description>
-    </item>
-    <item>
-      <title>Week 8</title>
-      <link>https://long-28.github.io/en/2-worklog/08-week-8/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/08-week-8/</guid>
-      <description>Amazon Cognito authentication and authorization</description>
-    </item>
-    <item>
-      <title>Clean Up Resources</title>
-      <link>https://long-28.github.io/en/6-workshop/09-cleanup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/6-workshop/09-cleanup/</guid>
-      <description>Clean Up Resources</description>
-    </item>
-    <item>
-      <title>Week 9</title>
-      <link>https://long-28.github.io/en/2-worklog/09-week-9/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/09-week-9/</guid>
-      <description>Log analysis, CloudWatch alerts and system operations</description>
-    </item>
-    <item>
-      <title>Demo</title>
-      <link>https://long-28.github.io/en/6-workshop/demo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/6-workshop/demo/</guid>
-      <description>Verify the functionality of the Enterprise HelpDesk system after deployment on AWS.</description>
-    </item>
-    <item>
-      <title>Week 10</title>
-      <link>https://long-28.github.io/en/2-worklog/10-week-10/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/10-week-10/</guid>
-      <description>End-to-end testing, performance, security and AWS cost optimization</description>
-    </item>
-    <item>
-      <title>Week 11</title>
-      <link>https://long-28.github.io/en/2-worklog/11-week-11/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/11-week-11/</guid>
-      <description>Feature completion, demo video and technical documentation</description>
-    </item>
-    <item>
-      <title>Week 12</title>
-      <link>https://long-28.github.io/en/2-worklog/12-week-12/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/en/2-worklog/12-week-12/</guid>
-      <description>Internship summary, report completion and presentation preparation</description>
-    </item>
-  </channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>AWS Portfolio Workshop</title>
+		<link>http://localhost:1313/en/</link>
+		<description>Recent content on AWS Portfolio Workshop</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 22 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AWS IAM - The First Foundation When Learning Amazon Web Services</title>
+				<link>http://localhost:1313/en/4-blog-posts/01-blog-1/</link>
+				<pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/4-blog-posts/01-blog-1/</guid>
+				<description>&lt;h1 id=&#34;aws-iam---the-first-foundation-when-learning-amazon-web-services&#34;&gt;AWS IAM - The First Foundation When Learning Amazon Web Services&lt;/h1&gt;&#xA;&lt;p&gt;Hello everyone!&lt;/p&gt;&#xA;&lt;p&gt;When I first started learning Amazon Web Services (AWS), I thought I should begin with popular services such as Amazon EC2 or Amazon S3. However, after spending time studying and gaining hands-on experience, I realized that &lt;strong&gt;AWS Identity and Access Management (IAM)&lt;/strong&gt; is actually the most fundamental AWS service.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>AWS First Cloud AI Journey Community Day 2026</title>
+				<link>http://localhost:1313/en/5-events-participated/01-event-1/</link>
+				<pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/5-events-participated/01-event-1/</guid>
+				<description>&lt;h1 id=&#34;aws-first-cloud-ai-journey-community-day-2026&#34;&gt;AWS First Cloud AI Journey Community Day 2026&lt;/h1&gt;&#xA;&lt;h2 id=&#34;-context-and-participation-objectives&#34;&gt;🎯 Context and participation objectives&lt;/h2&gt;&#xA;&lt;h3 id=&#34;context&#34;&gt;Context&lt;/h3&gt;&#xA;&lt;p&gt;As AI and Cloud Computing continue to evolve rapidly, AWS First Cloud AI Journey Community Day 2026 connected Vietnam’s Cloud and AI community and shared real-world enterprise deployment practices on AWS.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Overview</title>
+				<link>http://localhost:1313/en/6-workshop/01-overview/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/6-workshop/01-overview/</guid>
+				<description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;&#xA;&lt;p&gt;This workshop provides a step-by-step guide to deploying the &lt;strong&gt;Enterprise HelpDesk&lt;/strong&gt; system on &lt;strong&gt;Amazon Web Services (AWS)&lt;/strong&gt;, covering the complete deployment process from building the network infrastructure to deploying the application, monitoring the environment, and optimizing AWS resources.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Week 1</title>
+				<link>http://localhost:1313/en/2-worklog/01-week-1/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/01-week-1/</guid>
+				<description>&lt;h2 id=&#34;-week-1-objectives&#34;&gt;🎯 Week 1 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Learn AWS Vietnam’s history, culture, internship rules and work processes.&lt;/li&gt;&#xA;&lt;li&gt;Create, verify and secure a personal AWS account for practice.&lt;/li&gt;&#xA;&lt;li&gt;Prepare the IDE, AWS CLI and architecture design tools.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Learn AWS Vietnam’s history, culture, internship rules and work processes.&lt;/td&gt;&lt;td&gt;05/05/2026&lt;/td&gt;&lt;td&gt;05/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Create, verify and secure a personal AWS account for practice.&lt;/td&gt;&lt;td&gt;06/05/2026&lt;/td&gt;&lt;td&gt;06/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Prepare the IDE, AWS CLI and architecture design tools.&lt;/td&gt;&lt;td&gt;07/05/2026&lt;/td&gt;&lt;td&gt;07/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Learn AWS Vietnam’s history, culture, internship rules and work processes.&lt;/td&gt;&lt;td&gt;08/05/2026&lt;/td&gt;&lt;td&gt;08/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Create, verify and secure a personal AWS account for practice.&lt;/td&gt;&lt;td&gt;09/05/2026&lt;/td&gt;&lt;td&gt;09/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Learn AWS Vietnam’s work culture and security requirements; prepare a complete AWS practice environment.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security</title>
+				<link>http://localhost:1313/en/4-blog-posts/02-blog-2/</link>
+				<pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/4-blog-posts/02-blog-2/</guid>
+				<description>&lt;h1 id=&#34;aws-cloudtrail-lake---analyzing-aws-activity-with-sql-to-enhance-system-security&#34;&gt;AWS CloudTrail Lake - Analyzing AWS Activity with SQL to Enhance System Security&lt;/h1&gt;&#xA;&lt;p&gt;Hello everyone!&lt;/p&gt;&#xA;&lt;p&gt;After learning about &lt;strong&gt;AWS Identity and Access Management (IAM)&lt;/strong&gt; in my previous article, I continued exploring another AWS service focused on security and monitoring: &lt;strong&gt;AWS CloudTrail Lake&lt;/strong&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Mini Meetup – First Cloud AI Journey 06/06/2026</title>
+				<link>http://localhost:1313/en/5-events-participated/02-event-2/</link>
+				<pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/5-events-participated/02-event-2/</guid>
+				<description>&lt;h1 id=&#34;mini-meetup--first-cloud-ai-journey-06062026&#34;&gt;Mini Meetup – First Cloud AI Journey 06/06/2026&lt;/h1&gt;&#xA;&lt;h2 id=&#34;-context-and-participation-objectives&#34;&gt;🎯 Context and participation objectives&lt;/h2&gt;&#xA;&lt;h3 id=&#34;context&#34;&gt;Context&lt;/h3&gt;&#xA;&lt;p&gt;Mini Meetup – First Cloud AI Journey followed the Community Day with a more hands-on focus on technical topics and career development for young Cloud practitioners.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Prerequisites</title>
+				<link>http://localhost:1313/en/6-workshop/02-prerequisites/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/6-workshop/02-prerequisites/</guid>
+				<description>&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;&#xA;&lt;p&gt;Before starting this workshop, ensure that you have completed the following prerequisites to ensure a smooth deployment experience.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-aws-account&#34;&gt;1. AWS Account&lt;/h2&gt;&#xA;&lt;p&gt;You must have an active AWS account with sufficient permissions to create, modify, and delete the AWS resources used throughout this workshop.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Week 2</title>
+				<link>http://localhost:1313/en/2-worklog/02-week-2/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/02-week-2/</guid>
+				<description>&lt;h2 id=&#34;-week-2-objectives&#34;&gt;🎯 Week 2 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Practice using the AWS Management Console and basic workshops.&lt;/li&gt;&#xA;&lt;li&gt;Learn how to write a standardized Lab Guide with screenshots.&lt;/li&gt;&#xA;&lt;li&gt;Draw AWS architecture and data-flow diagrams with draw.io.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Practice using the AWS Management Console and basic workshops.&lt;/td&gt;&lt;td&gt;11/05/2026&lt;/td&gt;&lt;td&gt;11/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Learn how to write a standardized Lab Guide with screenshots.&lt;/td&gt;&lt;td&gt;12/05/2026&lt;/td&gt;&lt;td&gt;12/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Draw AWS architecture and data-flow diagrams with draw.io.&lt;/td&gt;&lt;td&gt;13/05/2026&lt;/td&gt;&lt;td&gt;13/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Study IAM, S3, Lambda, API Gateway, DynamoDB, CloudWatch and Cognito.&lt;/td&gt;&lt;td&gt;14/05/2026&lt;/td&gt;&lt;td&gt;14/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Summarize the foundation for the GreenLens Kids project.&lt;/td&gt;&lt;td&gt;15/05/2026&lt;/td&gt;&lt;td&gt;15/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Practice using the AWS Management Console and basic workshops.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Learn how to write a standardized Lab Guide with screenshots.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Understand core AWS services and present technical knowledge through a clear Lab Guide.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production</title>
+				<link>http://localhost:1313/en/4-blog-posts/03-blog-3/</link>
+				<pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/4-blog-posts/03-blog-3/</guid>
+				<description>&lt;h1 id=&#34;aws-deadline-cloud---a-cloud-based-rendering-solution-for-optimizing-digital-content-production&#34;&gt;AWS Deadline Cloud - A Cloud-Based Rendering Solution for Optimizing Digital Content Production&lt;/h1&gt;&#xA;&lt;p&gt;Hello everyone!&lt;/p&gt;&#xA;&lt;p&gt;When people think about Amazon Web Services (AWS), they often think of popular services such as Amazon EC2, Amazon S3, or AWS Lambda. However, AWS also offers a wide range of specialized services designed for specific industries.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Architecture</title>
+				<link>http://localhost:1313/en/6-workshop/03-architecture/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/6-workshop/03-architecture/</guid>
+				<description>&lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;&#xA;&lt;p&gt;The diagram below presents an AWS application architecture using Amazon CloudFront, AWS WAF, an Application Load Balancer, Amazon EC2, Amazon RDS for SQL Server, and supporting security and monitoring services.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Week 3</title>
+				<link>http://localhost:1313/en/2-worklog/03-week-3/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/03-week-3/</guid>
+				<description>&lt;h2 id=&#34;-week-3-objectives&#34;&gt;🎯 Week 3 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Analyze the problem, functions and technical requirements of GreenLens Kids.&lt;/li&gt;&#xA;&lt;li&gt;Study Amazon S3 and the Object Storage model.&lt;/li&gt;&#xA;&lt;li&gt;Practice Amazon EBS and the Block Storage model.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Analyze the problem, functions and technical requirements of GreenLens Kids.&lt;/td&gt;&lt;td&gt;18/05/2026&lt;/td&gt;&lt;td&gt;18/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Study Amazon S3 and the Object Storage model.&lt;/td&gt;&lt;td&gt;19/05/2026&lt;/td&gt;&lt;td&gt;19/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Practice Amazon EBS and the Block Storage model.&lt;/td&gt;&lt;td&gt;20/05/2026&lt;/td&gt;&lt;td&gt;20/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Practice Amazon EFS and the File Storage model.&lt;/td&gt;&lt;td&gt;21/05/2026&lt;/td&gt;&lt;td&gt;21/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Compare cost and performance and select a suitable storage solution.&lt;/td&gt;&lt;td&gt;22/05/2026&lt;/td&gt;&lt;td&gt;22/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Analyze the problem, functions and technical requirements of GreenLens Kids.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Study Amazon S3 and the Object Storage model.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Differentiate S3, EBS and EFS; finalize project requirements and the storage direction.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Deployment</title>
+				<link>http://localhost:1313/en/6-workshop/04-deployment/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/6-workshop/04-deployment/</guid>
+				<description>&lt;h1 id=&#34;deploying-the-enterprise-helpdesk-system-on-aws&#34;&gt;Deploying the Enterprise HelpDesk System on AWS&lt;/h1&gt;&#xA;&lt;p&gt;In this section, you will build the network infrastructure for the Enterprise HelpDesk system using &lt;strong&gt;Amazon VPC&lt;/strong&gt;. After completing this section, the environment will be ready for deploying the &lt;strong&gt;Amazon RDS for SQL Server&lt;/strong&gt; database and the application using &lt;strong&gt;AWS Elastic Beanstalk&lt;/strong&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Week 4</title>
+				<link>http://localhost:1313/en/2-worklog/04-week-4/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/04-week-4/</guid>
+				<description>&lt;h2 id=&#34;-week-4-objectives&#34;&gt;🎯 Week 4 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Create the overall architecture draft in draw.io.&lt;/li&gt;&#xA;&lt;li&gt;Model interactions between API Gateway, Lambda, S3, DynamoDB and Cognito.&lt;/li&gt;&#xA;&lt;li&gt;Define data flows and integration points between components.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Create the overall architecture draft in draw.io.&lt;/td&gt;&lt;td&gt;25/05/2026&lt;/td&gt;&lt;td&gt;25/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Model interactions between API Gateway, Lambda, S3, DynamoDB and Cognito.&lt;/td&gt;&lt;td&gt;26/05/2026&lt;/td&gt;&lt;td&gt;26/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Define data flows and integration points between components.&lt;/td&gt;&lt;td&gt;27/05/2026&lt;/td&gt;&lt;td&gt;27/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Evaluate architecture validity, availability and latency.&lt;/td&gt;&lt;td&gt;28/05/2026&lt;/td&gt;&lt;td&gt;28/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Review security and finalize the system design documentation.&lt;/td&gt;&lt;td&gt;29/05/2026&lt;/td&gt;&lt;td&gt;29/05/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Create the overall architecture draft in draw.io.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Model interactions between API Gateway, Lambda, S3, DynamoDB and Cognito.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Complete the Serverless architecture diagram and design documentation for development.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Week 5</title>
+				<link>http://localhost:1313/en/2-worklog/05-week-5/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/05-week-5/</guid>
+				<description>&lt;h2 id=&#34;-week-5-objectives&#34;&gt;🎯 Week 5 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Configure IAM Users, Groups, Roles and Custom Policies using Least Privilege.&lt;/li&gt;&#xA;&lt;li&gt;Create and configure an S3 Bucket for GreenLens Kids images.&lt;/li&gt;&#xA;&lt;li&gt;Configure S3 access permissions, CORS and security policies.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Configure IAM Users, Groups, Roles and Custom Policies using Least Privilege.&lt;/td&gt;&lt;td&gt;01/06/2026&lt;/td&gt;&lt;td&gt;01/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Create and configure an S3 Bucket for GreenLens Kids images.&lt;/td&gt;&lt;td&gt;02/06/2026&lt;/td&gt;&lt;td&gt;02/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Configure S3 access permissions, CORS and security policies.&lt;/td&gt;&lt;td&gt;03/06/2026&lt;/td&gt;&lt;td&gt;03/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Manage AWS resources with the AWS CLI.&lt;/td&gt;&lt;td&gt;04/06/2026&lt;/td&gt;&lt;td&gt;04/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Set up basic monitoring and logging with CloudWatch.&lt;/td&gt;&lt;td&gt;05/06/2026&lt;/td&gt;&lt;td&gt;05/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Configure IAM Users, Groups, Roles and Custom Policies using Least Privilege.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Create and configure an S3 Bucket for GreenLens Kids images.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Configure the IAM, S3, AWS CLI and CloudWatch foundation for the project.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Week 6</title>
+				<link>http://localhost:1313/en/2-worklog/06-week-6/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/06-week-6/</guid>
+				<description>&lt;h2 id=&#34;-week-6-objectives&#34;&gt;🎯 Week 6 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Develop Lambda Functions for business logic.&lt;/li&gt;&#xA;&lt;li&gt;Design RESTful APIs with Amazon API Gateway.&lt;/li&gt;&#xA;&lt;li&gt;Configure API Gateway integration with Lambda.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Develop Lambda Functions for business logic.&lt;/td&gt;&lt;td&gt;08/06/2026&lt;/td&gt;&lt;td&gt;08/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Design RESTful APIs with Amazon API Gateway.&lt;/td&gt;&lt;td&gt;09/06/2026&lt;/td&gt;&lt;td&gt;09/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Configure API Gateway integration with Lambda.&lt;/td&gt;&lt;td&gt;10/06/2026&lt;/td&gt;&lt;td&gt;10/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Process JSON data between the client and backend.&lt;/td&gt;&lt;td&gt;11/06/2026&lt;/td&gt;&lt;td&gt;11/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Test HTTP requests and responses and finalize the endpoints.&lt;/td&gt;&lt;td&gt;12/06/2026&lt;/td&gt;&lt;td&gt;12/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Develop Lambda Functions for business logic.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Design RESTful APIs with Amazon API Gateway.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Build and successfully test the Serverless backend with Lambda and API Gateway.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Week 7</title>
+				<link>http://localhost:1313/en/2-worklog/07-week-7/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/07-week-7/</guid>
+				<description>&lt;h2 id=&#34;-week-7-objectives&#34;&gt;🎯 Week 7 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Study the NoSQL data model for GreenLens Kids.&lt;/li&gt;&#xA;&lt;li&gt;Design tables, Partition Keys and Sort Keys in DynamoDB.&lt;/li&gt;&#xA;&lt;li&gt;Deploy tables and configure data attributes.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Study the NoSQL data model for GreenLens Kids.&lt;/td&gt;&lt;td&gt;15/06/2026&lt;/td&gt;&lt;td&gt;15/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Design tables, Partition Keys and Sort Keys in DynamoDB.&lt;/td&gt;&lt;td&gt;16/06/2026&lt;/td&gt;&lt;td&gt;16/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Deploy tables and configure data attributes.&lt;/td&gt;&lt;td&gt;17/06/2026&lt;/td&gt;&lt;td&gt;17/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Integrate the AWS SDK with Lambda for CRUD operations.&lt;/td&gt;&lt;td&gt;18/06/2026&lt;/td&gt;&lt;td&gt;18/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Create a GSI and test data-query performance.&lt;/td&gt;&lt;td&gt;19/06/2026&lt;/td&gt;&lt;td&gt;19/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Study the NoSQL data model for GreenLens Kids.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Design tables, Partition Keys and Sort Keys in DynamoDB.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Master key and index design and CRUD operations on DynamoDB with the AWS SDK.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Week 8</title>
+				<link>http://localhost:1313/en/2-worklog/08-week-8/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/08-week-8/</guid>
+				<description>&lt;h2 id=&#34;-week-8-objectives&#34;&gt;🎯 Week 8 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Create and configure a Cognito User Pool for registration and login.&lt;/li&gt;&#xA;&lt;li&gt;Study the Identity Pool and AWS resource authorization.&lt;/li&gt;&#xA;&lt;li&gt;Integrate a Cognito Authorizer with API Gateway.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Create and configure a Cognito User Pool for registration and login.&lt;/td&gt;&lt;td&gt;22/06/2026&lt;/td&gt;&lt;td&gt;22/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Study the Identity Pool and AWS resource authorization.&lt;/td&gt;&lt;td&gt;23/06/2026&lt;/td&gt;&lt;td&gt;23/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Integrate a Cognito Authorizer with API Gateway.&lt;/td&gt;&lt;td&gt;24/06/2026&lt;/td&gt;&lt;td&gt;24/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Test JWT tokens and API access permissions.&lt;/td&gt;&lt;td&gt;25/06/2026&lt;/td&gt;&lt;td&gt;25/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Configure S3 access for authenticated users.&lt;/td&gt;&lt;td&gt;26/06/2026&lt;/td&gt;&lt;td&gt;26/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Create and configure a Cognito User Pool for registration and login.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Study the Identity Pool and AWS resource authorization.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Protect APIs with Cognito and JWT and apply user-based resource permissions.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Clean Up Resources</title>
+				<link>http://localhost:1313/en/6-workshop/09-cleanup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/6-workshop/09-cleanup/</guid>
+				<description>&lt;h1 id=&#34;clean-up-resources&#34;&gt;Clean Up Resources&lt;/h1&gt;&#xA;&lt;p&gt;After completing this workshop, you should delete all AWS resources that were created to avoid unnecessary charges. In this section, you will remove the AWS Elastic Beanstalk environment, AWS WAF Web ACL, Amazon RDS database, AWS Secrets Manager secret, and the security groups created during the workshop.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Week 9</title>
+				<link>http://localhost:1313/en/2-worklog/09-week-9/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/09-week-9/</guid>
+				<description>&lt;h2 id=&#34;-week-9-objectives&#34;&gt;🎯 Week 9 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Centralize API Gateway, Lambda and DynamoDB logs in CloudWatch Logs.&lt;/li&gt;&#xA;&lt;li&gt;Configure Metrics, CloudWatch Alarms and a Dashboard.&lt;/li&gt;&#xA;&lt;li&gt;Monitor performance and identify bottlenecks and errors.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Centralize API Gateway, Lambda and DynamoDB logs in CloudWatch Logs.&lt;/td&gt;&lt;td&gt;29/06/2026&lt;/td&gt;&lt;td&gt;29/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Configure Metrics, CloudWatch Alarms and a Dashboard.&lt;/td&gt;&lt;td&gt;30/06/2026&lt;/td&gt;&lt;td&gt;30/06/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Monitor performance and identify bottlenecks and errors.&lt;/td&gt;&lt;td&gt;01/07/2026&lt;/td&gt;&lt;td&gt;01/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Use Logs Insights and AWS X-Ray to find root causes.&lt;/td&gt;&lt;td&gt;02/07/2026&lt;/td&gt;&lt;td&gt;02/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Configure automatic alerts through Amazon SNS and handle incidents.&lt;/td&gt;&lt;td&gt;03/07/2026&lt;/td&gt;&lt;td&gt;03/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Centralize API Gateway, Lambda and DynamoDB logs in CloudWatch Logs.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Configure Metrics, CloudWatch Alarms and a Dashboard.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Complete monitoring, alerting and incident-handling processes for GreenLens Kids.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Demo</title>
+				<link>http://localhost:1313/en/6-workshop/demo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/6-workshop/demo/</guid>
+				<description>&lt;h1 id=&#34;enterprise-helpdesk-system-demo&#34;&gt;Enterprise HelpDesk System Demo&lt;/h1&gt;&#xA;&lt;p&gt;In this section, you will verify the functionality of the Enterprise HelpDesk system after it has been successfully deployed on AWS. The application&amp;rsquo;s business features and AWS services are demonstrated through real-world scenarios to validate that the system operates reliably, securely, and according to the designed architecture.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Week 10</title>
+				<link>http://localhost:1313/en/2-worklog/10-week-10/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/10-week-10/</guid>
+				<description>&lt;h2 id=&#34;-week-10-objectives&#34;&gt;🎯 Week 10 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Perform end-to-end testing of the GreenLens Kids system.&lt;/li&gt;&#xA;&lt;li&gt;Optimize Lambda, APIs and DynamoDB to reduce response time.&lt;/li&gt;&#xA;&lt;li&gt;Review S3 and API access permissions and security.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Perform end-to-end testing of the GreenLens Kids system.&lt;/td&gt;&lt;td&gt;06/07/2026&lt;/td&gt;&lt;td&gt;06/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Optimize Lambda, APIs and DynamoDB to reduce response time.&lt;/td&gt;&lt;td&gt;07/07/2026&lt;/td&gt;&lt;td&gt;07/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Review S3 and API access permissions and security.&lt;/td&gt;&lt;td&gt;08/07/2026&lt;/td&gt;&lt;td&gt;08/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Analyze costs and apply AWS Cost Optimization practices.&lt;/td&gt;&lt;td&gt;09/07/2026&lt;/td&gt;&lt;td&gt;09/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Evaluate test results and finalize the deployment configuration.&lt;/td&gt;&lt;td&gt;10/07/2026&lt;/td&gt;&lt;td&gt;10/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Perform end-to-end testing of the GreenLens Kids system.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Optimize Lambda, APIs and DynamoDB to reduce response time.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Complete system testing and improve performance, security and operating costs.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Week 11</title>
+				<link>http://localhost:1313/en/2-worklog/11-week-11/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/11-week-11/</guid>
+				<description>&lt;h2 id=&#34;-week-11-objectives&#34;&gt;🎯 Week 11 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Complete the remaining GreenLens Kids features and lock the source code.&lt;/li&gt;&#xA;&lt;li&gt;Verify system flows and capture evidence of AWS resources.&lt;/li&gt;&#xA;&lt;li&gt;Record a demo video of the main system functions.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Complete the remaining GreenLens Kids features and lock the source code.&lt;/td&gt;&lt;td&gt;13/07/2026&lt;/td&gt;&lt;td&gt;13/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Verify system flows and capture evidence of AWS resources.&lt;/td&gt;&lt;td&gt;14/07/2026&lt;/td&gt;&lt;td&gt;14/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Record a demo video of the main system functions.&lt;/td&gt;&lt;td&gt;15/07/2026&lt;/td&gt;&lt;td&gt;15/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Update the official architecture diagram to match the real infrastructure.&lt;/td&gt;&lt;td&gt;16/07/2026&lt;/td&gt;&lt;td&gt;16/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Complete the Technical Documentation and report content.&lt;/td&gt;&lt;td&gt;17/07/2026&lt;/td&gt;&lt;td&gt;17/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Complete the remaining GreenLens Kids features and lock the source code.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Verify system flows and capture evidence of AWS resources.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Package the demo product, architecture diagram and technical documentation for the report.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Week 12</title>
+				<link>http://localhost:1313/en/2-worklog/12-week-12/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/2-worklog/12-week-12/</guid>
+				<description>&lt;h2 id=&#34;-week-12-objectives&#34;&gt;🎯 Week 12 objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Review and remove test AWS resources to prevent additional charges.&lt;/li&gt;&#xA;&lt;li&gt;Complete the internship report, Worklog and company confirmation documents.&lt;/li&gt;&#xA;&lt;li&gt;Review all documentation, screenshots and practice results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-work-completed-during-the-week&#34;&gt;📅 Work completed during the week&lt;/h2&gt;&#xA;&lt;table class=&#34;table table-bordered table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&#34;width:6%&#34;&gt;No.&lt;/th&gt;&lt;th style=&#34;width:48%&#34;&gt;Task&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Start date&lt;/th&gt;&lt;th style=&#34;width:12%&#34;&gt;Completion date&lt;/th&gt;&lt;th style=&#34;width:22%&#34;&gt;References&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#xA;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Review and remove test AWS resources to prevent additional charges.&lt;/td&gt;&lt;td&gt;20/07/2026&lt;/td&gt;&lt;td&gt;20/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Complete the internship report, Worklog and company confirmation documents.&lt;/td&gt;&lt;td&gt;21/07/2026&lt;/td&gt;&lt;td&gt;21/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Review all documentation, screenshots and practice results.&lt;/td&gt;&lt;td&gt;22/07/2026&lt;/td&gt;&lt;td&gt;22/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Design slides and rehearse the presentation.&lt;/td&gt;&lt;td&gt;23/07/2026&lt;/td&gt;&lt;td&gt;23/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Summarize lessons learned and the Cloud Engineering/DevOps career direction.&lt;/td&gt;&lt;td&gt;24/07/2026&lt;/td&gt;&lt;td&gt;24/07/2026&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Review and remove test AWS resources to prevent additional charges.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;Complete the internship report, Worklog and company confirmation documents.&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;undefined&lt;/td&gt;&lt;td&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34; target=&#34;_blank&#34;&gt;AWS Documentation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;h2 id=&#34;-achievements&#34;&gt;🏆 Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Complete the report, Worklog and slides and prepare for the internship defense.&lt;/li&gt;&#xA;&lt;li&gt;Completed the planned practical activities and documented the weekly results.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-knowledge-gained&#34;&gt;💡 Knowledge gained&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strengthened AWS knowledge and system deployment skills through the GreenLens Kids roadmap.&lt;/li&gt;&#xA;&lt;li&gt;Improved skills in analysis, testing, technical documentation and presentation.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
 </rss>

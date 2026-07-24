@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Sự kiện đã tham gia on Workshop Portfolio AWS</title>
-    <link>https://long-28.github.io/vi/5-events-participated/</link>
-    <description>Recent content in Sự kiện đã tham gia on Workshop Portfolio AWS</description>
-    <generator>Hugo</generator>
-    <language>vi-VN</language>
-    <lastBuildDate>Sat, 06 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://long-28.github.io/vi/5-events-participated/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AWS First Cloud AI Journey Community Day 2026</title>
-      <link>https://long-28.github.io/vi/5-events-participated/01-event-1/</link>
-      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/vi/5-events-participated/01-event-1/</guid>
-      <description>Tham dự sự kiện AWS First Cloud AI Journey Community Day 2026 tại Thành phố Hồ Chí Minh.</description>
-    </item>
-    <item>
-      <title>Mini Meetup – First Cloud AI Journey 06/06/2026</title>
-      <link>https://long-28.github.io/vi/5-events-participated/02-event-2/</link>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://long-28.github.io/vi/5-events-participated/02-event-2/</guid>
-      <description>Tham dự Mini Meetup – First Cloud AI Journey với các chủ đề về Docker, AWS WAF, Neptune, WebSocket và lộ trình phát triển sự nghiệp Cloud.</description>
-    </item>
-  </channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Sự kiện đã tham gia on Workshop Portfolio AWS</title>
+		<link>http://localhost:1313/vi/5-events-participated/</link>
+		<description>Recent content in Sự kiện đã tham gia on Workshop Portfolio AWS</description>
+		<generator>Hugo</generator>
+		<language>vi-VN</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 06 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/vi/5-events-participated/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AWS First Cloud AI Journey Community Day 2026</title>
+				<link>http://localhost:1313/vi/5-events-participated/01-event-1/</link>
+				<pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/vi/5-events-participated/01-event-1/</guid>
+				<description>&lt;h1 id=&#34;aws-first-cloud-ai-journey-community-day-2026&#34;&gt;AWS First Cloud AI Journey Community Day 2026&lt;/h1&gt;&#xA;&lt;h2 id=&#34;-bối-cảnh--mục-tiêu-tham-dự-sự-kiện&#34;&gt;🎯 Bối cảnh &amp;amp; Mục tiêu tham dự sự kiện&lt;/h2&gt;&#xA;&lt;h3 id=&#34;bối-cảnh&#34;&gt;Bối cảnh&lt;/h3&gt;&#xA;&lt;p&gt;Trong bối cảnh AI và Cloud Computing phát triển nhanh, sự kiện AWS First Cloud AI Journey Community Day 2026 tạo cơ hội kết nối cộng đồng kỹ sư Cloud và AI tại Việt Nam, đồng thời chia sẻ các bài toán triển khai thực tế trên AWS.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Mini Meetup – First Cloud AI Journey 06/06/2026</title>
+				<link>http://localhost:1313/vi/5-events-participated/02-event-2/</link>
+				<pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/vi/5-events-participated/02-event-2/</guid>
+				<description>&lt;h1 id=&#34;mini-meetup--first-cloud-ai-journey-06062026&#34;&gt;Mini Meetup – First Cloud AI Journey 06/06/2026&lt;/h1&gt;&#xA;&lt;h2 id=&#34;-bối-cảnh--mục-tiêu-tham-dự-sự-kiện&#34;&gt;🎯 Bối cảnh &amp;amp; Mục tiêu tham dự sự kiện&lt;/h2&gt;&#xA;&lt;h3 id=&#34;bối-cảnh&#34;&gt;Bối cảnh&lt;/h3&gt;&#xA;&lt;p&gt;Mini Meetup – First Cloud AI Journey là chuỗi sự kiện chuyên sâu nối tiếp Community Day, tập trung vào các chủ đề kỹ thuật thực chiến và định hướng nghề nghiệp cho cộng đồng kỹ sư trẻ.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

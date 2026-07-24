@@ -2,420 +2,420 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://long-28.github.io/en/4-blog-posts/01-blog-1/</loc>
+    <loc>http://localhost:1313/en/4-blog-posts/01-blog-1/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/4-blog-posts/01-blog-1/"
+                href="http://localhost:1313/en/4-blog-posts/01-blog-1/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/4-blog-posts/01-blog-1/"
+                href="http://localhost:1313/vi/4-blog-posts/01-blog-1/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/5-events-participated/01-event-1/</loc>
+    <loc>http://localhost:1313/en/5-events-participated/01-event-1/</loc>
     <lastmod>2026-05-23T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/5-events-participated/01-event-1/"
+                href="http://localhost:1313/en/5-events-participated/01-event-1/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/5-events-participated/01-event-1/"
+                href="http://localhost:1313/vi/5-events-participated/01-event-1/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/6-workshop/01-overview/</loc>
+    <loc>http://localhost:1313/en/6-workshop/01-overview/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/6-workshop/01-overview/"
+                href="http://localhost:1313/en/6-workshop/01-overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/6-workshop/01-overview/"
+                href="http://localhost:1313/vi/6-workshop/01-overview/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/1-student-information/</loc>
+    <loc>http://localhost:1313/en/1-student-information/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/1-student-information/"
+                href="http://localhost:1313/en/1-student-information/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/1-student-information/"
+                href="http://localhost:1313/vi/1-student-information/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/01-week-1/</loc>
+    <loc>http://localhost:1313/en/2-worklog/01-week-1/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/01-week-1/"
+                href="http://localhost:1313/en/2-worklog/01-week-1/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/01-week-1/"
+                href="http://localhost:1313/vi/2-worklog/01-week-1/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/4-blog-posts/02-blog-2/</loc>
+    <loc>http://localhost:1313/en/4-blog-posts/02-blog-2/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/4-blog-posts/02-blog-2/"
+                href="http://localhost:1313/en/4-blog-posts/02-blog-2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/4-blog-posts/02-blog-2/"
+                href="http://localhost:1313/vi/4-blog-posts/02-blog-2/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/5-events-participated/02-event-2/</loc>
+    <loc>http://localhost:1313/en/5-events-participated/02-event-2/</loc>
     <lastmod>2026-06-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/5-events-participated/02-event-2/"
+                href="http://localhost:1313/en/5-events-participated/02-event-2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/5-events-participated/02-event-2/"
+                href="http://localhost:1313/vi/5-events-participated/02-event-2/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/</loc>
+    <loc>http://localhost:1313/en/2-worklog/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/"
+                href="http://localhost:1313/en/2-worklog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/"
+                href="http://localhost:1313/vi/2-worklog/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/6-workshop/02-prerequisites/</loc>
+    <loc>http://localhost:1313/en/6-workshop/02-prerequisites/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/6-workshop/02-prerequisites/"
+                href="http://localhost:1313/en/6-workshop/02-prerequisites/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/6-workshop/02-prerequisites/"
+                href="http://localhost:1313/vi/6-workshop/02-prerequisites/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/02-week-2/</loc>
+    <loc>http://localhost:1313/en/2-worklog/02-week-2/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/02-week-2/"
+                href="http://localhost:1313/en/2-worklog/02-week-2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/02-week-2/"
+                href="http://localhost:1313/vi/2-worklog/02-week-2/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/4-blog-posts/03-blog-3/</loc>
+    <loc>http://localhost:1313/en/4-blog-posts/03-blog-3/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/4-blog-posts/03-blog-3/"
+                href="http://localhost:1313/en/4-blog-posts/03-blog-3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/4-blog-posts/03-blog-3/"
+                href="http://localhost:1313/vi/4-blog-posts/03-blog-3/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/6-workshop/03-architecture/</loc>
+    <loc>http://localhost:1313/en/6-workshop/03-architecture/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/6-workshop/03-architecture/"
+                href="http://localhost:1313/en/6-workshop/03-architecture/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/6-workshop/03-architecture/"
+                href="http://localhost:1313/vi/6-workshop/03-architecture/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/3-proposal/</loc>
+    <loc>http://localhost:1313/en/3-proposal/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/3-proposal/"
+                href="http://localhost:1313/en/3-proposal/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/3-proposal/"
+                href="http://localhost:1313/vi/3-proposal/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/03-week-3/</loc>
+    <loc>http://localhost:1313/en/2-worklog/03-week-3/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/03-week-3/"
+                href="http://localhost:1313/en/2-worklog/03-week-3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/03-week-3/"
+                href="http://localhost:1313/vi/2-worklog/03-week-3/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/4-blog-posts/</loc>
+    <loc>http://localhost:1313/en/4-blog-posts/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/4-blog-posts/"
+                href="http://localhost:1313/en/4-blog-posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/4-blog-posts/"
+                href="http://localhost:1313/vi/4-blog-posts/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/6-workshop/04-deployment/</loc>
+    <loc>http://localhost:1313/en/6-workshop/04-deployment/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/6-workshop/04-deployment/"
+                href="http://localhost:1313/en/6-workshop/04-deployment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/6-workshop/04-deployment/"
+                href="http://localhost:1313/vi/6-workshop/04-deployment/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/04-week-4/</loc>
+    <loc>http://localhost:1313/en/2-worklog/04-week-4/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/04-week-4/"
+                href="http://localhost:1313/en/2-worklog/04-week-4/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/04-week-4/"
+                href="http://localhost:1313/vi/2-worklog/04-week-4/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/5-events-participated/</loc>
+    <loc>http://localhost:1313/en/5-events-participated/</loc>
     <lastmod>2026-06-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/5-events-participated/"
+                href="http://localhost:1313/en/5-events-participated/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/5-events-participated/"
+                href="http://localhost:1313/vi/5-events-participated/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/05-week-5/</loc>
+    <loc>http://localhost:1313/en/2-worklog/05-week-5/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/05-week-5/"
+                href="http://localhost:1313/en/2-worklog/05-week-5/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/05-week-5/"
+                href="http://localhost:1313/vi/2-worklog/05-week-5/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/06-week-6/</loc>
+    <loc>http://localhost:1313/en/2-worklog/06-week-6/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/06-week-6/"
+                href="http://localhost:1313/en/2-worklog/06-week-6/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/06-week-6/"
+                href="http://localhost:1313/vi/2-worklog/06-week-6/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/6-workshop/</loc>
+    <loc>http://localhost:1313/en/6-workshop/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/6-workshop/"
+                href="http://localhost:1313/en/6-workshop/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/6-workshop/"
+                href="http://localhost:1313/vi/6-workshop/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/7-self-evaluation/</loc>
+    <loc>http://localhost:1313/en/7-self-evaluation/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/7-self-evaluation/"
+                href="http://localhost:1313/en/7-self-evaluation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/7-self-evaluation/"
+                href="http://localhost:1313/vi/7-self-evaluation/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/07-week-7/</loc>
+    <loc>http://localhost:1313/en/2-worklog/07-week-7/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/07-week-7/"
+                href="http://localhost:1313/en/2-worklog/07-week-7/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/07-week-7/"
+                href="http://localhost:1313/vi/2-worklog/07-week-7/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/8-sharing-and-feedback/</loc>
+    <loc>http://localhost:1313/en/8-sharing-and-feedback/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/8-sharing-and-feedback/"
+                href="http://localhost:1313/en/8-sharing-and-feedback/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/8-sharing-and-feedback/"
+                href="http://localhost:1313/vi/8-sharing-and-feedback/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/08-week-8/</loc>
+    <loc>http://localhost:1313/en/2-worklog/08-week-8/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/08-week-8/"
+                href="http://localhost:1313/en/2-worklog/08-week-8/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/08-week-8/"
+                href="http://localhost:1313/vi/2-worklog/08-week-8/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/6-workshop/09-cleanup/</loc>
+    <loc>http://localhost:1313/en/6-workshop/09-cleanup/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/6-workshop/09-cleanup/"
+                href="http://localhost:1313/en/6-workshop/09-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/6-workshop/09-cleanup/"
+                href="http://localhost:1313/vi/6-workshop/09-cleanup/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/09-week-9/</loc>
+    <loc>http://localhost:1313/en/2-worklog/09-week-9/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/09-week-9/"
+                href="http://localhost:1313/en/2-worklog/09-week-9/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/09-week-9/"
+                href="http://localhost:1313/vi/2-worklog/09-week-9/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/6-workshop/demo/</loc>
+    <loc>http://localhost:1313/en/6-workshop/demo/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/6-workshop/demo/"
+                href="http://localhost:1313/en/6-workshop/demo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/6-workshop/demo/"
+                href="http://localhost:1313/vi/6-workshop/demo/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/10-week-10/</loc>
+    <loc>http://localhost:1313/en/2-worklog/10-week-10/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/10-week-10/"
+                href="http://localhost:1313/en/2-worklog/10-week-10/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/10-week-10/"
+                href="http://localhost:1313/vi/2-worklog/10-week-10/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/11-week-11/</loc>
+    <loc>http://localhost:1313/en/2-worklog/11-week-11/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/11-week-11/"
+                href="http://localhost:1313/en/2-worklog/11-week-11/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/11-week-11/"
+                href="http://localhost:1313/vi/2-worklog/11-week-11/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/2-worklog/12-week-12/</loc>
+    <loc>http://localhost:1313/en/2-worklog/12-week-12/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/2-worklog/12-week-12/"
+                href="http://localhost:1313/en/2-worklog/12-week-12/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/2-worklog/12-week-12/"
+                href="http://localhost:1313/vi/2-worklog/12-week-12/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/</loc>
+    <loc>http://localhost:1313/en/</loc>
     <lastmod>2026-07-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/"
+                href="http://localhost:1313/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/"
+                href="http://localhost:1313/vi/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/categories/</loc>
+    <loc>http://localhost:1313/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/categories/"
+                href="http://localhost:1313/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/categories/"
+                href="http://localhost:1313/vi/categories/"
                 />
   </url><url>
-    <loc>https://long-28.github.io/en/tags/</loc>
+    <loc>http://localhost:1313/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://long-28.github.io/en/tags/"
+                href="http://localhost:1313/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi-VN"
-                href="https://long-28.github.io/vi/tags/"
+                href="http://localhost:1313/vi/tags/"
                 />
   </url>
 </urlset>

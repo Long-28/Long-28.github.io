@@ -1,3 +1,1 @@
 User-agent: *
-Disallow:
-Sitemap: https://long-28.github.io/sitemap.xml

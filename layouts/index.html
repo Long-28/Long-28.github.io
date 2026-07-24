@@ -1,0 +1,15 @@
+{{- $target := .Site.GetPage "/1-student-information" -}}
+<!doctype html>
+<html lang="{{ .Language.Lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url={{ $target.RelPermalink }}">
+  <link rel="canonical" href="{{ $target.Permalink }}">
+  <title>{{ $target.Title }} :: {{ .Site.Title }}</title>
+  <script>window.location.replace({{ $target.RelPermalink | jsonify | safeJS }});</script>
+</head>
+<body>
+  <p><a href="{{ $target.RelPermalink }}">{{ $target.Title }}</a></p>
+</body>
+</html>
